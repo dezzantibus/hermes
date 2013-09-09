@@ -1,0 +1,25 @@
+
+
+.header{
+    width:20%;
+    margin:10px auto;
+    border: 1px solid #000;
+    text-align:center;
+}
+
+#mainColumn{
+    width:900px;
+    margin:auto;
+}
+
+.nav{
+    width:900px;
+    height:50px;
+    float:none;
+    text-align:center;
+}
+
+.nav a{
+    color:#FFF;
+    display:inline;
+}
