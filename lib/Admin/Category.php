@@ -18,4 +18,26 @@ class Admin_Category extends Category
 		return $return;
 	}
 
+    public function getPage( $page=1, $articlesPerPage=Config::ARTICLES_PER_PAGE )
+    {
+
+        $article = new Article();
+
+        $start = $articlesPerPage * ($page - 1);
+
+        $limit = $start . ', ' . $articlesPerPage;
+
+        $article->setLimit( $limit );
+
+        $article->setOrder( 'id', 'DESC' );
+
+        $parameters = array(
+            'category_id'   => $this->getData( 'id' ),
+            'journalist_id' => $_SESSION['journalist']['id'],
+        );
+
+        return $article->getListBy( $parameters );
+
+    }
+
 }

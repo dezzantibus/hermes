@@ -24,7 +24,8 @@ class Albanian
 	const MEX_LNAME       = 'Il cognome';
 	const MEX_MANAGER     = 'Il supervisore';
 	const MEX_PASSWORD    = 'La password';
-	const MEX_SUBTITLE    = 'Il sottotitolo';
+    const MEX_BRIEF       = 'Il breve';
+    const MEX_SUBTITLE    = 'Il sottotitolo';
 	const MEX_TEXT        = 'Il testo';
 	const MEX_TITLE       = 'Il titolo';
 	const MEX_USER        = 'L\'utente';
