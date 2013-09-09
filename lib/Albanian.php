@@ -51,6 +51,7 @@ class Albanian
     const ADMIN_MENU_NEW    = 'Nuovo';
     const ADMIN_MENU_EDIT   = 'Modifica';
     const ADMIN_MENU_DELETE = 'Cancella';
+    const ADMIN_MENU_SAVE   = 'Salva';
 
     const ADMIN_MENU_CATEGORY    = 'Categorie';
     const ADMIN_MENU_ARTICLE     = 'Articoli';
@@ -60,12 +61,16 @@ class Albanian
     const MEX_DELETE        = 'Sicuro di voler cancellare?';
     const MEX_SELECT_OPTION = 'Selezionare opzione';
 
-	const LABEL_DATE		= 'Data';
+    const LABEL_CATEGORY	= 'Categoria';
+    const LABEL_DATE		= 'Data';
+    const LABEL_EMAIL		= 'Email';
+    const LABEL_FNAME		= 'Nome';
+    const LABEL_JOURNALIST	= 'Giornalista';
+    const LABEL_LNAME	    = 'Cognome';
 	const LABEL_TITLE		= 'Titolo';
-	const LABEL_JOURNALIST	= 'Giornalista';
-	const LABEL_CATEGORY	= 'Categoria';
 
-    const NEW_ARTICLE   = 'Nuovo articolo';
+    const NEW_ARTICLE    = 'Nuovo articolo';
+    const NEW_JOURNALIST = 'Nuovo giornalista';
 
     static $month = array(
 		'english'  => array('January', 'February', 'March', 'April', 'May', 'June',	'July',   'August', 'September', 'October', 'November', 'December'),

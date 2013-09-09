@@ -4,6 +4,8 @@
 
 <form action="?cat={$category->getData( 'id' )}" method="post">
 
+	<input type="hidden" name="id" value="{$article->getData( 'id' )|default:'0'}">
+
 	<input type="hidden" name="category_id" value="{$category->getData( 'id' )}">
 
 	<input type="hidden" name="journalist_id" value="{$session.journalist.id}">
