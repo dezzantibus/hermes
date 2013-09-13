@@ -1,6 +1,6 @@
 {include file='admin/head.tpl'}
 
-<h1>{$journalist->getData( 'fname' )|default:$smarty.const.Albanian::NEW_JOURNALIST} {$journalist->getData( 'lname' )}</h1>
+<h1>{$journalist->getData( 'fname' )|default:$smarty.const.Albanian::NEW_JOURNALIST} {$journalist->getData( 'lname' )|default:''}</h1>
 
 <form action="?" method="post">
 
