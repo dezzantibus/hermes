@@ -7,13 +7,13 @@
 	<input type="hidden" name="id" value="{$article->getData( 'id' )|default:'0'}">
 
 	<label>{$smarty.const.Albanian::LABEL_FNAME}</label>
-	<input type="text" name="fname" value="{$article->getData( 'fname' )}">
+	<input type="text" name="fname" value="{$article->getData( 'fname' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_LNAME}</label>
-	<input type="text" name="lname" value="{$article->getData( 'lname' )}">
+	<input type="text" name="lname" value="{$article->getData( 'lname' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_EMAIL}</label>
-	<input type="text" name="email" value="{$article->getData( 'email' )}">
+	<input type="text" name="email" value="{$article->getData( 'email' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_PASSWORD}</label>
 	<input type="text" name="pass" value="">
