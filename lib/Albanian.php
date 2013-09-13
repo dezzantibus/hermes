@@ -67,6 +67,7 @@ class Albanian
     const LABEL_FNAME		= 'Nome';
     const LABEL_JOURNALIST	= 'Giornalista';
     const LABEL_LNAME	    = 'Cognome';
+    const LABEL_PASSWORD    = 'Password';
 	const LABEL_TITLE		= 'Titolo';
 
     const NEW_ARTICLE    = 'Nuovo articolo';
