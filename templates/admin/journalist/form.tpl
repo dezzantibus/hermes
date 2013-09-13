@@ -4,16 +4,16 @@
 
 <form action="?" method="post">
 
-	<input type="hidden" name="id" value="{$article->getData( 'id' )|default:'0'}">
+	<input type="hidden" name="id" value="{$journalist->getData( 'id' )|default:'0'}">
 
 	<label>{$smarty.const.Albanian::LABEL_FNAME}</label>
-	<input type="text" name="fname" value="{$article->getData( 'fname' )|default:''}">
+	<input type="text" name="fname" value="{$journalist->getData( 'fname' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_LNAME}</label>
-	<input type="text" name="lname" value="{$article->getData( 'lname' )|default:''}">
+	<input type="text" name="lname" value="{$journalist->getData( 'lname' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_EMAIL}</label>
-	<input type="text" name="email" value="{$article->getData( 'email' )|default:''}">
+	<input type="text" name="email" value="{$journalist->getData( 'email' )|default:''}">
 
 	<label>{$smarty.const.Albanian::LABEL_PASSWORD}</label>
 	<input type="text" name="pass" value="">
