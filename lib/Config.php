@@ -45,7 +45,9 @@ class Config
 		self::$folders['pages']	  = self::$folders['root'] . 'pages/';
 		self::$folders['sitemap'] = self::$folders['root'] . 'sitemap/';
 
-		spl_autoload_register('Config::autoloader');
+		spl_autoload_register( 'Config::autoloader' );
+		
+		date_default_timezone_set( 'Europe/Tirane' );
 		
 	}
 	

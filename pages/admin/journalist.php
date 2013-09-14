@@ -44,7 +44,7 @@ if( isset( $_GET['page'] ) )
 Template::assign( 'page', $page );
 
 $journalist = new Admin_Journalist();
-$journalist->setOrder( 'fname, lname' );
+$journalist->setOrder( 'fname`, `lname' );
 
 Template::assign( 'journalists', $journalist->getFullList() );
 
