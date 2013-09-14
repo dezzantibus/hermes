@@ -46,6 +46,6 @@ Template::assign( 'page', $page );
 $journalist = new Admin_Journalist();
 $journalist->setOrder( 'fname`, `lname' );
 
-Template::assign( 'journalists', $journalist->getFullList() );
+Template::assign( 'journalists', $journalist->getFullList( true ) );
 
 Template::display( 'admin/journalist/list.tpl' );
