@@ -8,7 +8,7 @@
 
 	<input type="hidden" name="category_id" value="{$category->getData( 'id' )}">
 
-	<input type="hidden" name="journalist_id" value="{$session.journalist.id}">
+	<input type="hidden" name="journalist_id" value="{$session.journalist.id|default:1}">
 
 	<label>{$smarty.const.Albanian::FORM_TITLE}</label>
 	<input type="text" name="title" value="{$article->getData( 'title' )}">
@@ -29,7 +29,7 @@
 	<label>{$smarty.const.Albanian::LABEL_HOMEPAGE}</label>
 
 	<input type="checkbox" name="highlight"{if $article->getData( 'highlight' ) eq 1} checked="checked"{/if}>
-	<label>{$smarty.const.Albanian::HIGHLIGHTED}</label>
+	<label>{$smarty.const.Albanian::LABEL_HIGHLIGHTED}</label>
 
 	<input type="submit" value="{$smarty.const.Albanian::ADMIN_MENU_SAVE}">
 
