@@ -10,20 +10,20 @@
 
 	<input type="hidden" name="journalist_id" value="{$session.journalist.id}">
 
-	<label>{$smarty.const.Albanian::LABEL_TITLE}</label>
+	<label>{$smarty.const.Albanian::FORM_TITLE}</label>
 	<input type="text" name="title" value="{$article->getData( 'title' )}">
 
-	<label>{$smarty.const.Albanian::LABEL_SUBTITLE}</label>
+	<label>{$smarty.const.Albanian::FORM_SUBTITLE}</label>
 	<input type="text" name="subtitle" value="{$article->getData( 'subtitle' )}">
 
-	<label>{$smarty.const.Albanian::LABEL_BRIEF}</label>
+	<label>{$smarty.const.Albanian::FORM_BRIEF}</label>
 	<textarea name="brief">{$article->getData( 'brief' )}</textarea>
 
-	<label>{$smarty.const.Albanian::LABEL_TEXT}</label>
+	<label>{$smarty.const.Albanian::FORM_TEXT}</label>
 	<textarea name="text">{$article->getData( 'text' )}</textarea>
 
 	<input type="checkbox" name="hero"{if $article->getData( 'hero' ) eq 1} checked="checked"{/if}>
-	<label>{$smarty.const.Albanian::LABEL_HERO}</label>
+	<label>{$smarty.const.Albanian::FORM_HERO}</label>
 
 	<input type="checkbox" name="homepage"{if $article->getData( 'homepage' ) eq 1} checked="checked"{/if}>
 	<label>{$smarty.const.Albanian::LABEL_HOMEPAGE}</label>

@@ -31,10 +31,12 @@ class Albanian
 	const MEX_USER        = 'L\'utente';
 	const MEX_USERNAME    = 'Il nome utente';
 
+    const FORM_BRIEF        = 'Breve';
 	const FORM_CATEGORY     = 'Categoria';
 	const FORM_EMAIL        = 'Email';
 	const FORM_FNAME        = 'Nome';
-	const FORM_JOURNALIST   = 'Giornalista';
+    const FORM_HERO         = 'Hero';
+    const FORM_JOURNALIST   = 'Giornalista';
 	const FORM_LNAME        = 'Cognome';
 	const FORM_PASSWORD     = 'Password';
 	const FORM_PWD_CONFIRM  = 'Conferma password';
@@ -43,20 +45,20 @@ class Albanian
 	const FORM_TITLE        = 'Titolo';
 	const FORM_USERNAME     = 'Nome utente';
 
-	const READ_MORE     = 'Continua a leggere';
-	const POPULAR_NEWS  = 'Notizie popolari';
-	const HIGHLIGHTED   = 'In evidenza';
-	const LATEST        = 'Ultimi articoli';
+	const READ_MORE    = 'Continua a leggere';
+	const POPULAR_NEWS = 'Notizie popolari';
+	const HIGHLIGHTED  = 'In evidenza';
+	const LATEST       = 'Ultimi articoli';
 
     const ADMIN_MENU_NEW    = 'Nuovo';
     const ADMIN_MENU_EDIT   = 'Modifica';
     const ADMIN_MENU_DELETE = 'Cancella';
     const ADMIN_MENU_SAVE   = 'Salva';
 
-    const ADMIN_MENU_CATEGORY    = 'Categorie';
-    const ADMIN_MENU_ARTICLE     = 'Articoli';
-    const ADMIN_MENU_JOURNALIST  = 'Giornalisti';
-    const ADMIN_MENU_NEWSLETTER  = 'Newsletter';
+    const ADMIN_MENU_CATEGORY   = 'Categorie';
+    const ADMIN_MENU_ARTICLE    = 'Articoli';
+    const ADMIN_MENU_JOURNALIST = 'Giornalisti';
+    const ADMIN_MENU_NEWSLETTER = 'Newsletter';
 	
     const MEX_DELETE        = 'Sicuro di voler cancellare?';
     const MEX_SELECT_OPTION = 'Selezionare opzione';
@@ -65,6 +67,8 @@ class Albanian
     const LABEL_DATE		= 'Data';
     const LABEL_EMAIL		= 'Email';
     const LABEL_FNAME		= 'Nome';
+    const LABEL_HIGHLIGHTED = 'In evidenza';
+    const LABEL_HOMEPAGE    = 'Homepage';
     const LABEL_JOURNALIST	= 'Giornalista';
     const LABEL_LNAME	    = 'Cognome';
     const LABEL_PASSWORD    = 'Password';
