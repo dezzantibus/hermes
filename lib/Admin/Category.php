@@ -23,7 +23,7 @@ class Admin_Category extends Category
 
         $article = new Article();
 
-        $start = $articlesPerPage * ($page - 1);
+        $start = $articlesPerPage * ( $page - 1 );
 
         $limit = $start . ', ' . $articlesPerPage;
 
@@ -31,10 +31,12 @@ class Admin_Category extends Category
 
         $article->setOrder( 'id', 'DESC' );
 
-        $parameters = array(
-            'category_id'   => $this->getData( 'id' ),
-            'journalist_id' => $_SESSION['journalist']['id'],
-        );
+        $parameters = array( 'category_id'   => $this->getData( 'id' ) );
+
+        if( $_SESSION['journalist']['id'] > 1 )
+        {
+            $parameters['journalist_id'] = $_SESSION['journalist']['id'];
+        }
 
         return $article->getListBy( $parameters );
 
