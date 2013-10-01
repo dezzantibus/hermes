@@ -38,7 +38,7 @@ class Admin_Category extends Category
             $parameters['journalist_id'] = $_SESSION['journalist']['id'];
         }
 
-        return $article->getListBy( $parameters );
+        return $article->getListBy( $parameters, true );
 
     }
 
