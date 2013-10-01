@@ -22,14 +22,20 @@
 	<label>{$smarty.const.Albanian::FORM_TEXT}</label>
 	<textarea name="text">{$article->getData( 'text' )}</textarea>
 
-	<input type="checkbox" name="hero"{if $article->getData( 'hero' ) eq 1} checked="checked"{/if}>
-	<label>{$smarty.const.Albanian::FORM_HERO}</label>
+	<label>
+		<input type="checkbox" name="hero"{if $article->getData( 'hero' ) eq 1} checked="checked"{/if}>
+		{$smarty.const.Albanian::FORM_HERO}
+	</label>
 
-	<input type="checkbox" name="homepage"{if $article->getData( 'homepage' ) eq 1} checked="checked"{/if}>
-	<label>{$smarty.const.Albanian::LABEL_HOMEPAGE}</label>
+	<label>
+		<input type="checkbox" name="homepage"{if $article->getData( 'homepage' ) eq 1} checked="checked"{/if}>
+		{$smarty.const.Albanian::LABEL_HOMEPAGE}
+	</label>
 
-	<input type="checkbox" name="highlight"{if $article->getData( 'highlight' ) eq 1} checked="checked"{/if}>
-	<label>{$smarty.const.Albanian::LABEL_HIGHLIGHTED}</label>
+	<label>
+		<input type="checkbox" name="highlight"{if $article->getData( 'highlight' ) eq 1} checked="checked"{/if}>
+		{$smarty.const.Albanian::LABEL_HIGHLIGHTED}
+	</label>
 
 	<input type="submit" value="{$smarty.const.Albanian::ADMIN_MENU_SAVE}">
 

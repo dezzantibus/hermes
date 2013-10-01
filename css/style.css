@@ -446,13 +446,82 @@ header li li:hover a{
 	margin-top:5px;
 }
 
+#admin h1{
+	font-size:15px;
+	margin:0 0 10px 0;
+}
 
+#admin header{
+	height:auto;
+	margin:0 0 20px 0;
+}
 
+#admin label,
+#admin select,
+#admin textarea,
+#admin input[type=text],
+#admin input[type=password]{
+	font-size:12px;
+	display:block;
+	width:200px;
+}
 
+#admin label{
+	margin:5px 0 2px 0;
+}
 
+#admin select,
+#admin textarea,
+#admin input{
+	padding:3px;
+}
 
+#admin input[type=button],
+#admin input[type=submit]{
+	font-size:12px;
+	display:block;
+	width:100px;
+	margin:10px 0 0 0;
+}
 
+#admin table{
+	border-collapse: collapse;
+}
 
+#admin th,
+#admin td{
+	font-size:12px;
+	padding:7px;
+	margin:0;
+}
+
+#admin th{
+	border-bottom:3px double #000;
+}
+
+#admin td{
+	border-bottom:1px solid #666;
+}
+
+#admin th:last-child,
+#admin td:last-child{
+	border:none;
+}
+
+#admin th a,
+#admin td a{
+	border:1px solid #666;
+	border-radius:4px;
+	padding:3px;
+	color:#000;
+	text-decoration:none;
+	background:#DDD;
+}
+
+#admin th a:hover,
+#admin td a:hover{
+	background:#FDD;
+}
 
 
 
