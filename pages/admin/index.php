@@ -12,8 +12,8 @@ if( isset( $_POST['action'] ) && $_POST['action'] == 'adminLogout' )
 
 if( empty( $_SESSION['journalist'] ) )
 {
-//    Template::display( 'admin/login.tpl' );
-//    exit();
+    Template::display( 'admin/login.tpl' );
+    exit();
 }
 
 if(isset($_GET['adminPath']))
