@@ -42,7 +42,7 @@
     
         <th>{$smarty.const.Albanian::LABEL_JOURNALIST}</th>
 
-		<th><a href="?cat={$category->getData( 'id' )}&art=0">{$smarty.const.Albanian::ADMIN_MENU_NEW}</a></th>
+		<th><a href="?cat={$category->getData( 'id' )}&amp;art=0">{$smarty.const.Albanian::ADMIN_MENU_NEW}</a></th>
     
     </tr>
 
@@ -54,11 +54,11 @@
         
         	<td>{$article->getData( 'title' )}</td>
         
-        	<td>{$article->category->getData( 'name' )}</td>
+        	<td>{$category->getData( 'name' )}</td>
         
-        	<td>{$article->journalist->getData( 'fname' )} {$article->journalist->getData( 'fname' )}</td>
+        	<td>{$session.journalist.fname} {$session.journalist.lname}</td>
 
-			<td><a href="?cat={$category->getData( 'id' )}&art={$article->getData( 'id' )}">{$smarty.const.Albanian::ADMIN_MENU_EDIT}</a></td>
+			<td><a href="?cat={$category->getData( 'id' )}&amp;art={$article->getData( 'id' )}">{$smarty.const.Albanian::ADMIN_MENU_EDIT}</a></td>
         
         </tr>
     
