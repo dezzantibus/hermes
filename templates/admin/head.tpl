@@ -11,9 +11,6 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<link type="text/css" href="/js/jquery/jquery-ui.css" />
 
-	<script type="text/javascript" src="/js/jquery/colorbox/jquery.colorbox-min.js"></script>
-	<link type="text/css" href="/js/jquery/colorbox/colorbox.css" />
-
 	<script type="text/javascript" src="/js/library.js"></script>
 	<style type="text/css">@import "/css/style.css";</style>
 

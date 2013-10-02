@@ -69,12 +69,13 @@ class Article extends Model
 	 * @param $orderby
 	 * @return mixed
 	 */
-	private function loadObjects($class, $orderby)
+	private function loadObjects($class, $orderBy)
 	{
 
 		$item = new $class;
 		$parameters = array( 'article_id' => $this->id );
-		return $item->getListBy ( $parameters, $orderby, 'DESC', true );
+        $item->setOrder( $orderBy, 'DESC' );
+		return $item->getListBy ( $parameters, true );
 
 	}
 

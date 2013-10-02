@@ -4,7 +4,7 @@
 
 <select onchange="window.location='?cat=' + this.value">
 
-	<option value="0">{$smarty.const.Albanian::MEX_SELECT_OPTION}</option>
+	<option value="-1">{$smarty.const.Albanian::MEX_SELECT_OPTION}</option>
 
 	{foreach from=$categories item='cat'}
 
@@ -58,7 +58,10 @@
         
         	<td>{$session.journalist.fname} {$session.journalist.lname}</td>
 
-			<td><a href="?cat={$category->getData( 'id' )}&amp;art={$article->getData( 'id' )}">{$smarty.const.Albanian::ADMIN_MENU_EDIT}</a></td>
+			<td>
+				<a href="?cat={$category->getData( 'id' )}&amp;art={$article->getData( 'id' )}">{$smarty.const.Albanian::ADMIN_MENU_EDIT}</a>
+				<a href="?cat={$category->getData( 'id' )}&amp;art={$article->getData( 'id' )}&show=pics">{$smarty.const.Albanian::ADMIN_MENU_PICS}</a>
+			</td>
         
         </tr>
     

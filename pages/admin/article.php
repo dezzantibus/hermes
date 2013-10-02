@@ -1,5 +1,27 @@
 <?php
 
+if( isset( $_GET['show'] ) )
+{
+
+    $test = new Admin_Image();
+
+    echo $test->generatePath();
+
+    die();
+
+    switch( $_GET['show'] )
+    {
+        case 'pics':
+            $article = new Admin_Article( $_GET['art'] );
+            Template::assign( 'article', $article );
+            Template::display( 'admin/article/pics.tpl' );
+            exit();
+
+    }
+
+}
+
+
 $category = new Admin_Category();
 if( isset( $_GET['cat'] ) )
 {

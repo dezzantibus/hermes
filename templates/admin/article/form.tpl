@@ -1,12 +1,25 @@
 {include file='admin/head.tpl'}
 
+{literal}
+	<script src="/js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript">
+
+		$( document).ready(
+			function(){
+				CKEDITOR.replace( 'text' );
+			}
+		);
+
+	</script>
+{/literal}
+
 <h1>{$article->getData( 'title' )|default:$smarty.const.Albanian::NEW_ARTICLE}</h1>
 
 <form action="?cat={$category->getData( 'id' )}" method="post">
 
 	<input type="hidden" name="id" value="{$article->getData( 'id' )|default:'0'}">
 
-	<input type="hidden" name="category_id" value="{$category->getData( 'id' )}">
+	<input type="hidden" name="category_id" value="{$category->getData( 'id' )|default:0}">
 
 	<input type="hidden" name="journalist_id" value="{$session.journalist.id|default:1}">
 
@@ -17,10 +30,10 @@
 	<input type="text" name="subtitle" value="{$article->getData( 'subtitle' )}">
 
 	<label>{$smarty.const.Albanian::FORM_BRIEF}</label>
-	<textarea name="brief">{$article->getData( 'brief' )}</textarea>
+	<textarea name="brief" id="brief">{$article->getData( 'brief' )}</textarea>
 
 	<label>{$smarty.const.Albanian::FORM_TEXT}</label>
-	<textarea name="text">{$article->getData( 'text' )}</textarea>
+	<textarea name="text" id="text">{$article->getData( 'text' )}</textarea>
 
 	<label>
 		<input type="checkbox" name="hero"{if $article->getData( 'hero' ) eq 1} checked="checked"{/if}>

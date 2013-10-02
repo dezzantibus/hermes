@@ -54,7 +54,9 @@ class Albanian
     const ADMIN_MENU_EDIT   = 'Modifica';
     const ADMIN_MENU_DELETE = 'Cancella';
     const ADMIN_MENU_SAVE   = 'Salva';
-    const ADMIN_MENU_LOGIN   = 'Login';
+    const ADMIN_MENU_LOGIN  = 'Login';
+    const ADMIN_MENU_PICS   = 'Immagini';
+    const ADMIN_MENU_BACK   = 'Indietro';
 
     const ADMIN_MENU_CATEGORY   = 'Categorie';
     const ADMIN_MENU_ARTICLE    = 'Articoli';

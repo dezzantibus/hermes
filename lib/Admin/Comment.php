@@ -1,5 +1,5 @@
 <?php
-class Admin_User extends User
+class Admin_Comment extends Comment
 {
 
 	/**
