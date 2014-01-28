@@ -1,5 +1,5 @@
 {include file='include/head.tpl'}
-
+{strip}
 <main class="mainColumn" id="index">
 
 	{include file="include/home_hero.tpl"}
@@ -43,3 +43,4 @@
 <div class="clear"></div>
 
 {include file='include/feet.tpl'}
+{/strip}
