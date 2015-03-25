@@ -18,7 +18,7 @@
 
 				{foreach from=$cat.children item='child'}
 
-					<option value="{$child.id}"{if $cat.id eq $category->getData( 'id' )} selected="selected"{/if}>{$child.name}</option>
+					<option value="{$child.id}"{if $child.id eq $category->getData( 'id' )} selected="selected"{/if}>{$child.name}</option>
 
 				{/foreach}
 

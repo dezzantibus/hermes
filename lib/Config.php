@@ -3,7 +3,7 @@
 class Config 
 {
 	
-	const DBSERVER  = 'localhost';
+	const DBSERVER  = '127.0.0.1';
 	const DBUSER	= 'root';
 	const DBPASS	= 'antani75';
 	const DBNAME	= 'hermes2';
