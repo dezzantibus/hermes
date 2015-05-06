@@ -1,0 +1,63 @@
+
+/*==============================================================================
+
+Table of contents
+
+Color:          #4a86b8 (blue)
+                (links, logo, weather, sidebar widget title, tabs,
+                post meta icons, post controls, accordions, page 404)
+
+Background:     #4a86b8 (blue)
+                (tag cloud buttons, pagination, onsale label, price slider shop,
+                category labels on images)
+
+Border:         #4a86b8 (blue)
+                (price slider shop, main menu links, images bottom border)
+
+===============================================================================*/
+
+
+/*==============================================================================
+    Color (Blue)
+===============================================================================*/
+a,
+h1#site-logo,
+h1#site-logo a,
+.weather-report .report,
+#sidebar h3.widget-title,
+.tabs .ui-tabs-nav li.ui-state-active a,
+article .post-meta span:before,
+.post-info span:before,
+.post-controls a:hover,
+.post-controls a span i,
+.accordion .title.ui-state-active,
+.above-the-fold h2.page-title,
+.page404 h2 {color: #4a86b8}
+
+
+/*==============================================================================
+    Background color (Blue)
+===============================================================================*/
+.tagcloud a:hover,
+#footer .tagcloud a:hover,
+ul.page-numbers li span.current,
+ul.page-numbers li a:hover,
+.onsale,
+.price_slider_wrapper .ui-slider-range,
+a.selected-gallery-filter,
+.block-layout-one .item span,
+.post-box-text span,
+.block-layout-two .main-item .post-img span,
+.block-layout-three .main-item .post-img span,
+.block-layout-four .main-item .post-img span,
+.block-layout-five .main-item .post-img span {background-color: #4a86b8}
+
+
+/*==============================================================================
+    Border color (Blue)
+===============================================================================*/
+.price_slider_wrapper .ui-slider-handle,
+.main-menu > li > a,
+.block-layout-three .item img,
+.block-layout-two .item img,
+.block-layout-one .item img {border-color: #4a86b8}

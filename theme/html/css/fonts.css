@@ -1,0 +1,23 @@
+/*==============================================================================
+    Open Sans
+===============================================================================*/
+body,
+h1#site-logo,
+h3.widget-title,
+.single-post h3.lead {
+    font-family: 'Open Sans', 'sans-serif';
+}
+
+/*==============================================================================
+    Droid Serif
+===============================================================================*/
+h1, h2, h3, h4, h5, h6,
+h3.widget-title,
+.dropcap:first-letter,
+p.title,
+.ui-tabs-nav,
+.post-controls a p,
+.accordion .title,
+h1#site-logo span {
+    font-family: 'Roboto Slab', serif;
+}

@@ -1,0 +1,63 @@
+/*==============================================================================
+    Layout
+===============================================================================*/
+
+/* Wrapper */
+#wrapper.boxed,
+.inner-wrapper {
+    width: 1220px
+}
+
+
+/*==============================================================================
+    Responsive menu
+===============================================================================*/
+a.responsive-menu-btn {
+    display: none
+}
+
+
+/*==============================================================================
+    Grid columns
+===============================================================================*/
+
+/* Default */
+.row {
+    
+}
+.row [class^=grid_]:last-child {
+    margin-right: 0
+}
+.row [class^=grid_] {
+    display: inline;
+    float: left;
+    margin: 0 20px 1.5em 0
+}
+.grid_1 {width: 80px}
+.grid_2 {width: 180px}
+.grid_3 {width: 280px}
+.grid_4 {width: 380px}
+.grid_5 {width: 480px}
+.grid_6 {width: 580px}
+.grid_7 {width: 680px}
+.grid_8 {width: 780px}
+.grid_9 {width: 880px}
+.grid_10 {width: 980px}
+.grid_11 {width: 1080px}
+.grid_12 {width: 100%}
+
+/* With sidebar */
+#main.left .grid_1, #main.right .grid_1 {width: 55px}
+#main.left .grid_2, #main.right .grid_2 {width: 130px}
+#main.left .grid_3, #main.right .grid_3 {width: 205px}
+#main.left .grid_4, #main.right .grid_4 {width: 280px}
+#main.left .grid_5, #main.right .grid_5 {width: 355px}
+#main.left .grid_6, #main.right .grid_6 {width: 430px}
+#main.left .grid_7, #main.right .grid_7 {width: 505px}
+#main.left .grid_8, #main.right .grid_8 {width: 580px}
+#main.left .grid_9, #main.right .grid_9 {width: 655px}
+#main.left .grid_10, #main.right .grid_10 {width: 730px}
+#main.left .grid_11, #main.right .grid_11 {width: 805px}
+#main.left .grid_12, #main.right .grid_12 {width: 100%}
+
+

@@ -1,0 +1,1038 @@
+/*
+
+Theme Name:         ck_base
+Description:        ck_base
+Version:            1.0.0
+Author:             CreativeKingdom
+Author URI:         http://www.CreativeKingdom.net
+
+*/
+
+
+/*==============================================================================
+    Base
+===============================================================================*/
+
+/* Body colors, fonts */
+body {
+    color: #777;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5em;
+    cursor: default;
+    background-color: #ccc;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif
+}
+
+/* Hides horizontal scroll bars when menu is open, 
+disable the webkit tap highlight and fix the focus scrolling in Safari */
+html, body{
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    height: 100%
+}
+
+/* Link colors */
+a {
+    color: #e05e48;
+    text-decoration: none;
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
+}
+a:hover {
+    cursor: pointer;
+    color: #e05e48
+}
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none
+}
+:focus {
+    outline:0
+}
+
+/* Margins */
+p,
+ul,
+ol,
+dl,
+blockquote,
+hr,
+pre,
+table,
+form,
+fieldset,
+figure,
+address {
+    margin-bottom: 1.5em
+}
+
+/* Image, video */
+img {
+    border: 0;
+    font-size: 0;
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle
+}
+a img {
+    border: none
+}
+
+
+/*==============================================================================
+    CSS Common
+===============================================================================*/
+
+/* Place elements and padding inside the box. */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after,
+#wrapper:before,
+#wrapper:after,
+.inner-wrapper:before,
+.inner-wrapper:after,
+.row:before,
+.row:after,
+.ck-tabs .ui-tabs-nav:before,
+.ck-tabs .ui-tabs-nav:after {
+    content: " ";
+    display: table
+}
+.clearfix:after,
+#wrapper:after,
+.inner-wrapper:after,
+.row:after,
+.ck-tabs .ui-tabs-nav:after {
+    clear: both
+}
+
+/* Remove the gap between images, videos, audio and canvas. */
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+    max-width: 100%
+}
+
+/* Remove text-shadow in selection highlight. */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none
+}
+
+/*==============================================================================
+    Typography
+===============================================================================*/
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0.1em;
+    font-weight: normal
+}
+h1 {
+    line-height: 1.111em;
+    font-size: 36px;
+}
+h2 {
+    display: inline-block;
+    border-bottom: 2px solid #e05e48;
+    line-height: 1.222em;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+h3 {
+    color: #555;
+    line-height: 1.333em;
+    font-size: 24px;
+}
+h4 {
+    color: #555;
+    line-height: 1.444em;
+    font-size: 18px;
+}
+h5 {
+    line-height: 1.555em;
+    font-size: 14px;
+}
+h6 {
+    line-height: 1.555em;
+    font-size: 12px;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none
+}
+.subheading {
+    color: #777;
+}
+
+/* Hr */
+hr {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-top: 1.5em;
+    height: 0;
+    border: 0;
+    display: block;
+    border-top: 1px solid #ddd;
+}
+
+/* Paragraph */
+.lead {
+    font-size: 18px;
+    line-height: 1.5em
+}
+
+/* Inline elements */
+abbr,
+acronym {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+cite {
+    font-style: italic
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 90%
+}
+code {
+    white-space: nowrap;
+    background-color: #fafafa;
+    padding: 2px 4px;
+    line-height: 1
+}
+pre {
+    display: block;
+    padding: 2px 4px;
+    font-size: 90%;
+    overflow: auto;
+    max-width: 100%;
+    background-color: #fafafa;
+    border: 2px solid #ccc;
+    clear: both;
+}
+em,
+i,
+dfn {
+    font-style: italic
+}
+sub,
+sup,
+small {
+    font-size: 90%
+}
+sub,
+sup {
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+b,
+strong {
+    font-weight: 700
+}
+del {
+    text-decoration: line-through
+}
+address {
+    font-style: normal
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 5px solid #ccc;
+}
+blockquote p {
+    padding-left: 1.5em;
+    font-family: "Georgia", serif;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* Lists */
+ul {
+    list-style-type:disc
+}
+ol {
+    list-style-type:decimal
+}
+ul,
+ol {
+    margin: 0 0 1.5em
+}
+li ul,
+li ol {
+    margin:0
+}
+
+/* Definition list */
+dt {
+    font-weight: 700
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 0.5em
+}
+
+/* Alignment */
+.text-left {
+    text-align: left
+}
+.text-center {
+    text-align: center
+}
+.text-right {
+    text-align: right
+}
+.text-justify  {
+    text-align: justify
+}
+
+/*==============================================================================
+    Tables
+===============================================================================*/
+
+/* Default table */
+table {
+    border: 0;
+    width: 100%
+}
+table thead {
+    text-align: left;
+    vertical-align: bottom
+}
+table thead tr {
+}
+table th,
+table td {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em
+}
+table td:first-child,
+table th:first-child {
+    border-left-width: 0
+}
+table td {
+}
+
+/* Bordered table */
+table.bordered {
+    border: 1px solid #ccc;
+    width: 100%
+}
+table.bordered thead {
+    background-color: #fafafa;
+    text-align: left;
+    vertical-align: bottom
+}
+table.bordered thead tr {
+    border-bottom: 1px solid #ccc
+}
+table.bordered th,
+table.bordered td {
+    border-left: 1px solid #ccc;
+    padding: 0.5em 1em
+}
+table.bordered td:first-child,
+table.bordered th:first-child {
+    border-left-width: 0
+}
+table.bordered td {
+    border-bottom: 1px solid #ccc
+}
+
+/*==============================================================================
+    Forms
+===============================================================================*/
+
+/* Form */
+form {
+    display: block;
+    clear: both
+}
+form .form-group {
+    margin-bottom: 1.5em
+}
+
+/* Label */
+label {
+    display: block;
+    margin-bottom: 0.5em
+}
+
+/* Fields */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    width: 100%
+}
+select {
+    background-color:#fff
+}
+input[type=radio],
+input[type=checkbox] {
+    margin: 4px 0.5em 0 0;
+    float: left
+}
+
+/* Textarea */
+textarea {
+    max-width: 100%;
+    min-height: 150px
+}
+
+/* Fieldset */
+fieldset {
+    padding: 1.5em;
+    border: 1px solid #ccc;
+}
+fieldset legend {
+    font-size: 18px;
+    margin-left: -0.5em;
+    padding: 0.5em
+}
+
+
+/*==============================================================================
+    Buttons
+===============================================================================*/
+
+/* Buttons */
+.btn,
+button {
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0.5em 1.5em 0;
+    padding: 0.5em 0.8em;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    background-color: #4cb9cd;
+    color: #fff;
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
+}
+.btn:hover,
+button:hover {
+    background-color: #449EAF;
+    color: #fff
+}
+
+/* Sizes */
+.btn-small {
+    padding: 0.35em 0.65em;
+    font-size: 12px
+}
+.btn-large {
+    padding: 1em 3em;
+    font-size: 16px
+}
+.btn-expand {
+    width: 100%;
+    display: block
+}
+
+/* Types */
+.btn-radius {
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+/* Colors */
+.btn-turquoise {
+    background-color: #1abc9c
+}
+.btn-turquoise:hover {
+    background-color: #16a085
+}
+.btn-green {
+    background-color: #2ecc71
+}
+.btn-green:hover {
+    background-color: #27ae60
+}
+.btn-blue {
+    background-color: #3498db
+}
+.btn-blue:hover {
+    background-color: #2980b9
+}
+.btn-darkblue {
+    background-color: #34495e
+}
+.btn-darkblue:hover {
+    background-color: #2c3e50
+}
+.btn-purple {
+    background-color: #9b59b6
+}
+.btn-purple:hover {
+    background-color: #8e44ad
+}
+.btn-red {
+    background-color: #e05e48
+}
+.btn-red:hover {
+    background-color: #e26c58
+}
+.btn-orange {
+    background-color: #f1c40f
+}
+.btn-orange:hover {
+    background-color: #f39c12
+}
+.btn-grey {
+    background-color: #44474f
+}
+.btn-grey:hover {
+    background-color: #70747E
+}
+
+
+/*==============================================================================
+    Layout
+===============================================================================*/
+
+/* Wrapper */
+#wrapper {
+    background-color: #fff
+}
+#wrapper.boxed {
+    margin: 0 auto
+}
+
+/* Inner wrapper */
+.inner-wrapper {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+
+/*==============================================================================
+    Header
+===============================================================================*/
+
+
+
+
+/*==============================================================================
+    Primary menu
+===============================================================================*/
+
+/* Base */
+.primary-menu {
+    background-color: #44474f
+}
+.primary-menu ul {
+    z-index: 99;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.primary-menu ul.main-menu:before,
+.primary-menu ul.main-menu:after {
+    content: " ";
+    display: table
+}
+.primary-menu ul.main-menu:after {
+    clear: both
+}
+
+/* Top menu */
+.main-menu a {
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
+}
+.main-menu > li > a {
+    color: #fff;
+    padding: 15px;
+    display: block;
+    position: relative;
+}
+.main-menu > li {
+    float: left
+}
+.main-menu ul li {
+    float: none;
+    position: relative
+}
+.main-menu > li:hover > a {
+    background-color: #e05e48
+}
+
+/* Submenu */
+.main-menu ul.sub-menu {
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    opacity: 0;
+    height: 0;
+    -webkit-transition: opacity 0.2s;
+       -moz-transition: opacity 0.2s;
+         -o-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+    visibility: hidden;
+    background-color: #333
+}
+.main-menu li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+.main-menu ul.sub-menu ul {
+    position: absolute;
+    left: 100%;
+    top: 0
+}
+.main-menu ul.sub-menu li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+}
+ul.sub-menu > li:hover > a {
+    background-color: #666
+}
+
+/* Mega menu */
+ul.mega-menu {
+    padding: 1.5em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    height: 0;
+    -webkit-transition: opacity 0.2s;
+       -moz-transition: opacity 0.2s;
+         -o-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+    visibility: hidden;
+    background-color: #333
+}
+
+/* Mega menu grid */
+ul.mega-menu [class^=grid_] {
+    margin: 0 2% 0 0
+}
+ul.mega-menu .grid_1 {width:6.5%}
+ul.mega-menu .grid_2 {width:15.0%}
+ul.mega-menu .grid_3 {width:23.5%}
+ul.mega-menu .grid_4 {width:32.0%}
+ul.mega-menu .grid_5 {width:40.5%}
+ul.mega-menu .grid_6 {width:49.0%}
+ul.mega-menu .grid_7 {width:57.5%}
+ul.mega-menu .grid_8 {width:66.0%}
+ul.mega-menu .grid_9 {width:74.5%}
+ul.mega-menu .grid_10 {width:83.0%}
+ul.mega-menu .grid_11 {width:91.5%}
+ul.mega-menu .grid_12 {width:100%}
+
+/* Sub mega menu */
+ul.mega-menu ul.mega-sub-menu li {
+    float: none
+}
+ul.mega-menu ul.mega-sub-menu li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+}
+ul.mega-menu ul.mega-sub-menu > li:hover > a {
+    background-color: #666
+}
+
+/* Drop down arrows */
+ul.main-menu > li a span {
+    position: relative;
+    display: block;
+    padding-right: 15px
+}
+ul.main-menu > li a span:after {
+    display: block;
+    position: absolute;
+    right: 0px;
+    font-family: "FontAwesome";
+    content: '\f107';
+    top: 0;
+    font-size: 10px;
+}
+ul.sub-menu > li a span {
+    position: relative;
+    display: block;
+    padding-right: 15px
+}
+ul.sub-menu > li a span:after {
+    display: block;
+    position: absolute;
+    right: 0px;
+    font-family: "FontAwesome";
+    content: '\f105';
+    top: 0;
+    font-size: 10px;
+}
+
+
+/*==============================================================================
+    Responsive menu
+===============================================================================*/
+/* Menu Appearance */
+.pushy{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    background: #333;
+    -webkit-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    -moz-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+}
+.pushy ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.pushy ul ul li a {
+    padding-left: 30px
+}
+.pushy ul ul ul li a {
+    padding-left: 45px
+}
+.pushy ul ul ul ul li a {
+    padding-left: 60px
+}
+
+/* Push menu links */
+.pushy a{
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none
+}
+.pushy a:hover{
+    background: #00b4ff;
+    color: #FFF;
+}
+
+/* Responsive menu btn */
+.responsive-menu-btn {
+    color: #fff;
+    padding: 0 15px; 
+    display: block;
+    height: 51px;
+    line-height: 51px
+}
+.responsive-menu-btn:hover {
+    color: #fff
+}
+
+/* Menu Movement */
+.pushy-left{
+    -webkit-transform: translate3d(-300px,0,0);
+       -moz-transform: translate3d(-300px,0,0);
+        -ms-transform: translate3d(-300px,0,0);
+         -o-transform: translate3d(-300px,0,0);
+            transform: translate3d(-300px,0,0);
+}
+.pushy-open{
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+         -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+}
+.container-push,
+.push-push{
+    -webkit-transform: translate3d(300px,0,0);
+       -moz-transform: translate3d(300px,0,0);
+        -ms-transform: translate3d(300px,0,0);
+         -o-transform: translate3d(300px,0,0);
+            transform: translate3d(300px,0,0);
+}
+
+/* Menu Transitions */
+.pushy,
+#wrapper,
+.push {
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.16, .68, .43, .99);
+       -moz-transition: -moz-transform .2s cubic-bezier(.16, .68, .43, .99);
+         -o-transition: -o-transform .2s cubic-bezier(.16, .68, .43, .99);
+            transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+    -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+}
+
+/* Site Overlay */
+.site-overlay{
+    display: none
+}
+.pushy-active .site-overlay{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    left: 300px;
+    z-index: 9999
+}
+
+
+/*==============================================================================
+    Main
+===============================================================================*/
+
+/* Main */
+#main {
+    float: left;
+    margin-bottom: 1.5em;
+    width: 100%
+}
+#main.left {
+    float: left;
+    width: 880px;
+    margin-right: 20px
+}
+#main.right {
+    float: right;
+    width: 880px;
+    margin-left: 20px
+}
+
+/*==============================================================================
+    Section
+===============================================================================*/
+
+/* Section */
+section#section {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ddd
+}
+
+/*==============================================================================
+    Pagination
+===============================================================================*/
+
+/* Base */
+ul.page-numbers {
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5em 0
+}
+ul.page-numbers li {
+    float: left
+}
+ul.page-numbers li a {}
+ul.page-numbers li span.current {}
+
+/*==============================================================================
+    Sidebar
+===============================================================================*/
+
+/* Sidebar */
+aside#sidebar {
+    margin-bottom: 1.5em;
+    float: left;
+    width: 280px;
+    display: inline
+}
+
+/*==============================================================================
+    Footer
+===============================================================================*/
+
+/* Footer */
+footer#footer {
+    padding: 1.5em 0;
+}
+
+
+/*==============================================================================
+    Shortcodes
+===============================================================================*/
+
+/* Alerts */
+.ck-alert {
+    padding: 0.5em;
+    margin: 0 0 1.5em 0;
+    background-color: #fff
+}
+.ck-alert.white {
+    background-color: #fff;
+    border: 1px solid #ddd
+}
+.ck-alert.grey {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    color: #333
+}
+.ck-alert.red {
+    background-color: #ffe6e3;
+    border: 1px solid #f2c3bf;
+    color: #bf210e
+}
+.ck-alert.yellow {
+    background-color: #fff7d6;
+    border: 1px solid #e9d477;
+    color: #956433
+}
+.ck-alert.green {
+    background-color: #edfdd3;
+    border: 1px solid #c4dba0;
+    color: #657e3c
+}
+
+/* Tooltips */
+[data-tip] {
+    position:relative
+}
+[data-tip]:before {
+    content: '';
+    visibility: hidden;
+    opacity: 0;
+    border: 5px solid #000;
+    border-top-color: #000;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    z-index: 8;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    -webkit-transition: opacity 0.2s;
+       -moz-transition: opacity 0.2s;
+         -o-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+}
+[data-tip]:after {
+    visibility: hidden;
+    opacity: 0;
+    content: attr(data-tip);
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    padding: 0 0.5em;
+    background: #000;
+    color: #fff;
+    z-index: 9;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    white-space: nowrap;
+    word-wrap: normal;
+    -webkit-transition: opacity 0.2s;
+       -moz-transition: opacity 0.2s;
+         -o-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+    visibility: visible;
+    opacity: 1
+}
+
+/* Tabs */
+.ck-tabs {
+    margin: 0 0 1.5em 0
+}
+.ck-tabs .ui-tabs-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.ck-tabs .ui-tabs-nav li {
+    margin-right: 0.5em;
+    position: relative;
+    float: left
+}
+.ck-tabs .ui-tabs-panel {}
+
+/* Accordion */
+.ck-accordion {
+    clear: both;
+    margin: 0 0 1.5em 0
+}
+.ck-accordion .ui-accordion-header {
+    padding: 0.5em;
+    cursor: pointer;
+    border: 1px solid #ddd
+}
+.ck-accordion .ui-accordion-content {
+    overflow: hidden
+}
+.ck-accordion .ui-accordion-content p:last-child {}
+

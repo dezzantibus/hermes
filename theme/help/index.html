@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        
+        <!-- Site title -->
+        <title>Documentation</title>
+        
+        <!-- Meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="ck_base">
+        
+        <!-- Normalize -->
+        <link rel="stylesheet" href="css/normalize.css">
+        
+        <!-- Main style -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- Layout style -->
+        <link rel="stylesheet" href="css/layout.css">
+        
+        <!-- Retina icons -->
+        <link rel="stylesheet" href="css/fontawesome.css">
+        
+        <!-- Responsive style -->
+        <link rel="stylesheet" media="(min-width:0px) and (max-width:760px)"  href="css/mobile.css">
+        <link rel="stylesheet" media="(min-width:761px) and (max-width:1080px)" href="css/720.css">
+        <link rel="stylesheet" media="(min-width:1081px) and (max-width:1300px)" href="css/960.css">
+        <link rel="stylesheet" media="(min-width:1301px)" href="css/1200.css">
+        
+        <!-- Load jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    </head>
+    <body>
+        
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header" role="banner">
+                <div class="inner-wrapper">
+                    
+                    <!-- Group logo -->
+                    <div id="logo">
+                        <p><img src="images/CreativeKingdom.png" alt="CreativeKingdom"/></p>
+                        <h1 id="site-logo">Theme Documentation</h1>
+                        <h2 id="site-description">Setup guide and general information to help you get the best from your new template.</h2>
+                    </div>
+                    
+                    <!-- Intro -->
+                    <div class="row" style="margin-bottom: 3em">
+                        <div class="grid_12">
+                            <h3 style="color: #fff">Congratulations!</h3>
+                            <h4 style="color: #ccc">Now you are the owner of <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank">DialyMagazine</a></h4>
+                            <p style="color: #999">The scope of this documentation file is to provide you with the information you need to help you get started with your new template. I hope you will enjoy the template as much I did while I working on it! Should you have any questions that are beyond the scope of this documentation, please feel free to contact me via Support Email.</p>
+                            <a href="mailto:support@creativekingdom.net" class="btn btn btn-red btn-radius">Support Email</a>
+                            <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank" class="btn btn btn-red btn-radius">Theme Demo</a>
+                        </div>
+                    </div>
+                
+                </div>
+            </header>
+            
+            <!-- Section -->
+            <section id="section">
+                <div class="inner-wrapper">
+                    
+                    <!-- Main -->
+                    <div id="main" role="main">
+                        
+                        <h2>Getting started</h2>
+                        <h4>Template files</h4>
+                        <p>The first step would be to get familiarized with the zip file you have downloaded from ThemeForest.</p>
+                        <ul>
+                            <li><strong>images</strong> - Here goes all stuff like site images, weather icons...</li>
+                            <li><strong>demo</strong> - Demo content like images, logo... (you can remove this)</li>
+                            <li><strong>fonts</strong> - Fonts files (Fontawesome and Socicon)</li>
+                            <li><strong>css</strong> - All css files for website</li>
+                            <li><strong>js</strong> - All javascript (jQuery) used on site.</li>
+                        </ul>                        
+                        <hr>                        
+                        <h2>Wide/boxed</h2>
+                        <h4>Wide</h4>
+                        <p>Wide layout is by default, it means that you don't need to add any class to body or wrapper.</p>                        
+                        <hr>                        
+                        <h4>Boxed</h4>
+                        <p>To set your boxed layout you need to add class <code>.boxed</code> to div <code>wrapper</code>. You can set your background color or background image in style.css at line 17 <code>body {}</code></p>
+                        <pre>&lt;div id=&quot;wrapper&quot; class=&quot;boxed&quot;&gt;</pre>
+                        <hr>
+                        <h2>Colors</h2>
+                        <h4>Primary</h4>
+                        <p>Base color is blue, but you can easy set your own color for background, text and border in <strong>colors.css</strong>.</p>
+                        <hr>
+                        <h2>Header</h2>
+                        <h4>Top bar</h4>
+                        <p>Top bar can be dark or light.</p>
+                        <pre>&lt;div class=&quot;top-bar dark&quot;&gt;</pre>
+                        <pre>&lt;div class=&quot;top-bar light&quot;&gt;</pre>
+                        <hr>
+                        <h4>Weather report</h4>
+                        <p>There are 8 states of weather. All have light and dark image. So if you set to light bar you will need to include dark image and vice verse. All weather images are placed into images/weather folder. Prefix of images are <strong>light-*</strong> or <strong>dark-*</strong></p>
+<pre>&lt;div class=&quot;weather-report&quot;&gt;
+    &lt;span class=&quot;report&quot;&gt;+28&deg;C&lt;/span&gt;
+    &lt;img src=&quot;images/weather/dark-weather-thunder.png&quot; alt=&quot;Sunny&quot;&gt;
+    &lt;span class=&quot;city&quot;&gt;London, England&lt;/span&gt;
+&lt;/div&gt;</pre>
+<pre>&lt;div class=&quot;weather-report&quot;&gt;
+    &lt;span class=&quot;report&quot;&gt;+28&deg;C&lt;/span&gt;
+    &lt;img src=&quot;images/weather/light-weather-thunder.png&quot; alt=&quot;Sunny&quot;&gt;
+    &lt;span class=&quot;city&quot;&gt;London, England&lt;/span&gt;
+&lt;/div&gt;</pre>
+                        <hr>
+                        <h4>Header</h4>
+                        <p>Container with logo and banner can be dark or light.</p>
+                        <pre>&lt;header id=&quot;header&quot; class=&quot;dark&quot; role=&quot;banner&quot;&gt;</pre>
+                        <pre>&lt;header id=&quot;header&quot; class=&quot;light&quot; role=&quot;banner&quot;&gt;</pre>
+                        <hr>
+                        <h4>Logo</h4>
+                        <p>Logo can be textual or with image linked to your index page. Here is the example with text and image.</p>
+<pre>&lt;div id=&quot;logo&quot;&gt;
+    &lt;h1 id=&quot;site-logo&quot;&gt;&lt;a href=&quot;index.html&quot;&gt;Dialy&lt;span&gt;Magazine&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+    &lt;h2 id=&quot;site-description&quot;&gt;Premium HTML5 Magazine Theme&lt;/h2&gt;
+&lt;/div&gt;</pre>
+<pre>&lt;div id=&quot;logo&quot;&gt;
+    &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;demo/DialyMagazine.png&quot;/&gt;&lt;/a&gt;
+    &lt;h2 id=&quot;site-description&quot;&gt;Premium HTML5 Magazine Theme&lt;/h2&gt;
+&lt;/div&gt;</pre>
+                        <hr>
+                        <h4>Main menu</h4>
+                        <p>Primary navigation can be dark or light.</p>
+                        <pre>&lt;nav class=&quot;primary-menu dark sticky-menu&quot; role=&quot;navigation&quot;&gt;</pre>
+                        <pre>&lt;nav class=&quot;primary-menu light sticky-menu&quot; role=&quot;navigation&quot;&gt;</pre>
+                        <hr>
+                        <h2>Fixed navigation</h2>
+                        <h4>Enable/disable</h4>
+                        <p>You can enable or disable fixed nav in your site by adding class <code>.sticky-menu</code>. By removing this class you will get none fixed navigation.</p>
+                        <pre>&lt;nav class=&quot;primary-menu dark sticky-menu&quot; role=&quot;navigation&quot;&gt;</pre>
+                        
+                        <hr>
+                        <h2>Fonts family</h2>
+                        <h4>Body</h4>
+                        <p>Body use Google font <strong>Open Sans</strong>. You can change it by adding link from <a href="https://www.google.com/fonts" target="_blank">Google Fonts library</a>. In head on each page you replace <code>&lt;link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'&gt;</code> for your own font.</p>
+                        <p>After that open your <strong>fonts.css</strong> from css folder and replace css rule with your own font family.</p>
+                        <hr>
+                        <h4>Headings</h4>
+                        <p>Headings and few more tags use Google font <strong>Roboto Slab</strong>. You can change it by adding link from <a href="https://www.google.com/fonts" target="_blank">Google Fonts library</a>. In head on each page you replace <code>&lt;link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'&gt;</code> for your own font.</p>
+                        <p>After that open your <strong>fonts.css</strong> from css folder and replace css rule with your own font family.</p>
+                        <hr>
+                        <h2>Fontawesome retina icons</h2>
+                        <h4>439 Icons</h4>
+                        <p>Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS. You can include it in your top bar menu and main menu in links. All examples and what you can do check <a href="#" target="_blank">http://fontawesome.io/examples/</a> and here you can check all <a href="http://fontawesome.io/icons/" target="_blank">icons set</a>.</p>
+                        <hr>
+                        <h2>Shortcodes</h2>
+                        <h4>Common shortcodes</h4>
+                        <p>All code for shortcodes can be viewed in <code>shortcodes.html</code> file, just copy and paste.</p>
+                        <hr>
+                        <h2>Contact form</h2>
+                        <h4>Email</h4>
+                        <p>You get fully functional contact form. You need to set your email address in <code>contact.php</code> page at line 3 and subject title in line 2 at same page.</p>
+<pre>$subjectPrefix = '[Write the title for email header]';
+$emailTo = '[Write your email here]';
+</pre>
+                        <hr>
+                        <h2>Above the fold</h2>
+                        <h4>Slider and two posts</h4>
+                        <p>Above the fold is space for slider, grid posts and page title. In <code>index.html</code> you will find slider + 2 last posts. Slider can have any number of slides.</p>
+                        <h4>Grid posts</h4>
+                        <p>In <code>index_1.html</code> you will find grid posts. In demo there are 2 rows with 6 posts. You can have as mayn rows as you want. But needs to be filed with posts. Every row has 3 posts.</p>
+                        <hr>
+                        <h4>Page title</h4>
+                        <p>In <code>shop.html</code> you will find page title.</p>
+                        <hr>
+                        <h4>Category title</h4>
+                        <p>In <code>blog_grid.html</code> you will find category title with custom text color. This color is the same as blog catgeory  and menu border in main menu.</p>
+                        <hr>
+                        <h2>Main</h2>
+                        <h4>Main content</h4>
+                        <p>Main content is placed inside main div. It can be align to left, right or full width.</p>
+                        <pre>&lt;div id=&quot;main&quot; class=&quot;left&quot; role=&quot;main&quot;&gt;</pre>
+                        <pre>&lt;div id=&quot;main&quot; class=&quot;right&quot; role=&quot;main&quot;&gt;</pre>
+                        <pre>&lt;div id=&quot;main&quot; role=&quot;main&quot;&gt;</pre>
+                        <hr>
+                        <h2>Sidebar</h2>
+                        <h4>Widgets</h4>
+                        <p>All widgets can be viewed and copy form <code>index.html</code> and <code>shop.html</code></p>
+                        <hr>
+                        <h2>Footer</h2>
+                        <h4>Widgets</h4>
+                        <p>Footer is made for 4 widgets, any widget from sidebar you can include in footer.</p>
+                        
+                    </div>
+                    
+                </div>                
+            </section>            
+        </div>
+    
+    <!-- Load scripts -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/menu.min.js"></script>
+    <script src="js/fitvids.min.js"></script>
+    <script src="js/init.js"></script>
+
+    </body>
+</html>
