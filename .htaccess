@@ -1,7 +1,16 @@
-RewriteEngine On
-RewriteBase /
-RewriteRule ^([0-9]+)/(.*?).html$ /index.php?path=category&id=$1&page=1 [L,QSA]
-RewriteRule ^([0-9]+)/([0-9]+)/(.*?).html$ /index.php?path=category&id=$1&page=$2 [L,QSA]
-RewriteRule ^([0-9]+)/([0-9]+)-(.*?)-([0-9]+)/(.*?).html$ /index.php?path=article&id=$1 [L,QSA]
-RewriteRule ^admin/(.*?).html$ /index.php?path=admin/index&adminPath=$1 [L,QSA]
-RewriteRule ^admin$ /index.php?path=admin/index [L,QSA]
+<IfModule mod_rewrite.c>
+	RewriteEngine on 	 
+	RewriteRule ^about.html$ index.php?handler=handler_about [QSA,L]
+	RewriteRule ^frequently-asked-questions.html$ index.php?handler=handler_faq [QSA,L]
+	RewriteRule ^terms-and-conditions.html$ index.php?handler=handler_tnc [QSA,L]
+	RewriteRule ^contacts.html$ index.php?handler=handler_contacts [QSA,L]
+	RewriteRule ^admin/(.*).html$ index.php?handler=handler_admin_$1 [QSA,L]
+	RewriteRule ^profile.html$ index.php?handler=handler_user_profile&nick= [QSA,L]
+	RewriteRule ^profile/(.*).html$ index.php?handler=handler_user_profile&nick=$1 [QSA,L]
+	RewriteRule ^new/(.*).html$ index.php?handler=handler_new_$1 [QSA,L]
+	RewriteRule ^action/(.*)/(.*).html$ index.php?handler=action_$1_$2 [QSA,L]
+	RewriteRule ^action/(.*).html$ index.php?handler=action_$1 [QSA,L]
+	RewriteRule ^(.*)-(.*)/(.*)/(.*)/(.*).html$ index.php?handler=handler_story&story_id=$1&chapter_id=$2 [QSA,L]
+	RewriteRule ^(.*)/(.*)/(.*).html$ index.php?handler=handler_story&story_id=$1 [QSA,L]
+	RewriteRule ^(.*).html$ index.php?handler=handler_category&route=$1 [QSA,L]
+</IfModule>
