@@ -10,21 +10,29 @@
 class layout_basic_section extends layout
 {
 
-    private $id;
+    private $params;
 
-    private $class;
-
-    function __construct( $id=null, $class=null )
+    function __construct( $params=array() )
     {
 
-        $this->id    = $id;
-        $this->class = $class;
+        $this->params = $params;
 
     }
 
     protected function renderTop()
     {
-        echo '<section id="', $this->id, '" class="', $this->class, '">';
+
+        echo '<section';
+
+        foreach( $this->params as $label => $value )
+        {
+
+            echo ' ', $label, '="', $value, '"';
+
+        }
+
+        echo '>';
+
     }
 
     protected function renderBottom()
