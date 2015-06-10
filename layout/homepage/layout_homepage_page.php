@@ -19,10 +19,8 @@ class layout_homepage_page extends layout_page
         $params = array(
             'id'    => 'main',
             'class' => 'left',
-            'role'  => 'main'
-
+            'role'  => 'main',
         );
-
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
         // here we add all the layout blocks to $main
