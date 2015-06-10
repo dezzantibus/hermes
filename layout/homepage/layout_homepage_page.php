@@ -23,10 +23,17 @@ class layout_homepage_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-        // here we add all the layout blocks to $main
-        //
-        //
-        //
+        $main->addChild( new layout_homepage_popular() );
+
+        // categories
+        // this will be dynaminc with a foreach
+        // and a switch to determine the layout object
+        $main->addChild( new layout_homepage_ModuleG1P6() );
+        $main->addChild( new layout_homepage_ModuleG2P6() );
+        $main->addChild( new layout_homepage_ModuleG3P0() );
+        $main->addChild( new layout_homepage_ModuleG2P0() );
+
+        // end categories
 
         $wrapper->addChild( new layout_sidebar() );
 
