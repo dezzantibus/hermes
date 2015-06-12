@@ -31,6 +31,7 @@ class class_finder
 			switch( $frags[1] )
 			{
                 case 'homepage': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
+                case 'category': require_once __DIR__ . '/../layout/category/' . $name . '.php'; break;
                 case 'basic':    require_once __DIR__ . '/../layout/basic/' . $name . '.php';    break;
                 default:         require_once __DIR__ . '/../layout/' . $name . '.php';
 			}
