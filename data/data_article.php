@@ -40,21 +40,21 @@ class data_article extends data
 
         if( !empty( $data ) )
         {
-            if( !empty( $data['id'] ) )             $this->id            = $data['id'];
-            if( !empty( $data['category_id'] ) )    $this->category_id   = $data['category_id'];
-            if( !empty( $data['journalist_id'] ) )  $this->journalist_id = $data['journalist_id'];
-            if( !empty( $data['title'] ) )          $this->title         = $data['title'];
-            if( !empty( $data['subtitle'] ) )       $this->subtitle      = $data['subtitle'];
-            if( !empty( $data['brief'] ) )          $this->brief         = $data['brief'];
-            if( !empty( $data['text'] ) )           $this->text          = $data['text'];
-            if( !empty( $data['created'] ) )        $this->created       = $data['created'];
-            if( !empty( $data['sent'] ) )           $this->sent          = $data['sent'];
-            if( !empty( $data['hero'] ) )           $this->hero          = $data['hero'];
-            if( !empty( $data['homepage'] ) )       $this->homepage      = $data['homepage'];
+            if( isset( $data['id'] ) )             $this->id            = $data['id'];
+            if( isset( $data['category_id'] ) )    $this->category_id   = $data['category_id'];
+            if( isset( $data['journalist_id'] ) )  $this->journalist_id = $data['journalist_id'];
+            if( isset( $data['title'] ) )          $this->title         = $data['title'];
+            if( isset( $data['subtitle'] ) )       $this->subtitle      = $data['subtitle'];
+            if( isset( $data['brief'] ) )          $this->brief         = $data['brief'];
+            if( isset( $data['text'] ) )           $this->text          = $data['text'];
+            if( isset( $data['created'] ) )        $this->created       = $data['created'];
+            if( isset( $data['sent'] ) )           $this->sent          = $data['sent'];
+            if( isset( $data['hero'] ) )           $this->hero          = $data['hero'];
+            if( isset( $data['homepage'] ) )       $this->homepage      = $data['homepage'];
         }
 
-        if( !empty( $journalist ) ) $this->journalist = $journalist;
-        if( !empty( $category ) )   $this->category   = $category;
+        if( isset( $journalist ) ) $this->journalist = $journalist;
+        if( isset( $category ) )   $this->category   = $category;
 
     }
 
