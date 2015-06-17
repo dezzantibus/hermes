@@ -15,4 +15,31 @@ abstract class handler
 
     }
 
+    protected function getHeaderData()
+    {
+
+        $result = new data_header();
+
+        return $result;
+
+    }
+
+    protected function getFooterData()
+    {
+
+        $result = new data_footer();
+
+        return $result;
+
+    }
+
+    protected function getSidebarData()
+    {
+
+        $result = new data_sidebar();
+
+        return $result;
+
+    }
+
 }

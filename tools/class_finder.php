@@ -15,8 +15,8 @@ class class_finder
             case 'message':  require_once __DIR__ . '/message.php';  break;
             case 'router':   require_once __DIR__ . '/router.php';   break;
             case 'security': require_once __DIR__ . '/security.php'; break;
-            case 'layout':   self::getLayoutClass( $name, $frags );  break;			
-            case 'handler':  self::getHandlerClass( $name, $frags ); break;			
+            case 'layout':   self::getLayoutClass( $name, $frags );  break;
+            case 'handler':  self::getHandlerClass( $name, $frags ); break;
             case 'action':   self::getActionClass( $name, $frags );  break;			
             default: require_once __DIR__ . '/../' . $frags[0] . '/' . $name . '.php';
         }
@@ -60,21 +60,21 @@ class class_finder
 	
 	}
 
-	private static function getActionClass( $name, $frags )
-	{
+    private static function getActionClass( $name, $frags )
+    {
 
-		if( isset( $frags[1] ) )
-		{ 
-			switch( $frags[1] )
-			{
-				default:       require_once __DIR__ . '/../action/' . $name . '.php';
-			}
-		}
-		else
-		{
-			require_once __DIR__ . '/../action/action.php';
-		}
-	
-	}
+        if( isset( $frags[1] ) )
+        {
+            switch( $frags[1] )
+            {
+                default:       require_once __DIR__ . '/../action/' . $name . '.php';
+            }
+        }
+        else
+        {
+            require_once __DIR__ . '/../action/action.php';
+        }
+
+    }
 
 }
