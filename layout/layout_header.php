@@ -106,10 +106,8 @@ class layout_header extends layout
 
             </div>
         </div>
+        <?php
 
-
-
-    <?
     }
 
     private function mid_bar()
@@ -125,14 +123,14 @@ class layout_header extends layout
 
             <!-- Ad banner -->
             <div class="ad-banner-728x90">
-                <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/728x90.gif" alt="Banner"/></a>
+                <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="/728/90/filler.jpg" alt="Banner"/></a>
 
             </div>
 
         </div>
 
 
-        <?
+        <?php
     }
 
     private function low_bar()
@@ -185,7 +183,7 @@ class layout_header extends layout
                                         <div class="block-layout-two">
                                             <div class="main-item">
                                                 <div class="post-img">
-                                                    <a href="#"><img src="demo/338x250.gif" alt="Post"/></a>
+                                                    <a href="#"><img src="/338/250/filler.jpg" alt="Post"/></a>
                                                     <span><a href="#">Fashion</a></span>
                                                 </div>
                                                 <h3><a href="#">The Homesman rides, The Expendables assemble</a></h3>
@@ -201,7 +199,7 @@ class layout_header extends layout
                                         <ul class="recent-posts">
                                             <li>
                                                 <div class="image">
-                                                    <a href="#"><img src="demo/80x65.gif" alt="Post"/></a>
+                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
                                                 </div>
                                                 <div class="text">
                                                     <h3><a href="#">Etiam luctus neque vel enim molestie pretium</a></h3>
@@ -210,7 +208,7 @@ class layout_header extends layout
                                             </li>
                                             <li>
                                                 <div class="image">
-                                                    <a href="#"><img src="demo/80x65.gif" alt="Post"/></a>
+                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
                                                 </div>
                                                 <div class="text">
                                                     <h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>
@@ -219,7 +217,7 @@ class layout_header extends layout
                                             </li>
                                             <li>
                                                 <div class="image">
-                                                    <a href="#"><img src="demo/80x65.gif" alt="Post"/></a>
+                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
                                                 </div>
                                                 <div class="text">
                                                     <h3><a href="#">Is Brixton London's next tech hipster hub?</a></h3>
@@ -257,7 +255,7 @@ class layout_header extends layout
             </div>
         </nav>
 
-        <?
+        <?php
     }
 
 }

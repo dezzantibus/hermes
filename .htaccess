@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
-	RewriteEngine on 	 
+	RewriteEngine on
+	RewriteRule ^demo/(.*)x(.*).gif$ image.php?width=$1&height=$2&file=filler.jpg [QSA,L]
+	RewriteRule ^(.*)/(.*)/(.*).jpg$ image.php?width=$1&height=$2&file=$3.jpg [QSA,L]
 	RewriteRule ^about.html$ index.php?handler=handler_about [QSA,L]
 	RewriteRule ^frequently-asked-questions.html$ index.php?handler=handler_faq [QSA,L]
 	RewriteRule ^terms-and-conditions.html$ index.php?handler=handler_tnc [QSA,L]

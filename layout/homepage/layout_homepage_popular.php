@@ -21,7 +21,7 @@ class layout_homepage_popular extends layout
             <p class="title"><span>Popular <strong>posts</strong></span></p>
             <div class="row">
                 <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
+                    <a href="#"><img src="/80/65/filler.jpg" /></a>
                     <div>
                         <span><a href="#">Sport</a></span>
                         <h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>
