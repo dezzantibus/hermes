@@ -13,4 +13,9 @@ class security
 		return $data;
 	}
 
+    static public function hash( $data )
+    {
+        return sha1( 'ZANTE-' . $data . '-ZANTE' );
+    }
+
 }
