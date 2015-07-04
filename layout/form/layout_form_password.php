@@ -32,29 +32,27 @@ class layout_form_password extends layout
         echo
         '<div class="form-group">',
             '<label class="control-label">', $this->label ,'</label>',
-            '<div class="controls">',
 
-                '<input name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '" type="password" ';
+            '<input name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '" type="password" ';
 
-                if( !is_null( $this->placeholder ) )
-                {
-                    echo ' placeholder="', $this->placeholder, '"';
-                }
+            if( !is_null( $this->placeholder ) )
+            {
+                echo ' placeholder="', $this->placeholder, '"';
+            }
 
-                if( !is_null( $this->errorMessage ) )
-                {
-                    echo ' data-error-empty="', $this->errorMessage, '"';
-                }
+            if( !is_null( $this->errorMessage ) )
+            {
+                echo ' data-error-empty="', $this->errorMessage, '"';
+            }
 
-                if( !is_null( $this->value ) )
-                {
-                    echo ' value="', $this->value, '"';
-                }
+            if( !is_null( $this->value ) )
+            {
+                echo ' value="', $this->value, '"';
+            }
 
-                echo
-                '>',
+            echo
+            '>',
 
-            '</div>',
         '</div>';
     }
 

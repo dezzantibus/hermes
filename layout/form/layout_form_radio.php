@@ -32,34 +32,15 @@ class layout_form_radio extends layout
     {
         echo
         '<div class="form-group">',
-            '<label class="control-label">', $this->label ,'</label>',
-		'</div>',
-		'<div class="btn-group" data-toggle="buttons">';
+            '<label>', $this->label ,'</label>';
 
 			foreach( $this->list->getData() as $item )
 			{
 
 				echo
-				'<label class="btn btn-primary ';
-				
-				if( $this->value == $item['value'] )
-				{
-					echo ' active';
-				}
+				'<label>',
 
-				echo
-				'">',
-				'<input name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '" type="radio" value="', $item['value'], '"';
-
-				if( !is_null( $this->placeholder ) )
-				{
-					echo ' placeholder="', $this->placeholder, '"';
-				}
-
-				if( !is_null( $this->errorMessage ) )
-				{
-					echo ' data-error-empty="', $this->errorMessage, '"';
-				}
+				'<input name="', $this->name, '" type="radio" value="', $item['value'], '"';
 
 				if( $this->value == $item['value'] )
 				{

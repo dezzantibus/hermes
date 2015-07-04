@@ -100,7 +100,7 @@ class layout_header extends layout
                 <!-- Weather -->
                 <div class="weather-report">
                     <span class="report">+28°C</span>
-                    <img src="images/weather/light-weather-thunder.png" alt="Sunny">
+                    <img src="/images/weather/light-weather-thunder.png" alt="Sunny">
                     <span class="city">London, England</span>
                 </div>
 

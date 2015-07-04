@@ -33,21 +33,19 @@ class layout_form_dropdown extends layout
 		
 		 echo
         '<div class="form-group">',
-            '<label class="control-label">', $this->label ,'</label>',
-            '<div class="controls">',
+            '<label>', $this->label ,'</label>',
 
-                '<select name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '">';
-                
-					foreach( $this->list->getData() as $item )
-					{
-						echo
-						'<option value="' . $item['value'] . '">' . $item['label'] . '</option>';
-					}
-				
-				echo
-                '</select>',
+            '<select name="', $this->name, '" class="', $this->class, '">';
 
-            '</div>',
+                foreach( $this->list->getData() as $item )
+                {
+                    echo
+                    '<option value="' . $item['value'] . '">' . $item['label'] . '</option>';
+                }
+
+            echo
+            '</select>',
+
         '</div>';
 	
     }

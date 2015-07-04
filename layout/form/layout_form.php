@@ -44,44 +44,24 @@ class layout_form extends layout
     {
 
         echo
-		'<div id="start" class="container content">',
-			'<div class="row">',
-				'<div class="col-md-10 col-md-offset-1">',
-					'<form action="', $this->action, '" class="myform ', $this->class, '" method="post" novalidate id="', $this->id, '">',
-						'<input type="hidden" name="success_url" value="', $this->success_url, '">',
-						'<input type="hidden" name="error_url" value="', $this->error_url, '">',
-						'<div class="row clearfix">',
-							'<div class="col-xs-12 col-sm-6 col-md-6">';
+        '<form action="', $this->action, '" class="myform ', $this->class, '" method="post" novalidate id="', $this->id, '">',
+            '<input type="hidden" name="success_url" value="', $this->success_url, '">',
+            '<input type="hidden" name="error_url" value="', $this->error_url, '">';
 
     }
 
     protected function renderBottom()
     {
-								echo
-								'<p>',
-					
-									'<button name="submit" type="submit" class="btn btn-store btn-block" ',
-									'data-error-message="', $this->error_message ,'" ',
-									'data-sending-message="', $this->submit_message, '" ',
-									'data-ok-message="', $this->ok_message,'">', $this->submit_label,'</button>',
-					
-								'</p>',
-								'<input type="hidden" name="submitted" id="submitted3" value="true">',
-							'</div>',
-							'<div class="col-xs-12 col-sm-6 col-md-6 form_text">';
-							
-								foreach( $this->form_text->getData() as $fragment )
-								{
-									echo $fragment;
-								}
-								
-							echo
-							'</div>',
-						'</div>',
-					'</form>',
-				'</div>',	
-			'</div>', //end row -->
-		'</div>';		
+            echo
+            '<p>',
+
+                '<button name="submit" type="submit" class="btn btn-store btn-block" ',
+                'data-error-message="', $this->error_message ,'" ',
+                'data-sending-message="', $this->submit_message, '" ',
+                'data-ok-message="', $this->ok_message,'">', $this->submit_label,'</button>',
+
+            '</p>',
+        '</form>';
     }
 
 }

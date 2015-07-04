@@ -31,32 +31,32 @@ abstract class layout_page extends layout
             '<meta name="description" content="', $this->description, '">',
 
             //<!-- Normalize -->
-            '<link rel="stylesheet" href="css/normalize.css">',
+            '<link rel="stylesheet" href="/css/normalize.css">',
 
             //<!-- Main style -->
-            '<link rel="stylesheet" href="css/style.css">',
+            '<link rel="stylesheet" href="/css/style.css">',
 
             //<!-- Layout style -->
-            '<link rel="stylesheet" href="css/layout.css">',
+            '<link rel="stylesheet" href="/css/layout.css">',
 
             //<!-- Colors style -->
-            '<link rel="stylesheet" href="css/colors.css">',
+            '<link rel="stylesheet" href="/css/colors.css">',
 
             //<!-- Retina icons -->
-            '<link rel="stylesheet" href="css/fontawesome.css">',
+            '<link rel="stylesheet" href="/css/fontawesome.css">',
 
             //<!-- Responsive style -->
-            '<link rel="stylesheet" media="(min-width:0px) and (max-width:760px)"  href="css/mobile.css">',
-            '<link rel="stylesheet" media="(min-width:761px) and (max-width:1080px)" href="css/720.css">',
-            '<link rel="stylesheet" media="(min-width:1081px) and (max-width:1300px)" href="css/960.css">',
-            '<link rel="stylesheet" media="(min-width:1301px)" href="css/1200.css">',
+            '<link rel="stylesheet" media="(min-width:0px) and (max-width:760px)"  href="/css/mobile.css">',
+            '<link rel="stylesheet" media="(min-width:761px) and (max-width:1080px)" href="/css/720.css">',
+            '<link rel="stylesheet" media="(min-width:1081px) and (max-width:1300px)" href="/css/960.css">',
+            '<link rel="stylesheet" media="(min-width:1301px)" href="/css/1200.css">',
 
             //<!-- Fonts Google -->
             "<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>",
             "<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>",
 
             //<!-- Fonts library -->
-            '<link rel="stylesheet" href="css/fonts.css">',
+            '<link rel="stylesheet" href="/css/fonts.css">',
 
             //<!-- Load jQuery -->
             '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>',
@@ -78,14 +78,14 @@ abstract class layout_page extends layout
                 '</div>',
 
             //<!-- Load scripts -->
-            '<script src="js/modernizr.min.js"></script>',
-            '<script src="js/easing.min.js"></script>',
-            '<script src="js/stickykit.min.js"></script>',
-            '<script src="js/flexslider.min.js"></script>',
-            '<script src="js/isotope.js"></script>',
-            '<script src="js/fitvids.min.js"></script>',
-            '<script src="js/contact.form.js"></script>',
-            '<script src="js/init.js"></script>',
+            '<script src="/js/modernizr.min.js"></script>',
+            '<script src="/js/easing.min.js"></script>',
+            '<script src="/js/stickykit.min.js"></script>',
+            '<script src="/js/flexslider.min.js"></script>',
+            '<script src="/js/isotope.js"></script>',
+            '<script src="/js/fitvids.min.js"></script>',
+            '<script src="/js/contact.form.js"></script>',
+            '<script src="/js/init.js"></script>',
 
         '</body>',
         '</html>';

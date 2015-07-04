@@ -30,9 +30,12 @@ class class_finder
 		{ 
 			switch( $frags[1] )
 			{
+                case 'article':  require_once __DIR__ . '/../layout/article/' . $name . '.php';  break;
+                case 'admin':    require_once __DIR__ . '/../layout/admin/' . $name . '.php';    break;
                 case 'homepage': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
                 case 'category': require_once __DIR__ . '/../layout/category/' . $name . '.php'; break;
                 case 'basic':    require_once __DIR__ . '/../layout/basic/' . $name . '.php';    break;
+                case 'form':     require_once __DIR__ . '/../layout/form/' . $name . '.php';     break;
                 default:         require_once __DIR__ . '/../layout/' . $name . '.php';
 			}
 		}
@@ -50,6 +53,7 @@ class class_finder
 		{ 
 			switch( $frags[1] )
 			{
+                case 'admin': require_once __DIR__ . '/../handler/admin/' . $name . '.php'; break;
 				default:      require_once __DIR__ . '/../handler/' . $name . '.php';
 			}
 		}

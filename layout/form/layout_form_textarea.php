@@ -33,24 +33,22 @@ class layout_form_textarea extends layout
         echo
         '<div class="form-group">',
             '<label class="control-label">', $this->label ,'</label>',
-            '<div class="controls">',
 
-                '<textarea name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '" rows="', $this->rows, '"';
+            '<textarea name="', $this->name, '" class="form-control input-lg requiredField', $this->class, '" rows="', $this->rows, '"';
 
-                if( !is_null( $this->placeholder ) )
-                {
-                    echo ' placeholder="', $this->placeholder, '"';
-                }
+            if( !is_null( $this->placeholder ) )
+            {
+                echo ' placeholder="', $this->placeholder, '"';
+            }
 
-                if( !is_null( $this->errorMessage ) )
-                {
-                    echo ' data-error-empty="', $this->errorMessage, '"';
-                }
+            if( !is_null( $this->errorMessage ) )
+            {
+                echo ' data-error-empty="', $this->errorMessage, '"';
+            }
 
-                echo
-                '>', $this->value, '</textarea>',
+            echo
+            '>', $this->value, '</textarea>',
 
-            '</div>',
         '</div>';
     }
 

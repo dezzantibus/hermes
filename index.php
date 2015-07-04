@@ -19,5 +19,4 @@ else
 
 /** @var handler $page */
 $page = new $handler;
-
 $page->run();
