@@ -31,6 +31,14 @@ class data_article extends data
 
     public $sent;
 
+    public $image_1;
+
+    public $image_2;
+
+    public $image_3;
+
+    public $image_4;
+
     public $hero;
 
     public $homepage;
@@ -49,6 +57,10 @@ class data_article extends data
             if( isset( $data['text'] ) )           $this->text          = $data['text'];
             if( isset( $data['created'] ) )        $this->created       = $data['created'];
             if( isset( $data['sent'] ) )           $this->sent          = $data['sent'];
+            if( isset( $data['image_1'] ) )        $this->image_1       = $data['image_1'];
+            if( isset( $data['image_2'] ) )        $this->image_2       = $data['image_2'];
+            if( isset( $data['image_3'] ) )        $this->image_3       = $data['image_3'];
+            if( isset( $data['image_4'] ) )        $this->image_4       = $data['image_4'];
             if( isset( $data['hero'] ) )           $this->hero          = $data['hero'];
             if( isset( $data['homepage'] ) )       $this->homepage      = $data['homepage'];
         }

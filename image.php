@@ -9,14 +9,12 @@
 class image
 {
 
-    const PROCESSED_PATH = '../images/uploads/processed/';
-
-    const ORIGINAL_PATH = '../images/uploads/original/';
-
-    public static function retrieve( $file, $width, $height )
+    public static function retrieve( $file, $path, $width, $height )
     {
 
-        $processed_filename = self::PROCESSED_PATH . $file . '_' . $width . '_' . $height . '.jpg';
+        $file_path = __DIR__ . "/../upload/article/$path/";
+
+        $processed_filename = $file_path . $file . '_' . $width . '_' . $height . '.jpg';
 
         if( file_exists( $processed_filename ) )
         {
@@ -25,7 +23,7 @@ class image
         else
         {
 
-            $original_filename = self::ORIGINAL_PATH . $file . '.jpg';
+            $original_filename = $file_path . $file . '.jpg';
 
             $image = imagecreatefromjpeg( $original_filename );
 
@@ -91,4 +89,4 @@ if( $_GET['file'] == 'filler.jpg' )
     die();
 }
 
-image::retrieve( $_GET['file'], $_GET['width'], $_GET['height'] );
+image::retrieve( $_GET['file'], $_GET['path'], $_GET['width'], $_GET['height'] );

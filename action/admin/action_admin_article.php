@@ -20,11 +20,21 @@ class action_admin_article extends action
 
         if( empty( $article->id ) )
         {
-            model_article::create( $article );
+            $article->id = model_article::create( $article );
         }
         else
         {
             model_article::update( $article );
+        }
+
+        for( $i=1; $i<=4; $i++ )
+        {
+            $image = file::saveFromPost( 'image' . $i, $article->id );
+            if( $image )
+            {
+                $property = 'image_' . $i;
+                $article->$property = $image;
+            }
         }
 
         $this->success();

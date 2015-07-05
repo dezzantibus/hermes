@@ -29,7 +29,7 @@ class layout_form_file extends layout
     {
         echo
         '<div class="form-group">',
-            '<label class="control-label">', $this->label ,'</label>',
+            '<label>', $this->label ,'</label>',
 
             '<input name="', $this->name, '" class="form-control input-lg ', $this->class, '" type="file" ';
 

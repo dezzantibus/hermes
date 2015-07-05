@@ -48,6 +48,11 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_textarea( 'text', 'Tekst', null, 25 ) );
 
+        for( $i=1; $i<=4; $i++ )
+        {
+            $form->addChild( new layout_form_file( 'image' . $i, 'Imazh ' . $i ), null );
+        }
+
         $form->addChild( new layout_form_radio( 'hero', 'Hero', $filler, null ) );
 
         $form->addChild( new layout_form_radio( 'homepage', 'Homepage', $filler, null ) );
