@@ -10,7 +10,7 @@ class class_finder
 
         switch( $frags[0] )
         {
-            case 'adwords':  require_once __DIR__ . '/adwords.php';  break;
+            case 'google':   require_once __DIR__ . '/google.php';   break;
             case 'constant': require_once __DIR__ . '/constant.php'; break;
             case 'message':  require_once __DIR__ . '/message.php';  break;
             case 'router':   require_once __DIR__ . '/router.php';   break;
