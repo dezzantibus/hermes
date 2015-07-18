@@ -16,8 +16,6 @@ class action_admin_article extends action
 
         /** @TODO validation */
 
-        /** @TODO save images */
-
         if( empty( $article->id ) )
         {
             $article->id = model_article::create( $article );
@@ -36,6 +34,7 @@ class action_admin_article extends action
                 $article->$property = $image;
             }
         }
+
         model_article::update( $article );
 
         $this->success();

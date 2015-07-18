@@ -95,10 +95,10 @@ class model_category extends model
 
     }
 
-    static public function getFullList()
+    static public function getFullList( $order='order' )
     {
 
-        $sql = 'SELECT * FROM category ORDER BY `order` ASC';
+        $sql = "SELECT * FROM category ORDER BY `$order` ASC";
 
         $query = db::prepare( $sql );
         $query->execute();

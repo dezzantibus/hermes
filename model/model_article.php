@@ -16,13 +16,13 @@ class model_article extends model
             INSERT INTO article
                 (
                 category_id, journalist_id,
-                title, subtitle, brief
+                title, subtitle, brief,
                 text, hero, homepage
                 )
             VALUES
                 (
                 :category_id, :journalist_id,
-                :title, :subtitle, :brief
+                :title, :subtitle, :brief,
                 :text, :hero, :homepage
                 )
         ';
@@ -48,14 +48,18 @@ class model_article extends model
 
         $sql = '
             UPDATE article
-            SET category_id = :category_id,
-                journalist_id = :journalist_id
-                title = :title
-                subtitle = :subtitle
-                brief = :brief
-                text = :text
-                sent = :sent
-                hero = :hero
+            SET category_id   = :category_id,
+                journalist_id = :journalist_id,
+                title         = :title,
+                subtitle      = :subtitle,
+                brief         = :brief,
+                text          = :text,
+                sent          = :sent,
+                image_1       = :image_1,
+                image_2       = :image_2,
+                image_3       = :image_3,
+                image_4       = :image_4,
+                hero = :hero,
                 homepage = :homepage
             WHERE id = :id
         ';
@@ -69,6 +73,10 @@ class model_article extends model
             ->bindString( ':brief',         $data->brief )
             ->bindString( ':text',          $data->text )
             ->bindInt   ( ':sent',          $data->sent )
+            ->bindString( ':image_1',       $data->image_1 )
+            ->bindString( ':image_2',       $data->image_2 )
+            ->bindString( ':image_3',       $data->image_3 )
+            ->bindString( ':image_4',       $data->image_4 )
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
             ->bindInt   ( ':id',            $data->id )

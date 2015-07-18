@@ -17,8 +17,8 @@
 
 
 	RewriteRule ^(.*)demo/(.*)x(.*).gif$ image.php?width=$2&height=$3&file=filler.jpg [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*).jpg$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
 	RewriteRule ^(.*)/(.*)/(.*).jpg$ image.php?width=$1&height=$2&file=$3.jpg [QSA,L] #To be removed
-	RewriteRule ^(.*)/(.*)/article/(.*)/(.*)/(.*)/(.*).jpg$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
 
 	RewriteRule ^(.*)/(.*).action$ index.php?handler=action_$1_$2 [QSA,L]
 	RewriteRule ^(.*).action$ index.php?handler=action_$1 [QSA,L]

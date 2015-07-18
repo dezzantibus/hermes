@@ -12,7 +12,7 @@ class file
     static public function saveFromPost( $input, $article_id )
     {
 
-        if( !isset( $_FILES[ $input ] ) )
+        if( empty( $_FILES[ $input ]['tmp_name'] ) )
         {
             return false;
         }
@@ -43,7 +43,7 @@ class file
 
         if( !is_dir( $path['file'] ) )
         {
-            mkdir( $path['file'] );
+            mkdir( $path['file'], 0777, true );
         }
 
         return $path;

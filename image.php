@@ -12,7 +12,7 @@ class image
     public static function retrieve( $file, $path, $width, $height )
     {
 
-        $file_path = __DIR__ . "/../upload/article/$path/";
+        $file_path = __DIR__ . "/upload/articles/$path/";
 
         $processed_filename = $file_path . $file . '_' . $width . '_' . $height . '.jpg';
 
@@ -32,15 +32,27 @@ class image
 
             if( ( $original_width / $width ) < ( $original_height / $height ) )
             {
-                $new_height = $height;
-                $new_width  = $original_width * ( $height / $original_height );
-            }
-            else
-            {
                 $new_width  = $width;
                 $new_height = $original_height * ( $width / $original_width );
             }
+            else
+            {
+                $new_height = $height;
+                $new_width  = $original_width * ( $height / $original_height );
+            }
 
+            $temp = imagecreatetruecolor( $new_width, $new_height );
+
+            imagecopyresampled( $temp, $image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+
+            $image = imagecreatetruecolor( $width, $height );
+
+            $x = ( $new_width - $width ) / 2;
+            $y = ( $new_height - $height ) / 2;
+
+            imagecopyresampled( $image, $temp, 0, 0, $x, $y, $width, $height, $width, $height );
+
+            /* this is PHP 5.5
             $image = imagescale( $image, $new_width, $new_height );
 
             $cropping_array = array(
@@ -51,6 +63,7 @@ class image
             );
 
             $image = imagecrop( $image, $cropping_array );
+            */
 
             imagejpeg( $image, $processed_filename );
 

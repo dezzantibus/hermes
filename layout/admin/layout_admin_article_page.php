@@ -7,7 +7,9 @@ class layout_admin_article_page extends layout_page
     (
         data_header  $header,
         data_footer  $footer,
-        data_sidebar $sidebar
+        data_sidebar $sidebar,
+        data_array   $categories,
+        data_article $article
     )
     {
 
@@ -34,33 +36,48 @@ class layout_admin_article_page extends layout_page
             '/admin/article/new.form'
         ) );
 
-        $filler = new data_array();
-        $filler->add( array( 'label' => 'Data 1', 'value' => 1 ) );
-        $filler->add( array( 'label' => 'Data 2', 'value' => 2 ) );
-        $filler->add( array( 'label' => 'Data 3', 'value' => 3 ) );
+        /** @var  $category data_category */
+        $dropdown_data = new data_array();
+        foreach( $categories->getData() as $category )
+        {
+            $dropdown_data->add( array(
+                'label' => $category->name,
+                'value' => $category->id,
+            ) );
+        }
+
+        $radio_data = new data_array();
+        $radio_data->add( array(
+            'label' => 'Po',
+            'value' => 1,
+        ) );
+        $radio_data->add( array(
+            'label' => 'Jo',
+            'value' => 0,
+        ) );
 
         // Data from submit to be added here.
 
-        $form->addChild( new layout_form_hidden( 'id', null ) );
+        $form->addChild( new layout_form_hidden( 'id', $article->id ) );
 
-        $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $filler ) );
+        $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $dropdown_data, $article->category_id ) );
 
-        $form->addChild( new layout_form_text( 'title', 'Titull', null ) );
+        $form->addChild( new layout_form_text( 'title', 'Titull', $article->title ) );
 
-        $form->addChild( new layout_form_text( 'subtitle', 'Nëntitull', null ) );
+        $form->addChild( new layout_form_text( 'subtitle', 'Nëntitull', $article->subtitle ) );
 
-        $form->addChild( new layout_form_textarea( 'brief', 'Shkurtër', null ) );
+        $form->addChild( new layout_form_textarea( 'brief', 'Shkurtër', $article->brief ) );
 
-        $form->addChild( new layout_form_textarea( 'text', 'Tekst', null, 25 ) );
+        $form->addChild( new layout_form_textarea( 'text', 'Tekst', $article->text, 25 ) );
 
         for( $i=1; $i<=4; $i++ )
         {
             $form->addChild( new layout_form_file( 'image' . $i, 'Imazh ' . $i ), null );
         }
 
-        $form->addChild( new layout_form_radio( 'hero', 'Hero', $filler, null ) );
+        $form->addChild( new layout_form_radio( 'hero', 'Hero', $radio_data, $article->hero ) );
 
-        $form->addChild( new layout_form_radio( 'homepage', 'Homepage', $filler, null ) );
+        $form->addChild( new layout_form_radio( 'homepage', 'Homepage', $radio_data, $article->homepage ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

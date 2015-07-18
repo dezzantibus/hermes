@@ -44,7 +44,7 @@ class layout_form extends layout
     {
 
         echo
-        '<form action="', $this->action, '" class="myform ', $this->class, '" method="post" novalidate id="', $this->id, '">',
+        '<form action="', $this->action, '" class="myform ', $this->class, '" method="post" novalidate id="', $this->id, '" enctype="multipart/form-data">',
             '<input type="hidden" name="success_url" value="', $this->success_url, '">',
             '<input type="hidden" name="error_url" value="', $this->error_url, '">';
 
