@@ -27,7 +27,7 @@ class layout_sidebar extends layout
 
         <!-- Search widget -->
         <div class="widget">
-            <h3 class="widget-title">Search</h3>
+            <h3 class="widget-title">K&euml;rkim</h3>
             <form class="searchform">
                 <input type="text" placeholder="To search type and hit enter"/>
                 <input type="submit" value="&#xf002;"/>
@@ -36,7 +36,7 @@ class layout_sidebar extends layout
 
         <!-- Banner 300x250 -->
         <div class="widget">
-            <h3 class="widget-title">Advertisement</h3>
+            <h3 class="widget-title">Reklam&euml;</h3>
             <div class="ad-banner-300x250">
                 <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>
             </div>
@@ -46,9 +46,9 @@ class layout_sidebar extends layout
         <div class="widget">
             <div class="tabs">
                 <ul>
-                    <li><a href="#tab-popular">Popular</a></li>
-                    <li><a href="#tab-recent">Recent</a></li>
-                    <li><a href="#tab-comments">Comments</a></li>
+                    <li><a href="#tab-popular">Popullor</a></li>
+                    <li><a href="#tab-recent">Fundit</a></li>
+                    <li><a href="#tab-comments">Komentet</a></li>
                 </ul>
                 <div id="tab-popular">
                     <ul class="recent-posts">
@@ -133,7 +133,7 @@ class layout_sidebar extends layout
 
         <!-- Recent comments -->
         <div class="widget">
-            <h3 class="widget-title">Recent comments</h3>
+            <h3 class="widget-title">Komentet e fundit</h3>
             <ul class="recent-comments">
                 <li>
                     <p class="author">FreddoFrog</p>
@@ -152,7 +152,7 @@ class layout_sidebar extends layout
 
         <!-- Recent posts -->
         <div class="widget">
-            <h3 class="widget-title">Recent posts</h3>
+            <h3 class="widget-title">Artikujt e fundit</h3>
             <ul class="recent-posts">
                 <li>
                     <div class="image">
@@ -229,7 +229,7 @@ class layout_sidebar extends layout
 
         <!-- Banner 125x125 -->
         <div class="widget">
-            <h3 class="widget-title">Advertisement</h3>
+            <h3 class="widget-title">Reklam&euml;</h3>
             <ul class="ad-banner-125x125">
                 <li><a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/125x125.gif" alt="Banner"/></a></li>
                 <li><a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/125x125.gif" alt="Banner"/></a></li>

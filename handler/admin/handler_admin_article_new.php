@@ -16,6 +16,13 @@ class handler_admin_article_new extends handler
         $footer  = $this->getFooterData();
         $sidebar = $this->getSidebarData();
 
+        if( empty( $_SESSION['journalist'] ) )
+        {
+            $page = new layout_admin_login_page( $header, $footer, $sidebar );
+            $page->render();
+            die();
+        }
+
         $categories = model_category::getFullList( 'name' );
 
         if( empty( $form_data ) )

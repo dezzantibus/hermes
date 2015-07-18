@@ -9,19 +9,19 @@
 class layout_homepage_ModuleG2P0 extends layout
 {
 
-    /** @var  $list data_array */
+    /** @var  $list data_category */
     private $list;
 
-    function __construct( data_array $list )
+    function __construct( data_category $list )
     {
 
         $this->list = $list;
 
         /** @TODO delete this filler */
-        $this->list = new data_array();
+        $this->list->home_articles = new data_array();
 
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
 
     }
 
@@ -30,9 +30,9 @@ class layout_homepage_ModuleG2P0 extends layout
 
         echo
         '<div class="block-layout-five">',
-            '<p class="title"><span>World <strong>news</strong></span></p>';
+            '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>';
 
-            foreach( $this->list->getData() as $article )
+            foreach( $this->list->home_articles->getData() as $article )
             {
 
                 echo

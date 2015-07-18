@@ -9,36 +9,36 @@
 class layout_homepage_ModuleG1P6 extends layout
 {
 
-    /** @var  data_array */
+    /** @var  data_category */
     private $list;
 
-    function __construct( data_array $list )
+    function __construct( data_category $list )
     {
 
         $this->list = $list;
 
         /** @TODO delete this filler */
-        $this->list = new data_array();
+        $this->list->home_articles = new data_array();
 
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
-        $this->list->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
+        $this->list->home_articles->add( 'filler' );
 
     }
 
     public function render()
     {
 
-        $main = $this->list->first();
+        $main = $this->list->home_articles->first();
 
         echo
         '<div class="block-layout-three row">',
             '<div class="grid_12">',
-                '<p class="title"><span>Latest from <strong>travel</strong></span></p>',
+                '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>',
                 '<div class="main-item">',
                     '<div class="post-img">',
                         '<a href="#"><img src="/demo/422x260.gif" alt="Post"/></a>',
@@ -60,7 +60,7 @@ class layout_homepage_ModuleG1P6 extends layout
                 '</div>',
                 '<div class="small-items">';
 
-                    foreach( $this->list->getData() as $article )
+                    foreach( $this->list->home_articles->getData() as $article )
                     {
                         echo
                         '<div class="item">',

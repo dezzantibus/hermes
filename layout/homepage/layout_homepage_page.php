@@ -35,7 +35,7 @@ class layout_homepage_page extends layout_page
         foreach( $home_categories->getData() as $category )
         {
             $type = $category->home_block;
-            $main->addChild( new $type( new data_array ) );
+            $main->addChild( new $type( $category ) );
         }
 //        $main->addChild( new layout_homepage_ModuleG1P6( new data_array ) );
 //        $main->addChild( new layout_homepage_ModuleG2P6( new data_array ) );

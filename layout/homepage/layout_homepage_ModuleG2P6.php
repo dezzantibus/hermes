@@ -9,25 +9,25 @@
 class layout_homepage_ModuleG2P6 extends layout
 {
 
-    /** @var  data_array */
+    /** @var  data_category */
     private $list;
 
-    function __construct( data_array $list )
+    function __construct( data_category $list )
     {
 
         $this->list = $list;
 
         /** @TODO delete this filler */
-        $this->list = new data_array();
+        $this->list->home_articles = new data_array();
 
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
-        $this->list->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
+        $this->list->home_articles->add( new data_article() );
 
     }
 
@@ -36,24 +36,24 @@ class layout_homepage_ModuleG2P6 extends layout
 
         echo
         '<div class="block-layout-two row">',
-            '<p class="title"><span>Latest <strong>news</strong></span></p>',
+            '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>',
             '<div class="grid_6">';
 
-                $this->large( $this->list->getIndex( 0 ) );
+                $this->large( $this->list->home_articles->getIndex( 0 ) );
 
-                $this->small( $this->list->getIndex( 2 ) );
-                $this->small( $this->list->getIndex( 3 ) );
-                $this->small( $this->list->getIndex( 4 ) );
+                $this->small( $this->list->home_articles->getIndex( 2 ) );
+                $this->small( $this->list->home_articles->getIndex( 3 ) );
+                $this->small( $this->list->home_articles->getIndex( 4 ) );
 
             echo
             '</div>',
             '<div class="grid_6">';
 
-                $this->large( $this->list->getIndex( 1 ) );
+                $this->large( $this->list->home_articles->getIndex( 1 ) );
 
-                $this->small( $this->list->getIndex( 5 ) );
-                $this->small( $this->list->getIndex( 6 ) );
-                $this->small( $this->list->getIndex( 7 ) );
+                $this->small( $this->list->home_articles->getIndex( 5 ) );
+                $this->small( $this->list->home_articles->getIndex( 6 ) );
+                $this->small( $this->list->home_articles->getIndex( 7 ) );
 
             echo
             '</div>',
