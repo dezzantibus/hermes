@@ -100,7 +100,33 @@ class model_article extends model
 
     }
 
-    static public function getHomeCategory( $category_id, $number )
+    static public function getByRouting( $routing, $parent )
+    {
+
+        $category = model_category::getByRouting( $parent );
+
+        $sql = '
+            SELECT *
+            FROM article
+            WHERE routing = :routing
+                AND category_id = :category_id
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindString( ':routing',     $routing )
+            ->bindInt   ( ':category_id', $category->id )
+            ->execute();
+
+        $row = $query->fetch();
+
+        $journalist = model_journalist::getById( $row['id'] );
+
+        return new data_article( $row, $category, $journalist );
+
+    }
+
+    static public function getHomeCategory( data_category $category, $number )
     {
 
         $sql = '
@@ -114,14 +140,14 @@ class model_article extends model
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt( ':category_id', $category_id )
+            ->bindInt( ':category_id', $category->id )
             ->bindInt( ':number',      $number )
             ->execute();
 
         $result = new data_array();
         while( $row = $query->fetch() )
         {
-            $result->add( new data_article( $row ) );
+            $result->add( new data_article( $row, $category ) );
         }
 
         return $result;

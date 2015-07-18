@@ -30,7 +30,7 @@ class handler_homepage extends handler
                 default: $number = 0;
             }
 
-            $category->home_articles = model_article::getHomeCategory( $category->id, $number );
+            $category->home_articles = model_article::getHomeCategory( $category, $number );
 
         }
 

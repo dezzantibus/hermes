@@ -81,6 +81,20 @@ class model_category extends model
 
     }
 
+    static public function getByRouting( $routing )
+    {
+
+        $sql = 'SELECT * FROM category WHERE routing = :routing';
+
+        $query = db::prepare( $sql );
+        $query->bindString( ':routing', $routing )->execute();
+
+        $row = $query->fetch();
+
+        return new data_category( $row );
+
+    }
+
     static public function getFullList()
     {
 

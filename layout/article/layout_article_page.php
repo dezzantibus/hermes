@@ -3,10 +3,15 @@
 class layout_article_page extends layout_page
 {
 
-    public function __construct()
+    public function __construct
+    (
+        data_header  $header,
+        data_footer  $footer,
+        data_sidebar $sidebar
+    )
     {
 
-        $this->addChild( new layout_header() );
+        $this->addChild( new layout_header( $header ) );
 
         $params  = array( 'id' => 'section' );
         $section = $this->addChild( new layout_basic_section( $params ) );
@@ -31,9 +36,9 @@ class layout_article_page extends layout_page
 
         $main->addChild( new layout_article_comments() );
 
-        $wrapper->addChild( new layout_sidebar() );
+        $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
-        $this->addChild( new layout_footer() );
+        $this->addChild( new layout_footer( $footer ) );
 
     }
 

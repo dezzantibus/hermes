@@ -19,6 +19,8 @@ class data_article extends data
 
     public $journalist;
 
+    public $routing;
+
     public $title;
 
     public $subtitle;
@@ -43,7 +45,7 @@ class data_article extends data
 
     public $homepage;
 
-    function __construct( $data=null, data_journalist $journalist=null, data_category $category=null )
+    function __construct( $data=null, data_category $category=null, data_journalist $journalist=null )
     {
 
         if( !empty( $data ) )
@@ -51,6 +53,7 @@ class data_article extends data
             if( isset( $data['id'] ) )             $this->id            = $data['id'];
             if( isset( $data['category_id'] ) )    $this->category_id   = $data['category_id'];
             if( isset( $data['journalist_id'] ) )  $this->journalist_id = $data['journalist_id'];
+            if( isset( $data['routing'] ) )        $this->routing       = $data['routing'];
             if( isset( $data['title'] ) )          $this->title         = $data['title'];
             if( isset( $data['subtitle'] ) )       $this->subtitle      = $data['subtitle'];
             if( isset( $data['brief'] ) )          $this->brief         = $data['brief'];

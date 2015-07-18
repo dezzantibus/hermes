@@ -12,10 +12,14 @@ class handler_category extends handler
     public function run()
     {
 
-        // Collect data
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData();
+
+        $category = model_category::getByRouting( $this->data['routing'] );
 
         // Render page
-        $page = new layout_category_page();
+        $page = new layout_category_page( $header, $footer, $sidebar );
         $page->render();
 
     }

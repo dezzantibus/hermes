@@ -12,10 +12,17 @@ class handler_article extends handler
     public function run()
     {
 
-        // Collect data
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData();
+
+        $article = model_article::getByRouting(
+            $this->data['routing'],
+            $this->data['parent']
+        );
 
         // Render page
-        $page = new layout_article_page();
+        $page = new layout_article_page( $header, $footer, $sidebar );
         $page->render();
 
     }

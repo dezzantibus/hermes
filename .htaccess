@@ -27,6 +27,6 @@
 	RewriteRule ^(.*)/(.*).form$ index.php?handler=handler_$1_$2 [QSA,L]
 	RewriteRule ^(.*).form$ index.php?handler=handler_$1 [QSA,L]
 
-	RewriteRule ^(.*)/(.*).html$ index.php?handler=handler_article&routing=$1/$2 [QSA,L]
+	RewriteRule ^(.*)/(.*).html$ index.php?handler=handler_article&parent=$1&routing=$2 [QSA,L]
 	RewriteRule ^(.*).html$ index.php?handler=handler_category&routing=$1 [QSA,L]
 </IfModule>

@@ -12,10 +12,12 @@ class handler_admin_article_new extends handler
     public function run()
     {
 
-        // Collect data
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData();
 
         // Render page
-        $page = new layout_admin_article_page();
+        $page = new layout_admin_article_page( $header, $footer, $sidebar );
         $page->render();
 
     }
