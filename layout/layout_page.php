@@ -64,6 +64,8 @@ abstract class layout_page extends layout
 
             '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>',
 
+            '<link rel="stylesheet" href="/css/mine.css">',
+
         '</head>',
         '<body>',
 
