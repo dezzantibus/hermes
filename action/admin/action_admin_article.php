@@ -36,6 +36,7 @@ class action_admin_article extends action
                 $article->$property = $image;
             }
         }
+        model_article::update( $article );
 
         $this->success();
 

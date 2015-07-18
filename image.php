@@ -68,24 +68,36 @@ if( $_GET['file'] == 'filler.jpg' )
 
     header('Content-Type: image/jpeg');
 
-    switch( rand(1, 13) )
-    {
-        case 1:  $category = '/cats/';      break;
-        case 2:  $category = '/abstract/';  break;
-        case 3:  $category = '/animals/';   break;
-        case 4:  $category = '/business/';  break;
-        case 5:  $category = '/city/';      break;
-        case 6:  $category = '/food/';      break;
-        case 7:  $category = '/nightlife/'; break;
-        case 8:  $category = '/fashion/';   break;
-        case 9:  $category = '/people/';    break;
-        case 10: $category = '/nature/';    break;
-        case 11: $category = '/sports/';    break;
-        case 12: $category = '/technics/';  break;
-        case 13: $category = '/transport/'; break;
-    }
+//    switch( rand(1, 13) )
+//    {
+//        case 1:  $category = '/cats/';      break;
+//        case 2:  $category = '/abstract/';  break;
+//        case 3:  $category = '/animals/';   break;
+//        case 4:  $category = '/business/';  break;
+//        case 5:  $category = '/city/';      break;
+//        case 6:  $category = '/food/';      break;
+//        case 7:  $category = '/nightlife/'; break;
+//        case 8:  $category = '/fashion/';   break;
+//        case 9:  $category = '/people/';    break;
+//        case 10: $category = '/nature/';    break;
+//        case 11: $category = '/sports/';    break;
+//        case 12: $category = '/technics/';  break;
+//        case 13: $category = '/transport/'; break;
+//    }
 
-    imagejpeg( imagecreatefromjpeg( 'http://lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) );
+//    switch( rand( 1,2 ) )
+//    {
+//        case 1: imagejpeg( imagecreatefromjpeg( '//lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) ); break;
+//        case 2: imagejpeg( imagecreatefromjpeg( '//fillmurray.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
+//        case 3: imagejpeg( imagecreatefromjpeg( '//nicenicejpg.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
+//        case 3: imagejpeg( imagecreatefromjpeg( '//placecage.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
+//        case 3: imagejpeg( imagecreatefromjpeg( '//placebear.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
+//        case 3: imagejpeg( imagecreatefromjpeg( '//placekitten.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
+//    }
+    //imagejpeg( imagecreatefromjpeg( 'http://lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) );
+    //imagejpeg( imagecreatefromjpeg( 'http://lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) );
+
+    imagejpeg( imagecreatefromjpeg( 'http://placekitten.com/' . $_GET['width'] . '/' . $_GET['height']));
     die();
 }
 

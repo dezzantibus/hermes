@@ -36,7 +36,7 @@ class layout_admin_article_page extends layout_page
 
         // Data from submit to be added here.
 
-        $form->addChild( new Layout_form_hidden( 'id', null ) );
+        $form->addChild( new layout_form_hidden( 'id', null ) );
 
         $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $filler ) );
 

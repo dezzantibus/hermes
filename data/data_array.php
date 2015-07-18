@@ -38,6 +38,11 @@ class data_array extends data
         return $this->array;
     }
 
+    public function getIndex( $index )
+    {
+        return $this->array[ $index ];
+    }
+
     public function last()
     {
         if( $this->isEmpty() )

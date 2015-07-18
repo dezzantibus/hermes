@@ -10,29 +10,30 @@ class layout_homepage_ModuleG1P6 extends layout
 {
 
     /** @var  data_array */
-    private $articles;
+    private $list;
 
-    function __construct( data_array $articles )
+    function __construct( data_array $list )
     {
 
-//        $this->articles = $articles;
+        $this->list = $list;
 
-        $this->articles = new data_array();
+        /** @TODO delete this filler */
+        $this->list = new data_array();
 
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
-        $this->articles->add( new data_article );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
+        $this->list->add( 'filler' );
 
     }
 
     public function render()
     {
 
-        $main = $this->articles->first();
+        $main = $this->list->first();
 
         echo
         '<div class="block-layout-three row">',
@@ -40,7 +41,7 @@ class layout_homepage_ModuleG1P6 extends layout
                 '<p class="title"><span>Latest from <strong>travel</strong></span></p>',
                 '<div class="main-item">',
                     '<div class="post-img">',
-                        '<a href="#"><img src="demo/422x260.gif" alt="Post"/></a>',
+                        '<a href="#"><img src="/demo/422x260.gif" alt="Post"/></a>',
                         '<span><a href="#">Travel</a></span>',
                     '</div>',
                     '<h3><a href="#">Travel news roundup: Wales, eco-luxury in the Galapagos …</a></h3>',
@@ -59,11 +60,11 @@ class layout_homepage_ModuleG1P6 extends layout
                 '</div>',
                 '<div class="small-items">';
 
-                    foreach( $this->articles->getData() as $item )
+                    foreach( $this->list->getData() as $article )
                     {
                         echo
                         '<div class="item">',
-                            '<a href="#"><img src="demo/80x65.gif" alt="Post"/></a>',
+                            '<a href="#"><img src="/demo/80x65.gif" alt="Post"/></a>',
                             '<div>',
                                 '<h3><a href="#">Ut gravida, eros a porttitor ornare, quam mauris dignissim nisl ac eleifend metus erat</a></h3>',
                                 '<p class="date">December 13, 2014</p>',

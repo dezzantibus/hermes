@@ -9,71 +9,64 @@
 class layout_homepage_popular extends layout
 {
 
-    function __construct()
+    /** @var  $list data_array */
+    private $list;
+
+    function __construct( data_array $list )
     {
+
+        $this->list = $list;
+
+        /** @TODO delete this filler */
+        $this->list = new data_array();
+
+        $this->list->add( new data_article );
+        $this->list->add( new data_article );
+        $this->list->add( new data_article );
+        $this->list->add( new data_article );
+        $this->list->add( new data_article );
+        $this->list->add( new data_article );
 
     }
 
     public function render()
     {
-        ?>
-        <div class="block-layout-one">
-            <p class="title"><span>Popular <strong>posts</strong></span></p>
-            <div class="row">
-                <div class="item grid_4">
-                    <a href="#"><img src="/80/65/filler.jpg" /></a>
-                    <div>
-                        <span><a href="#">Sport</a></span>
-                        <h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif"/></a>
-                    <div>
-                        <span><a href="#">Culture</a></span>
-                        <h3><a href="#">Sigrid Rausing: 'The sadness was overwhelming'</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Technology</a></span>
-                        <h3><a href="#">Is Brixton London's next tech hipster hub?</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Travel</a></span>
-                        <h3><a href="#">The Giro d'Italia comes to Northern Ireland</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Business</a></span>
-                        <h3><a href="#">Does your business need to get a grip on marketing?</a></h3>
-                        <p class="date">Septmeber 16, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Politics</a></span>
-                        <h3><a href="#">Ryanair profits endure bumpy landing</a></h3>
-                        <p class="date">June 2, 2014</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
+        echo
+        '<div class="block-layout-one">',
+            '<p class="title"><span>Popular <strong>posts</strong></span></p>',
+            '<div class="row">';
+
+                $this->element( $this->list->getIndex( 0 ) );
+                $this->element( $this->list->getIndex( 1 ) );
+                $this->element( $this->list->getIndex( 2 ) );
+
+            echo
+            '</div>',
+            '<div class="row">';
+
+                $this->element( $this->list->getIndex( 3 ) );
+                $this->element( $this->list->getIndex( 4 ) );
+                $this->element( $this->list->getIndex( 5 ) );
+
+            echo
+            '</div>',
+        '</div>';
+
     }
 
+    private function element( data_article $article )
+    {
+
+        echo
+        '<div class="item grid_4">',
+            '<a href="#"><img src="/80/65/filler.jpg" /></a>',
+            '<div>',
+                '<span><a href="#">Sport</a></span>',
+                '<h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>',
+                '<p class="date">December 13, 2014</p>',
+            '</div>',
+        '</div>';
+
+    }
 
 }

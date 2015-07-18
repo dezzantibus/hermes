@@ -27,7 +27,7 @@ class layout_homepage_hero extends layout
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <img src="/785/505/filler.jpg" alt="Image" />
+                            <img src="demo/785x505.gif" alt="Image" />
                             <div class="post-box-text">
                                 <span><a href="#">Culture</a></span>
                                 <h3><a href="#">Amazon and Snapchat rank low for protecting user data from government</a></h3>
@@ -35,7 +35,7 @@ class layout_homepage_hero extends layout
                             </div>
                         </li>
                         <li>
-                            <img src="/785/505/filler.jpg" alt="Image" />
+                            <img src="demo/785x505.gif" alt="Image" />
                             <div class="post-box-text">
                                 <span><a href="#">Culture</a></span>
                                 <h3><a href="#">Amazon and Snapchat rank low for protecting user data from government</a></h3>
@@ -43,7 +43,7 @@ class layout_homepage_hero extends layout
                             </div>
                         </li>
                         <li>
-                            <img src="/785/505/filler.jpg" alt="Image" />
+                            <img src="demo/785x505.gif" alt="Image" />
                             <div class="post-box-text">
                                 <span><a href="#">Culture</a></span>
                                 <h3><a href="#">Amazon and Snapchat rank low for protecting user data from government</a></h3>
