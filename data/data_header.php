@@ -11,6 +11,7 @@ class data_header extends data
 
     public $top_menu;
 
+    /** @var  data_array */
     public $category_menu;
 
     public $weather;

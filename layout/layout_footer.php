@@ -9,9 +9,12 @@
 class layout_footer extends layout
 {
 
-    function __construct()
-    {
+    /** @var  data_footer */
+    private $data;
 
+    public function __construct( data_footer $data )
+    {
+        $this->data = $data;
     }
 
     public function render()

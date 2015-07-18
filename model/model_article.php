@@ -100,4 +100,32 @@ class model_article extends model
 
     }
 
+    static public function getHomeCategory( $category_id, $number )
+    {
+
+        $sql = '
+            SELECT *
+            FROM article
+            WHERE category_id = :category_id
+                AND homepage = 1
+            ORDER BY id DESC
+            LIMIT :number
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':category_id', $category_id )
+            ->bindInt( ':number',      $number )
+            ->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $result->add( new data_article( $row ) );
+        }
+
+        return $result;
+
+    }
+
 }

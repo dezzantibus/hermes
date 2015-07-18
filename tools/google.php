@@ -1,12 +1,13 @@
 <?php
-class Google
+
+class google
 {
 
     const SECONDS_ANDREA = 60;
 
     private static $who = null;
 
-    static function analytics()
+    public static function analytics()
     {
 
         return "
@@ -27,210 +28,46 @@ class Google
 
     }
 
-    static function adwords($shape)
+    public static function automatic()
     {
 
-        if(is_null(self::$who))
+        if( self::chooseWho() == 'Andrea' )
         {
-            self::chooseWho();
-        }
-
-
-        switch($shape)
-        {
-
-            case '728x90':
-                $return = self::ad728x90();
-                break;
-
-            case '160x600':
-                $return = self::ad160x600();
-                break;
-
-            case '200x200':
-                $return = self::ad200x200();
-                break;
-
-            case '250x250':
-                $return = self::ad250x250();
-                break;
-
-            case '728x15':
-                $return = self::ad728x15();
-                break;
-
-            case '125x125':
-                $return = self::ad125x125();
-                break;
-
-            default:
-                $return = '';
-        }
-
-        return "<div>$return</div>";
-
-    }
-
-    private static function ad160x600()
-    {
-//        if(self::$who == 'Andrea')
-//        {
-//            return '
-//				<script type="text/javascript"><!--
-//					google_ad_client = "ca-pub-0866520425041689";
-//					/* Hermes - 160x600 */
-//					google_ad_slot = "3190138742";
-//					google_ad_width = 160;
-//					google_ad_height = 600;
-//					//-->
-//				</script>
-//				<script type="text/javascript"
-//					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-//				</script>
-//			';
-//        }
-//        else
-        {
-            return '';
-        }
-    }
-
-    private static function ad728x90()
-    {
-        if(self::$who == 'Andrea')
-        {
-            //<!-- Hermes - Leaderboard -->
+            //<!-- Hermes scuro automatico -->
             echo
             '<ins class="adsbygoogle" ',
-                'style="display:inline-block;width:728px;height:90px" ',
-                'data-ad-client="ca-pub-0866520425041689" ',
-                'data-ad-slot="7123697947"></ins>',
-            '<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>';
+                 'style="display:block" ',
+                 'data-ad-client="ca-pub-0866520425041689" ',
+                 'data-ad-slot="8400124744" ',
+                 'data-ad-format="auto"></ins>',
+            '<script>',
+                '(adsbygoogle = window.adsbygoogle || []).push({});',
+            '</script>';
         }
         else
         {
-            echo '';
-        }
-    }
 
-    private static function ad200x200()
-    {
-//        if(self::$who == 'Andrea')
-//        {
-//            return '
-//				<script type="text/javascript"><!--
-//					google_ad_client = "ca-pub-0866520425041689";
-//					/* Hermes - 200x200 */
-//					google_ad_slot = "7620338341";
-//					google_ad_width = 200;
-//					google_ad_height = 200;
-//					//-->
-//				</script>
-//				<script type="text/javascript"
-//					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-//				</script>
-//			';
-//        }
-//        else
-        {
-            return '';
-        }
-    }
-
-    private static function ad728x15()
-    {
-//        if(self::$who == 'Andrea')
-//        {
-//            return '
-//				<script type="text/javascript"><!--
-//					google_ad_client = "ca-pub-0866520425041689";
-//					/* Hermes - 728x15 */
-//					google_ad_slot = "9097071549";
-//					google_ad_width = 728;
-//					google_ad_height = 15;
-//					//-->
-//				</script>
-//				<script type="text/javascript"
-//					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-//				</script>
-//			';
-//        }
-//        else
-        {
-            return '';
-        }
-    }
-
-    private static function ad125x125()
-    {
-//        if(self::$who == 'Andrea')
-//        {
-//            return '
-//				<script type="text/javascript"><!--
-//					google_ad_client = "ca-pub-0866520425041689";
-//					/* Hermes - 125x125 */
-//					google_ad_slot = "1573804745";
-//					google_ad_width = 125;
-//					google_ad_height = 125;
-//					//-->
-//				</script>
-//				<script type="text/javascript"
-//					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-//				</script>
-//			';
-//        }
-//        else
-        {
-            return '';
-        }
-    }
-
-    private static function ad250x250()
-    {
-//        if(self::$who == 'Andrea')
-//        {
-//            return '
-//				<script type="text/javascript"><!--
-//					google_ad_client = "ca-pub-0866520425041689";
-//						/* Hermes - 250x250 */
-//					google_ad_slot = "5648920740";
-//					google_ad_width = 250;
-//					google_ad_height = 250;
-//					//-->
-//				</script>
-//				<script type="text/javascript"
-//					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-//				</script>
-//			';
-//        }
-//        else
-        {
-            return '';
-        }
-    }
-
-    private static function adBlank()
-    {
-        if(self::$who == 'Andrea')
-        {
-            return '';
-        }
-        else
-        {
-            return '';
         }
     }
 
     private static function chooseWho()
     {
-        if(self::SECONDS_ANDREA > date('s'))
+
+        if( empty( self::$who ) )
         {
-            self::$who = 'Andrea';
+            if(self::SECONDS_ANDREA > date('s'))
+            {
+                self::$who = 'Andrea';
+            }
+            else
+            {
+                self::$who = 'Paolo';
+            }
+
         }
-        else
-        {
-            self::$who = 'Paolo';
-        }
+
+        return self::$who;
+
     }
 
 }

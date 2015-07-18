@@ -8,7 +8,7 @@ class db
 
     const HOST = '127.0.0.1';
 
-    const SCHEMA = 'hermes';
+    const SCHEMA = 'hermes2';
 
     const USER = 'root';
 

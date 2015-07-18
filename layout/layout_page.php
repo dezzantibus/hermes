@@ -12,7 +12,7 @@ abstract class layout_page extends layout
 
         echo
         '<!DOCTYPE html>',
-        '<html lang="en-US">',
+        '<html lang="sq">',
         '<head>',
 
             //<!-- Site title -->

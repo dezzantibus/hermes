@@ -9,9 +9,12 @@
 class layout_sidebar extends layout
 {
 
-    function __construct()
-    {
+    /** @var  data_sidebar */
+    private $data;
 
+    public function __construct( data_sidebar $data )
+    {
+        $this->data = $data;
     }
 
     public function render()

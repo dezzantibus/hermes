@@ -20,6 +20,8 @@ abstract class handler
 
         $result = new data_header();
 
+        $result->category_menu = model_category::getFullList();
+
         return $result;
 
     }

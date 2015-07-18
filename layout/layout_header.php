@@ -4,9 +4,12 @@
 class layout_header extends layout
 {
 
-    public function __construct()
-    {
+    /** @var  data_header */
+    private $data;
 
+    public function __construct( data_header $data )
+    {
+        $this->data = $data;
     }
 
     public function render()
@@ -25,6 +28,7 @@ class layout_header extends layout
 
     }
 
+    /*
     private function top_bar()
     {
 
@@ -109,6 +113,26 @@ class layout_header extends layout
         <?php
 
     }
+    */
+
+    private function top_bar()
+    {
+
+
+
+        //<!-- Top bar -->
+        echo
+        '<div class="top-bar dark">',
+            '<div class="inner-wrapper">';
+
+                google::automatic();
+
+            echo
+            '</div>',
+        '</div>';
+
+
+    }
 
     private function mid_bar()
     {
@@ -135,127 +159,33 @@ class layout_header extends layout
 
     private function low_bar()
     {
-        ?>
 
-        <!-- Primary navigation -->
-        <nav class="primary-menu dark sticky-menu" role="navigation">
-            <div class="inner-wrapper">
+        echo
 
-                <!-- Responsive menu -->
-                <a class="click-to-open-menu"><i class="fa fa-align-justify"></i></a>
+        //<!-- Primary navigation -->
+        '<nav class="primary-menu dark sticky-menu" role="navigation">',
+            '<div class="inner-wrapper">',
 
-                <!-- Main menu -->
-                <ul class="main-menu">
-                    <li><a href="index.html"><span>Home</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home page</a></li>
-                            <li><a href="index_1.html">Home page 1</a></li>
-                            <li><a href="index_2.html"><span>Home page 2</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home page</a></li>
-                                    <li><a href="index_1.html">Home page 1</a></li>
-                                    <li><a href="index_2.html">Home page 2</a></li>
-                                    <li><a href="index_3.html">Home page 3</a></li>
-                                    <li><a href="index_4.html">Home page 4</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="index_3.html">Home page 3</a></li>
-                            <li><a href="index_4.html">Home page 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="mega-menu-full"><a href="#"><span><i class="fa fa-th"></i> Mega menu</span></a>
-                        <ul class="menu-blocks row">
-                            <li class="grid_4">
-                                <ul class="menu-content category-menu">
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Photography</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Magazine</a></li>
-                                    <li><a href="#">Illustration</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Sport</a></li>
-                                </ul>
-                            </li>
-                            <li class="grid_4">
-                                <ul class="menu-content featured-post">
-                                    <li>
-                                        <div class="block-layout-two">
-                                            <div class="main-item">
-                                                <div class="post-img">
-                                                    <a href="#"><img src="/338/250/filler.jpg" alt="Post"/></a>
-                                                    <span><a href="#">Fashion</a></span>
-                                                </div>
-                                                <h3><a href="#">The Homesman rides, The Expendables assemble</a></h3>
-                                                <p class="date">December 13, 2014</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="grid_4">
-                                <ul class="menu-content article-list">
-                                    <li>
-                                        <ul class="recent-posts">
-                                            <li>
-                                                <div class="image">
-                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
-                                                </div>
-                                                <div class="text">
-                                                    <h3><a href="#">Etiam luctus neque vel enim molestie pretium</a></h3>
-                                                    <p class="date">September 16, 2104</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="image">
-                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
-                                                </div>
-                                                <div class="text">
-                                                    <h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>
-                                                    <p class="date">September 16, 2104</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="image">
-                                                    <a href="#"><img src="/80/65/filler.jpg" alt="Post"/></a>
-                                                </div>
-                                                <div class="text">
-                                                    <h3><a href="#">Is Brixton London's next tech hipster hub?</a></h3>
-                                                    <p class="date">September 16, 2104</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="image">
-                                                    <a href="#"><img src="demo/80x65.gif" alt="Post"/></a>
-                                                </div>
-                                                <div class="text">
-                                                    <h3><a href="#">Does your business need to get a grip on marketing?</a></h3>
-                                                    <p class="date">September 16, 2104</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">Culture</a></li>
-                    <li><a href="#">Show</a></li>
-                    <li><a href="#">Lifestyle</a></li>
-                    <li><a href="#">Game</a></li>
-                    <li><a href="#">Fun</a></li>
-                </ul>
-            </div>
-        </nav>
+                //<!-- Responsive menu -->
+                '<a class="click-to-open-menu"><i class="fa fa-align-justify"></i></a>',
 
-        <?php
+                //<!-- Main menu -->
+                '<ul class="main-menu">',
+                    '<li><a href="/">Home</a></li>';
+
+                    /** @var $category data_category */
+                    foreach( $this->data->category_menu->getData() as $category )
+                    {
+
+                        echo '<li><a href="/', $category->routing, '.html">' , $category->name, '</a></li>';
+
+                    }
+
+                    echo
+                '</ul>',
+            '</div>',
+        '</nav>';
+
     }
 
 }

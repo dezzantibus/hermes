@@ -12,10 +12,30 @@ class handler_homepage extends handler
     public function run()
     {
 
-        // Collect data
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData();
+
+        /** @var  $category data_category */
+        $home_categories = model_category::getHomepageList();
+        foreach( $home_categories->getData() as $category )
+        {
+
+            switch( $category->home_block )
+            {
+                case 'layout_homepage_ModuleG3P0': $number = 3; break;
+                case 'layout_homepage_ModuleG2P6': $number = 8; break;
+                case 'layout_homepage_ModuleG2P0': $number = 2; break;
+                case 'layout_homepage_ModuleG1P6': $number = 7; break;
+                default: $number = 0;
+            }
+
+            $category->home_articles = model_article::getHomeCategory( $category->id, $number );
+
+        }
 
         // Render page
-        $page = new layout_homepage_page();
+        $page = new layout_homepage_page( $header, $footer, $sidebar, $home_categories );
         $page->render();
 
     }
