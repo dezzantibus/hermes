@@ -9,22 +9,47 @@
 class layout_category_pagination extends layout
 {
 
-    function __construct()
-    {
+    private $number;
 
+    private $current;
+
+    function __construct($number, $current)
+    {
+        $this->number  = $number;
+        $this->current = $current;
     }
 
     public function render()
     {
-        ?>
-        <ul class="page-numbers">
-            <li><span class="page-numbers current">1</span></li>
-            <li><a class="page-numbers" href="#">2</a></li>
-            <li><a class="page-numbers" href="#">3</a></li>
-            <li><a class="page-numbers" href="#">4</a></li>
-            <li><a class="page-numbers" href="#">Next</a></li>
-        </ul>
-        <?php
+
+        echo '<ul class="page-numbers">';
+
+            if( $this->current > 1 )
+            {
+                echo '<li><a class="page-numbers" href="#">M&euml;parsh&euml;m</a></li>';
+            }
+
+            for( $page=1; $page<=$this->number; $page++ )
+            {
+
+                if( $page == $this->current )
+                {
+                    echo '<li><span class="page-numbers current">', $page, '</span></li>';
+                }
+                else
+                {
+                    echo '<li><a class="page-numbers" href="#">', $page, '</a></li>';
+                }
+
+            }
+
+            if( $this->current != $this->number )
+            {
+                echo '<li><a class="page-numbers" href="#">Vijues</a></li>';
+            }
+
+        echo '</ul>';
+
     }
 
 }

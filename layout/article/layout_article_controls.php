@@ -17,18 +17,19 @@ class layout_article_controls extends layout
 
     public function render()
     {
-        ?>
-        <div class="post-controls">
-            <a href="#" class="prev">
-                <span><i class="fa fa-angle-left"></i></span>
-                <p>Dico splendide eos inulla detraxit ferri interesset sollicitudin neque</p>
-            </a>
-            <a href="#" class="next">
-                <span><i class="fa fa-angle-right"></i></span>
-                <p>Dico splendide eos inulla detraxit ferri interesset sollicitudin neque</p>
-            </a>
-        </div>
-        <?php
+
+        echo
+        '<div class="post-controls">',
+            '<a href="#" class="prev">',
+                '<span><i class="fa fa-angle-left"></i></span>',
+                '<p>Dico splendide eos inulla detraxit ferri interesset sollicitudin neque</p>',
+            '</a>',
+            '<a href="#" class="next">',
+                '<span><i class="fa fa-angle-right"></i></span>',
+                '<p>Dico splendide eos inulla detraxit ferri interesset sollicitudin neque</p>',
+            '</a>',
+        '</div>';
+
     }
 
 }
