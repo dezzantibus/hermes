@@ -17,13 +17,15 @@ class model_article extends model
                 (
                 category_id, journalist_id,
                 title, subtitle, brief,
-                text, hero, homepage
+                text, hero, homepage,
+                image_1, image_2, image_3, image_4
                 )
             VALUES
                 (
                 :category_id, :journalist_id,
                 :title, :subtitle, :brief,
-                :text, :hero, :homepage
+                :text, :hero, :homepage,
+                :image_1, :image_2, :image_3, :image_4
                 )
         ';
 
@@ -37,6 +39,10 @@ class model_article extends model
             ->bindString( ':text',          $data->text )
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
+            ->bindString( ':image_1',       $data->image_1 )
+            ->bindString( ':image_2',       $data->image_2 )
+            ->bindString( ':image_3',       $data->image_3 )
+            ->bindString( ':image_4',       $data->image_4 )
             ->execute();
 
         return db::lastInsertId();
