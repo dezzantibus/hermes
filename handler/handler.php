@@ -24,7 +24,7 @@ abstract class handler
 
         if( empty( $this->category_list ) )
         {
-            $this->category_list = model_category::getFullList()
+            $this->category_list = model_category::getFullList();
         }
 
         $result->category_menu = $this->category_list;
@@ -40,7 +40,7 @@ abstract class handler
 
         if( empty( $this->category_list ) )
         {
-            $this->category_list = model_category::getFullList()
+            $this->category_list = model_category::getFullList();
         }
 
         $result->categories = $this->category_list;
@@ -56,7 +56,7 @@ abstract class handler
 
         if( empty( $this->category_list ) )
         {
-            $this->category_list = model_category::getFullList()
+            $this->category_list = model_category::getFullList();
         }
 
         $result->categories = $this->category_list;
