@@ -26,6 +26,11 @@ class handler_admin_category_edit extends handler
         $categories = model_category::getFullList( 'name' );
 
         // Get category data
+        if( empty( $form_data ) )
+        {
+            // get the category from somewhere.
+            $form_data = new data_category();
+        }
 
         // Render page
         $page = new layout_admin_category_page( $header, $footer, $sidebar, $categories, $form_data );

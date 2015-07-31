@@ -26,6 +26,11 @@ class handler_admin_journalist_edit extends handler
         $categories = model_category::getFullList( 'name' );
 
         // Get journalist data
+        if( empty( $form_data ) )
+        {
+            // get the journalist from somewhere.
+            $form_data = new data_journalist();
+        }
 
         // Render page
         $page = new layout_admin_journalist_page( $header, $footer, $sidebar, $categories, $form_data );

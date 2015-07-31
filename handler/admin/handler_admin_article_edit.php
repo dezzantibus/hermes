@@ -26,6 +26,11 @@ class handler_admin_article_edit extends handler
         $categories = model_category::getFullList( 'name' );
 
         // Get article data
+        if( empty( $form_data ) )
+        {
+            // get the article from somewhere.
+            $form_data = new data_article();
+        }
 
         // Render page
         $page = new layout_admin_article_page( $header, $footer, $sidebar, $categories, $form_data );
