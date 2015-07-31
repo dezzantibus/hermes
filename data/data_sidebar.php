@@ -11,14 +11,22 @@ class data_sidebar extends data
 
     public $banner;
 
+    /** @var  data_array */
     public $popular_articles;
 
+    /** @var  data_array */
     public $recent_articles;
 
+    /** @var  data_array */
     public $recent_comments;
 
+    /** @var  data_array */
     public $archive;
 
+    /** @var  data_array */
     public $tags;
+
+    /** @var  data_array */
+    public $categories;
 
 }

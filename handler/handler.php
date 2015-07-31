@@ -5,6 +5,8 @@ abstract class handler
 
     protected $data;
 
+    protected $category_list;
+
     function __construct()
     {
         $this->data = $_GET;
@@ -20,7 +22,12 @@ abstract class handler
 
         $result = new data_header();
 
-        $result->category_menu = model_category::getFullList();
+        if( empty( $this->category_list ) )
+        {
+            $this->category_list = model_category::getFullList()
+        }
+
+        $result->category_menu = $this->category_list;
 
         return $result;
 
@@ -31,6 +38,13 @@ abstract class handler
 
         $result = new data_footer();
 
+        if( empty( $this->category_list ) )
+        {
+            $this->category_list = model_category::getFullList()
+        }
+
+        $result->categories = $this->category_list;
+
         return $result;
 
     }
@@ -39,6 +53,13 @@ abstract class handler
     {
 
         $result = new data_sidebar();
+
+        if( empty( $this->category_list ) )
+        {
+            $this->category_list = model_category::getFullList()
+        }
+
+        $result->categories = $this->category_list;
 
         return $result;
 

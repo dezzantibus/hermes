@@ -18,7 +18,7 @@ class layout_header extends layout
 
         echo '<header id="header" class="dark" role="banner">';
 
-            $this->top_bar();
+            //$this->top_bar();
 
             $this->mid_bar();
 
@@ -136,25 +136,25 @@ class layout_header extends layout
 
     private function mid_bar()
     {
-        ?>
-        <div class="inner-wrapper row">
 
-            <!-- Logo -->
-            <div id="logo">
-                <h1 id="site-logo"><a href="index.html">Dialy<span>Magazine</span></a></h1>
-                <h2 id="site-description">Premium HTML5 Magazine Theme</h2>
-            </div>
+        echo
+        '<div class="inner-wrapper row">',
 
-            <!-- Ad banner -->
-            <div class="ad-banner-728x90">
-                <a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="/728/90/filler.jpg" alt="Banner"/></a>
+            //<!-- Logo -->
+            '<div id="logo">',
+                '<h1 id="site-logo"><a href="index.html">Dialy<span>Magazine</span></a></h1>',
+                '<h2 id="site-description">Premium HTML5 Magazine Theme</h2>',
+            '</div>',
 
-            </div>
+            //<!-- Ad banner -->
+            '<div class="ad-banner-728x90">';
+                google::automatic();
+                //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="/728/90/filler.jpg" alt="Banner"/></a>',
+            echo
+            '</div>',
 
-        </div>
+        '</div>';
 
-
-        <?php
     }
 
     private function low_bar()

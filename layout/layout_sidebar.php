@@ -324,7 +324,7 @@ class layout_sidebar extends layout
                 '<div><a href="#">music</a><span>63</span></div>',
                 '<div><a href="#">technology</a><span>1</span></div>',
             '</div>',
-        '</div>',
+        '</div>';
 
     }
 
