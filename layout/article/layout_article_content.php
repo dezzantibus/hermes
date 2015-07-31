@@ -36,12 +36,12 @@ class layout_article_content extends layout
                 </blockquote>
                 <p>Aliquam justo mi, lobortis posuere lacus ut, ultricies feugiat nulla. Nulla vestibulum lacinia sollicitudin. Quisque ultricies semper congue. Aenean nec odio ante. Etiam rutrum hendrerit nulla, et accumsan justo dapibus ac. Duis varius sit amet sapien vitae ultricies. Nulla cursus dolor et justo pulvinar mattis. Vestibulum diam nisl, vulputate vitae blandit tristique, feugiat vitae libero. Etiam in tellus vitae purus posuere vestibulum a sed nunc. Integer ultrices magna nec viverra lobortis. Donec viverra sed elit in tempor. Duis lacus libero, mollis vitae pellentesque a, elementum quis mauris. Nullam non elit sed diam varius convallis et nec felis. Maecenas nec ultrices sapien, ut pretium erat. Curabitur iaculis in quam in vulputate. Fusce non urna purus.</p>
                 <h4>Sample code</h4>
-<pre>
-.class-name {
-    display: block;
-    position: relative;
-    color: #333;
-}</pre>
+                <pre>
+                .class-name {
+                    display: block;
+                    position: relative;
+                    color: #333;
+                }</pre>
                 <p>Nam bibendum ante ipsum, vitae ullamcorper risus accumsan et. Proin at metus elementum justo adipiscing scelerisque eu quis lacus. Nunc eleifend tellus at viverra interdum. Mauris blandit magna non felis fringilla viverra. Pellentesque dui nisi, ultrices id facilisis et, consectetur a orci. Proin viverra massa sed erat pulvinar eleifend. Nullam eleifend tortor at diam facilisis, pharetra pharetra justo sagittis. Nulla quis leo eget nulla cursus porta. Aliquam justo mi, lobortis posuere lacus ut, ultricies feugiat nulla. Nulla vestibulum lacinia sollicitudin. Quisque ultricies semper congue. Aenean nec odio ante. Etiam rutrum hendrerit nulla, et accumsan justo dapibus ac. Duis varius sit amet sapien vitae ultricies. Nulla cursus dolor et justo pulvinar mattis. Vestibulum diam nisl, vulputate vitae blandit tristique, feugiat vitae libero. Etiam in tellus vitae purus posuere vestibulum a sed nunc. Integer ultrices magna nec viverra lobortis. Donec viverra sed elit in tempor. Duis lacus libero, mollis vitae pellentesque a, elementum quis mauris. Nullam non elit sed diam varius convallis et nec felis. Maecenas nec ultrices sapien, ut pretium erat. Curabitur iaculis in quam in vulputate. Fusce non urna purus.</p>
             </div>
             <!-- Post info -->
