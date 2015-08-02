@@ -41,21 +41,16 @@ class action_admin_article extends action
 
     }
 
-    private function failure()
+    private function failure( data_article $article )
     {
-
-        /** @TODO collect data to display the form */
-
-        $page = new layout_admin_article_page();
-        $page->render();
-
+        $handler = new handler_admin_article_edit();
+        $handler->run( $article );
     }
 
     private function success()
     {
-
-        /** @TODO show list of articles in admin */
-
+        $handler = new handler_admin_article_list();
+        $handler->run();
     }
 
 }
