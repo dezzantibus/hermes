@@ -6,10 +6,10 @@
  * Time: 15:20
  */
 
-class handler_admin_article_list extends handler
+class handler_admin extends handler
 {
 
-    public function run()
+    public function run( $form_data=null )
     {
 
         $header  = $this->getHeaderData();
@@ -20,11 +20,10 @@ class handler_admin_article_list extends handler
 
         $categories = model_category::getFullList( 'name' );
 
-        // Get list of articles
-        
+        // Get article data
 
         // Render page
-        $page = new layout_admin_article_list_page( $header, $footer, $sidebar, $categories );
+        $page = new layout_admin_page( $header, $footer, $sidebar );
         $page->render();
 
     }

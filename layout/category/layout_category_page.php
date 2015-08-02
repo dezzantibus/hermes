@@ -5,9 +5,11 @@ class layout_category_page extends layout_page
 
     public function __construct
     (
-        data_header  $header,
-        data_footer  $footer,
-        data_sidebar $sidebar
+        data_header   $header,
+        data_footer   $footer,
+        data_sidebar  $sidebar,
+        data_category $category,
+        data_array    $articles
     )
     {
 
