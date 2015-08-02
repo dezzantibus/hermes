@@ -16,7 +16,7 @@ class layout_header extends layout
     {
 
 
-        echo '<header id="header" class="dark" role="banner">';
+        echo '<header id="header" class="light" role="banner">';
 
             //$this->top_bar();
 
@@ -122,7 +122,7 @@ class layout_header extends layout
 
         //<!-- Top bar -->
         echo
-        '<div class="top-bar dark">',
+        '<div class="top-bar light">',
             '<div class="inner-wrapper">';
 
                 google::automatic();
@@ -163,7 +163,7 @@ class layout_header extends layout
         echo
 
         //<!-- Primary navigation -->
-        '<nav class="primary-menu dark sticky-menu" role="navigation">',
+        '<nav class="primary-menu light sticky-menu" role="navigation">',
             '<div class="inner-wrapper">',
 
                 //<!-- Responsive menu -->

@@ -34,7 +34,7 @@ class layout_basic_button_link extends layout
 
             if( $label == 'class' )
             {
-                echo ' ', $label, '="btn btn-large ', $value, '"';
+                echo ' ', $label, '="btn ', $value, '"';
                 $class = true;
             }
             else

@@ -18,13 +18,11 @@ class handler_admin_article_list extends handler
 
         $this->login( $header, $footer, $sidebar );
 
-        $categories = model_category::getFullList( 'name' );
-
         // Get list of articles
-        
+        $articles = model_article::getLastNumber( 50 );
 
         // Render page
-        $page = new layout_admin_article_list_page( $header, $footer, $sidebar, $categories );
+        $page = new layout_admin_article_list_page( $header, $footer, $sidebar, $articles );
         $page->render();
 
     }

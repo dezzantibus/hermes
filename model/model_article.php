@@ -114,6 +114,24 @@ class model_article extends model
 
     }
 
+    static public function getLastNumber( $limit, $category=null )
+    {
+
+        $sql = 'SELECT * FROM article ORDER BY id DESC LIMIT :limit';
+
+        $query = db::prepare( $sql );
+        $query->bindInt( ':limit', $limit )->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $result->add( new data_article( $row ) );
+        }
+
+        return $result;
+
+    }
+
     static public function getByRouting( $routing, $parent )
     {
 

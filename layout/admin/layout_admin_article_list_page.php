@@ -1,13 +1,14 @@
 <?php
 
-class layout_admin_page extends layout_page
+class layout_admin_article_list_page extends layout_page
 {
 
     public function __construct
     (
         data_header  $header,
         data_footer  $footer,
-        data_sidebar $sidebar
+        data_sidebar $sidebar,
+        data_array   $articles
     )
     {
 
@@ -26,18 +27,25 @@ class layout_admin_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-
         $params = array(
-            'href'  => '/admin/article/list',
+            'href'  => '/admin/article/new.form',
             'class' => 'btn-large',
         );
-        $main->addChild( new layout_basic_button_link( 'Articoli', $params ) );
+        $main->addChild( new layout_basic_button_link( 'Inserisci nuovo', $params ) );
 
-        $params = array(
-            'href'  => '/admin/journalist/list',
-            'class' => 'btn-large',
-        );
-        $main->addChild( new layout_basic_button_link( 'Giornalisti', $params ) );
+
+        /** @var $article data_article */
+        foreach( $articles->getData() as $article )
+        {
+            $main->addChild( new layout_admin_listcell( '/admin/article/edit.form?id=' . $article->id, $article->title ) );
+
+        }
+
+
+
+
+
+
 
 
 

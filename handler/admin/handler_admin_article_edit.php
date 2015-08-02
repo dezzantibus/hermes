@@ -16,12 +16,7 @@ class handler_admin_article_edit extends handler
         $footer  = $this->getFooterData();
         $sidebar = $this->getSidebarData();
 
-        if( empty( $_SESSION['journalist'] ) )
-        {
-            $page = new layout_admin_login_page( $header, $footer, $sidebar );
-            $page->render();
-            die();
-        }
+        $this->login( $header, $footer, $sidebar );
 
         $categories = model_category::getFullList( 'name' );
 
@@ -29,7 +24,7 @@ class handler_admin_article_edit extends handler
         if( empty( $form_data ) )
         {
             // get the article from somewhere.
-            $form_data = new data_article();
+            $form_data = model_article::getById( $_GET['id'] );
         }
 
         // Render page
