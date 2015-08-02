@@ -179,6 +179,11 @@ class layout_sidebar extends layout
     private function recentComments()
     {
 
+        if( !$this->data->recent_comments instanceof data_array )
+        {
+            return false;
+        }
+
         //<!-- Recent comments -->
         echo
         '<div class="widget">',
@@ -202,6 +207,11 @@ class layout_sidebar extends layout
 
     private function recentPosts()
     {
+
+        if( !$this->data->recent_articles instanceof data_array )
+        {
+            return false;
+        }
 
         //<!-- Recent posts -->
         echo
