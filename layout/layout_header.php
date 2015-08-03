@@ -177,7 +177,10 @@ class layout_header extends layout
                     foreach( $this->data->category_menu->getData() as $category )
                     {
 
-                        echo '<li><a href="/', $category->routing, '.html">' , $category->name, '</a></li>';
+                        echo
+                        '<li style="border-bottom:1px solid ', $category->colour, '">',
+                            '<a style="color:', $category->colour, '" href="/', $category->routing, '.html">' , $category->name, '</a>',
+                        '</li>';
 
                     }
 
