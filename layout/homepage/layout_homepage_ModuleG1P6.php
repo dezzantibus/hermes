@@ -14,39 +14,27 @@ class layout_homepage_ModuleG1P6 extends layout
 
     function __construct( data_category $list )
     {
-
         $this->list = $list;
-
-        /** @TODO delete this filler */
-        $this->list->home_articles = new data_array();
-
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-
     }
 
     public function render()
     {
 
+        /** @var $main data_article */
         $main = $this->list->home_articles->first();
 
         echo
         '<div class="block-layout-three row">',
             '<div class="grid_12">',
-                '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>',
+                '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>',
                 '<div class="main-item">',
                     '<div class="post-img">',
-                        '<a href="#"><img src="/demo/422x260.gif" alt="Post"/></a>',
+                        '<a href="', $main->getLink(), '"><img src="/demo/422x260.gif" alt="Post"/></a>',
                         '<span><a href="#">Travel</a></span>',
                     '</div>',
-                    '<h3><a href="#">Travel news roundup: Wales, eco-luxury in the Galapagos …</a></h3>',
+                    '<h3><a href="', $main->getLink(), '">', $main->title, '</a></h3>',
                     '<div class="post-dca">',
-                        '<span class="date">June 8, 2014</span>',
+                        '<span class="date">', data_article::dateForDisplay( $main->created ), '</span>',
                         '<span class="comments"><a href="#">23 Comments</a></span>',
                         '<ul class="rating-list">',
                             '<li>',
@@ -56,18 +44,19 @@ class layout_homepage_ModuleG1P6 extends layout
                             '</li>',
                         '</ul>',
                     '</div>',
-                    '<p>Donec nibh urna, mattis nec lacinia egestas, volutpat quis risus. Morbi sagittis blandit cursus. Morbi in velit dui. Suspendisse aliquam porttitor tortor at tempus. Ut gravida, eros a porttitor ornare, quam mauris dignissim nisl, ac eleifend metus erat dignissim felis.</p>',
+                    '<p>', $main->brief, '</p>',
                 '</div>',
                 '<div class="small-items">';
 
+                    /** @var $article data_article  */
                     foreach( $this->list->home_articles->getData() as $article )
                     {
                         echo
                         '<div class="item">',
-                            '<a href="#"><img src="/demo/80x65.gif" alt="Post"/></a>',
+                            '<a href="', $article->getLink(), '"><img src="/demo/80x65.gif" alt="Post"/></a>',
                             '<div>',
-                                '<h3><a href="#">Ut gravida, eros a porttitor ornare, quam mauris dignissim nisl ac eleifend metus erat</a></h3>',
-                                '<p class="date">December 13, 2014</p>',
+                                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                                '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                             '</div>',
                         '</div>';
                     }

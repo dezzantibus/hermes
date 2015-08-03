@@ -8,13 +8,14 @@ class layout_homepage_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_array   $home_categories
+        data_array   $home_categories,
+        data_array   $hero_articles
     )
     {
 
         $this->addChild( new layout_header( $header ) );
 
-        $this->addChild( new layout_homepage_hero( new data_array ) );
+        $this->addChild( new layout_homepage_hero( $hero_articles ) );
 
         $params  = array( 'id' => 'section' );
         $section = $this->addChild( new layout_basic_section( $params ) );
@@ -37,10 +38,6 @@ class layout_homepage_page extends layout_page
             $type = $category->home_block;
             $main->addChild( new $type( $category ) );
         }
-//        $main->addChild( new layout_homepage_ModuleG1P6( new data_array ) );
-//        $main->addChild( new layout_homepage_ModuleG2P6( new data_array ) );
-//        $main->addChild( new layout_homepage_ModuleG3P0( new data_array ) );
-//        $main->addChild( new layout_homepage_ModuleG2P0( new data_array ) );
 
         // end categories
 

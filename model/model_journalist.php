@@ -79,7 +79,7 @@ class model_journalist extends model
 
         $row = $query->fetch();
 
-        return new data_comment( $row );
+        return new data_journalist( $row );
 
     }
 

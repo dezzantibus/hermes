@@ -18,7 +18,8 @@ class action_admin_article extends action
 
         if( empty( $article->id ) )
         {
-            $article->id = model_article::create( $article );
+            $article->routing = data_article::clean_for_url( $article->title );
+            $article->id      = model_article::create( $article );
         }
         else
         {

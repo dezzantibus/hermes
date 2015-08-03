@@ -30,7 +30,7 @@ class layout_homepage_ModuleG2P0 extends layout
 
         echo
         '<div class="block-layout-five">',
-            '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>';
+            '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>';
 
             foreach( $this->list->home_articles->getData() as $article )
             {

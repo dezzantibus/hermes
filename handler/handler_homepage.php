@@ -34,8 +34,10 @@ class handler_homepage extends handler
 
         }
 
+        $hero_articles = model_article::getHero();
+
         // Render page
-        $page = new layout_homepage_page( $header, $footer, $sidebar, $home_categories );
+        $page = new layout_homepage_page( $header, $footer, $sidebar, $home_categories, $hero_articles );
         $page->render();
 
     }

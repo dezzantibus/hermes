@@ -73,4 +73,9 @@ class data_article extends data
 
     }
 
+    public function getLink()
+    {
+        return '/' . $this->category->routing . '/' . $this->routing . '.html';
+    }
+
 }

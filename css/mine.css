@@ -4,3 +4,7 @@
     padding: 3px;
     line-height: 1.5em;
 }
+
+ul.main-menu a{
+    padding:15px;
+}

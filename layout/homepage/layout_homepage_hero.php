@@ -18,14 +18,6 @@ class layout_homepage_hero extends layout
 
         $this->large = $list;
 
-        $this->large = new data_array();
-        $this->large->add( 'filler' );
-        $this->large->add( 'filler' );
-        $this->large->add( 'filler' );
-        $this->large->add( 'filler' );
-        $this->large->add( 'filler' );
-        $this->large->add( 'filler' );
-
         $this->small = new data_array();
         $this->small->add( $this->large->last() );
         $this->small->add( $this->large->last() );
@@ -45,15 +37,16 @@ class layout_homepage_hero extends layout
                 '<div class="flexslider">',
                     '<ul class="slides">';
 
+                        /** @var $article data_article */
                         foreach( $this->large->getData() as $article )
                         {
                             echo
                             '<li>',
-                                '<img src="demo/785x505.gif" alt="Image" />',
+                                '<img src="demo/785x500.gif" alt="Image" />',
                                 '<div class="post-box-text">',
-                                    '<span><a href="#">Culture</a></span>',
-                                    '<h3><a href="#">Amazon and Snapchat rank low for protecting user data from government</a></h3>',
-                                    '<p>July 18, 2014</p>',
+                                    '<span><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                                    '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                                    '<p>', data_article::dateForDisplay( $article->created ), '</p>',
                                 '</div>',
                             '</li>';
 
@@ -67,15 +60,16 @@ class layout_homepage_hero extends layout
                 //<!-- Block with 2 posts -->
                 '<div class="block-with-two-posts">';
 
+                    /** @var $article data_article */
                     foreach( $this->small->getData() as $article )
                     {
                         echo
                         '<div class="post-block">',
-                            '<a href="#"><img src="/390/250/filler.jpg" alt="Post"/></a>',
+                            '<a href="', $article->getLink(), '"><img src="/390/250/filler.jpg" alt="Post"/></a>',
                             '<div class="post-box-text">',
-                                '<span><a href="#">Culture</a></span>',
-                                '<h3><a href="#">Britain\'s Got Talent: will Piers Morgan return to replace David Walliams?</a></h3>',
-                                '<p>December 9, 2014</p>',
+                                '<span><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                                '<p>', data_article::dateForDisplay( $article->created ), '</p>',
                             '</div>',
                         '</div>';
                     }

@@ -14,21 +14,7 @@ class layout_homepage_ModuleG2P6 extends layout
 
     function __construct( data_category $list )
     {
-
         $this->list = $list;
-
-        /** @TODO delete this filler */
-        $this->list->home_articles = new data_array();
-
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-        $this->list->home_articles->add( new data_article() );
-
     }
 
     public function render()
@@ -36,7 +22,7 @@ class layout_homepage_ModuleG2P6 extends layout
 
         echo
         '<div class="block-layout-two row">',
-            '<p class="title"><span><strong>', $this->list->name, '</strong></span></p>',
+            '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>',
             '<div class="grid_6">';
 
                 $this->large( $this->list->home_articles->getIndex( 0 ) );
@@ -67,12 +53,12 @@ class layout_homepage_ModuleG2P6 extends layout
         echo
         '<div class="main-item">',
             '<div class="post-img">',
-                '<a href="#"><img src="demo/422x260.gif" alt="Post"/></a>',
+                '<a href="', $article->getLink(), '"><img src="demo/422x260.gif" alt="Post"/></a>',
                 '<span><a href="#">Fashion</a></span>',
             '</div>',
-            '<h3><a href="#">The Homesman rides, The Expendables assemble</a></h3>',
+            '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
             '<div class="post-dca">',
-                '<span class="date">June 8, 2014</span>',
+                '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>',
                 '<span class="comments"><a href="#">23 Comments</a></span>',
                 '<span class="author"><a href="#">John Doe</a></span>',
                 '<ul class="rating-list">',
@@ -83,7 +69,7 @@ class layout_homepage_ModuleG2P6 extends layout
                     '</li>',
                 '</ul>',
             '</div>',
-            '<p>Adipisicing nam cras consequat ipsum. Donec excepteur aptent incididunt class. Congue natoque varius bibendum primis. Maecenas fermentum integer eleifend feugiat nisi. Ac nostrud porta …</p>',
+            '<p>', $article->brief, '</p>',
         '</div>';
 
     }
@@ -93,10 +79,10 @@ class layout_homepage_ModuleG2P6 extends layout
 
         echo
         '<div class="item">',
-            '<a href="#"><img src="demo/80x65.gif" alt="Post"/></a>',
+            '<a href="', $article->getLink(), '"><img src="demo/80x65.gif" alt="Post"/></a>',
             '<div>',
-                '<h3><a href="#">Thinking of buying dungarees? Just don\'t expect them to transform you into Alexa Chung</a></h3>',
-                '<p class="date">December 13, 2014</p>',
+                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
             '</div>',
         '</div>';
 

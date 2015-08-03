@@ -21,7 +21,7 @@ abstract class data
         return base_convert( $id, 36, 10 );
     }
 
-    protected static function clean_for_url( $string )
+    public static function clean_for_url( $string )
     {
 
         $search  = array( ' ', '&', '%', '?', '$', '+' );
@@ -31,7 +31,7 @@ abstract class data
 
     }
 	
-	protected static function dateForDisplay( $in )
+	public static function dateForDisplay( $in )
 	{
 		return date( 'jS F, Y', strtotime( $in ) );
 	}
