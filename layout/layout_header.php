@@ -171,15 +171,15 @@ class layout_header extends layout
 
                 //<!-- Main menu -->
                 '<ul class="main-menu">',
-                    '<li><a href="/">Home</a></li>';
+                    '<li><a style="border-bottom:2px solid #0000" href="/">Home</a></li>';
 
                     /** @var $category data_category */
                     foreach( $this->data->category_menu->getData() as $category )
                     {
 
                         echo
-                        '<li style="border-bottom:1px solid ', $category->colour, '">',
-                            '<a style="color:', $category->colour, '" href="/', $category->routing, '.html">' , $category->name, '</a>',
+                        '<li>',
+                            '<a style="border-bottom:2px solid ', $category->colour, ';color:', $category->colour, '" href="/', $category->routing, '.html">' , $category->name, '</a>',
                         '</li>';
 
                     }
