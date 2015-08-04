@@ -40,13 +40,13 @@ class layout_homepage_ModuleG3P0 extends layout
                 '<div class="grid_4">',
                     '<div class="main-item">',
                         '<div class="post-img">',
-                            '<a href="#"><img src="demo/276x200.gif" alt="Post"/></a>',
-                            '<span><a href="#">Money</a></span>',
+                            '<a href="', $article->getLink(), '"><img src="demo/276x200.gif" alt="Post"/></a>',
+                            //'<span><a href="#">Money</a></span>',
                         '</div>',
-                        '<h3><a href="#">Can you afford a £1,000 bill for your child\'s prom?</a></h3>',
-                        '<p class="date">December 13, 2014</p>',
+                        '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                        '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                     '</div>',
-                    '<p>Donec nibh urna, mattis nec lacinia egestas, volutpat quis risus. Morbi sagittis blandit cursus. Morbi in velit dui. Suspendisse aliquam porttitor tortor at tempus. Ut gravida, eros a porttitor ornare, quam mauris dignissim nisl, ac eleifend metus erat dignissim felis. Donec nibh urna, mattis nec lacinia egestas, volutpat quis risus</p>',
+                    '<p>', $article->brief, '</p>',
                 '</div>';
 
             }
