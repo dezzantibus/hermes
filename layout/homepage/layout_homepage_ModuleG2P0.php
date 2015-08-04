@@ -14,15 +14,7 @@ class layout_homepage_ModuleG2P0 extends layout
 
     function __construct( data_category $list )
     {
-
         $this->list = $list;
-
-        /** @TODO delete this filler */
-        $this->list->home_articles = new data_array();
-
-        $this->list->home_articles->add( 'filler' );
-        $this->list->home_articles->add( 'filler' );
-
     }
 
     public function render()
