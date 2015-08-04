@@ -9,4 +9,6 @@ class constant
 
     const WEEK_IN_SECONDS = 604800;
 
+    const ARTICLES_PER_PAGE = 20;
+
 }

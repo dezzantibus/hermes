@@ -25,6 +25,8 @@ class data_category extends data
 
     public $home_articles;
 
+    public $pinned_articles;
+
     public $colour;
 
     function __construct( $data=null )
