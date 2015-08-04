@@ -17,14 +17,14 @@ class model_article extends model
                 (
                 category_id, journalist_id, routing,
                 title, subtitle, brief,
-                text, hero, homepage,
+                text, hero, homepage, pinned,
                 image_1, image_2, image_3, image_4
                 )
             VALUES
                 (
                 :category_id, :journalist_id, :routing,
                 :title, :subtitle, :brief,
-                :text, :hero, :homepage,
+                :text, :hero, :homepage, :pinned,
                 :image_1, :image_2, :image_3, :image_4
                 )
         ';
@@ -40,6 +40,7 @@ class model_article extends model
             ->bindString( ':text',          htmlentities( $data->text ) )
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
+            ->bindInt   ( ':pinned',        $data->pinned )
             ->bindString( ':image_1',       $data->image_1 )
             ->bindString( ':image_2',       $data->image_2 )
             ->bindString( ':image_3',       $data->image_3 )
@@ -67,8 +68,9 @@ class model_article extends model
                 image_2       = :image_2,
                 image_3       = :image_3,
                 image_4       = :image_4,
-                hero = :hero,
-                homepage = :homepage
+                hero          = :hero,
+                homepage      = :homepage,
+                pinned        = :pinned
             WHERE id = :id
         ';
 
@@ -88,6 +90,7 @@ class model_article extends model
             ->bindString( ':image_4',       $data->image_4 )
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
+            ->bindInt   ( ':pinned',        $data->pinned )
             ->bindInt   ( ':id',            $data->id )
             ->execute();
 

@@ -79,6 +79,8 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_radio( 'homepage', 'Homepage', $radio_data, $article->homepage ) );
 
+        $form->addChild( new layout_form_radio( 'pinned', 'R&euml;nd&euml;sish&euml;m', $radio_data, $article->pinned ) );
+
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
         $this->addChild( new layout_footer( $footer ) );

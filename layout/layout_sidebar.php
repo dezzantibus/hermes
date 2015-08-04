@@ -71,8 +71,10 @@ class layout_sidebar extends layout
         echo
         '<div class="widget">',
             '<h3 class="widget-title">Reklam&euml;</h3>',
-            '<div class="ad-banner-300x250">',
-                '<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
+            '<div class="ad-banner-300x250">';
+                google::automatic();
+                //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
+            echo
             '</div>',
         '</div>';
 
