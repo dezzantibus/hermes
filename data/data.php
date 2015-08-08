@@ -38,7 +38,7 @@ abstract class data
 
     private static function translateDate( $in )
     {
-        return $in
+        return $in;
     }
 
 }
