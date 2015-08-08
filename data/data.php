@@ -33,7 +33,12 @@ abstract class data
 	
 	public static function dateForDisplay( $in )
 	{
-		return date( 'jS F, Y', strtotime( $in ) );
+		return self::translateDate( date( 'jS F, Y', strtotime( $in ) ) );
 	}
+
+    private static function translateDate( $in )
+    {
+        return $in
+    }
 
 }

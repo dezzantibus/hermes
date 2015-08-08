@@ -18,7 +18,14 @@ class handler_category extends handler
 
         $category = model_category::getByRouting( $this->data['routing'] );
 
-        $articles = model_article::getCategoryPage( $category->id, $this->data['page'] );
+        if( empty( $this->data['page'] ) )
+        {
+            $articles = model_article::getCategoryPage( $category, 1 );
+        }
+        else
+        {
+            $articles = model_article::getCategoryPage( $category, $this->data['page'] );
+        }
 
         if( $this->data['page'] > 1 )
         {

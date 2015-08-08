@@ -9,9 +9,11 @@
 class layout_category_title extends layout
 {
 
-    function __construct()
-    {
+    private $category;
 
+    function __construct( data_category $category )
+    {
+        $this->category = $category;
     }
 
     public function render()
@@ -20,7 +22,7 @@ class layout_category_title extends layout
         echo
         '<div id="above-the-fold" class="above-the-fold">',
             '<div class="inner-wrapper">',
-                '<h2 class="page-title">Travel</h2>',
+                '<h2 class="page-title" style="color:', $this->category->colour, '">', $this->category->name, '</h2>',
             '</div>',
         '</div>';
 

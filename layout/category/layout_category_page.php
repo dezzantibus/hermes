@@ -16,7 +16,7 @@ class layout_category_page extends layout_page
 
         $this->addChild( new layout_header( $header ) );
 
-        $this->addChild( new layout_category_title() );
+        $this->addChild( new layout_category_title( $category ) );
 
         $params  = array( 'id' => 'section' );
         $section = $this->addChild( new layout_basic_section( $params ) );
