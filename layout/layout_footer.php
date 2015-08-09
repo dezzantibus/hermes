@@ -26,11 +26,11 @@ class layout_footer extends layout
 
                 $this->about();
 
-                $this->recentComments();
-
-                $this->recentPosts();
-
-                $this->categories();
+//                $this->recentComments();
+//
+//                $this->recentPosts();
+//
+//                $this->categories();
 
             echo
             '</div>',

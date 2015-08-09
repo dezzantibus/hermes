@@ -42,9 +42,9 @@ class layout_homepage_hero extends layout
                         {
                             echo
                             '<li>',
-                                '<img src="demo/785x500.gif" alt="Image" />',
+                                '<img src="', empty( $article->image_1 ) ? 'demo/785x505.gif' : '/785/505' . $article->image_1, '" alt="Image" />',
                                 '<div class="post-box-text">',
-                                    '<span><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                                    '<span style="background-color:', $article->category->colour, '"><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
                                     '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                                     '<p>', data_article::dateForDisplay( $article->created ), '</p>',
                                 '</div>',
@@ -65,9 +65,9 @@ class layout_homepage_hero extends layout
                     {
                         echo
                         '<div class="post-block">',
-                            '<a href="', $article->getLink(), '"><img src="/390/250/filler.jpg" alt="Post"/></a>',
+                            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/390x250.gif' : '/390/250' . $article->image_1, '" alt="Post"/></a>',
                             '<div class="post-box-text">',
-                                '<span><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                                '<span style="background-color:', $article->category->colour, '"><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
                                 '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                                 '<p>', data_article::dateForDisplay( $article->created ), '</p>',
                             '</div>',
