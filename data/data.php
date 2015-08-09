@@ -33,12 +33,27 @@ abstract class data
 	
 	public static function dateForDisplay( $in )
 	{
-		return self::translateDate( date( 'jS F, Y', strtotime( $in ) ) );
+		return self::translateDate( date( 'D j M, Y', strtotime( $in ) ) );
 	}
 
     private static function translateDate( $in )
     {
-        return $in;
+
+        $search = array(
+            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',
+
+            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+        );
+
+        $replace = array(
+            'e Hënë', 'e Martë', 'e Mërkurë', 'e Enjte', 'e Premte', 'e Shtunë', 'e Diel',
+
+            'Janar', 'Shkurt', 'Mars', 'Prill', 'Maj', 'Qershor',
+            'Korrik', 'Gusht', 'Shtator', 'Tetor', 'Nëntor', 'Dhjetor',
+        );
+
+        return str_replace( $search, $replace, $in );
     }
 
 }
