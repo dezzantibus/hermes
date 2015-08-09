@@ -15,6 +15,7 @@ class layout_header extends layout
     public function render()
     {
 
+        $this->cookies();
 
         echo '<header id="header" class="light" role="banner">';
 
@@ -114,6 +115,27 @@ class layout_header extends layout
 
     }
     */
+
+    private function cookies()
+    {
+
+        echo
+        '<script src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.1.0.2.min.js"></script>',
+        '<script type="text/javascript">',
+            'window.cookieconsent_options = {',
+                '"message":',
+                    '"Ne jemi duke përdorur cookies për të ju japin përvojën më të mirë në faqen tonë. Cookies janë fotografi të ',
+                    'depozituara në shfletuesin tuaj dhe janë përdorur nga shumica e faqet e internetit për të ndihmuar të ',
+                    'personalizoni përvojën tuaj web. <br><br>',
+                    'Duke vazhduar për të përdorur faqen tonë të internetit pa ndryshuar cilësimet, ju jeni duke rënë dakord për përdorimin e cookies.",',
+                '"dismiss":"Un&euml; kam kuptuar",',
+                '"learnMore":"More info",',
+                '"link":null,',
+                '"theme":"dark-top"',
+            '};',
+        '</script>';
+
+    }
 
     private function top_bar()
     {
