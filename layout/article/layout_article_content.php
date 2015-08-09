@@ -35,7 +35,7 @@ class layout_article_content extends layout
 
             echo
             '<h1 class="post-title">', $this->article->title, '</h1>',
-            '<h3 class="lead">', $this->article->brief, '</h3>',
+            '<h3 class="lead">', $this->article->subtitle, '</h3>',
 
 //            '<div class="post-meta">',
 //                '<span class="author">Author <a href="#">John Doe</a></span>',
