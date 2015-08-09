@@ -21,6 +21,8 @@ class handler_article extends handler
             $this->data['parent']
         );
 
+        model_hit::log( $article );
+
         // Render page
         $page = new layout_article_page( $header, $footer, $sidebar, $article );
         $page->render();

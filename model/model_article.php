@@ -274,4 +274,57 @@ class model_article extends model
 
     }
 
+    static public function getPopular( $category_id=null, $days=7, $limit=6 )
+    {
+
+        if( empty( $category_id ) )
+        {
+            $sql = '
+                SELECT article.*, count(hit.id) AS hits
+                FROM article
+                    INNER JOIN hit
+                        ON hit.article_id = article.id
+                WHERE hit.created > NOW() - INTERVAL :days DAY
+                GROUP BY hit.article_id
+                ORDER BY hits DESC
+                LIMIT :limit
+            ';
+        }
+        else
+        {
+            $sql = '
+                SELECT article.*, count(hit.id) AS hits
+                FROM article
+                    INNER JOIN hit
+                        ON hit.article_id = article.id
+                WHERE hit.created > NOW() - INTERVAL :days DAY
+                    AND article.category_id = :category_id
+                GROUP BY hit.article_id
+                ORDER BY hits DESC
+                LIMIT :limit
+            ';
+        }
+
+        $query = db::prepare( $sql )
+            ->bindInt( ':days',  $days )
+            ->bindInt( ':limit', $limit );
+
+        if( !empty( $category_id ) )
+        {
+            $query->bindInt( ':category_id',  $category_id );
+        }
+
+        $query->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $category = model_category::getById( $row['category_id'] );
+            $result->add( new data_article( $row, $category ) );
+        }
+
+        return $result;
+
+    }
+
 }

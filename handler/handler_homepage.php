@@ -34,10 +34,11 @@ class handler_homepage extends handler
 
         }
 
-        $hero_articles = model_article::getHero();
+        $hero_articles    = model_article::getHero();
+        $popular_articles = model_article::getPopular();
 
         // Render page
-        $page = new layout_homepage_page( $header, $footer, $sidebar, $home_categories, $hero_articles );
+        $page = new layout_homepage_page( $header, $footer, $sidebar, $home_categories, $hero_articles, $popular_articles );
         $page->render();
 
     }

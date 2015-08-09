@@ -9,7 +9,8 @@ class layout_homepage_page extends layout_page
         data_footer  $footer,
         data_sidebar $sidebar,
         data_array   $home_categories,
-        data_array   $hero_articles
+        data_array   $hero_articles,
+        data_array   $popular_articles
     )
     {
 
@@ -30,7 +31,7 @@ class layout_homepage_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-        $main->addChild( new layout_homepage_popular( new data_array ) );
+        $main->addChild( new layout_homepage_popular( $popular_articles ) );
 
         /** @var $category data_category */
         foreach( $home_categories->getData() as $category )

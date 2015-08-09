@@ -14,26 +14,14 @@ class layout_homepage_popular extends layout
 
     function __construct( data_array $list )
     {
-
         $this->list = $list;
-
-        /** @TODO delete this filler */
-        $this->list = new data_array();
-
-        $this->list->add( new data_article );
-        $this->list->add( new data_article );
-        $this->list->add( new data_article );
-        $this->list->add( new data_article );
-        $this->list->add( new data_article );
-        $this->list->add( new data_article );
-
     }
 
     public function render()
     {
         echo
         '<div class="block-layout-one">',
-            '<p class="title"><span>Popular <strong>posts</strong></span></p>',
+            '<p class="title"><span>Artikuj <strong>popullore</strong></span></p>',
             '<div class="row">';
 
                 $this->element( $this->list->getIndex( 0 ) );
@@ -59,11 +47,11 @@ class layout_homepage_popular extends layout
 
         echo
         '<div class="item grid_4">',
-            '<a href="#"><img src="/80/65/filler.jpg" /></a>',
+            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/80x65.gif' : '/80/65' . $article->image_1, '" /></a>',
             '<div>',
-                '<span><a href="#">Sport</a></span>',
-                '<h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>',
-                '<p class="date">December 13, 2014</p>',
+                '<span style="background-color:', $article->category->colour, '"><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
             '</div>',
         '</div>';
 
