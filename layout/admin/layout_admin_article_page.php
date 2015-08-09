@@ -60,6 +60,8 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'id', $article->id ) );
 
+        $form->addChild( new layout_form_hidden( 'routing', $article->routing ) );
+
         $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $dropdown_data, $article->category_id ) );
 
         $form->addChild( new layout_form_text( 'title', 'Titull', $article->title ) );
