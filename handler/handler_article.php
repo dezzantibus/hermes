@@ -22,7 +22,7 @@ class handler_article extends handler
         );
 
         // Render page
-        $page = new layout_article_page( $header, $footer, $sidebar );
+        $page = new layout_article_page( $header, $footer, $sidebar, $article );
         $page->render();
 
     }

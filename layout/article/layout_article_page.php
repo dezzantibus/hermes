@@ -7,7 +7,8 @@ class layout_article_page extends layout_page
     (
         data_header  $header,
         data_footer  $footer,
-        data_sidebar $sidebar
+        data_sidebar $sidebar,
+        data_article $article
     )
     {
 
@@ -26,15 +27,15 @@ class layout_article_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-        $main->addChild( new layout_article_content() );
+        $main->addChild( new layout_article_content( $article ) );
 
-        $main->addChild( new layout_article_bio() );
+//        $main->addChild( new layout_article_bio() );
 
-        $main->addChild( new layout_article_controls() );
+//        $main->addChild( new layout_article_controls() );
 
-        $main->addChild( new layout_article_related() );
+//        $main->addChild( new layout_article_related() );
 
-        $main->addChild( new layout_article_comments() );
+//        $main->addChild( new layout_article_comments() );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
