@@ -24,8 +24,8 @@ abstract class data
     public static function clean_for_url( $string )
     {
 
-        $search  = array( ' ', '&', '%', '?', '$', '+', 'ë', 'ç', '"', ',', "'", '(', ')' );
-        $replace = array( '-', '',  '',  '',  '',  '',  'e', 'c', '',  '',  '',  '',  '' );
+        $search  = array( ' ', '&', '%', '?', '$', '+', 'ë', 'Ë', 'ç', '"', ',', "'", '(', ')', '.' );
+        $replace = array( '-', '',  '',  '',  '',  '',  'e', 'E', 'c', '',  '',  '',  '',  '',  '' );
 
         return str_replace( $search, $replace, $string );
 

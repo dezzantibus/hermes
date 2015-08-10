@@ -39,8 +39,9 @@ class layout_form_dropdown extends layout
 
                 foreach( $this->list->getData() as $item )
                 {
-                    echo
-                    '<option value="' . $item['value'] . '">' . $item['label'] . '</option>';
+                    echo '<option value="' . $item['value'] . '"';
+                    if( $item['value'] == $this->value ) echo ' selected="selected"';
+                    echo '>' . $item['label'] . '</option>';
                 }
 
             echo
