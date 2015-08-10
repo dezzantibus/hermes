@@ -12,14 +12,14 @@ class handler_article extends handler
     public function run()
     {
 
-        $header  = $this->getHeaderData();
-        $footer  = $this->getFooterData();
-        $sidebar = $this->getSidebarData();
-
         $article = model_article::getByRouting(
             $this->data['routing'],
             $this->data['parent']
         );
+
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData( $article->category );
 
         model_hit::log( $article );
 

@@ -21,7 +21,7 @@ class layout_homepage_popular extends layout
     {
         echo
         '<div class="block-layout-one">',
-            '<p class="title"><span>Artikuj <strong>popullore</strong></span></p>',
+            '<p class="title"><span>Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong></span></p>',
             '<div class="row">';
 
                 $this->element( $this->list->getIndex( 0 ) );

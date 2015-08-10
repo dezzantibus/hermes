@@ -7,6 +7,8 @@ abstract class handler
 
     protected $category_list;
 
+    protected $recent_articles;
+
     function __construct()
     {
         $this->data = $_GET;
@@ -49,7 +51,7 @@ abstract class handler
 
     }
 
-    protected function getSidebarData()
+    protected function getSidebarData( $category=null )
     {
 
         $result = new data_sidebar();
@@ -58,8 +60,13 @@ abstract class handler
         {
             $this->category_list = model_category::getFullList();
         }
-
         $result->categories = $this->category_list;
+
+        if( empty( $this->recent_articles ) )
+        {
+            $this->recent_articles = model_article::getRecent( $category );
+        }
+        $result->recent_articles = $this->recent_articles;
 
         return $result;
 

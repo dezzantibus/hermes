@@ -23,13 +23,13 @@ class layout_sidebar extends layout
         //<!-- Aside -->
         echo '<aside id="sidebar" role="complementary">';
 
-        $this->search();
+//        $this->search();
 
         $this->banner();
 
         //$this->tabs();
 
-        $this->recentComments();
+//        $this->recentComments();
 
         $this->recentPosts();
 
@@ -218,7 +218,7 @@ class layout_sidebar extends layout
         //<!-- Recent posts -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">Artikujt e fundit</h3>',
+            '<h3 class="widget-title">Lajmet E FUNDIT</h3>',
             '<ul class="recent-posts">';
 
                 foreach( $this->data->recent_articles->getData() as $article )
@@ -227,11 +227,11 @@ class layout_sidebar extends layout
                     echo
                     '<li>',
                         '<div class="image">',
-                            '<a href="#"><img src="demo/80x65.gif" alt="Post"/></a>',
+                            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/80x65.gif' : '/80/65' . $article->image_1, '" alt="Post"/></a>',
                         '</div>',
                         '<div class="text">',
-                            '<h3><a href="#">Standard Chartered under pressure over executive pay</a></h3>',
-                            '<p class="date">September 16, 2104</p>',
+                            '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                            '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                         '</div>',
                     '</li>';
 
@@ -268,13 +268,15 @@ class layout_sidebar extends layout
         echo
         '<div class="widget">',
             '<h3 class="widget-title">Categories</h3>',
-            '<ul class="widget-categories">',
-                '<li><a href="#">Photography</a></li>',
-                '<li><a href="#">Design</a></li>',
-                '<li><a href="#">Fashion</a></li>',
-                '<li><a href="#">Photoshop</a></li>',
-                '<li><a href="#">Magazine</a></li>',
-                '<li><a href="#">Development</a></li>',
+            '<ul class="widget-categories">';
+
+                /** @var $category data_category */
+                foreach( $this->data->categories->getData() as $category )
+                {
+                    echo  '<li><a href="', $category->routing, '.html">', $category->name, '</a></li>';
+                }
+
+            echo
             '</ul>',
         '</div>';
 
