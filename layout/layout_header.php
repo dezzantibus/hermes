@@ -15,7 +15,7 @@ class layout_header extends layout
     public function render()
     {
 
-        $this->cookies();
+//        $this->cookies();
 
         echo '<header id="header" class="light" role="banner">';
 
