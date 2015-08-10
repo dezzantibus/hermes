@@ -23,6 +23,11 @@ class action_admin_article extends action
         }
         else
         {
+            $db_article = model_article::getById( $article->id );
+            $article->image_1 = $db_article->image_1;
+            $article->image_2 = $db_article->image_2;
+            $article->image_3 = $db_article->image_3;
+            $article->image_4 = $db_article->image_4;
             model_article::update( $article );
         }
 
