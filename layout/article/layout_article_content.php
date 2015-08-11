@@ -47,11 +47,11 @@ class layout_article_content extends layout
 
 
             //<!-- Post info -->
-            '<div class="post-info">',
-                '<span class="tags">Tags <a href="#">Design</a>, <a href="#">Code</a>, <a href="#">Html5</a></span>',
-                '<span class="category">Category <a href="#">Sport</a></span>',
-                '<span class="views">Views <a href="#">3526</a></span>',
-            '</div>',
+//            '<div class="post-info">',
+//                '<span class="tags">Tags <a href="#">Design</a>, <a href="#">Code</a>, <a href="#">Html5</a></span>',
+//                '<span class="category">Category <a href="#">Sport</a></span>',
+//                '<span class="views">Views <a href="#">3526</a></span>',
+//            '</div>',
 
             '<div class="post-share">',
                 '<span class="share-text">Share this post:</span>',
