@@ -40,17 +40,17 @@ abstract class data
     {
 
         $search = array(
-            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',
-
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+
+            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',
         );
 
         $replace = array(
-            'e Hënë', 'e Martë', 'e Mërkurë', 'e Enjte', 'e Premte', 'e Shtunë', 'e Diel',
-
             'Janar', 'Shkurt', 'Mars', 'Prill', 'Maj', 'Qershor',
             'Korrik', 'Gusht', 'Shtator', 'Tetor', 'Nëntor', 'Dhjetor',
+
+            'e Hënë', 'e Martë', 'e Mërkurë', 'e Enjte', 'e Premte', 'e Shtunë', 'e Diel',
         );
 
         return str_replace( $search, $replace, $in );
