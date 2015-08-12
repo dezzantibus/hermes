@@ -37,7 +37,7 @@ class layout_homepage_ModuleG3P0 extends layout
                         '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                         '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                     '</div>',
-                    '<p>', $article->brief, '</p>',
+                    '<p>', empty( $article->brief ) ? substr( $article->text, 0, 200 ) . '...' : $article->brief, '</p>',
                 '</div>';
 
             }

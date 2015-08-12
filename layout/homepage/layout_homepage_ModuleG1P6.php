@@ -44,7 +44,7 @@ class layout_homepage_ModuleG1P6 extends layout
 //                            '</li>',
 //                        '</ul>',
                     '</div>',
-                    '<p>', $main->brief, '</p>',
+                    '<p>', empty( $main->brief ) ? substr( $main->text, 0, 200 ) . '...' : $main->brief, '</p>',
                 '</div>',
                 '<div class="small-items">';
 
