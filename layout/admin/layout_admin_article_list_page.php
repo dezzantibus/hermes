@@ -8,7 +8,9 @@ class layout_admin_article_list_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_array   $articles
+        data_array   $articles,
+                     $pages,
+                     $page
     )
     {
 
@@ -41,13 +43,7 @@ class layout_admin_article_list_page extends layout_page
 
         }
 
-
-
-
-
-
-
-
+        $main->addChild( new layout_category_pagination( $pages, $page ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

@@ -11,4 +11,6 @@ class constant
 
     const ARTICLES_PER_PAGE = 20;
 
+    const ADMIN_ARTICLES_PER_PAGE = 40;
+
 }

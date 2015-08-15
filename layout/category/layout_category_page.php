@@ -10,7 +10,9 @@ class layout_category_page extends layout_page
         data_sidebar  $sidebar,
         data_category $category,
         data_array    $articles,
-        data_array    $pinned
+        data_array    $pinned,
+                      $pages,
+                      $page
     )
     {
 
@@ -42,7 +44,7 @@ class layout_category_page extends layout_page
             $content->addChild( new layout_category_item( $article ) );
         }
 
-        //$main->addChild( new layout_category_pagination() );
+        $main->addChild( new layout_category_pagination( $pages, $page ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

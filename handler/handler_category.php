@@ -14,18 +14,15 @@ class handler_category extends handler
 
         $category = model_category::getByRouting( $this->data['routing'] );
 
-        $header  = $this->getHeaderData();
-        $footer  = $this->getFooterData();
-        $sidebar = $this->getSidebarData( $category );
+        // Get list of articles
+        $page = $this->data['page'];
+        if( empty( $page ) )
+        {
+            $page = 1;
+        }
+        $articles = model_article::getCategoryPage( $category, $page );
 
-        if( empty( $this->data['page'] ) )
-        {
-            $articles = model_article::getCategoryPage( $category, 1 );
-        }
-        else
-        {
-            $articles = model_article::getCategoryPage( $category, $this->data['page'] );
-        }
+        $pages = model_article::getCategoryPageNumber( $category );
 
         if( $this->data['page'] > 1 )
         {
@@ -36,8 +33,13 @@ class handler_category extends handler
             $pinned = model_article::getCategoryPinned( $category, 6 );
         }
 
+
+        $header  = $this->getHeaderData();
+        $footer  = $this->getFooterData();
+        $sidebar = $this->getSidebarData( $category );
+
         // Render page
-        $page = new layout_category_page( $header, $footer, $sidebar, $category, $articles, $pinned );
+        $page = new layout_category_page( $header, $footer, $sidebar, $category, $articles, $pinned, $pages, $page );
         $page->render();
 
     }

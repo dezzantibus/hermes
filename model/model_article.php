@@ -218,6 +218,45 @@ class model_article extends model
 
     }
 
+    static public function getAdminPage( $page=1 )
+    {
+
+        $sql = '
+            SELECT *
+            FROM article
+            ORDER BY id DESC
+            LIMIT :start, :number
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':start',       ( $page - 1 ) * constant::ADMIN_ARTICLES_PER_PAGE )
+            ->bindInt( ':number',      constant::ADMIN_ARTICLES_PER_PAGE )
+            ->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $category = model_category::getById( $row['category_id'] );
+            $result->add( new data_article( $row, $category ) );
+        }
+
+        return $result;
+
+    }
+
+    static public function getAdminPageNumber()
+    {
+
+        $sql = 'SELECT COUNT( id ) AS num FROM article';
+
+        $query = db::prepare( $sql )->execute();
+        $row   = $query->fetch();
+
+        return ceil( $row['num'] / constant::ADMIN_ARTICLES_PER_PAGE );
+
+    }
+
     static public function getCategoryPage( data_category $category, $page=1 )
     {
 
@@ -243,6 +282,21 @@ class model_article extends model
         }
 
         return $result;
+
+    }
+
+    static public function getCategoryPageNumber( data_category $category )
+    {
+
+        $sql = 'SELECT COUNT( id ) AS num FROM article WHERE category_id = :category_id';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':category_id', $category->id )
+            ->execute();
+        $row   = $query->fetch();
+
+        return ceil( $row['num'] / constant::ARTICLES_PER_PAGE );
 
     }
 

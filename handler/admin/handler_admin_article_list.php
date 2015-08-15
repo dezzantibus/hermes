@@ -19,10 +19,17 @@ class handler_admin_article_list extends handler
         $this->login( $header, $footer, $sidebar );
 
         // Get list of articles
-        $articles = model_article::getLastNumber( 50 );
+        $page = $this->data['page'];
+        if( empty( $page ) )
+        {
+            $page = 1;
+        }
+        $articles = model_article::getAdminPage( $page );
+
+        $pages = model_article::getAdminPageNumber();
 
         // Render page
-        $page = new layout_admin_article_list_page( $header, $footer, $sidebar, $articles );
+        $page = new layout_admin_article_list_page( $header, $footer, $sidebar, $articles, $pages, $page );
         $page->render();
 
     }

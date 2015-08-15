@@ -13,7 +13,7 @@ class layout_category_pagination extends layout
 
     private $current;
 
-    function __construct($number, $current)
+    function __construct( $number, $current )
     {
         $this->number  = $number;
         $this->current = $current;
@@ -22,14 +22,19 @@ class layout_category_pagination extends layout
     public function render()
     {
 
+        if( $this->number < 2 )
+        {
+            return null;
+        }
+
         echo '<ul class="page-numbers">';
 
             if( $this->current > 1 )
             {
-                echo '<li><a class="page-numbers" href="#">M&euml;parsh&euml;m</a></li>';
+                echo '<li><a class="page-numbers" href="?page=1">M&euml;parsh&euml;m</a></li>';
             }
 
-            for( $page=1; $page<=$this->number; $page++ )
+            for( $page=1; $this->number >= $page; $page++ )
             {
 
                 if( $page == $this->current )
@@ -38,14 +43,14 @@ class layout_category_pagination extends layout
                 }
                 else
                 {
-                    echo '<li><a class="page-numbers" href="#">', $page, '</a></li>';
+                    echo '<li><a class="page-numbers" href="?page=', $page, '">', $page, '</a></li>';
                 }
 
             }
 
             if( $this->current != $this->number )
             {
-                echo '<li><a class="page-numbers" href="#">Vijues</a></li>';
+                echo '<li><a class="page-numbers" href="?page=', $this->number, '">Vijues</a></li>';
             }
 
         echo '</ul>';
