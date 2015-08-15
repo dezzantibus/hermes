@@ -60,6 +60,16 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'id', $article->id ) );
 
+        if( !empty( $article->id ) )
+        {
+            $params = array(
+//                'href'    => '/admin/article_delete.action?id=' . $article->id,
+                'class'   => 'btn-large',
+                'onclick' => 'if(confirm(\'Sicuro di voler cancellare?\')) window.location=\'/admin/article_delete.action?id=' . $article->id . '\'',
+            );
+            $form->addChild( new layout_basic_button_link( 'Cancella', $params ) );
+        }
+
         $form->addChild( new layout_form_hidden( 'routing', $article->routing ) );
 
         $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $dropdown_data, $article->category_id ) );

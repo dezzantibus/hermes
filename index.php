@@ -16,7 +16,7 @@ else
 {
     $handler = 'handler_homepage';
 }
-
+var_dump($handler);
 /** @var handler $page */
 $page = new $handler;
 $page->run();
