@@ -23,9 +23,10 @@ class handler_homepage extends handler
 
             switch( $category->home_block )
             {
-                case 'layout_homepage_ModuleG3P0': $number = 3; break;
-                case 'layout_homepage_ModuleG2P6': $number = 8; break;
                 case 'layout_homepage_ModuleG2P0': $number = 2; break;
+                case 'layout_homepage_ModuleG3P0': $number = 3; break;
+                case 'layout_homepage_ModuleG1P4': $number = 5; break;
+                case 'layout_homepage_ModuleG2P6': $number = 8; break;
                 case 'layout_homepage_ModuleG1P6': $number = 7; break;
                 default: $number = 0;
             }

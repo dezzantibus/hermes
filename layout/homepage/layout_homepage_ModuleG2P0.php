@@ -36,7 +36,7 @@ class layout_homepage_ModuleG2P0 extends layout
                         '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                         '<div class="post-dca">',
                             '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>',
-                            '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
+//                            '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
 //                            '<span class="author"><a href="', $article->getLink(), '">John Doe</a></span>',
 //                            '<ul class="rating-list">',
 //                                '<li>',
