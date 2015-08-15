@@ -51,7 +51,7 @@ class layout_category_item extends layout
 //                        '</li>',
 //                   '</ul>',
                 '</div>',
-                '<p>', $this->article->brief, '</p>',
+                '<p>', empty( $this->article->brief ) ? substr( $this->article->text, 0, 300 ) . '...' : $this->article->brief, '</p>',
             '</div>',
         '</div>';
 
@@ -79,7 +79,7 @@ class layout_category_item extends layout
 //                        '</li>',
 //                    '</ul>',
                 '</div>',
-                '<p>', $this->article->brief, '</p>',
+                '<p>', empty( $this->article->brief ) ? substr( $this->article->text, 0, 300 ) . '...' : $this->article->brief, '</p>',
             '</div>',
         '</div>';
 

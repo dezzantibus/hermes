@@ -164,7 +164,7 @@ class layout_header extends layout
 
             //<!-- Logo -->
             '<div id="logo">',
-                '<h1 id="site-logo"><a href="index.html">Hermes<span>News</span></a></h1>',
+                '<h1 id="site-logo"><a href="/">Hermes<span>News</span></a></h1>',
                 '<h2 id="site-description">Lajmi i par&euml; Portali shqiptar</h2>',
             '</div>',
 
