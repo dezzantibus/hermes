@@ -33,14 +33,12 @@ class layout_admin_article_list_page extends layout_page
             'href'  => '/admin/article/new.form',
             'class' => 'btn-large',
         );
-        $main->addChild( new layout_basic_button_link( 'Inserisci nuovo', $params ) );
-
+        $main->addChild( new layout_basic_button_link( constant::$language['Insert new'], $params ) );
 
         /** @var $article data_article */
         foreach( $articles->getData() as $article )
         {
             $main->addChild( new layout_admin_listcell( '/admin/article/edit.form?id=' . $article->id, $article->title ) );
-
         }
 
         $main->addChild( new layout_category_pagination( $pages, $page ) );

@@ -10,15 +10,16 @@ class class_finder
 
         switch( $frags[0] )
         {
-            case 'layout':   self::getLayoutClass( $name, $frags );  break;
-            case 'handler':  self::getHandlerClass( $name, $frags ); break;
-            case 'action':   self::getActionClass( $name, $frags );  break;
-            case 'google':   require_once __DIR__ . '/google.php';   break;
-            case 'constant': require_once __DIR__ . '/constant.php'; break;
-            case 'message':  require_once __DIR__ . '/message.php';  break;
-            case 'router':   require_once __DIR__ . '/router.php';   break;
-            case 'security': require_once __DIR__ . '/security.php'; break;
-            case 'file':     require_once __DIR__ . '/file.php';     break;
+            case 'layout':   self::getLayoutClass( $name, $frags );               break;
+            case 'handler':  self::getHandlerClass( $name, $frags );              break;
+            case 'action':   self::getActionClass( $name, $frags );               break;
+            case 'language': require_once __DIR__ . '/language/'. $name . '.php'; break;
+            case 'google':   require_once __DIR__ . '/google.php';                break;
+            case 'constant': require_once __DIR__ . '/constant.php';              break;
+            case 'message':  require_once __DIR__ . '/message.php';               break;
+            case 'router':   require_once __DIR__ . '/router.php';                break;
+            case 'security': require_once __DIR__ . '/security.php';              break;
+            case 'file':     require_once __DIR__ . '/file.php';                  break;
             default: require_once __DIR__ . '/../' . $frags[0] . '/' . $name . '.php';
         }
 

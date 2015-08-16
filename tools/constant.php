@@ -13,4 +13,6 @@ class constant
 
     const ADMIN_ARTICLES_PER_PAGE = 40;
 
+    static $language;
+
 }
