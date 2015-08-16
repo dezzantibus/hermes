@@ -48,7 +48,7 @@ class layout_article_content extends layout
 //                '<span class="comments">Comments <a href="#">152</a></span>',
 //            '</div>',
 
-            '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>';
+            '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>',
 
 
             //<!-- Post info -->
@@ -58,11 +58,8 @@ class layout_article_content extends layout
 //                '<span class="views">Views <a href="#">3526</a></span>',
 //            '</div>',
 
-
-
-            echo
             '<div class="post-share">',
-                '<span class="share-text">Share this post:</span>',
+                '<span class="share-text">', constant::$text['share_post'], ':</span>',
                 '<ul>',
                     '<li><a target="_blank"  data-tip="Share on Twitter!" href="https://twitter.com/home?status=', $this->full_link, '" class="twitter"><span class="socicon">a</span></a></li>',
                     '<li><a target="_blank" data-tip="Share on Facebook!" href="https://www.facebook.com/sharer/sharer.php?u=', $this->full_link, '" class="facebook"><span class="socicon">b</span></a></li>',

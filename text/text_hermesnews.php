@@ -22,7 +22,7 @@ class text_hermesnews
             'popular_articles'  => 'Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong>',
             'pagination_first'  => 'M&euml;parsh&euml;m',
             'pagination_last'   => 'Vijues',
-
+            'share_post'        => 'Share this post',
         );
 
         return $text;
