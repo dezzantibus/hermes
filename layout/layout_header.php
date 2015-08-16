@@ -164,14 +164,13 @@ class layout_header extends layout
 
             //<!-- Logo -->
             '<div id="logo">',
-                '<h1 id="site-logo"><a href="/">Hermes<span>News</span></a></h1>',
-                '<h2 id="site-description">Lajmi i par&euml; Portali shqiptar</h2>',
+                '<h1 id="site-logo"><a href="/">', constant::$text['header_name'], '</a></h1>',
+                '<h2 id="site-description">', constant::$text['header_under_name'], '</h2>',
             '</div>',
 
             //<!-- Ad banner -->
             '<div class="ad-banner-728x90">';
                 google::automatic();
-                //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="/728/90/filler.jpg" alt="Banner"/></a>',
             echo
             '</div>',
 

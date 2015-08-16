@@ -9,11 +9,16 @@ switch( $_SERVER['HTTP_HOST'] )
     case 'eroitaliano.com':
     case 'www.eroitaliano.com':
     case 'local.hermesnews.org':
-        constant::$language = language_albanian::text();
+        constant::$text = text_hermesnews::text();
+        db::$schema = 'hermes2';
         break;
 
-    default:
-        constant::$language = language_english::text();
+    case 'athena.news':
+    case 'www.athena.news':
+        constant::$text = text_athena::text();
+        db::$schema = 'athena';
+        break;
+
 }
 
 session_start();

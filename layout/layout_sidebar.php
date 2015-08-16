@@ -55,7 +55,7 @@ class layout_sidebar extends layout
         //<!-- Search widget -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$language['Search'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Search'], '</h3>',
             '<form class="searchform">',
                 '<input type="text" placeholder="To search type and hit enter"/>',
                 '<input type="submit" value="&#xf002;"/>',
@@ -70,7 +70,7 @@ class layout_sidebar extends layout
         //<!-- Banner 300x250 -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$language['Advertising'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Advertising'], '</h3>',
             '<div class="ad-banner-300x250">';
                 google::automatic();
                 //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
@@ -89,7 +89,7 @@ class layout_sidebar extends layout
         <div class="widget">
             <div class="tabs">
                 <ul>
-                    <li><a href="#tab-popular">', constant::$language['Popular'], '</a></li>
+                    <li><a href="#tab-popular">', constant::$text['Popular'], '</a></li>
                     <li><a href="#tab-recent">Fundit</a></li>
                     <li><a href="#tab-comments">Komentet</a></li>
                 </ul>
@@ -189,7 +189,7 @@ class layout_sidebar extends layout
         //<!-- Recent comments -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$language['Recent comments'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Recent comments'], '</h3>',
             '<ul class="recent-comments">';
 
                 foreach( $this->data->recent_comments->getData() as $comments )
@@ -218,7 +218,7 @@ class layout_sidebar extends layout
         //<!-- Recent posts -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$language['Recent posts'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Recent posts'], '</h3>',
             '<ul class="recent-posts">';
 
                 foreach( $this->data->recent_articles->getData() as $article )
@@ -267,7 +267,7 @@ class layout_sidebar extends layout
         //<!-- Category widget -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$language['Categories'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Categories'], '</h3>',
             '<ul class="widget-categories">';
 
                 /** @var $category data_category */

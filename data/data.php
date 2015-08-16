@@ -39,6 +39,11 @@ abstract class data
     private static function translateDate( $in )
     {
 
+        if( constant::$text['language'] == 'english' )
+        {
+            return $in;
+        }
+
         $search = array(
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',

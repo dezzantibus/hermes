@@ -34,7 +34,7 @@ class layout_category_page extends layout_page
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
         // pinned articles
-//        $main->addChild( new layout_homepage_ModuleG2P0( $category ) );
+//        $main->addChild( new layout_category_pinned( $articles ) );
 
         $params  = array( 'class' => 'block-layout-five' );
         $content = $main->addChild( new layout_basic_div( $params ) );

@@ -18,7 +18,7 @@ class layout_admin_listcell extends layout_page
         echo
         '<div>',
             '<h4>', $this->label, '</h4>',
-            '<a class="btn btn-small btn-red" href="', $this->link, '">', constant::$language['Modify'], '</a>',
+            '<a class="btn btn-small btn-red" href="', $this->link, '">', constant::$text['Modify'], '</a>',
             '<hr>',
         '</div>';
     }

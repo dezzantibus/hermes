@@ -24,8 +24,8 @@ class layout_footer extends layout
         '<footer id="footer" role="contentinfo">',
             '<div class="inner-wrapper">';
 
-                $this->about();
-
+//                $this->about();
+//
 //                $this->recentComments();
 //
 //                $this->recentPosts();

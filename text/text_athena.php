@@ -2,7 +2,7 @@
 
 date_default_timezone_set( "Europe/London" );
 
-class language_english
+class text_athena
 {
 
     static function text()

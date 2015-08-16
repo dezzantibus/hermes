@@ -2,7 +2,7 @@
 
 date_default_timezone_set( "Europe/Tirane" );
 
-class language_albanian
+class text_hermesnews
 {
 
     static function text()
@@ -16,7 +16,13 @@ class language_albanian
             'Popular'           => 'Popullor',
             'Recent comments'   => 'Komentet e fundit',
             'Recent articles'   => 'Lajmet E FUNDIT',
-            'Categories'        => 'Categorie'
+            'Categories'        => 'Categorie',
+            'header_name'       => 'Hermes<span>News</span>',
+            'header_under_name' => 'Lajmi i par&euml; Portali shqiptar',
+            'popular_articles'  => 'Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong>',
+            'pagination_first'  => 'M&euml;parsh&euml;m',
+            'pagination_last'   => 'Vijues',
+
         );
 
         return $text;

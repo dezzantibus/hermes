@@ -8,7 +8,7 @@ class db
 
     const HOST = '127.0.0.1';
 
-    const SCHEMA = 'hermes2';
+    public static $schema; // = 'hermes2';
 
     const USER = 'root';
 
@@ -18,7 +18,7 @@ class db
     {
         if( is_null( self::$connection ) )
         {
-            self::$connection = new PDO( 'mysql:host=' . self::HOST . ';dbname=' . self::SCHEMA, self::USER, self::PASS );
+            self::$connection = new PDO( 'mysql:host=' . self::HOST . ';dbname=' . self::$schema, self::USER, self::PASS );
         }
     }
 
