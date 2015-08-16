@@ -12,9 +12,14 @@ class layout_article_content extends layout
 
     private $article;
 
+    private $full_link;
+
     function __construct( data_article $article )
     {
         $this->article = $article;
+
+        $this->full_link = 'http://' . $_SERVER['HTTP_HOST'] . $this->article->getLink();
+
     }
 
     public function render()
@@ -43,7 +48,7 @@ class layout_article_content extends layout
 //                '<span class="comments">Comments <a href="#">152</a></span>',
 //            '</div>',
 
-            '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>',
+            '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>';
 
 
             //<!-- Post info -->
@@ -53,15 +58,18 @@ class layout_article_content extends layout
 //                '<span class="views">Views <a href="#">3526</a></span>',
 //            '</div>',
 
+
+
+            echo
             '<div class="post-share">',
                 '<span class="share-text">Share this post:</span>',
                 '<ul>',
-                    '<li><a data-tip="Share on Twitter!" href="#" class="twitter"><span class="socicon">a</span></a><p>16</p></li>',
-                    '<li><a data-tip="Share on Facebook!" href="#" class="facebook"><span class="socicon">b</span></a><p>16</p></li>',
-                    '<li><a data-tip="Share on Google+!" href="#" class="google"><span class="socicon">c</span></a><p>16</p></li>',
-                    '<li><a data-tip="Share on Pinterest!" href="#" class="google"><span class="socicon">d</span></a><p>16</p></li>',
-                    '<li><a data-tip="Share on LinkedIn!" href="#" class="linkedin"><span class="socicon">j</span></a><p>16</p></li>',
-                    '<li><a data-tip="Share on Tumblr!" href="#" class="tumblr"><span class="socicon">z</span></a><p>16</p></li>',
+                    '<li><a target="_blank"  data-tip="Share on Twitter!" href="https://twitter.com/home?status=', $this->full_link, '" class="twitter"><span class="socicon">a</span></a></li>',
+                    '<li><a target="_blank" data-tip="Share on Facebook!" href="https://www.facebook.com/sharer/sharer.php?u=', $this->full_link, '" class="facebook"><span class="socicon">b</span></a></li>',
+                    '<li><a target="_blank" data-tip="Share on Google+!" href="https://plus.google.com/share?url=', $this->full_link, '" class="google"><span class="socicon">c</span></a></li>',
+//                    '<li><a data-tip="Share on Pinterest!" href="#" class="google"><span class="socicon">d</span></a><p>16</p></li>',
+//                    '<li><a data-tip="Share on LinkedIn!" href="#" class="linkedin"><span class="socicon">j</span></a><p>16</p></li>',
+//                    '<li><a data-tip="Share on Tumblr!" href="#" class="tumblr"><span class="socicon">z</span></a><p>16</p></li>',
                 '</ul>',
             '</div>',
 
