@@ -23,6 +23,22 @@ class text_athena
             'pagination_first'  => 'First',
             'pagination_last'   => 'Last',
             'share_post'        => 'Share this post',
+            'Articles'          => 'Articles',
+            'Journalists'       => 'Journalists',
+            'email'             => 'E-mail',
+            'password'          => 'Password',
+            'first name'        => 'First name',
+            'last name'         => 'Last name',
+            'repeat password'   => 'Repeat password',
+            'category'          => 'Category',
+            'title'             => 'Title',
+            'subtitle'          => 'Subtitle',
+            'brief'             => 'Brief',
+            'text'              => 'Text',
+            'pinned'            => 'Pinned',
+            'image'             => 'Image',
+            'yes'               => 'Yes',
+            'no'                => 'No',
         );
 
         return $text;

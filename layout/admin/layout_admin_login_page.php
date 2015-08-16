@@ -34,9 +34,9 @@ class layout_admin_login_page extends layout_page
             '/admin/article/new.form'
         ) );
 
-        $form->addChild( new layout_form_text( 'email', 'e-mail', $article->title ) );
+        $form->addChild( new layout_form_text( 'email', constant::$text['email'], $article->title ) );
 
-        $form->addChild( new layout_form_password( 'password', 'Fjal&euml;kalim', $article->subtitle ) );
+        $form->addChild( new layout_form_password( 'password', constant::$text['password'], $article->subtitle ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

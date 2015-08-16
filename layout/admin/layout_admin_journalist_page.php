@@ -38,18 +38,15 @@ class layout_admin_journalist_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'id', $journalist->id ) );
 
-        // This will become the manager drop down
-        //$form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $dropdown_data, $article->category_id ) );
+        $form->addChild( new layout_form_text( 'first_name', constant::$text['first name'], $journalist->first_name ) );
 
-        $form->addChild( new layout_form_text( 'first_name', 'Emri i parë', $journalist->first_name ) );
+        $form->addChild( new layout_form_text( 'last_name', constant::$text['last name'], $journalist->last_name ) );
 
-        $form->addChild( new layout_form_text( 'last_name', 'Mbiemër', $journalist->last_name ) );
+        $form->addChild( new layout_form_text( 'email', constant::$text['email'], $journalist->email ) );
 
-        $form->addChild( new layout_form_text( 'email', 'Email', $journalist->email ) );
+        $form->addChild( new layout_form_text( 'password', constant::$text['password'] ) );
 
-        $form->addChild( new layout_form_text( 'password', 'Fjalëkalim' ) );
-
-        $form->addChild( new layout_form_text( 'repeat_password', 'Fjalëkalim përsëritje' ) );
+        $form->addChild( new layout_form_text( 'repeat_password', constant::$text['repeat password'] ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

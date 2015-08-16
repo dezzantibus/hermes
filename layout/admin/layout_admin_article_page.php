@@ -48,11 +48,11 @@ class layout_admin_article_page extends layout_page
 
         $radio_data = new data_array();
         $radio_data->add( array(
-            'label' => 'Po',
+            'label' => constant::$text['yes'],
             'value' => 1,
         ) );
         $radio_data->add( array(
-            'label' => 'Jo',
+            'label' => constant::$text['no'],
             'value' => 0,
         ) );
 
@@ -72,26 +72,26 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'routing', $article->routing ) );
 
-        $form->addChild( new layout_form_dropdown( 'category_id', 'Kategori', $dropdown_data, $article->category_id ) );
+        $form->addChild( new layout_form_dropdown( 'category_id', constant::$text['category'], $dropdown_data, $article->category_id ) );
 
-        $form->addChild( new layout_form_text( 'title', 'Titull', $article->title ) );
+        $form->addChild( new layout_form_text( 'title', constant::$text['title'], $article->title ) );
 
-        $form->addChild( new layout_form_text( 'subtitle', 'Nëntitull', $article->subtitle ) );
+        $form->addChild( new layout_form_text( 'subtitle', constant::$text['subtitle'], $article->subtitle ) );
 
-        $form->addChild( new layout_form_textarea( 'brief', 'Shkurtër', $article->brief ) );
+        $form->addChild( new layout_form_textarea( 'brief', constant::$text['brief'], $article->brief ) );
 
-        $form->addChild( new layout_form_textarea( 'text', 'Tekst', $article->text, 25 ) );
+        $form->addChild( new layout_form_textarea( 'text', constant::$text['text'], $article->text, 25 ) );
 
         for( $i=1; $i<=4; $i++ )
         {
-            $form->addChild( new layout_form_file( 'image' . $i, 'Imazh ' . $i ), null );
+            $form->addChild( new layout_form_file( 'image' . $i, constant::$text['image'] . ' ' . $i ), null );
         }
 
         $form->addChild( new layout_form_radio( 'hero', 'Hero', $radio_data, $article->hero ) );
 
         $form->addChild( new layout_form_radio( 'homepage', 'Homepage', $radio_data, $article->homepage ) );
 
-        $form->addChild( new layout_form_radio( 'pinned', 'R&euml;nd&euml;sish&euml;m', $radio_data, $article->pinned ) );
+        $form->addChild( new layout_form_radio( 'pinned', constant::$text['pinned'], $radio_data, $article->pinned ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

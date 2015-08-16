@@ -23,6 +23,22 @@ class text_hermesnews
             'pagination_first'  => 'M&euml;parsh&euml;m',
             'pagination_last'   => 'Vijues',
             'share_post'        => 'Share this post',
+            'Articles'          => 'Articoli',
+            'Journalists'       => 'Giornalisti',
+            'email'             => 'E-mail',
+            'password'          => 'Fjal&euml;kalim',
+            'first name'        => 'Emri i par&euml;',
+            'last name'         => 'Mbiem&euml;r',
+            'repeat password'   => 'Fjalëkalim përsëritje',
+            'category'          => 'Kategori',
+            'title'             => 'Titull',
+            'subtitle'          => 'Nëntitull',
+            'brief'             => 'Shkurtër',
+            'text'              => 'Tekst',
+            'pinned'            => 'R&euml;nd&euml;sish&euml;m',
+            'image'             => 'Imazh',
+            'yes'               => 'Po',
+            'no'                => 'Jo',
         );
 
         return $text;

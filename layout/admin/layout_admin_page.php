@@ -31,13 +31,13 @@ class layout_admin_page extends layout_page
             'href'  => '/admin/article/list',
             'class' => 'btn-large',
         );
-        $main->addChild( new layout_basic_button_link( 'Articoli', $params ) );
+        $main->addChild( new layout_basic_button_link( constant::$text['Articles'], $params ) );
 
         $params = array(
             'href'  => '/admin/journalist/list',
             'class' => 'btn-large',
         );
-        $main->addChild( new layout_basic_button_link( 'Giornalisti', $params ) );
+        $main->addChild( new layout_basic_button_link( constant::$text['Journalists'], $params ) );
 
 
 
