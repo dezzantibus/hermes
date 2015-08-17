@@ -21,9 +21,9 @@ class layout_homepage_ModuleG2P6 extends layout
     {
 
         echo
-        '<div class="block-layout-two row">',
+        '<div class="block-layout-two row ', $this->list->routing, '">',
             '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>',
-            '<div class="grid_6">';
+            '<div class="grid_6 column-1">';
 
                 $this->large( $this->list->home_articles->getIndex( 0 ) );
 
@@ -33,7 +33,7 @@ class layout_homepage_ModuleG2P6 extends layout
 
             echo
             '</div>',
-            '<div class="grid_6">';
+            '<div class="grid_6 column-2">';
 
                 $this->large( $this->list->home_articles->getIndex( 1 ) );
 
@@ -43,7 +43,19 @@ class layout_homepage_ModuleG2P6 extends layout
 
             echo
             '</div>',
-        '</div>';
+        '</div>',
+
+        '<script type="text/javascript">',
+            '$( document ).ready(function() {',
+                'var one = $(".', $this->list->routing, ' .column-1 .main-item p");',
+                'var two = $(".', $this->list->routing, ' .column-2 .main-item p");',
+                'if(  one.height() > two.height() )',
+                    '{two.height( one.height() );}',
+                'else',
+                    '{one.height( two.height() );}',
+            '});',
+        '</script>';
+
 
     }
 

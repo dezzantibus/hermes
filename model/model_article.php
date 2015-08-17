@@ -172,7 +172,7 @@ class model_article extends model
             FROM article
             WHERE category_id = :category_id
                 AND homepage = 1
-                #AND image_1 IS NOT NULL
+                AND image_1 IS NOT NULL
             ORDER BY id DESC
             LIMIT :number
         ';

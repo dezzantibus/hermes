@@ -19,27 +19,31 @@ class layout_homepage_popular extends layout
 
     public function render()
     {
-        echo
-        '<div class="block-layout-one">',
-            '<p class="title"><span>', constant::$text['popular_articles'], '</strong></span></p>',
-            '<div class="row">';
-
-                $this->element( $this->list->getIndex( 0 ) );
-                $this->element( $this->list->getIndex( 1 ) );
-                $this->element( $this->list->getIndex( 2 ) );
+        if( $this->list->count() > 5 )
+        {
 
             echo
-            '</div>',
-            '<div class="row">';
+            '<div class="block-layout-one">',
+                '<p class="title"><span>', constant::$text['popular_articles'], '</strong></span></p>',
+                '<div class="row">';
 
-                $this->element( $this->list->getIndex( 3 ) );
-                $this->element( $this->list->getIndex( 4 ) );
-                $this->element( $this->list->getIndex( 5 ) );
+                    $this->element( $this->list->getIndex( 0 ) );
+                    $this->element( $this->list->getIndex( 1 ) );
+                    $this->element( $this->list->getIndex( 2 ) );
 
-            echo
-            '</div>',
-        '</div>';
+                echo
+                '</div>',
+                '<div class="row">';
 
+                    $this->element( $this->list->getIndex( 3 ) );
+                    $this->element( $this->list->getIndex( 4 ) );
+                    $this->element( $this->list->getIndex( 5 ) );
+
+                echo
+                '</div>',
+            '</div>';
+
+        }
     }
 
     private function element( data_article $article )
