@@ -6,57 +6,27 @@
  * Time: 22:55
  */
 
-class action_admin_article extends action
+class action_comment extends action
 {
 
     public function run()
     {
 
-        $article = new data_article( $this->data );
+        echo                     '<li>',
+                        '<article>',
+//                            '<div class="comment-avatar"><img src="demo/50x50.gif" alt="Avatar"/></div>',
+                            '<div class="comment-meta">',
+                                '<span class="comment-author"><a href="#">', $this->data['nick'], '</a> </span>',
+                                '<span class="comment-date">', data_article::dateForDisplay( time() ), '</span>',
+                            '</div>',
+                            '<div class="comment-content">',
+                                '<p>', $this->data['text'], '</p>',
+//                                '<a class="reply" href="#">Reply</a>',
+                            '</div>',
+                        '</article>',
+                    '</li>';
 
-        /** @TODO validation */
 
-        if( empty( $article->id ) )
-        {
-            $article->routing = data_article::clean_for_url( $article->title );
-            $article->id      = model_article::create( $article );
-        }
-        else
-        {
-            $db_article = model_article::getById( $article->id );
-            $article->image_1 = $db_article->image_1;
-            $article->image_2 = $db_article->image_2;
-            $article->image_3 = $db_article->image_3;
-            $article->image_4 = $db_article->image_4;
-            model_article::update( $article );
-        }
-
-        for( $i=1; $i<=4; $i++ )
-        {
-            $image = file::saveFromPost( 'image' . $i, $article->id );
-            if( $image )
-            {
-                $property = 'image_' . $i;
-                $article->$property = $image;
-            }
-        }
-
-        model_article::update( $article );
-
-        $this->success();
-
-    }
-
-    private function failure( data_article $article )
-    {
-        $handler = new handler_admin_article_edit();
-        $handler->run( $article );
-    }
-
-    private function success()
-    {
-        $handler = new handler_admin_article_list();
-        $handler->run();
     }
 
 }
