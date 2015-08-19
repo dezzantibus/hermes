@@ -10,4 +10,14 @@
 abstract class model
 {
 
+    protected static function clean_text( $in )
+    {
+
+        $search  = array( '&gt;', '&lt;' );
+        $replace = array( '>',    '<' );
+
+        return str_replace( $search, $replace, htmlentities( $in ) );
+
+    }
+
 }
