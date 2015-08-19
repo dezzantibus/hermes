@@ -273,7 +273,7 @@ class layout_sidebar extends layout
                 /** @var $category data_category */
                 foreach( $this->data->categories->getData() as $category )
                 {
-                    echo  '<li><a href="', $category->routing, '.html">', $category->name, '</a></li>';
+                    echo  '<li><a href="/', $category->routing, '.html">', $category->name, '</a></li>';
                 }
 
             echo
