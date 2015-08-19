@@ -9,6 +9,7 @@ class text_hermesnews
     {
 
         $text = array(
+            'approval'          => '0',
             'language'          => 'albanian',
             'Insert new'        => 'Inserisci nuovo',
             'Modify'            => 'Modifica',

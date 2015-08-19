@@ -23,8 +23,10 @@ class handler_article extends handler
 
         model_hit::log( $article );
 
+        $comments = model_comment::getForArticle( $article->id );
+
         // Render page
-        $page = new layout_article_page( $header, $footer, $sidebar, $article );
+        $page = new layout_article_page( $header, $footer, $sidebar, $article, $comments );
         $page->render();
 
     }

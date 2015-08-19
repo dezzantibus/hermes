@@ -10,15 +10,110 @@
 class layout_article_comments extends layout
 {
 
-    function __construct()
-    {
+    private $comments;
 
+    function __construct( data_array $comments )
+    {
+        $this->comments = $comments;
     }
 
     public function render()
     {
-        ?>
-        <div class="comments">
+
+
+
+        echo
+        '<div class="comments">',
+
+            //<!-- Respond -->
+            '<div id="respond">',
+                '<p class="title"><span>Leave <strong>reply</strong></span></p>',
+                '<form>',
+                    '<input type="hidden" name="approved" value="', constant::$text['comment_approval'], '">',
+                    '<div class="form-group">',
+                        '<label>Name<span>*</span></label>',
+                        '<input type="text" name="nick">',
+                    '</div>',
+//                    '<div class="form-group">',
+//                        '<label>Email<span>*</span></label>',
+//                        '<input type="text" placeholder="Type your email adress...">',
+//                    '</div>',
+//                    '<div class="form-group">',
+//                        '<label>Website</label>',
+//                        '<input type="text" placeholder="Type your website URL...">',
+//                    '</div>',
+                    '<div class="form-group">',
+                        '<label>Comment<span>*</span></label>',
+                        '<textarea name="text"></textarea>',
+                    '</div>',
+                    '<input class="btn" name="submit" type="button" onclick="submit_comment();" id="submit" value="Post a comment">',
+                '</form>',
+            '</div>',
+
+            '<h4 style="display:none" id="confirm">Your comment is awaiting approval. Once it will be approved it will appear under the article</h4>',
+
+
+            '<script type="text/javascript">',
+
+                'function submit_comment(){',
+
+                    'if($("#respond input[name=nick]").val()==""){',
+                        'alert("Name is required");',
+                        'return false;',
+                    '}',
+                    'if($("#respond textarea").val()==""){',
+                        'alert("Comment is required");',
+                        'return false;',
+                    '}',
+                    '$.post(',
+                        '"/comment.action",',
+                        '{ nick: $("#respond input[name=nick]").val(), text: $("#respond textarea").val() }',
+                    ').done(function( data ) { ',
+                        '$("#respond").hide(); ',
+                        '$("#confirm").show(); ',
+                        '$("ol.comments-list").prepend(data)',
+                    '});',
+                '}',
+
+            '</script>';
+
+            echo
+            '<p class="title"><span>', $this->comments->count(), ' <strong>Comments</strong></span></p>',
+            '<ol class="comments-list">';
+
+                /** @var $comment data_comment */
+                foreach( $this->comments->getData() as $comment )
+                {
+
+                    echo
+                    '<li>',
+                        '<article>',
+//                            '<div class="comment-avatar"><img src="demo/50x50.gif" alt="Avatar"/></div>',
+                            '<div class="comment-meta">',
+                                '<span class="comment-author"><a href="#">', $comment->nick, '</a></span>',
+                                '<span class="comment-date">', data_article::dateForDisplay( $comment->created ), '</span>',
+                            '</div>',
+                            '<div class="comment-content">',
+                                '<p>', $comment->text, '</p>',
+//                                '<a class="reply" href="#">Reply</a>',
+                            '</div>',
+                        '</article>',
+                    '</li>';
+
+                }
+
+            echo
+            '</ol>',
+        '</div>';
+
+    }
+
+}
+
+
+/*
+
+
             <p class="title"><span>4 <strong>Comments</strong></span></p>
             <ol class="comments-list">
                 <li>
@@ -103,34 +198,7 @@ class layout_article_comments extends layout
                         </div>
                     </article>
                 </li>
-            </ol>
 
-            <!-- Respond -->
-            <div id="respond">
-                <p class="title"><span>Leave <strong>reply</strong></span></p>
-                <form>
-                    <div class="form-group">
-                        <label>Name<span>*</span></label>
-                        <input type="text" placeholder="Type your name...">
-                    </div>
-                    <div class="form-group">
-                        <label>Email<span>*</span></label>
-                        <input type="text" placeholder="Type your email adress...">
-                    </div>
-                    <div class="form-group">
-                        <label>Website</label>
-                        <input type="text" placeholder="Type your website URL...">
-                    </div>
-                    <div class="form-group">
-                        <label>Comment<span>*</span></label>
-                        <textarea placeholder="Type your website URL..."></textarea>
-                    </div>
-                    <input class="btn" name="submit" type="submit" id="submit" value="Post a comment">
-                </form>
-            </div>
 
-        </div>
-        <?php
-    }
 
-}
+ */

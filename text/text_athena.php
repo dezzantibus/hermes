@@ -9,6 +9,7 @@ class text_athena
     {
 
         $text = array(
+            'approval'          => '1',
             'language'          => 'english',
             'Insert new'        => 'Insert new',
             'Modify'            => 'Modify',
