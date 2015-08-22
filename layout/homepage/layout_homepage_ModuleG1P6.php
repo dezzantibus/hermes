@@ -30,7 +30,7 @@ class layout_homepage_ModuleG1P6 extends layout
                 '<div class="main-item">',
                     '<div class="post-img">',
                         '<a href="', $main->getLink(), '"><img src="', empty($main->image_1) ? '/demo/422x260.gif' : '/422/260' . $main->image_1, '" alt="Post"/></a>',
-//                        '<span><a href="#">Travel</a></span>',
+                        '<span><a href="#">', $main->journalist->display_name, '</a></span>',
                     '</div>',
                     '<h3><a href="', $main->getLink(), '">', $main->title, '</a></h3>',
                     '<div class="post-dca">',

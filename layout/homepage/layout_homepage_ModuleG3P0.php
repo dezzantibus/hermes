@@ -32,7 +32,7 @@ class layout_homepage_ModuleG3P0 extends layout
                     '<div class="main-item">',
                         '<div class="post-img">',
                             '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/276x200.gif' : '/276/200' . $article->image_1, '" alt="Post"/></a>',
-                            //'<span><a href="#">Money</a></span>',
+                            '<span><a href="#">', $article->journalist->display_name, '</a></span>',
                         '</div>',
                         '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                         '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',

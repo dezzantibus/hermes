@@ -36,7 +36,7 @@ class layout_homepage_ModuleG1P4 extends layout
                     '<div class="post-dca">',
                         '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>',
 //                        '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
-//                        '<span class="author"><a href="', $article->getLink(), '">John Doe</a></span>',
+                        '<span class="author"><a href="', $article->getLink(), '">', $article->journalist->display_name, '</a></span>',
 //                        '<ul class="rating-list">',
 //                            '<li>',
 //                                '<div class="rating-stars" title="Rating: 4.5">',
@@ -76,44 +76,16 @@ class layout_homepage_ModuleG1P4 extends layout
 
     }
 
-    private function large( data_article $article )
-    {
-
-        echo
-        '<div class="main-item">',
-            '<div class="post-img">',
-                '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/350x250.gif' : '/350/250' . $article->image_1, '" alt="Post"/></a>',
-            '</div>',
-            '<div class="post-meta">',
-                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
-                '<div class="post-dca">',
-                    '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>',
-//                    '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
-//                    '<span class="author"><a href="', $article->getLink(), '">John Doe</a></span>',
-//                    '<ul class="rating-list">',
-//                        '<li>',
-//                            '<div class="rating-stars" title="Rating: 4.5">',
-//                                '<span style="width: 90%"></span>',
-//                            '</div>',
-//                        '</li>',
-//                    '</ul>',
-                '</div>',
-                '<p>', empty( $article->brief ) ? substr( $article->text, 0, 300 ) . '...' : $article->brief, '</p>',
-            '</div>',
-        '</div>';
-
-    }
-
     private function small( data_article $article )
     {
 
         echo
         '<div class="item">',
-        '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/80x65.gif' : '/80/65' . $article->image_1, '" alt="Post"/></a>',
-        '<div>',
-        '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
-        '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
-        '</div>',
+            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/80x65.gif' : '/80/65' . $article->image_1, '" alt="Post"/></a>',
+            '<div>',
+                '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
+            '</div>',
         '</div>';
 
     }

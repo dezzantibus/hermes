@@ -186,7 +186,8 @@ class model_article extends model
         $result = new data_array();
         while( $row = $query->fetch() )
         {
-            $result->add( new data_article( $row, $category ) );
+            $journalist = model_journalist::getById( $row['journalist_id'] );
+            $result->add( new data_article( $row, $category, $journalist ) );
         }
 
         return $result;
@@ -278,7 +279,8 @@ class model_article extends model
         $result = new data_array();
         while( $row = $query->fetch() )
         {
-            $result->add( new data_article( $row, $category ) );
+            $journalist = model_journalist::getById( $row['journalist_id'] );
+            $result->add( new data_article( $row, $category, $journalist ) );
         }
 
         return $result;
