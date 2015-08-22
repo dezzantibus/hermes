@@ -19,13 +19,13 @@ class action_admin_login extends action
 
         if( empty( $journalist->id ) )
         {
-            $handler = new handler_admin_article_list();
+            $handler = new handler_admin();
             $handler->run( 'journalist not found' );
         }
         else
         {
             $_SESSION['journalist'] = $journalist;
-            $handler = new handler_admin_article_list();
+            $handler = new handler_admin();
             $handler->run();
         }
 

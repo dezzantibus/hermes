@@ -222,14 +222,29 @@ class model_article extends model
     static public function getAdminPage( $page=1 )
     {
 
-        $sql = '
-            SELECT *
-            FROM article
-            ORDER BY id DESC
-            LIMIT :start, :number
-        ';
+        if( $_SESSION['journalist']->id == 1 )
+        {
+            $sql = '
+                SELECT *
+                FROM article
+                ORDER BY id DESC
+                LIMIT :start, :number
+            ';
+            $query = db::prepare( $sql );
+        }
+        else
+        {
+            $sql = '
+                SELECT *
+                FROM article
+                    WHERE journalist_id = :journalist_id
+                ORDER BY id DESC
+                LIMIT :start, :number
+            ';
+            $query = db::prepare( $sql );
+            $query->bindInt( ':journalist_id', $_SESSION['journalist']->id );
+        }
 
-        $query = db::prepare( $sql );
         $query
             ->bindInt( ':start',       ( $page - 1 ) * constant::ADMIN_ARTICLES_PER_PAGE )
             ->bindInt( ':number',      constant::ADMIN_ARTICLES_PER_PAGE )
@@ -347,8 +362,6 @@ class model_article extends model
         return $result;
 
     }
-
-
 
     static public function getCategoryPinned( data_category $category, $limit )
     {
