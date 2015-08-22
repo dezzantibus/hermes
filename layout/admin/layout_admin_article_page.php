@@ -46,16 +46,6 @@ class layout_admin_article_page extends layout_page
             ) );
         }
 
-        $radio_data = new data_array();
-        $radio_data->add( array(
-            'label' => constant::$text['yes'],
-            'value' => 1,
-        ) );
-        $radio_data->add( array(
-            'label' => constant::$text['no'],
-            'value' => 0,
-        ) );
-
         // Data from submit to be added here.
 
         $form->addChild( new layout_form_hidden( 'id', $article->id ) );
@@ -72,8 +62,6 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'routing', $article->routing ) );
 
-        $form->addChild( new layout_form_hidden( 'journalist_id', empty( $article->journalist_id ) ? $_SESSION['journalist']->id : $article->journalist_id ) );
-
         $form->addChild( new layout_form_dropdown( 'category_id', constant::$text['category'], $dropdown_data, $article->category_id ) );
 
         $form->addChild( new layout_form_text( 'title', constant::$text['title'], $article->title ) );
@@ -88,6 +76,38 @@ class layout_admin_article_page extends layout_page
         {
             $form->addChild( new layout_form_file( 'image' . $i, constant::$text['image'] . ' ' . $i ), null );
         }
+
+        switch( constant::$text['site'] )
+        {
+            case 'athena':
+                $form->addChild( new layout_form_hidden( 'journalist_id', empty( $article->journalist_id ) ? $_SESSION['journalist']->id : $article->journalist_id ) );
+                break;
+
+            case 'hermes':
+                $radio_data = new data_array();
+                $radio_data->add( array(
+                    'label' => constant::$text['yes'],
+                    'value' => $_SESSION['journalist']->id,
+                ) );
+                $radio_data->add( array(
+                    'label' => constant::$text['no'],
+                    'value' => 0,
+                ) );
+
+                $form->addChild( new layout_form_radio( 'journalist_id', constant::$text['show journalist'], $radio_data, $article->journalist_id ) );
+
+                break;
+        }
+
+        $radio_data = new data_array();
+        $radio_data->add( array(
+            'label' => constant::$text['yes'],
+            'value' => 1,
+        ) );
+        $radio_data->add( array(
+            'label' => constant::$text['no'],
+            'value' => 0,
+        ) );
 
         $form->addChild( new layout_form_radio( 'hero', 'Hero', $radio_data, $article->hero ) );
 

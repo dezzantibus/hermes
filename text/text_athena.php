@@ -9,6 +9,7 @@ class text_athena
     {
 
         $text = array(
+            'site'              => 'athena',
             'language'          => 'english',
             'Insert new'        => 'Insert new',
             'Modify'            => 'Modify',
@@ -41,6 +42,7 @@ class text_athena
             'yes'               => 'Yes',
             'no'                => 'No',
             'login failed'      => 'Login failed, please try again',
+            'show journalist'   => 'Show journalist',
         );
 
         return $text;

@@ -29,8 +29,12 @@ class layout_homepage_ModuleG1P6 extends layout
                 '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>',
                 '<div class="main-item">',
                     '<div class="post-img">',
-                        '<a href="', $main->getLink(), '"><img src="', empty($main->image_1) ? '/demo/422x260.gif' : '/422/260' . $main->image_1, '" alt="Post"/></a>',
-                        '<span><a href="#">', $main->journalist->display_name, '</a></span>',
+                        '<a href="', $main->getLink(), '"><img src="', empty($main->image_1) ? '/demo/422x260.gif' : '/422/260' . $main->image_1, '" alt="Post"/></a>';
+                        if( $main->journalist_id > 0 )
+                        {
+                            echo '<span><a href="#">', $main->journalist->display_name, '</a></span>';
+                        }
+                    echo
                     '</div>',
                     '<h3><a href="', $main->getLink(), '">', $main->title, '</a></h3>',
                     '<div class="post-dca">',

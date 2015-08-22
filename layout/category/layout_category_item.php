@@ -40,9 +40,14 @@ class layout_category_item extends layout
             '<div class="post-meta">',
                 '<h3><a href="', $this->article->getLink(), '">', $this->article->title, '</a></h3>',
                 '<div class="post-dca">',
-                    '<span class="date">', data_article::dateForDisplay( $this->article->created ), '</span>',
+                    '<span class="date">', data_article::dateForDisplay( $this->article->created ), '</span>';
 //                    '<span class="comments"><a href="', $this->article->getLink(), '">23 Comments</a></span>',
-                    '<span class="author"><a href="', $this->article->getLink(), '">', $this->article->journalist->display_name, '</a></span>',
+
+                    if( $this->article->journalist_id > 0 )
+                    {
+                        echo '<span class="author"><a href="', $this->article->getLink(), '">', $this->article->journalist->display_name, '</a></span>';
+                    }
+
 //                    '<ul class="rating-list">',
 //                        '<li>',
 //                            '<div class="rating-stars" title="Rating: 4.5">',
@@ -50,6 +55,7 @@ class layout_category_item extends layout
 //                            '</div>',
 //                        '</li>',
 //                   '</ul>',
+                echo
                 '</div>',
                 '<p>', empty( $this->article->brief ) ? substr( $this->article->text, 0, 300 ) . '...' : $this->article->brief, '</p>',
             '</div>',
@@ -68,9 +74,13 @@ class layout_category_item extends layout
             '<div class="post-meta">',
                 '<h3><a href="', $this->article->getLink(), '">', $this->article->title, '</a></h3>',
                 '<div class="post-dca">',
-                    '<span class="date">', data_article::dateForDisplay( $this->article->created ), '</span>',
+                    '<span class="date">', data_article::dateForDisplay( $this->article->created ), '</span>';
 //                    '<span class="comments"><a href="', $this->article->getLink(), '">23 Comments</a></span>',
-                    '<span class="author"><a href="', $this->article->getLink(), '">', $this->article->journalist->display_name, '</a></span>',
+
+                    if( $this->article->journalist_id > 0 )
+                    {
+                        echo '<span class="author"><a href="', $this->article->getLink(), '">', $this->article->journalist->display_name, '</a></span>';
+                    }
 //                    '<ul class="rating-list">',
 //                        '<li>',
 //                            '<div class="rating-stars" title="Rating: 4.5">',
@@ -78,6 +88,7 @@ class layout_category_item extends layout
 //                            '</div>',
 //                        '</li>',
 //                    '</ul>',
+                echo
                 '</div>',
                 '<p>', empty( $this->article->brief ) ? substr( $this->article->text, 0, 300 ) . '...' : $this->article->brief, '</p>',
             '</div>',

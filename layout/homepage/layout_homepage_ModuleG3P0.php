@@ -31,8 +31,14 @@ class layout_homepage_ModuleG3P0 extends layout
                 '<div class="grid_4">',
                     '<div class="main-item">',
                         '<div class="post-img">',
-                            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/276x200.gif' : '/276/200' . $article->image_1, '" alt="Post"/></a>',
-                            '<span><a href="#">', $article->journalist->display_name, '</a></span>',
+                            '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/276x200.gif' : '/276/200' . $article->image_1, '" alt="Post"/></a>';
+
+                            if( $article->journalist_id > 0 )
+                            {
+                                echo'<span><a href="#">', $article->journalist->display_name, '</a></span>';
+                            }
+
+                        echo
                         '</div>',
                         '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                         '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',

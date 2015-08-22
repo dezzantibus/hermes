@@ -9,6 +9,7 @@ class text_hermesnews
     {
 
         $text = array(
+            'site'              => 'hermes',
             'language'          => 'albanian',
             'Insert new'        => 'Inserisci nuovo',
             'Modify'            => 'Modifica',
@@ -41,6 +42,7 @@ class text_hermesnews
             'yes'               => 'Po',
             'no'                => 'Jo',
             'login failed'      => 'Login failed, please try again',
+            'show journalist'   => 'Mostra giornalista',
         );
 
         return $text;

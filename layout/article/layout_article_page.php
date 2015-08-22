@@ -29,7 +29,10 @@ class layout_article_page extends layout_page
 
         $main->addChild( new layout_article_content( $article ) );
 
-        $main->addChild( new layout_article_bio( $article->journalist ) );
+        if( $article->journalist_id > 0 )
+        {
+            $main->addChild( new layout_article_bio( $article->journalist ) );
+        }
 
 //        $main->addChild( new layout_article_controls() );
 
