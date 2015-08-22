@@ -3,3 +3,8 @@
     background: url("/images/logo/athena.png") left no-repeat;
     padding-left: 50px;
 }
+
+ul.main-menu a{
+    padding:13px 30px;
+}
+
