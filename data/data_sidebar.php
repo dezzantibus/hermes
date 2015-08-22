@@ -29,4 +29,6 @@ class data_sidebar extends data
     /** @var  data_array */
     public $categories;
 
+    public $adData;
+
 }

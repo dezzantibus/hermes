@@ -29,6 +29,8 @@ class data_journalist extends data
 
     public $created;
 
+    public $google;
+
     function __construct( $data=null )
     {
 
@@ -44,6 +46,7 @@ class data_journalist extends data
             if( isset( $data['icon'] ) )         $this->icon         = $data['icon'];
             if( isset( $data['bio'] ) )          $this->bio          = $data['bio'];
             if( isset( $data['created'] ) )      $this->created      = $data['created'];
+            if( isset( $data['google'] ) )       $this->google       = $data['google'];
         }
 
     }

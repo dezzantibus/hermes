@@ -72,7 +72,7 @@ class layout_sidebar extends layout
         '<div class="widget">',
             '<h3 class="widget-title">', constant::$text['Advertising'], '</h3>',
             '<div class="ad-banner-300x250">';
-                google::automatic();
+                banner::automatic( $this->data->adData );
                 //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
             echo
             '</div>',

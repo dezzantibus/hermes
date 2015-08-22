@@ -51,7 +51,7 @@ abstract class handler
 
     }
 
-    protected function getSidebarData( $category=null )
+    protected function getSidebarData( $category=null, $adData=null )
     {
 
         $result = new data_sidebar();
@@ -67,6 +67,8 @@ abstract class handler
             $this->recent_articles = model_article::getRecent( $category );
         }
         $result->recent_articles = $this->recent_articles;
+
+        $result->adData = $adData;
 
         return $result;
 

@@ -147,7 +147,7 @@ class layout_header extends layout
         '<div class="top-bar light">',
             '<div class="inner-wrapper">';
 
-                google::automatic();
+                banner::automatic();
 
             echo
             '</div>',
@@ -170,7 +170,7 @@ class layout_header extends layout
 
             //<!-- Ad banner -->
             '<div class="ad-banner-728x90">';
-                google::automatic();
+                banner::automatic();
             echo
             '</div>',
 
