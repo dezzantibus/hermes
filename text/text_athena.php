@@ -40,6 +40,7 @@ class text_athena
             'image'             => 'Image',
             'yes'               => 'Yes',
             'no'                => 'No',
+            'login failed'      => 'Login failed, please try again',
         );
 
         return $text;

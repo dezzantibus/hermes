@@ -40,6 +40,7 @@ class text_hermesnews
             'image'             => 'Imazh',
             'yes'               => 'Po',
             'no'                => 'Jo',
+            'login failed'      => 'Login failed, please try again',
         );
 
         return $text;

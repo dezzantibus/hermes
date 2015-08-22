@@ -12,3 +12,11 @@ ul.main-menu a{
 .cc_message{
     width:80%;
 }
+
+.message{
+    font-family: 'Open Sans', 'sans-serif';
+    padding:5px 20px;
+    color: #FFF;
+    background:#555;
+    font-size:14px;
+}

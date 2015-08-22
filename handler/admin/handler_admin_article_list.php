@@ -9,14 +9,14 @@
 class handler_admin_article_list extends handler
 {
 
-    public function run()
+    public function run( $message=null )
     {
 
         $header  = $this->getHeaderData();
         $footer  = $this->getFooterData();
         $sidebar = $this->getSidebarData();
 
-        $this->login( $header, $footer, $sidebar );
+        $this->login( $header, $footer, $sidebar, $message );
 
         // Get list of articles
         $page = $this->data['page'];

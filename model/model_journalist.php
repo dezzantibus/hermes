@@ -86,4 +86,26 @@ class model_journalist extends model
 
     }
 
+    static public function login( $email, $pass )
+    {
+
+        $sql = '
+            SELECT *
+            FROM journalist
+            WHERE password = :password
+                AND email = :email
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindString( ':password', security::hash( $pass ) )
+            ->bindString( ':email',    $email )
+            ->execute();
+
+        $row = $query->fetch();
+
+        return new data_journalist( $row );
+
+    }
+
 }

@@ -7,7 +7,8 @@ class layout_admin_login_page extends layout_page
     (
         data_header  $header,
         data_footer  $footer,
-        data_sidebar $sidebar
+        data_sidebar $sidebar,
+                     $message
     )
     {
 
@@ -37,6 +38,14 @@ class layout_admin_login_page extends layout_page
         $form->addChild( new layout_form_text( 'email', constant::$text['email'], $article->title ) );
 
         $form->addChild( new layout_form_password( 'password', constant::$text['password'], $article->subtitle ) );
+
+        switch( $message )
+        {
+            case 'journalist not found':
+                $params = array( 'class' => 'message' );
+                $main->addChild( new layout_basic_h4( constant::$text['login failed'], $params ) );
+                break;
+        }
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
