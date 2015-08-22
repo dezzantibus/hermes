@@ -17,11 +17,15 @@
 
 
 	RewriteRule ^(.*)demo/(.*)x(.*)\.gif$ image.php?width=$2&height=$3&file=filler.jpg [QSA,L]
-	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
-	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
-	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPEG$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
-	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpeg$ image.php?width=$1&height=$2&file=$6&path=$3/$4/$5 [QSA,L]
-	RewriteRule ^(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$3.jpg [QSA,L] #To be removed
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPEG$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpeg$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.JPEG$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.jpeg$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+#	RewriteRule ^(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$3.jpg [QSA,L] #To be removed
 
 	RewriteRule ^(.*)/(.*)\.action$ index.php?handler=action_$1_$2 [QSA,L]
 	RewriteRule ^(.*)\.action$ index.php?handler=action_$1 [QSA,L]

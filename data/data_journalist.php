@@ -23,6 +23,10 @@ class data_journalist extends data
 
     public $password;
 
+    public $icon;
+
+    public $bio;
+
     public $created;
 
     function __construct( $data=null )
@@ -37,6 +41,8 @@ class data_journalist extends data
             if( isset( $data['display_name'] ) ) $this->display_name = $data['display_name'];
             if( isset( $data['email'] ) )        $this->email        = $data['email'];
             if( isset( $data['password'] ) )     $this->password     = $data['password'];
+            if( isset( $data['icon'] ) )         $this->icon         = $data['icon'];
+            if( isset( $data['bio'] ) )          $this->bio          = $data['bio'];
             if( isset( $data['created'] ) )      $this->created      = $data['created'];
         }
 

@@ -72,6 +72,8 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_hidden( 'routing', $article->routing ) );
 
+        $form->addChild( new layout_form_hidden( 'journalist_id', empty( $article->journalist_id ) ? $_SESSION['journalist']->id : $article->journalist_id ) );
+
         $form->addChild( new layout_form_dropdown( 'category_id', constant::$text['category'], $dropdown_data, $article->category_id ) );
 
         $form->addChild( new layout_form_text( 'title', constant::$text['title'], $article->title ) );

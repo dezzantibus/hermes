@@ -21,10 +21,10 @@ class layout_article_bio extends layout
     {
         echo
         '<div class="post-bio">',
-            '<img src="demo/100x100.gif" alt="Author"/>',
+            '<img src="', empty( $this->journalist->icon ) ? '/demo/100x100.gif' : '/100/100' . $this->journalist->icon, '" alt="Author"/>',
             '<div class="description">',
-                '<a class="bio" href="#">John doe</a>',
-                '<p>Nam bibendum ante ipsum, vitae ullamcorper risus accumsan et. Proin at metus elementum justo adipiscing scelerisque eu quis lacus. Nunc eleifend tellus at viverra interdum. Mauris blandit magna non felis fringilla viverra. Pellentesque dui nisi, ultrices id facilisis et, consectetur a orci. Proin viverra massa sed erat pulvinar eleifend. Nullam eleifend tortor at diam facilisis, pharetra pharetra justo sagittis. Nulla quis leo eget nulla cursus porta.</p>',
+                '<a class="bio" href="#">', $this->journalist->display_name, '</a>',
+                '<p>', $this->journalist->bio, '</p>',
             '</div>',
         '</div>';
     }

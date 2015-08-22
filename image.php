@@ -12,7 +12,7 @@ class image
     public static function retrieve( $file, $path, $width, $height )
     {
 
-        $file_path = __DIR__ . "/upload/articles/$path/";
+        $file_path = __DIR__ . "/upload/$path/";
 
         $processed_filename = $file_path . $file . '_' . $width . '_' . $height . '.jpg';
 
