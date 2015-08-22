@@ -47,12 +47,21 @@ class layout_homepage_ModuleG2P6 extends layout
 
         '<script type="text/javascript">',
             '$( document ).ready(function() {',
+
                 'var one = $(".', $this->list->routing, ' .column-1 .main-item p");',
                 'var two = $(".', $this->list->routing, ' .column-2 .main-item p");',
                 'if(  one.height() > two.height() )',
                     '{two.height( one.height() );}',
                 'else',
                     '{one.height( two.height() );}',
+
+                'one = $(".', $this->list->routing, ' .column-1 .main-item h3");',
+                'two = $(".', $this->list->routing, ' .column-2 .main-item h3");',
+                'if(  one.height() > two.height() )',
+                    '{two.height( one.height() );}',
+                'else',
+                    '{one.height( two.height() );}',
+
             '});',
         '</script>';
 
