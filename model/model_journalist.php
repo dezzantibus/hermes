@@ -14,18 +14,19 @@ class model_journalist extends model
 
         $sql = '
             INSERT INTO journalist
-                (  manager_id,  first_name,  last_name,  email,  password )
+                (  manager_id,  first_name,  last_name,  display_name,  email,  password )
             VALUES
-                ( :manager_id, :first_name, :last_name, :email, :password )
+                ( :manager_id, :first_name, :last_name, :display_name, :email, :password )
         ';
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt   ( ':manager_id', $data->manager_id )
-            ->bindString( ':first_name', $data->first_name )
-            ->bindString( ':last_name',  $data->last_name )
-            ->bindString( ':email',      $data->email )
-            ->bindString( ':password',   security::hash( $data->password ) )
+            ->bindInt   ( ':manager_id',   $data->manager_id )
+            ->bindString( ':first_name',   $data->first_name )
+            ->bindString( ':last_name',    $data->last_name )
+            ->bindString( ':display_name', $data->display_name )
+            ->bindString( ':email',        $data->email )
+            ->bindString( ':password',     security::hash( $data->password ) )
             ->execute();
 
         return db::lastInsertId();
@@ -37,11 +38,12 @@ class model_journalist extends model
 
         $sql = '
             UPDATE journalist
-            SET manager_id = :manager_id,
-                first_name = :first_name,
-                last_name = :last_name,
-                email = :email,
-                password = :password,
+            SET manager_id   = :manager_id,
+                first_name   = :first_name,
+                last_name    = :last_name,
+                display_name = :display_name,
+                email        = :email,
+                password     = :password,
             WHERE id = :id
         ';
 
@@ -49,12 +51,13 @@ class model_journalist extends model
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt   ( ':manager_id', $data->manager_id )
-            ->bindString( ':first_name', $data->first_name )
-            ->bindString( ':last_name',  $data->last_name )
-            ->bindString( ':email',      $data->email )
-            ->bindString( ':password',   $password )
-            ->bindInt   ( ':id',         $data->id )
+            ->bindInt   ( ':manager_id',   $data->manager_id )
+            ->bindString( ':first_name',   $data->first_name )
+            ->bindString( ':last_name',    $data->last_name )
+            ->bindString( ':display_name', $data->display_name )
+            ->bindString( ':email',        $data->email )
+            ->bindString( ':password',     $password )
+            ->bindInt   ( ':id',           $data->id )
             ->execute();
 
     }

@@ -75,12 +75,12 @@ abstract class handler
     protected function login( $header, $footer, $sidebar )
     {
 
-//        if( empty( $_SESSION['journalist'] ) )
-//        {
-//            $page = new layout_admin_login_page( $header, $footer, $sidebar );
-//            $page->render();
-//            die();
-//        }
+        if( empty( $_SESSION['journalist'] ) )
+        {
+            $page = new layout_admin_login_page( $header, $footer, $sidebar );
+            $page->render();
+            die();
+        }
 
     }
 
