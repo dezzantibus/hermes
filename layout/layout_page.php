@@ -19,7 +19,7 @@ abstract class layout_page extends layout
             '<title>', $this->title, '</title>',
 
             //<!-- Favicons -->
-            '<link rel="shortcut icon" href="favicon.ico">',
+            '<link rel="shortcut icon" href="/images/logo/', constant::$text['site'], '-favico.png">',
             '<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">',
             '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">',
             '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">',
@@ -65,6 +65,8 @@ abstract class layout_page extends layout
             '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>',
 
             '<link rel="stylesheet" href="/css/mine.css">',
+
+            '<link rel="stylesheet" href="/css/', constant::$text['site'], '.css">',
 
         '</head>',
         '<body>',
