@@ -20,3 +20,8 @@ ul.main-menu a{
     background:#555;
     font-size:14px;
 }
+
+.post-bio .description p {
+    font-size: 12px;
+    line-height: 16px;
+}
