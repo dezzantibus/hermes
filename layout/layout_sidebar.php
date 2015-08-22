@@ -218,7 +218,7 @@ class layout_sidebar extends layout
         //<!-- Recent posts -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">', constant::$text['Recent posts'], '</h3>',
+            '<h3 class="widget-title">', constant::$text['Recent articles'], '</h3>',
             '<ul class="recent-posts">';
 
                 foreach( $this->data->recent_articles->getData() as $article )
