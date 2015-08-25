@@ -43,6 +43,10 @@ class text_hermesnews
             'no'                => 'Jo',
             'login failed'      => 'Login failed, please try again',
             'show journalist'   => 'Mostra giornalista',
+            'side text'         => 'Hermesnews &euml;sht&euml; gazeta e par&euml; online n&euml; gjuh&euml;n shqipe, themeluar n&euml; vitin 2006
+                                    n&euml; Itali. Lajme dhe opinione, p&euml;r ata q&euml; k&euml;rkojn&euml; informacion t&euml; shpejt&euml;, t&euml;
+                                    pavaruar dhe t&euml; besuesh&euml;m',
+            'site name'         => 'Hermesnews',
         );
 
         return $text;

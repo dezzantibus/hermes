@@ -37,7 +37,7 @@ class layout_sidebar extends layout
 
         $this->category();
 
-        $this->meta();
+//        $this->meta();
 
         $this->text();
 
@@ -305,8 +305,8 @@ class layout_sidebar extends layout
         //<!-- Text widget -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">Text</h3>',
-            '<p>Etiam luctus neque vel enim molestie pretium. Etiam vitae purus ac urna molestie ultrices vel molestie...</p>',
+            '<h3 class="widget-title">', constant::$text['site name'], '</h3>',
+            '<p>', constant::$text['side text'], '</p>',
         '</div>';
 
     }

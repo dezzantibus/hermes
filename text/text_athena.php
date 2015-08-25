@@ -43,6 +43,8 @@ class text_athena
             'no'                => 'No',
             'login failed'      => 'Login failed, please try again',
             'show journalist'   => 'Show journalist',
+            'side text'         => 'Side text',
+            'site name'         => 'Athena News',
         );
 
         return $text;
