@@ -43,7 +43,7 @@ class text_athena
             'no'                => 'No',
             'login failed'      => 'Login failed, please try again',
             'show journalist'   => 'Show journalist',
-            'side text'         => 'Side text',
+            'side text'         => 'The measure of information is in its quality, not in its quantity',
             'site name'         => 'Athena News',
         );
 

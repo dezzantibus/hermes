@@ -50,16 +50,28 @@ class banner
 
     private static function bannerAndrea()
     {
-        //<!-- Hermes scuro automatico -->
-        echo
-        '<ins class="adsbygoogle" ',
-            'style="display:block" ',
-            'data-ad-client="ca-pub-0866520425041689" ',
-            'data-ad-slot="8400124744" ',
-            'data-ad-format="auto"></ins>',
-        '<script>',
-            '(adsbygoogle = window.adsbygoogle || []).push({});',
-        '</script>';
+
+        switch( constant::$text['site'] )
+        {
+            case 'athena':
+                //<!-- Hermes scuro automatico -->
+                echo
+                '<ins class="adsbygoogle" ',
+                    'style="display:block" ',
+                    'data-ad-client="ca-pub-0866520425041689" ',
+                    'data-ad-slot="8400124744" ',
+                    'data-ad-format="auto"></ins>',
+                '<script>',
+                    '(adsbygoogle = window.adsbygoogle || []).push({});',
+                '</script>';
+                break;
+
+            case 'hermes':
+                echo
+                '<script type="text/javascript"><!-- amazon_ad_tag = "athnew-21"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_link_target = "new";//--></script>',
+                '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
+                break;
+        }
 
     }
 

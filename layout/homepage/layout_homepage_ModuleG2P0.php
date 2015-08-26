@@ -34,16 +34,17 @@ class layout_homepage_ModuleG2P0 extends layout
                     '</div>',
                     '<div class="post-meta">',
                         '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
-                        '<div class="post-dca">';
+                        '<div class="post-dca">',
 
+                            '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>';
+
+//                            '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
                             if( $article->journalist_id > 0 )
                             {
-                                echo '<span class="date">', data_article::dateForDisplay( $article->created ), '</span>';
+                                echo '<span class="author"><a href="', $article->getLink(), '">', $article->journalist->display_name, '</a></span>';
                             }
-                
+
                             echo
-//                            '<span class="comments"><a href="', $article->getLink(), '">23 Comments</a></span>',
-                            '<span class="author"><a href="', $article->getLink(), '">', $article->journalist->display_name, '</a></span>',
 //                            '<ul class="rating-list">',
 //                                '<li>',
 //                                    '<div class="rating-stars" title="Rating: 4.5">',
