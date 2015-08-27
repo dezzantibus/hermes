@@ -192,7 +192,7 @@ class layout_header extends layout
 
                 //<!-- Main menu -->
                 '<ul class="main-menu">',
-                    '<li><a style="border-bottom:2px solid #000; padding:13px 12px;" href="/">Home</a></li>';
+                    '<li><a style="border-bottom:2px solid #000;" href="/">Home</a></li>';
 
                     /** @var $category data_category */
                     foreach( $this->data->category_menu->getData() as $category )
