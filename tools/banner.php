@@ -76,12 +76,6 @@ class banner
 //                        '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
                         break;
 
-                    case 'header':
-                        echo
-                        '<script type="text/javascript"><!-- amazon_ad_tag = "athnew-21"; amazon_ad_width = "728"; amazon_ad_height = "90"; amazon_ad_link_target = "new";//--></script>',
-                        '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
-                        break;
-
                 }
                 break;
 
