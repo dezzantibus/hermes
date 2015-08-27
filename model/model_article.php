@@ -469,7 +469,7 @@ class model_article extends model
         {
 
             $xml .= '<url>';
-            $xml .=     '<loc>http://www.example.org/business/article55.html</loc>';
+            $xml .=     '<loc>http://' . $_SERVER['HTTP_HOST'] . '/' . $category->routing . '/' . $row['routing'] . '.html</loc>';
             $xml .=     '<news:news>';
 
             $xml .=         '<news:publication>';
