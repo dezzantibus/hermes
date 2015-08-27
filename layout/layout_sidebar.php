@@ -25,7 +25,7 @@ class layout_sidebar extends layout
 
 //        $this->search();
 
-        $this->banner();
+        $this->banner( 'side1' );
 
         //$this->tabs();
 
@@ -41,7 +41,7 @@ class layout_sidebar extends layout
 
         $this->text();
 
-        $this->banner();
+        $this->banner( 'side2' );
 
 //        $this->tags();
 
@@ -64,7 +64,7 @@ class layout_sidebar extends layout
 
     }
 
-    private function banner()
+    private function banner( $data )
     {
 
         //<!-- Banner 300x250 -->
@@ -72,7 +72,7 @@ class layout_sidebar extends layout
         '<div class="widget">',
             '<h3 class="widget-title">', constant::$text['Advertising'], '</h3>',
             '<div class="ad-banner-300x250">';
-                banner::automatic( $this->data->adData );
+                banner::automatic( $data );
                 //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
             echo
             '</div>',
