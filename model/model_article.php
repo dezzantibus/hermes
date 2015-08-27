@@ -444,4 +444,62 @@ class model_article extends model
 
     }
 
+    static public function sitemaps( $category_id )
+    {
+
+        $category = model_category::getById( $category_id );
+
+        $xml  = '<?xml version="1.0" encoding="UTF-8"?>';
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">';
+
+        $sql = '
+            SELECT *
+            FROM article
+            WHERE category_id = :category_id
+            ORDER BY created DESC
+            LIMIT 1000
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':category_id', $category_id )
+            ->execute();
+
+        while( $row = $query->fetch() )
+        {
+
+            $xml .= '<url>';
+            $xml .=     '<loc>http://www.example.org/business/article55.html</loc>';
+            $xml .=     '<news:news>';
+
+            $xml .=         '<news:publication>';
+
+            $xml .=             '<news:name>' . constant::$text['site name'] . '</news:name>';
+
+                                switch( constant::$text['language'] )
+                                {
+                                    case 'albanian': $xml .= '<news:language>sq</news:language>'; break;
+                                    case 'english':  $xml .= '<news:language>en</news:language>'; break;
+                                }
+
+            $xml .=         '<news:publication_date>' . substr( $row['created'], 0, 10 ) . '</news:publication_date>';
+            $xml .=         '<news:title>' . $row['title'] . '</news:title>';
+
+            $xml .=         '</news:publication>';
+
+            $xml .=     '</news:news>';
+            $xml .= '</url>';
+
+        }
+
+        $xml .= '</urlset>';
+
+        $fp = fopen( __DIR__ . '/../sitemap/' . $category->routing . '.xml', 'w' );
+        fwrite( $fp, utf8_encode( $xml ) );
+        fclose( $fp );
+
+        die();
+
+    }
+
 }

@@ -43,6 +43,8 @@ class action_admin_article extends action
 
         model_article::update( $article );
 
+        model_article::sitemaps( $article->category_id );
+
         $this->success();
 
     }
