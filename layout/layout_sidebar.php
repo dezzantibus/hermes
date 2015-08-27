@@ -43,7 +43,7 @@ class layout_sidebar extends layout
 
         $this->banner();
 
-        $this->tags();
+//        $this->tags();
 
         echo '</aside>';
 
