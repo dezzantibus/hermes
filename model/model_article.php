@@ -482,10 +482,10 @@ class model_article extends model
                                     case 'english':  $xml .= '<news:language>en</news:language>'; break;
                                 }
 
+            $xml .=         '</news:publication>';
+
             $xml .=         '<news:publication_date>' . substr( $row['created'], 0, 10 ) . '</news:publication_date>';
             $xml .=         '<news:title>' . $row['title'] . '</news:title>';
-
-            $xml .=         '</news:publication>';
 
             $xml .=     '</news:news>';
             $xml .= '</url>';
