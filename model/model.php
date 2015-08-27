@@ -13,7 +13,7 @@ abstract class model
     protected static function clean_text( $in )
     {
 
-        $search  = array( '&gt;', '&lt;', '&quot' );
+        $search  = array( '&gt;', '&lt;', '&quot;' );
         $replace = array( '>',    '<',    '"' );
 
         return str_replace( $search, $replace, htmlentities( $in ) );
