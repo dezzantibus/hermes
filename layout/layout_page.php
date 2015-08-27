@@ -29,6 +29,7 @@ abstract class layout_page extends layout
             '<meta charset="UTF-8">',
             '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">',
             '<meta name="description" content="', $this->description, '">',
+            constant::$text['webmaster tools'],
 
             //<!-- Normalize -->
             '<link rel="stylesheet" href="/css/normalize.css">',

@@ -12,6 +12,10 @@ class layout_article_page extends layout_page
     )
     {
 
+        $this->title = $article->title;
+
+        $this->description = $article->brief;
+
         $this->addChild( new layout_header( $header ) );
 
         $params  = array( 'id' => 'section' );

@@ -14,6 +14,14 @@ class layout_homepage_page extends layout_page
     )
     {
 
+        switch( constant::$text['site'] )
+        {
+            case 'hermes': $this->title = 'Hermes news'; break;
+            case 'athena': $this->title = 'Athena news'; break;
+        }
+
+        $this->description = constant::$text['site text'];
+
         $this->addChild( new layout_header( $header ) );
 
         $this->addChild( new layout_homepage_hero( $hero_articles ) );

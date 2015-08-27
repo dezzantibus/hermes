@@ -33,7 +33,6 @@ class handler_category extends handler
             $pinned = model_article::getCategoryPinned( $category, 6 );
         }
 
-
         $header  = $this->getHeaderData();
         $footer  = $this->getFooterData();
         $sidebar = $this->getSidebarData( $category );
