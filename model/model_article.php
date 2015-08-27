@@ -498,8 +498,6 @@ class model_article extends model
         fwrite( $fp, utf8_encode( $xml ) );
         fclose( $fp );
 
-        die();
-
     }
 
 }
