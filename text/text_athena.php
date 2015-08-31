@@ -10,6 +10,7 @@ class text_athena
 
         $text = array(
             'site'              => 'athena',
+            'approval'          => '1',
             'language'          => 'english',
             'Insert new'        => 'Insert new',
             'Modify'            => 'Modify',

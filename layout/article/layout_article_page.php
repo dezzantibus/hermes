@@ -8,7 +8,8 @@ class layout_article_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_article $article
+        data_article $article,
+        data_array   $comments
     )
     {
 
@@ -42,7 +43,7 @@ class layout_article_page extends layout_page
 
 //        $main->addChild( new layout_article_related() );
 
-//        $main->addChild( new layout_article_comments() );
+        $main->addChild( new layout_article_comments( $comments ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
