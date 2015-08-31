@@ -18,7 +18,7 @@ class text_hermesnews
             'Popular'           => 'Popullor',
             'Recent comments'   => 'Komentet e fundit',
             'Recent articles'   => 'Lajmet E FUNDIT',
-            'Categories'        => 'Kategori',
+            'Categories'        => 'Kategorit&euml;',
             'header_name'       => 'Hermes<span>News</span>',
             'header_under_name' => 'Lajmi i par&euml; Portali shqiptar',
             'popular_articles'  => 'Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong>',
