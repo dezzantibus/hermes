@@ -47,7 +47,7 @@ class text_hermesnews
                                     n&euml; Itali. Lajme dhe opinione, p&euml;r ata q&euml; k&euml;rkojn&euml; informacion t&euml; shpejt&euml;, t&euml;
                                     pavaruar dhe t&euml; besuesh&euml;m',
             'site name'         => 'Hermesnews',
-            'webmaster tools'   => '',
+            'webmaster tools'   => '<meta name="google-site-verification" content="MnixnFITnn6TxYiK9fGi1eAeeQSrXkU97hpVxfeQb6A" />',
         );
 
         return $text;
