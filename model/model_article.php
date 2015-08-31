@@ -485,7 +485,7 @@ class model_article extends model
             $xml .=         '</news:publication>';
 
             $xml .=         '<news:publication_date>' . substr( $row['created'], 0, 10 ) . '</news:publication_date>';
-            $xml .=         '<news:title>' . $row['title'] . '</news:title>';
+            $xml .=         '<news:title><![CDATA[' . html_entity_decode( $row['title'] ) . ']]></news:title>';
 
             $xml .=     '</news:news>';
             $xml .= '</url>';
