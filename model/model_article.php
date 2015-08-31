@@ -96,13 +96,15 @@ class model_article extends model
 
     }
 
-    static public function delete( $id )
+    static public function delete( $id, $category_id )
     {
 
         $sql = 'DELETE FROM article WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id', $id )->execute();
+
+        self::sitemaps( $category_id );
 
     }
 
