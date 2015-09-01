@@ -25,7 +25,7 @@ class layout_sidebar extends layout
 
 //        $this->search();
 
-        $this->banner( 'side1' );
+        $this->banner( $this->data->adData, 'side1' );
 
         //$this->tabs();
 
@@ -41,7 +41,7 @@ class layout_sidebar extends layout
 
         $this->text();
 
-        $this->banner( 'side2' );
+        $this->banner( $this->data->adData, 'side2' );
 
 //        $this->tags();
 
@@ -64,8 +64,22 @@ class layout_sidebar extends layout
 
     }
 
-    private function banner( $data )
+    private function banner( $data, $position )
     {
+
+        switch( constant::$text['site'] )
+        {
+            case 'athena':
+                if( !( $data instanceof data_journalist ) )
+                {
+                    $data = $position;
+                }
+                break;
+
+            case 'hermes':
+                $data = $position;
+                break;
+        }
 
         //<!-- Banner 300x250 -->
         echo
