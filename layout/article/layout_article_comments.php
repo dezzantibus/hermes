@@ -71,9 +71,18 @@ class layout_article_comments extends layout
                         '"/comment.action",',
                         '{ approved: ', constant::$text['approval'], ', article_id: ', $this->article->id, ', nick: $("#respond input[name=nick]").val(), text: $("#respond textarea").val() }',
                     ').done(function( data ) { ',
-                        '$("#respond").hide(); ',
-                        '$("#confirm").show(); ',
-                        '$("ol.comments-list").prepend(data)',
+                        '$("#respond").hide(); ';
+
+                        if( constant::$text['approval'] == 0 )
+                        {
+                            echo '$("#confirm").show(); ';
+                        }
+                        else
+                        {
+                            echo '$("ol.comments-list").prepend(data)';
+                        }
+
+                    echo
                     '});',
                 '}',
 
