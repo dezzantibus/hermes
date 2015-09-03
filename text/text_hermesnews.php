@@ -49,6 +49,9 @@ class text_hermesnews
                                     pavaruar dhe t&euml; besuesh&euml;m',
             'site name'         => 'Hermesnews',
             'webmaster tools'   => '<meta name="google-site-verification" content="MnixnFITnn6TxYiK9fGi1eAeeQSrXkU97hpVxfeQb6A" />',
+            'approve'           => 'Approva',
+            'hide'              => 'Nascondi',
+            'comments'          => 'Komentet',
         );
 
         return $text;

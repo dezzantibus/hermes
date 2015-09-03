@@ -11,13 +11,15 @@ class data_comment extends data
 
     public $id;
 
-    public $user_id;
+    public $user_id = 0;
 
     public $article_id;
 
     public $nick;
 
     public $text;
+
+    public $approved;
 
     public $created;
 
@@ -31,6 +33,7 @@ class data_comment extends data
             if( isset( $data['article_id'] ) ) $this->article_id = $data['article_id'];
             if( isset( $data['nick'] ) )       $this->nick       = $data['nick'];
             if( isset( $data['text'] ) )       $this->text       = $data['text'];
+            if( isset( $data['approved'] ) )   $this->approved   = $data['approved'];
             if( isset( $data['created'] ) )    $this->created    = $data['created'];
         }
 

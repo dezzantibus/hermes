@@ -47,6 +47,9 @@ class text_athena
             'side text'         => 'The measure of information is in its quality, not in its quantity',
             'site name'         => 'Athena News',
             'webmaster tools'   => '<meta name="google-site-verification" content="ofPhINaR1U1p8knFO7xXAm9apQZpd80XlffGDMEyA-c" />',
+            'approve'           => 'Approve',
+            'hide'              => 'Hide',
+            'comments'          => 'Comments',
         );
 
         return $text;

@@ -35,11 +35,20 @@ class layout_admin_page extends layout_page
 
         if( $_SESSION['journalist']->id == 1 )
         {
+
+//            $params = array(
+//                'href'  => '/admin/journalist/list',
+//                'class' => 'btn-large',
+//            );
+//            $main->addChild( new layout_basic_button_link( constant::$text['Journalists'], $params ) );
+
             $params = array(
-                'href'  => '/admin/journalist/list',
+                'href'  => '/admin/comment/list',
                 'class' => 'btn-large',
             );
-            $main->addChild( new layout_basic_button_link( constant::$text['Journalists'], $params ) );
+            $main->addChild( new layout_basic_button_link( constant::$text['comments'], $params ) );
+
+
         }
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );

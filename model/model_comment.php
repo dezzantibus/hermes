@@ -14,9 +14,9 @@ class model_comment extends model
 
         $sql = '
             INSERT INTO comment
-                (  user_id,  article_id,  nick,  text )
+                (  user_id,  article_id,  nick,  text,  approved )
             VALUES
-                ( :user_id, :article_id, :nick, :text )
+                ( :user_id, :article_id, :nick, :text, :approved )
         ';
 
         $query = db::prepare( $sql );
@@ -25,6 +25,7 @@ class model_comment extends model
             ->bindInt   ( ':article_id', $data->article_id )
             ->bindString( ':nick',       $data->nick )
             ->bindString( ':text',       $data->text )
+            ->bindInt   ( ':approved',   $data->approved )
             ->execute();
 
         return db::lastInsertId();
@@ -99,6 +100,45 @@ class model_comment extends model
         }
 
         return $return;
+
+    }
+
+    static public function getPending()
+    {
+
+        $sql = '
+            SELECT *
+            FROM comment
+            WHERE approved = 0
+            ORDER BY created
+        ';
+
+        $query = db::prepare( $sql )->execute();
+
+        $return = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $return->add( new data_comment( $row ) );
+        }
+
+        return $return;
+
+    }
+
+    static public function approve( $id, $approved )
+    {
+
+        $sql = '
+            UPDATE comment
+            SET approved = :approved
+            WHERE id = :id
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':approved', $approved )
+            ->bindInt( ':id',       $id )
+            ->execute();
 
     }
 

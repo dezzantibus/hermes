@@ -1,6 +1,6 @@
 <?php
 
-class layout_article_page extends layout_page
+class layout_admin_comment_list_page extends layout_page
 {
 
     public function __construct
@@ -8,14 +8,9 @@ class layout_article_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_article $article,
         data_array   $comments
     )
     {
-
-        $this->title = $article->title;
-
-        $this->description = $article->brief;
 
         $this->addChild( new layout_header( $header ) );
 
@@ -32,18 +27,15 @@ class layout_article_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-        $main->addChild( new layout_article_content( $article ) );
-
-        if( $article->journalist_id > 0 )
+        /** @var $comment data_comment */
+        foreach( $comments->getData() as $comment )
         {
-            $main->addChild( new layout_article_bio( $article->journalist ) );
+            $main->addChild( new layout_admin_listcell_twoButtons(
+                '/admin/comment_approve.action?value=1&id=' . $comment->id,
+                '/admin/comment_approve.action?value=-1&id=' . $comment->id,
+                $comment->text
+            ) );
         }
-
-//        $main->addChild( new layout_article_controls() );
-
-//        $main->addChild( new layout_article_related() );
-
-        $main->addChild( new layout_article_comments( $comments, $article ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

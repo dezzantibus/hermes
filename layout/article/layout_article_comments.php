@@ -12,9 +12,12 @@ class layout_article_comments extends layout
 
     private $comments;
 
-    function __construct( data_array $comments )
+    private $article;
+
+    function __construct( data_array $comments, data_article $article )
     {
         $this->comments = $comments;
+        $this->article  = $article;
     }
 
     public function render()
@@ -29,7 +32,6 @@ class layout_article_comments extends layout
             '<div id="respond">',
                 '<p class="title"><span>Leave <strong>reply</strong></span></p>',
                 '<form>',
-                    '<input type="hidden" name="approved" value="', constant::$text['comment_approval'], '">',
                     '<div class="form-group">',
                         '<label>Name<span>*</span></label>',
                         '<input type="text" name="nick">',
@@ -67,7 +69,7 @@ class layout_article_comments extends layout
                     '}',
                     '$.post(',
                         '"/comment.action",',
-                        '{ nick: $("#respond input[name=nick]").val(), text: $("#respond textarea").val() }',
+                        '{ approved: ', constant::$text['approval'], ', article_id: ', $this->article->id, ', nick: $("#respond input[name=nick]").val(), text: $("#respond textarea").val() }',
                     ').done(function( data ) { ',
                         '$("#respond").hide(); ',
                         '$("#confirm").show(); ',
@@ -78,7 +80,7 @@ class layout_article_comments extends layout
             '</script>';
 
             echo
-            '<p class="title"><span>', $this->comments->count(), ' <strong>Comments</strong></span></p>',
+            '<p class="title"><span>', $this->comments->count(), ' <strong>', constant::$text['comments'], '</strong></span></p>',
             '<ol class="comments-list">';
 
                 /** @var $comment data_comment */
