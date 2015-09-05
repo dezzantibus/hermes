@@ -101,7 +101,7 @@ class layout_article_comments extends layout
                         '<article>',
 //                            '<div class="comment-avatar"><img src="demo/50x50.gif" alt="Avatar"/></div>',
                             '<div class="comment-meta">',
-                                '<span class="comment-author"><a href="#">', $comment->nick, '</a></span>',
+                                '<span class="comment-author"><a href="#">', $comment->nick, '</a></span>&nbsp;&nbsp;',
                                 '<span class="comment-date">', data_article::dateForDisplay( $comment->created ), '</span>',
                             '</div>',
                             '<div class="comment-content">',

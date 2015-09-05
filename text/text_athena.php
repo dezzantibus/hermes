@@ -55,6 +55,8 @@ class text_athena
             'comment'           => 'Comment',
             'post a comment'    => 'Post a comment',
             'leave reply'       => 'Leave <strong>reply</strong>',
+            'contacts'          => 'Contacts',
+            'contacts text'     => '',
         );
 
         return $text;

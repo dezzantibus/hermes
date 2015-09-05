@@ -37,7 +37,7 @@ class layout_sidebar extends layout
 
         $this->category();
 
-//        $this->meta();
+        $this->meta();
 
         $this->text();
 
@@ -301,14 +301,8 @@ class layout_sidebar extends layout
         //<!-- Meta widget -->
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">Meta</h3>',
-            '<ul>',
-                '<li><a href="#">Site admin</a></li>',
-                '<li><a href="#">Log out</a></li>',
-                '<li><a href="#">Entries RSS</a></li>',
-                '<li><a href="#">Comments RSS</a></li>',
-                '<li><a href="#">Wordpress.org</a></li>',
-            '</ul>',
+            '<h3 class="widget-title">', constant::$text['contacts'], '</h3>',
+            constant::$text['contacts text'],
         '</div>';
 
     }

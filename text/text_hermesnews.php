@@ -56,7 +56,9 @@ class text_hermesnews
             'name'              => 'Emri',
             'comment'           => 'Komenti',
             'post a comment'    => 'Posto komentin',
-            'leave reply'       => 'Shkruaj nj&euml; <strong>koment</strong>'
+            'leave reply'       => 'Shkruaj nj&euml; <strong>koment</strong>',
+            'contacts'          => 'Kontakte',
+            'contacts text'     => '<p>HermesNews Multimedia</p><ul><li><a href="mailto:drejtor@hermesnews.org">drejtor@hermesnews.org</a></li><li><a href="mailto:info@hermesnews.org">info@hermesnews.org</a></li></ul>',
         );
 
         return $text;
