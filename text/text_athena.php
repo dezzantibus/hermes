@@ -50,6 +50,11 @@ class text_athena
             'approve'           => 'Approve',
             'hide'              => 'Hide',
             'comments'          => 'Comments',
+            'comment approval'  => 'Your comment is awaiting approval. Once it will be approved it will appear under the article',
+            'name'              => 'Name',
+            'comment'           => 'Comment',
+            'post a comment'    => 'Post a comment',
+            'leave reply'       => 'Leave <strong>reply</strong>',
         );
 
         return $text;

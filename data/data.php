@@ -24,10 +24,10 @@ abstract class data
     public static function clean_for_url( $string )
     {
 
-        $search  = array( ' ', '&', '%', '?', '$', '+', 'ë', 'Ë', 'ç', '"', ',', "'", '(', ')', '.', '€' );
-        $replace = array( '-', '',  '',  '',  '',  '',  'e', 'E', 'c', '',  '',  '',  '',  '',  '',  'euro' );
+        $search  = array( ' ', '&', '%', '?', '$', '+', 'ë', 'Ë', 'ç', '"', ',', "'", '(', ')', '.', '€',   '/', '\\' );
+        $replace = array( '-', '',  '',  '',  '',  '',  'e', 'E', 'c', '',  '',  '',  '',  '',  '',  'euro', '', '' );
 
-        return str_replace( $search, $replace, $string );
+        return str_replace( $search, $replace, trim( $string ) );
 
     }
 	

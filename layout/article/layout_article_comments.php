@@ -33,7 +33,7 @@ class layout_article_comments extends layout
                 '<p class="title"><span>Leave <strong>reply</strong></span></p>',
                 '<form>',
                     '<div class="form-group">',
-                        '<label>Name<span>*</span></label>',
+                        '<label>', constant::$text['name'], '<span>*</span></label>',
                         '<input type="text" name="nick">',
                     '</div>',
 //                    '<div class="form-group">',
@@ -45,14 +45,14 @@ class layout_article_comments extends layout
 //                        '<input type="text" placeholder="Type your website URL...">',
 //                    '</div>',
                     '<div class="form-group">',
-                        '<label>Comment<span>*</span></label>',
+                        '<label>', constant::$text['comment'], '<span>*</span></label>',
                         '<textarea name="text"></textarea>',
                     '</div>',
-                    '<input class="btn" name="submit" type="button" onclick="submit_comment();" id="submit" value="Post a comment">',
+                    '<input class="btn" name="submit" type="button" onclick="submit_comment();" id="submit" value="', constant::$text['post a comment'], '">',
                 '</form>',
             '</div>',
 
-            '<h4 style="display:none" id="confirm">Your comment is awaiting approval. Once it will be approved it will appear under the article</h4>',
+            '<h4 style="display:none" id="confirm">', constant::$text['comment approval'], '</h4>',
 
 
             '<script type="text/javascript">',

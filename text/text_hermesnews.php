@@ -25,7 +25,7 @@ class text_hermesnews
             'popular_articles'  => 'Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong>',
             'pagination_first'  => 'M&euml;parsh&euml;m',
             'pagination_last'   => 'Vijues',
-            'share_post'        => 'Share this post',
+            'share_post'        => 'Shp&euml;rndaje k&euml;t&euml; artikull',
             'Articles'          => 'Articoli',
             'Journalists'       => 'Giornalisti',
             'email'             => 'E-mail',
@@ -52,6 +52,11 @@ class text_hermesnews
             'approve'           => 'Approva',
             'hide'              => 'Nascondi',
             'comments'          => 'Komentet',
+            'comment approval'  => 'Komenti juaj do t&euml; pres&euml; q&euml; t&euml; aprovohet. Pas k&euml;saj, ai do t&euml; shfaqet posht&euml; artikullit',
+            'name'              => 'Emri',
+            'comment'           => 'Komenti',
+            'post a comment'    => 'Posto komentin',
+            'leave reply'       => 'Shkruaj nj&euml; <strong>koment</strong>'
         );
 
         return $text;
