@@ -53,7 +53,7 @@ class layout_homepage_ModuleG3P0 extends layout
         '<script type="text/javascript">',
             '$( document ).ready(function() {',
 
-                'var maxHeight = $("#', $this->list->routing, '0 .h3").height();',
+                'var maxHeight = $("#', $this->list->routing, '0 h3").height();',
                 'if( $("#', $this->list->routing, '1 h3").height() > maxHeight ) maxHeight = $("#', $this->list->routing, '1 h3").height();',
                 'if( $("#', $this->list->routing, '2 h3").height() > maxHeight ) maxHeight = $("#', $this->list->routing, '2 h3").height();',
                 '$("#', $this->list->routing, ' h3").height( maxHeight )',
