@@ -30,7 +30,7 @@ class layout_article_comments extends layout
 
             //<!-- Respond -->
             '<div id="respond">',
-                '<p class="title"><span>Leave <strong>reply</strong></span></p>',
+                '<p class="title"><span>', constant::$text['leave reply'], '</span></p>',
                 '<form>',
                     '<div class="form-group">',
                         '<label>', constant::$text['name'], '<span>*</span></label>',
