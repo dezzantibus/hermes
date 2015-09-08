@@ -452,7 +452,7 @@ class model_article extends model
         $category = model_category::getById( $category_id );
 
         $xml  = '<?xml version="1.0" encoding="UTF-8"?>';
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">';
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
         $sql = '
             SELECT *
@@ -472,24 +472,7 @@ class model_article extends model
 
             $xml .= '<url>';
             $xml .=     '<loc>http://' . $_SERVER['HTTP_HOST'] . '/' . $category->routing . '/' . $row['routing'] . '.html</loc>';
-            $xml .=     '<news:news>';
-
-            $xml .=         '<news:publication>';
-
-            $xml .=             '<news:name>' . constant::$text['site name'] . '</news:name>';
-
-                                switch( constant::$text['language'] )
-                                {
-                                    case 'albanian': $xml .= '<news:language>sq</news:language>'; break;
-                                    case 'english':  $xml .= '<news:language>en</news:language>'; break;
-                                }
-
-            $xml .=         '</news:publication>';
-
-            $xml .=         '<news:publication_date>' . substr( $row['created'], 0, 10 ) . '</news:publication_date>';
-            $xml .=         '<news:title><![CDATA[' . html_entity_decode( $row['title'] ) . ']]></news:title>';
-
-            $xml .=     '</news:news>';
+            $xml .=     '<lastmod>' . substr( $row['created'], 0, 10 ) . '</lastmod>';
             $xml .= '</url>';
 
         }
