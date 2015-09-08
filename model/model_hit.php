@@ -14,15 +14,16 @@ class model_hit extends model
 
         $sql = '
             INSERT INTO hit
-                (article_id, category_id)
+                (  article_id,  category_id,  ip )
             VALUES
-                (:article_id, :category_id)
+                ( :article_id, :category_id, :ip )
         ';
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt( ':article_id',  $article->id )
-            ->bindInt( ':category_id', $article->category_id )
+            ->bindInt   ( ':article_id',  $article->id )
+            ->bindInt   ( ':category_id', $article->category_id )
+            ->bindString( ':ip',          $_SERVER['REMOTE_ADDR'] )
             ->execute();
 
     }
