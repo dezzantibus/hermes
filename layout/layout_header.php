@@ -170,7 +170,7 @@ class layout_header extends layout
 
             //<!-- Ad banner -->
             '<div class="ad-banner-728x90">';
-                banner::automatic( 'header' );
+//                banner::automatic( 'header' );
             echo
             '</div>',
 

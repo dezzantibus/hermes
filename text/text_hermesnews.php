@@ -20,7 +20,7 @@ class text_hermesnews
             'Recent comments'   => 'Komentet e fundit',
             'Recent articles'   => 'Lajmet E FUNDIT',
             'Categories'        => 'Kategorit&euml;',
-            'header_name'       => 'Hermes<span>News</span>',
+            'header_name'       => '', //'Hermes<span>News</span>',
             'header_under_name' => 'Lajmi i par&euml; Portali shqiptar',
             'popular_articles'  => 'Artikujt <strong>M&Euml; T&Euml; LEXUAR</strong>',
             'pagination_first'  => 'M&euml;parsh&euml;m',

@@ -6,11 +6,13 @@ spl_autoload_register( 'class_finder::getClassFile' );
 
 switch( $_SERVER['HTTP_HOST'] )
 {
-    case 'eroitaliano.com':
-    case 'www.eroitaliano.com':
+//    case 'eroitaliano.com':
+//    case 'www.eroitaliano.com':
     case 'hermesnews.al':
     case 'www.hermesnews.al':
     case 'local.hermesnews.org':
+    case 'hermesnews.org':
+    case 'www.hermesnews.org':
         constant::$text = text_hermesnews::text();
         db::$schema = 'hermes2';
         break;

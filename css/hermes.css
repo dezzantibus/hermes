@@ -8,3 +8,14 @@ ul.main-menu li:first-child a{
     padding:13px 12px;
 }
 
+#logo{
+    background: url("/images/logo/hermes.jpg") left top no-repeat;
+    margin-top:10px;
+    padding-left:16px;
+}
+
+#site-logo a{
+    height:33px;
+    width:250px;
+    display:block;
+}
