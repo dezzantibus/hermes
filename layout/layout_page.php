@@ -40,7 +40,7 @@ abstract class layout_page extends layout
                 '<meta name="twitter:card" content="summary_large_image">',
                 '<meta name="twitter:site" content="', constant::$text['twitter'], '">',
                 '<meta name="twitter:title" content="', substr( $this->article->title, 0, 70 ), '">',
-                '<meta name="twitter:description" content="', substr( $this->article->text, 0, 200 ), '">',
+                '<meta name="twitter:description" content="', str_replace( '"', "'", substr( $this->article->text, 0, 200) ), '">',
                 '<meta name="twitter:image" content="http://athena.news/860/450', $this->article->image_1, '">';
             }
 
