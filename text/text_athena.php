@@ -57,6 +57,7 @@ class text_athena
             'leave reply'       => 'Leave <strong>reply</strong>',
             'contacts'          => 'Contacts',
             'contacts text'     => '',
+            'twitter'           => '@athenanews',
         );
 
         return $text;

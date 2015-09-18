@@ -7,6 +7,9 @@ abstract class layout_page extends layout
 
     protected $description;
 
+    /** @var  data_article */
+    protected $article;
+
     protected function renderTop()
     {
 
@@ -29,8 +32,19 @@ abstract class layout_page extends layout
             '<meta charset="UTF-8">',
             '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">',
             '<meta name="description" content="', $this->description, '">',
-            constant::$text['webmaster tools'],
+            constant::$text['webmaster tools'];
 
+            if( $this instanceof layout_article_page && !empty( constant::$text['twitter'] ) )
+            {
+                echo
+                '<meta name="twitter:card" content="summary_large_image">',
+                '<meta name="twitter:site" content="', constant::$text['twitter'], '">',
+                '<meta name="twitter:title" content="', substr( $this->article->title, 0, 70 ), '">',
+                '<meta name="twitter:description" content="', str_replace( '"', "'", substr( $this->article->text, 0, 200) ), '">',
+                '<meta name="twitter:image" content="http://athena.news/860/450', $this->article->image_1, '">';
+            }
+
+            echo
             //<!-- Normalize -->
             '<link rel="stylesheet" href="/css/normalize.css">',
 
