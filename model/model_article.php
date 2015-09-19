@@ -12,6 +12,8 @@ class model_article extends model
     static public function create( data_article $data )
     {
 
+        cache_article::insert();
+
         $sql = '
             INSERT INTO article
                 (
@@ -53,6 +55,8 @@ class model_article extends model
 
     static public function update( data_article $data )
     {
+
+        cache_article::update();
 
         $sql = '
             UPDATE article
@@ -98,6 +102,8 @@ class model_article extends model
 
     static public function delete( $id, $category_id )
     {
+
+        cache_article::delete();
 
         $sql = 'DELETE FROM article WHERE id = :id';
 
@@ -199,22 +205,32 @@ class model_article extends model
     static public function getHero()
     {
 
-        $sql = '
-            SELECT *
-            FROM article
-            WHERE hero > 0
-            ORDER BY id DESC
-            LIMIT 6
-        ';
+        $result = cache_article::returnHero();
 
-        $query = db::prepare( $sql )->execute();
-
-        $result = new data_array();
-
-        while( $row = $query->fetch() )
+        if( empty( $result ) )
         {
-            $category = model_category::getById( $row['category_id'] );
-            $result->add( new data_article( $row, $category ) );
+
+
+            $sql = '
+                SELECT *
+                FROM article
+                WHERE hero > 0
+                ORDER BY id DESC
+                LIMIT 6
+            ';
+
+            $query = db::prepare( $sql )->execute();
+
+            $result = new data_array();
+
+            while( $row = $query->fetch() )
+            {
+                $category = model_category::getById( $row['category_id'] );
+                $result->add( new data_article( $row, $category ) );
+            }
+
+            cache_article::saveHero( $result );
+
         }
 
         return $result;
@@ -396,50 +412,59 @@ class model_article extends model
     static public function getPopular( $category_id=null, $days=7, $limit=6 )
     {
 
-        if( empty( $category_id ) )
-        {
-            $sql = '
-                SELECT article.*, count(hit.id) AS hits
-                FROM article
-                    INNER JOIN hit
-                        ON hit.article_id = article.id
-                WHERE hit.created > NOW() - INTERVAL :days DAY
-                GROUP BY hit.article_id
-                ORDER BY hits DESC
-                LIMIT :limit
-            ';
-        }
-        else
-        {
-            $sql = '
-                SELECT article.*, count(hit.id) AS hits
-                FROM article
-                    INNER JOIN hit
-                        ON hit.article_id = article.id
-                WHERE hit.created > NOW() - INTERVAL :days DAY
-                    AND article.category_id = :category_id
-                GROUP BY hit.article_id
-                ORDER BY hits DESC
-                LIMIT :limit
-            ';
-        }
+        $result = cache_article::returnPopular( $category_id );
 
-        $query = db::prepare( $sql )
-            ->bindInt( ':days',  $days )
-            ->bindInt( ':limit', $limit );
-
-        if( !empty( $category_id ) )
+        if( empty( $result ) )
         {
-            $query->bindInt( ':category_id',  $category_id );
-        }
 
-        $query->execute();
+            if( empty( $category_id ) )
+            {
+                $sql = '
+                    SELECT article.*, count(hit.id) AS hits
+                    FROM article
+                        INNER JOIN hit
+                            ON hit.article_id = article.id
+                    WHERE hit.created > NOW() - INTERVAL :days DAY
+                    GROUP BY hit.article_id
+                    ORDER BY hits DESC
+                    LIMIT :limit
+                ';
+            }
+            else
+            {
+                $sql = '
+                    SELECT article.*, count(hit.id) AS hits
+                    FROM article
+                        INNER JOIN hit
+                            ON hit.article_id = article.id
+                    WHERE hit.created > NOW() - INTERVAL :days DAY
+                        AND article.category_id = :category_id
+                    GROUP BY hit.article_id
+                    ORDER BY hits DESC
+                    LIMIT :limit
+                ';
+            }
 
-        $result = new data_array();
-        while( $row = $query->fetch() )
-        {
-            $category = model_category::getById( $row['category_id'] );
-            $result->add( new data_article( $row, $category ) );
+            $query = db::prepare( $sql )
+                ->bindInt( ':days',  $days )
+                ->bindInt( ':limit', $limit );
+
+            if( !empty( $category_id ) )
+            {
+                $query->bindInt( ':category_id',  $category_id );
+            }
+
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $category = model_category::getById( $row['category_id'] );
+                $result->add( new data_article( $row, $category ) );
+            }
+
+            cache_article::savePopular( $result, $category_id );
+
         }
 
         return $result;

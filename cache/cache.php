@@ -11,18 +11,13 @@ abstract class cache
 
     const PORT = 11211;
 
-//    const COMPRESS = MEMCACHE_COMPRESSED;
-
     static private function stampIndex( $index )
     {
-        return static::$path . $index;
+        return constant::$text['site'] . static::$path . $index;
     }
 
     static public function activate()
     {
-
-		/** @TODO remove this once memcache is up and running */
-		self::$available = false;
 
         if( empty( self::$available ) && self::$available !== false )
         {
@@ -57,7 +52,7 @@ abstract class cache
 
         $index = self::stampIndex( $index );
 
-        return self::$memcache->set( $index, $data, self::COMPRESS, $duration);
+        return self::$memcache->set( $index, $data, $duration);
 
     }
 
@@ -71,7 +66,7 @@ abstract class cache
 
         $index = self::stampIndex( $index );
 
-        return self::$memcache->get( $index, self::COMPRESS );
+        return self::$memcache->get( $index );
 
     }
 
