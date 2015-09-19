@@ -17,21 +17,30 @@ class handler_homepage extends handler
         $sidebar = $this->getSidebarData();
 
         /** @var  $category data_category */
-        $home_categories = model_category::getHomepageList();
-        foreach( $home_categories->getData() as $category )
+        $home_categories = cache_handler::retrieveHomeCategories();
+
+        if( empty( $home_categories ) )
         {
 
-            switch( $category->home_block )
+            $home_categories = model_category::getHomepageList();
+            foreach( $home_categories->getData() as $category )
             {
-                case 'layout_homepage_ModuleG2P0': $number = 2; break;
-                case 'layout_homepage_ModuleG3P0': $number = 3; break;
-                case 'layout_homepage_ModuleG1P4': $number = 5; break;
-                case 'layout_homepage_ModuleG2P6': $number = 8; break;
-                case 'layout_homepage_ModuleG1P6': $number = 7; break;
-                default: $number = 0;
+
+                switch( $category->home_block )
+                {
+                    case 'layout_homepage_ModuleG2P0': $number = 2; break;
+                    case 'layout_homepage_ModuleG3P0': $number = 3; break;
+                    case 'layout_homepage_ModuleG1P4': $number = 5; break;
+                    case 'layout_homepage_ModuleG2P6': $number = 8; break;
+                    case 'layout_homepage_ModuleG1P6': $number = 7; break;
+                    default: $number = 0;
+                }
+
+                $category->home_articles = model_article::getHomeCategory( $category, $number );
+
             }
 
-            $category->home_articles = model_article::getHomeCategory( $category, $number );
+            cache_handler::saveHomeCategories( $home_categories );
 
         }
 

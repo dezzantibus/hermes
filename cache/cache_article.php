@@ -7,7 +7,11 @@ class cache_article extends cache
 
     static public function insert()
     {
+
         self::clear( 'hero' );
+
+        cache_handler::clearHomeCategories();
+
     }
 
     static public function update()
