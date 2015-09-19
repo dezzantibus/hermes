@@ -28,8 +28,8 @@ class layout_homepage_ModuleG2P6 extends layout
                 $this->large( $this->list->home_articles->getIndex( 0 ) );
 
                 $this->small( $this->list->home_articles->getIndex( 2 ) );
-                $this->small( $this->list->home_articles->getIndex( 3 ) );
                 $this->small( $this->list->home_articles->getIndex( 4 ) );
+                $this->small( $this->list->home_articles->getIndex( 6 ) );
 
             echo
             '</div>',
@@ -37,8 +37,8 @@ class layout_homepage_ModuleG2P6 extends layout
 
                 $this->large( $this->list->home_articles->getIndex( 1 ) );
 
+                $this->small( $this->list->home_articles->getIndex( 3 ) );
                 $this->small( $this->list->home_articles->getIndex( 5 ) );
-                $this->small( $this->list->home_articles->getIndex( 6 ) );
                 $this->small( $this->list->home_articles->getIndex( 7 ) );
 
             echo
