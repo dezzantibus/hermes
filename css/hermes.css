@@ -1,11 +1,12 @@
 
 ul.main-menu a{
-    padding:13px 11px;
+    padding:13px 6px;
 }
 
 ul.main-menu li:first-child a{
     border-bottom:2px solid #000;
     padding:13px 12px;
+    display:none;
 }
 
 #logo{
