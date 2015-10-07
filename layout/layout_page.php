@@ -37,8 +37,8 @@ abstract class layout_page extends layout
             if( $this instanceof layout_article_page && !empty( constant::$text['twitter'] ) )
             {
 
-                $description = str_replace( '"', '\"', substr( $this->article->text, 0, 200) );
-                $title       = str_replace( '"', '\"', $this->article->title );
+                $description = str_replace( '"', "'", substr( $this->article->text, 0, 200) );
+                $title       = str_replace( '"', "'", $this->article->title );
 
                 echo
                 '<meta name="twitter:card" content="summary_large_image">',
