@@ -1,3 +1,7 @@
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|html|htm|xml|txt|xsl)$">
+    Header set Cache-Control "max-age=31536050"
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 
@@ -34,3 +38,5 @@
 	RewriteRule ^(.*)\.html$ index.php?handler=handler_category&routing=$1 [QSA,L]
 
 </IfModule>
+
+
