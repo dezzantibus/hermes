@@ -86,6 +86,24 @@ class model_journalist extends model
 
     }
 
+    static public function getFullList()
+    {
+
+        $sql = 'SELECT * FROM journalist ORDER BY display_name';
+
+        $query = db::prepare( $sql )->execute();
+
+        $list = new data_array();
+
+        while( $row = $query->fetch() )
+        {
+            $list->add( new data_journalist( $row ) );
+        }
+
+        return $list;
+
+    }
+
     static public function login( $email, $pass )
     {
 

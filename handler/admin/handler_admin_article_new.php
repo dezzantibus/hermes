@@ -20,13 +20,25 @@ class handler_admin_article_new extends handler
 
         $categories = model_category::getFullList( 'name' );
 
+        switch( constant::$text['site'] )
+        {
+            case 'athena':
+                $journalists = null;
+                break;
+
+            case 'hermes':
+                $journalists = model_journalist::getFullList();
+                break;
+        }
+
+
         if( empty( $form_data ) )
         {
             $form_data = new data_article();
         }
 
         // Render page
-        $page = new layout_admin_article_page( $header, $footer, $sidebar, $categories, $form_data );
+        $page = new layout_admin_article_page( $header, $footer, $sidebar, $categories, $form_data, $journalists );
         $page->render();
 
     }

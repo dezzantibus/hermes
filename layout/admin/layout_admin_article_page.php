@@ -9,7 +9,8 @@ class layout_admin_article_page extends layout_page
         data_footer  $footer,
         data_sidebar $sidebar,
         data_array   $categories,
-        data_article $article
+        data_article $article,
+        data_array   $journalists
     )
     {
 
@@ -84,18 +85,20 @@ class layout_admin_article_page extends layout_page
                 break;
 
             case 'hermes':
-                $radio_data = new data_array();
-                $radio_data->add( array(
-                    'label' => constant::$text['yes'],
-                    'value' => $_SESSION['journalist']->id,
-                ) );
-                $radio_data->add( array(
-                    'label' => constant::$text['no'],
+                $journalist_id = empty( $article->journalist_id ) ? $_SESSION['journalist']->id : $article->journalist_id;
+                $journa_list   = new data_array();
+                $journa_list-> add( array(
+                    'label' => 'Nessuno',
                     'value' => 0,
                 ) );
-
-                $form->addChild( new layout_form_radio( 'journalist_id', constant::$text['show journalist'], $radio_data, $article->journalist_id ) );
-
+                foreach( $journalists->getData() as $j )
+                {
+                    $journa_list->add( array(
+                        'label' => $j->display_name,
+                        'value' => $j->id,
+                    ) );
+                }
+                $form->addChild( new layout_form_dropdown( 'journalist_id', constant::$text['show journalist'], $journa_list, $journalist_id ) );
                 break;
         }
 
