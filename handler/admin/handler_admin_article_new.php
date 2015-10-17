@@ -23,14 +23,13 @@ class handler_admin_article_new extends handler
         switch( constant::$text['site'] )
         {
             case 'athena':
-                $journalists = null;
+                $journalists = new data_array();
                 break;
 
             case 'hermes':
                 $journalists = model_journalist::getFullList();
                 break;
         }
-
 
         if( empty( $form_data ) )
         {

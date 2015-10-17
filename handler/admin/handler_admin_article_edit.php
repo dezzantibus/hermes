@@ -20,6 +20,17 @@ class handler_admin_article_edit extends handler
 
         $categories = model_category::getFullList( 'name' );
 
+        switch( constant::$text['site'] )
+        {
+            case 'athena':
+                $journalists = new data_array();
+                break;
+
+            case 'hermes':
+                $journalists = model_journalist::getFullList();
+                break;
+        }
+
         // Get article data
         if( empty( $form_data ) )
         {
@@ -28,7 +39,7 @@ class handler_admin_article_edit extends handler
         }
 
         // Render page
-        $page = new layout_admin_article_page( $header, $footer, $sidebar, $categories, $form_data );
+        $page = new layout_admin_article_page( $header, $footer, $sidebar, $categories, $form_data, $journalists );
         $page->render();
 
     }
