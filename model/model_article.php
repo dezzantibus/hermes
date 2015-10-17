@@ -240,7 +240,7 @@ class model_article extends model
     static public function getAdminPage( $page=1 )
     {
 
-        if( $_SESSION['journalist']->id == 1 )
+        if( $_SESSION['journalist']->id == 1 || $_SESSION['journalist']->display_name == 'Paolo Picci' )
         {
             $sql = '
                 SELECT *
