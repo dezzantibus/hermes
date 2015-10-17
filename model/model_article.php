@@ -338,43 +338,52 @@ class model_article extends model
     static public function getRecent( data_category $category=null, $limit=6 )
     {
 
-        if( empty( $category ) )
-        {
-            $sql = '
-                SELECT *
-                FROM article
-                WHERE image_1 IS NOT NULL
-                ORDER BY id DESC
-                LIMIT :limit
-            ';
-        }
-        else
-        {
-            $sql = '
-                SELECT *
-                FROM article
-                WHERE image_1 IS NOT NULL
-                    AND category_id = :category_id
-                ORDER BY id DESC
-                LIMIT :limit
-            ';
-        }
+        $result = cache_article::returnRecent( empty( $category ) ? '' : $category->id );
 
-        $query = db::prepare( $sql );
-        $query->bindInt( ':limit', $limit );
-
-        if( !empty( $category ) )
+        if( empty( $result ) )
         {
-            $query->bindInt( ':category_id', $category->id );
-        }
 
-        $query->execute();
+            if( empty( $category ) )
+            {
+                $sql = '
+                    SELECT *
+                    FROM article
+                    WHERE image_1 IS NOT NULL
+                    ORDER BY id DESC
+                    LIMIT :limit
+                ';
+            }
+            else
+            {
+                $sql = '
+                    SELECT *
+                    FROM article
+                    WHERE image_1 IS NOT NULL
+                        AND category_id = :category_id
+                    ORDER BY id DESC
+                    LIMIT :limit
+                ';
+            }
 
-        $result = new data_array();
-        while( $row = $query->fetch() )
-        {
-            $category = model_category::getById( $row['category_id'] );
-            $result->add( new data_article( $row, $category ) );
+            $query = db::prepare( $sql );
+            $query->bindInt( ':limit', $limit );
+
+            if( !empty( $category ) )
+            {
+                $query->bindInt( ':category_id', $category->id );
+            }
+
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $category = model_category::getById( $row['category_id'] );
+                $result->add( new data_article( $row, $category ) );
+            }
+
+            cache_article::saveRecent( $result, empty( $category ) ? '' : $category->id );
+
         }
 
         return $result;

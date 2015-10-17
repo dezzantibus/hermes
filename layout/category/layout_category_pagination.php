@@ -31,7 +31,7 @@ class layout_category_pagination extends layout
 
             if( $this->current > 1 )
             {
-                echo '<li><a class="page-numbers" href="?page=1">M&euml;parsh&euml;m</a></li>';
+                echo '<li><a class="page-numbers" href="?page=1">', constant::$text['pagination_first'], '</a></li>';
             }
 
             for( $page=1; $this->number >= $page; $page++ )
@@ -50,7 +50,7 @@ class layout_category_pagination extends layout
 
             if( $this->current != $this->number )
             {
-                echo '<li><a class="page-numbers" href="?page=', $this->number, '">Vijues</a></li>';
+                echo '<li><a class="page-numbers" href="?page=', $this->number, '">', constant::$text['pagination_last'], '</a></li>';
             }
 
         echo '</ul>';

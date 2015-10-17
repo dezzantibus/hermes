@@ -36,12 +36,30 @@ abstract class layout_page extends layout
 
             if( $this instanceof layout_article_page && !empty( constant::$text['twitter'] ) )
             {
+
+                $description = str_replace( '"', "'", substr( $this->article->text, 0, 200) );
+                $title       = str_replace( '"', "'", $this->article->title );
+
                 echo
                 '<meta name="twitter:card" content="summary_large_image">',
                 '<meta name="twitter:site" content="', constant::$text['twitter'], '">',
-                '<meta name="twitter:title" content="', substr( $this->article->title, 0, 70 ), '">',
-                '<meta name="twitter:description" content="', str_replace( '"', "'", substr( $this->article->text, 0, 200) ), '">',
-                '<meta name="twitter:image" content="http://athena.news/860/450', $this->article->image_1, '">';
+                '<meta name="twitter:title" content="', substr( $title, 0, 70 ), '">',
+                '<meta name="twitter:description" content="', $description, '">',
+                '<meta name="twitter:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">',
+
+                '<meta property="og:title" content="', $title, '" />',
+                '<meta property="og:type" content="article" />',
+                '<meta property="og:url" content="', $this->article->getLink(), '" />',
+                '<meta property="og:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '" />',
+                '<meta property="og:description" content="', $description, '" />',
+                '<meta property="og:site_name" content="', constant::$text['twitter'], '" />',
+                '<meta property="article:published_time" content="', $this->article->created, '" />',
+                '<meta property="article:section" content="', $this->article->category->name, '" />',
+
+                '<meta itemprop="name" content="', $title, '">',
+                '<meta itemprop="description" content="', $description, '">',
+                '<meta itemprop="image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">';
+
             }
 
             echo

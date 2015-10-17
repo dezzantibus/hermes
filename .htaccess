@@ -34,3 +34,5 @@
 	RewriteRule ^(.*)\.html$ index.php?handler=handler_category&routing=$1 [QSA,L]
 
 </IfModule>
+
+
