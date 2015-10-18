@@ -42,11 +42,11 @@ class layout_article_content extends layout
             '<h1 class="post-title">', $this->article->title, '</h1>',
             '<h3 class="lead">', $this->article->subtitle, '</h3>',
 
-//            '<div class="post-meta">',
+            '<div class="post-meta">',
 //                '<span class="author">Author <a href="#">John Doe</a></span>',
-//                '<span class="date">Published <a href="#">December 13, 2014</a></span>',
+                '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
 //                '<span class="comments">Comments <a href="#">152</a></span>',
-//            '</div>',
+            '</div>',
 
             '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>',
 

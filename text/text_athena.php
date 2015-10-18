@@ -58,6 +58,7 @@ class text_athena
             'contacts'          => 'Contacts',
             'contacts text'     => '',
             'twitter'           => '@athenanews',
+            'published'         => 'Published',
         );
 
         return $text;
