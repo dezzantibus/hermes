@@ -34,31 +34,46 @@ abstract class layout_page extends layout
             '<meta name="description" content="', $this->description, '">',
             constant::$text['webmaster tools'];
 
-            if( $this instanceof layout_article_page && !empty( constant::$text['twitter'] ) )
+            if( $this instanceof layout_article_page )
             {
 
-                $description = str_replace( '"', "'", substr( $this->article->text, 0, 200) );
+                $text        = str_replace( '"', "'", $this->article->text );
+                $description = substr( $text, 0, 200);
                 $title       = str_replace( '"', "'", $this->article->title );
 
+                if( !empty( constant::$text['twitter'] ) )
+                {
+                    echo
+                    '<meta name="twitter:card" content="summary_large_image">',
+                    '<meta name="twitter:site" content="', constant::$text['twitter'], '">',
+                    '<meta name="twitter:title" content="', substr( $title, 0, 70 ), '">',
+                    '<meta name="twitter:description" content="', $description, '">',
+                    '<meta name="twitter:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">',
+
+                    '<meta property="og:title" content="', $title, '" />',
+                    '<meta property="og:type" content="article" />',
+                    '<meta property="og:url" content="', $this->article->getLink(), '" />',
+                    '<meta property="og:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '" />',
+                    '<meta property="og:description" content="', $description, '" />',
+                    '<meta property="og:site_name" content="', constant::$text['twitter'], '" />',
+                    '<meta property="article:published_time" content="', $this->article->created, '" />',
+                    '<meta property="article:section" content="', $this->article->category->name, '" />',
+
+                    '<meta itemprop="name" content="', $title, '">',
+                    '<meta itemprop="description" content="', $description, '">',
+                    '<meta itemprop="image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">';
+                }
+
                 echo
-                '<meta name="twitter:card" content="summary_large_image">',
-                '<meta name="twitter:site" content="', constant::$text['twitter'], '">',
-                '<meta name="twitter:title" content="', substr( $title, 0, 70 ), '">',
-                '<meta name="twitter:description" content="', $description, '">',
-                '<meta name="twitter:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">',
-
-                '<meta property="og:title" content="', $title, '" />',
-                '<meta property="og:type" content="article" />',
-                '<meta property="og:url" content="', $this->article->getLink(), '" />',
-                '<meta property="og:image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '" />',
-                '<meta property="og:description" content="', $description, '" />',
-                '<meta property="og:site_name" content="', constant::$text['twitter'], '" />',
-                '<meta property="article:published_time" content="', $this->article->created, '" />',
-                '<meta property="article:section" content="', $this->article->category->name, '" />',
-
-                '<meta itemprop="name" content="', $title, '">',
-                '<meta itemprop="description" content="', $description, '">',
-                '<meta itemprop="image" content="http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '">';
+                '<script type="application/ld+json">{',
+                    '"@context": "http://schema.org",',
+                    '"@type": "NewsArticle",',
+                    '"headline": "', $title, '",',
+                    '"image": [ "http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '" ],',
+                    '"datePublished": "', date( 'c', $this->article->created ) ,'",',
+                    '"description": "', $description, '",',
+                    '"articleBody": "', $text, '"',
+                '}</script>';
 
             }
 
