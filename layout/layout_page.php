@@ -70,7 +70,7 @@ abstract class layout_page extends layout
                     '"@type": "NewsArticle",',
                     '"headline": "', $title, '",',
                     '"image": [ "http://', $_SERVER['HTTP_HOST'], '/860/450', $this->article->image_1, '" ],',
-                    '"datePublished": "', date( 'c', $this->article->created ) ,'",',
+                    '"datePublished": "', date( 'c', strtotime( $this->article->created ) ) ,'",',
                     '"description": "', $description, '",',
                     '"articleBody": "', $text, '"',
                 '}</script>';
