@@ -1,6 +1,7 @@
 
 ul.main-menu a{
-    padding:13px 6px;
+    padding:10px 7px;
+    font-size:11px;
 }
 
 ul.main-menu li:first-child a{

@@ -44,8 +44,11 @@ class layout_homepage_page extends layout_page
         /** @var $category data_category */
         foreach( $home_categories->getData() as $category )
         {
-            $type = $category->home_block;
-            $main->addChild( new $type( $category ) );
+            if( !empty( $category->home_block ) )
+            {
+                $type = $category->home_block;
+                $main->addChild( new $type( $category ) );
+            }
         }
 
         // end categories
