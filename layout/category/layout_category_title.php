@@ -26,16 +26,6 @@ class layout_category_title extends layout
             '</div>',
         '</div>';
 
-        if( $this->category->id == 9 )
-        {
-        echo
-        '
-<div class="inner-wrapper" style="margin-bottom:15px;">
-        <a href="http://www.konfindustria.org.al/?lang=en"><img src="/banner/ELISAA_728x90px_D.jpg"></a>
-</div>
-        ';
-        }
-
     }
 
 }
