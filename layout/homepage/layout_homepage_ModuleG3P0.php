@@ -20,6 +20,16 @@ class layout_homepage_ModuleG3P0 extends layout
     public function render()
     {
 
+        if( $this->list->id == 12 )
+        {
+            echo
+            '
+
+            <a href="https://www.facebook.com/Manjola-Baci-802169569849189/?fref=ts"><img src="/banner/Manjola-Baci.jpg"></a>
+
+            ';
+        }
+
         echo
         '<div class="block-layout-four row" id="', $this->list->routing, '">',
             '<p class="title" style="color:', $this->list->colour, '"><span><strong>', $this->list->name, '</strong></span></p>';
