@@ -20,17 +20,16 @@ class layout_homepage_ModuleG2P6 extends layout
     public function render()
     {
 
-        /*
         if( $this->list->id == 9 )
         {
             echo
             '
 
-            <a href="http://www.konfindustria.org.al/?lang=en"><img src="/banner/ELISAA_728x90px_D.jpg"></a>
+            <a href="https://www.facebook.com/Manjola-Baci-802169569849189/?fref=ts"><img src="/banner/Manjola-Baci.jpg"></a>
 
             ';
+            //<a href="http://www.konfindustria.org.al/?lang=en"><img src="/banner/ELISAA_728x90px_D.jpg"></a>
         }
-        */
 
         echo
         '<div class="block-layout-two row ', $this->list->routing, '">',

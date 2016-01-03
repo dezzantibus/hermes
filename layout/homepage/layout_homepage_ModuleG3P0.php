@@ -20,6 +20,7 @@ class layout_homepage_ModuleG3P0 extends layout
     public function render()
     {
 
+        /*
         if( $this->list->id == 12 )
         {
             echo
@@ -29,6 +30,7 @@ class layout_homepage_ModuleG3P0 extends layout
 
             ';
         }
+        */
 
         echo
         '<div class="block-layout-four row" id="', $this->list->routing, '">',
