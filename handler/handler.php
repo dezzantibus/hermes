@@ -11,7 +11,11 @@ abstract class handler
 
     function __construct()
     {
+
         $this->data = $_GET;
+
+        model_banner::getActive();
+
     }
 
     public function run()

@@ -99,4 +99,41 @@ class model_banner extends model
 
     }
 
+    static public function getActive()
+    {
+
+        $sql = '
+            SELECT *
+            FROM banner
+            WHERE NOW() BETWEEN date_from AND date_to
+                AND active = 1
+            ORDER BY views ASC
+        ';
+
+        $query = db::prepare( $sql );
+        $query->execute();
+
+        banner::$list = array();
+
+        while( $row = $query->fetch() )
+        {
+            banner::$list[] = new data_banner( $row );
+        }
+
+    }
+
+    static public function logView( $id )
+    {
+
+        $sql = '
+            UPDATE banner
+            SET views = views + 1
+            WHERE id = :id
+        ';
+
+        $query = db::prepare( $sql );
+        $query->bindInt( ':id', $id )->execute();
+
+    }
+
 }

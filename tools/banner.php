@@ -3,148 +3,96 @@
 class banner
 {
 
+    const HOMEPAGE = 1;
+
+    const CATEGORY_TOP = 2;
+
+    const CATEGORY_MIDDLE = 3;
+
+    const CATEGORY_BOTTOM = 4;
+
+    const ARTICLE = 5;
+
+    const SIDEBAR_HOMEPAGE_TOP = 6;
+
+    const SIDEBAR_HOMEPAGE_BOTTOM = 7;
+
+    const SIDEBAR_CATEGORY_TOP = 8;
+
+    const SIDEBAR_CATEGORY_BOTTOM = 9;
+
+    const SIDEBAR_ARTICLE_TOP = 10;
+
+    const SIDEBAR_ARTICLE_BOTTOM = 11;
+
+    const HEADER_HOME = 12;
+
+    const HEADER_CATEGORY = 13;
+
+    const HEADER_ARTICLE = 14;
+
     const SECONDS_ANDREA = 60;
 
-    private static $who = null;
+    public static $list;
 
-    public static function automatic( $data=null )
+    public static function getListOfPositions()
     {
 
-        switch( constant::$text['site'] )
-        {
-
-            case 'hermes': self::bannerHermes( $data ); break;
-            case 'athena': self::bannerAthena( $data ); break;
-
-        }
+        return array(
+            1  => 'Homepage categoria',
+            2  => 'Categoria sopra',
+            3  => 'Categoria centrale',
+            4  => 'Categoria sotto',
+            5  => 'Articolo',
+            6  => 'Laterale Homepage sopra',
+            7  => 'Laterale Homepage sotto',
+            8  => 'Laterale Categoria sopra',
+            9  => 'Laterale Categoria sotto',
+            10 => 'Laterale Articolo sopra',
+            11 => 'Laterale Articolo sotto',
+            12 => 'Header Homepage',
+            13 => 'Header Categoria',
+            14 => 'Header Articolo',
+        );
 
     }
 
-    private static function bannerAthena( $data )
+    public static function getForPosition( $position_id, $category_id )
     {
 
-        if( $data instanceof data_journalist && !empty( $data->google ) )
+        $banner = null;
+
+        /** @var $item data_banner */
+        foreach( self::$list as $item )
         {
-            echo $data->google;
-        }
-        else
-        {
-            self::bannerAndrea( $data );
-        }
 
-    }
-
-    private static function bannerHermes( $data )
-    {
-
-        if( self::chooseWho() == 'Andrea' )
-        {
-            self::bannerAndrea( $data );
-        }
-        else
-        {
-            self::bannerPaolo( $data );
-        }
-
-    }
-
-    private static function bannerAndrea( $data )
-    {
-
-        switch( constant::$text['site'] )
-        {
-            case 'athena':
-                switch( $data )
-                {
-
-                    case 'side2':
-                        echo
-                        '<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fathnew-21%2F8009%2F3fa34915-fa49-453d-a069-4780ac20a6a4&Operation=GetScriptTemplate"> </SCRIPT>',
-                        '<NOSCRIPT><A HREF="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fathnew-21%2F8009%2F3fa34915-fa49-453d-a069-4780ac20a6a4&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>';
-//                        '<script type="text/javascript"><!-- amazon_ad_tag = "athnew-21"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_link_target = "new";//--></script>',
-//                        '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
-                        break;
-
-                    case 'side1':
-                    default:
-                        echo
-                        '<ins class="adsbygoogle" ',
-                            'style="display:block" ',
-                            'data-ad-client="ca-pub-0866520425041689" ',
-                            'data-ad-slot="8400124744" ',
-                            'data-ad-format="auto"></ins>',
-                        '<script>',
-                            '(adsbygoogle = window.adsbygoogle || []).push({});',
-                        '</script>';
-                        break;
-
-
-                }
-                break;
-
-            case 'hermes':
-                switch( $data )
-                {
-                    case 'side1':
-                        echo
-                        '<ins class="adsbygoogle" ',
-                        'style="display:block" ',
-                        'data-ad-client="ca-pub-0866520425041689" ',
-                        'data-ad-slot="8400124744" ',
-                        'data-ad-format="auto"></ins>',
-                        '<script>',
-                        '(adsbygoogle = window.adsbygoogle || []).push({});',
-                        '</script>';
-                        break;
-
-                    case 'side2':
-                        echo
-
-
-                        '<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fathnew-21%2F8009%2F3fa34915-fa49-453d-a069-4780ac20a6a4&Operation=GetScriptTemplate"> </SCRIPT>',
-                        '<NOSCRIPT><A HREF="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fathnew-21%2F8009%2F3fa34915-fa49-453d-a069-4780ac20a6a4&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>';
-
-
-
-//                        '<script type="text/javascript"><!-- amazon_ad_tag = "athnew-21"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_link_target = "new";//--></script>',
-//                        '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
-                        break;
-
-                    case 'header':
-                        echo
-                        '<script type="text/javascript"><!-- amazon_ad_tag = "athnew-21"; amazon_ad_width = "728"; amazon_ad_height = "90"; amazon_ad_link_target = "new";//--></script>',
-                        '<script type="text/javascript" src="http://ir-uk.amazon-adsystem.com/s/ads.js"></script>';
-                        break;
-
-                }
-                break;
-
-        }
-
-    }
-
-    private static function bannerPaolo( $data )
-    {
-
-    }
-
-    private static function chooseWho()
-    {
-
-        if( empty( self::$who ) )
-        {
-            if(self::SECONDS_ANDREA > date('s'))
+            if(
+                is_null( $banner ) &&
+                $item->category_id == $category_id &&
+                $item->position_id == $position_id
+            )
             {
-                self::$who = 'Andrea';
-            }
-            else
-            {
-                self::$who = 'Paolo';
+                $banner = $item;
+                model_banner::logView( $banner->id );
             }
 
         }
 
-        return self::$who;
+        return $banner;
+
+    }
+
+    public static function bannerAndrea()
+    {
+        echo
+        '<ins class="adsbygoogle" ',
+        'style="display:block" ',
+        'data-ad-client="ca-pub-0866520425041689" ',
+        'data-ad-slot="8400124744" ',
+        'data-ad-format="auto"></ins>',
+        '<script>',
+        '(adsbygoogle = window.adsbygoogle || []).push({});',
+        '</script>';
 
     }
 
