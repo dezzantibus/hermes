@@ -20,6 +20,7 @@ class layout_homepage_ModuleG2P6 extends layout
     public function render()
     {
 
+        /*
         if( $this->list->id == 9 )
         {
             echo
@@ -29,6 +30,7 @@ class layout_homepage_ModuleG2P6 extends layout
 
             ';
         }
+        */
 
         echo
         '<div class="block-layout-two row ', $this->list->routing, '">',
