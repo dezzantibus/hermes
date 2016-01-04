@@ -12,13 +12,22 @@ class layout_homepage_ModuleG1P4 extends layout
     /** @var  data_category */
     private $list;
 
+    /** @var  data_banner */
+    private $banner;
+
     function __construct( data_category $list )
     {
+
         $this->list = $list;
+
+        $this->banner = banner::getForPosition( banner::HOMEPAGE, $list->id );
+
     }
 
     public function render()
     {
+
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-five">',

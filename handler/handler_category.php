@@ -35,7 +35,7 @@ class handler_category extends handler
 
         $header  = $this->getHeaderData();
         $footer  = $this->getFooterData();
-        $sidebar = $this->getSidebarData( $category );
+        $sidebar = $this->getSidebarData( $category, $category );
 
         // Render page
         $page = new layout_category_page( $header, $footer, $sidebar, $category, $articles, $pinned, $pages, $page );

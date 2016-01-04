@@ -96,4 +96,18 @@ class banner
 
     }
 
+    public static function outputBanner( $banner, $replace=false )
+    {
+
+        if( ! is_null( $banner ) )
+        {
+            echo '<a href="', $banner->link, '" target="_blank"><img src="', $banner->file, '" alt="Banner"/></a>';
+        }
+        elseif( $replace )
+        {
+            self::bannerAndrea();
+        }
+
+    }
+
 }

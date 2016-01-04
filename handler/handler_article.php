@@ -21,7 +21,7 @@ class handler_article extends handler
 
         $header  = $this->getHeaderData();
         $footer  = $this->getFooterData();
-        $sidebar = $this->getSidebarData( $article->category, $article->journalist );
+        $sidebar = $this->getSidebarData( $article->category, $article );
 
         model_hit::log( $article );
 

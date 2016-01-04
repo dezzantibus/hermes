@@ -64,21 +64,34 @@ class layout_sidebar extends layout
 
     }
 
-    private function banner( $data, $position )
+    private function banner( $adData, $position )
     {
 
-        switch( constant::$text['site'] )
+        switch( true )
         {
-            case 'athena':
-                if( !( $data instanceof data_journalist ) )
-                {
-                    $data = $position;
-                }
+
+            case ( $adData instanceof data_category) :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_CATEGORY_TOP : banner::SIDEBAR_CATEGORY_BOTTOM;
+                $category_id = $adData->id;
                 break;
 
-            case 'hermes':
-                $data = $position;
+            case ( $adData instanceof data_article ) :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_ARTICLE_TOP : banner::SIDEBAR_ARTICLE_BOTTOM;
+                $category_id = $adData->category_id;
                 break;
+
+            default :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_HOMEPAGE_TOP : banner::SIDEBAR_HOMEPAGE_BOTTOM;
+                $category_id = 0;
+                break;
+
+        }
+
+        $banner = banner::getForPosition( $position_id, $category_id );
+
+        if( is_null( $banner ) )
+        {
+            return;
         }
 
         //<!-- Banner 300x250 -->
@@ -86,8 +99,9 @@ class layout_sidebar extends layout
         '<div class="widget">',
             '<h3 class="widget-title">', constant::$text['Advertising'], '</h3>',
             '<div class="ad-banner-300x250">';
-                banner::automatic( $data );
-                //'<a href="http://themeforest.net/user/CreativeKingdom/portfolio?ref=CreativeKingdom" target="_blank"><img src="demo/300x250.gif" alt="Banner"/></a>',
+
+                banner::outputBanner( $banner );
+
             echo
             '</div>',
         '</div>';
