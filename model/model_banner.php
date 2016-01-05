@@ -136,4 +136,28 @@ class model_banner extends model
 
     }
 
+    static public function getFullList()
+    {
+
+
+        $sql = '
+            SELECT *
+            FROM banner
+            ORDER BY id DESC
+        ';
+
+        $query = db::prepare( $sql );
+        $query->execute();
+
+        $list = new data_array();
+
+        while( $row = $query->fetch() )
+        {
+            $list->add( new data_banner( $row ) );
+        }
+
+        return $list;
+
+    }
+
 }

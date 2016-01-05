@@ -48,6 +48,12 @@ class layout_admin_page extends layout_page
             );
             $main->addChild( new layout_basic_button_link( constant::$text['comments'], $params ) );
 
+            $params = array(
+                'href'  => '/admin/banner/list',
+                'class' => 'btn-large',
+            );
+            $main->addChild( new layout_basic_button_link( constant::$text['banner'], $params ) );
+
 
         }
 

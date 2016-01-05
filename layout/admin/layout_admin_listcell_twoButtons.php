@@ -1,6 +1,6 @@
 <?php
 
-class layout_admin_listcell_twoButtons extends layout_page
+class layout_admin_listcell_twoButtons extends layout
 {
 
     private $link1;
