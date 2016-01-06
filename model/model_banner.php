@@ -107,7 +107,7 @@ class model_banner extends model
             FROM banner
             WHERE NOW() BETWEEN date_from AND date_to
                 AND active = 1
-            ORDER BY views ASC
+            ORDER BY RAND()
         ';
 
         $query = db::prepare( $sql );
