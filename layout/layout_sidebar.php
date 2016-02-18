@@ -88,7 +88,14 @@ class layout_sidebar extends layout
             '<div class="ad-banner-300x250">';
                 if( $position == 'side1')
                 {
-                    echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_1.jpg"></a>';
+                    switch( rand( 1, 5 ) )
+                    {
+                        case 1: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_1.jpg"></a>';  break;
+                        case 2: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_2.jpg"></a>';  break;
+                        case 3: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_A1.jpg"></a>'; break;
+                        case 4: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_B.jpg"></a>';  break;
+                        case 5: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_C.jpg"></a>';  break;
+                    }
                 }
                 else
                 {
