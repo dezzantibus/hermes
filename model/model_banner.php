@@ -27,6 +27,9 @@ class model_banner extends model
                 )
         ';
 
+        if( $data->position_id == banner::SIDEBAR_HOMEPAGE_TOP )    $data->category_id = 0;
+        if( $data->position_id == banner::SIDEBAR_HOMEPAGE_BOTTOM ) $data->category_id = 0;
+
         $query = db::prepare( $sql );
         $query
             ->bindInt   ( ':position_id',   $data->position_id )
@@ -59,6 +62,9 @@ class model_banner extends model
                 active      = :active
             WHERE id = :id
         ';
+
+        if( $data->position_id == banner::SIDEBAR_HOMEPAGE_TOP )    $data->category_id = 0;
+        if( $data->position_id == banner::SIDEBAR_HOMEPAGE_BOTTOM ) $data->category_id = 0;
 
         $query = db::prepare( $sql );
         $query

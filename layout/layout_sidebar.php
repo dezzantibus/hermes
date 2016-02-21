@@ -37,11 +37,11 @@ class layout_sidebar extends layout
 
         $this->category();
 
+        $this->banner( $this->data->adData, 'side2' );
+
         $this->meta();
 
         $this->text();
-
-        $this->banner( $this->data->adData, 'side2' );
 
 //        $this->tags();
 
