@@ -11,9 +11,13 @@ class layout_category_item extends layout
 
     private $article;
 
-    function __construct( data_article $article )
+    private $banner;
+
+    function __construct( data_article $article, $banner=false )
     {
         $this->article = $article;
+
+        $this->banner = $banner;
     }
 
     public function render()
@@ -34,6 +38,15 @@ class layout_category_item extends layout
 
     private function withoutImage()
     {
+
+        if( $this->banner )
+        {
+            $banner = banner::getForPosition( $this->banner, $this->article->category_id );
+            if( !is_null( $banner ) )
+            {
+                banner::outputBanner( $banner );
+            }
+        }
 
         echo
         '<div class="main-item no-image">',

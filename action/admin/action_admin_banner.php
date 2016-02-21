@@ -22,6 +22,10 @@ class action_admin_banner extends action
         }
         else
         {
+            $db_banner      = model_banner::getById( $banner->id );
+            $banner->active = $db_banner->active;
+            $banner->views  = $db_banner->views;
+            $banner->file   = $db_banner->file;
             model_banner::update( $banner );
         }
 
