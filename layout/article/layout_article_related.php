@@ -19,7 +19,7 @@ class layout_article_related extends layout
     {
         ?>
         <div class="block-layout-one">
-            <p class="title"><span>Related <strong>posts</strong></span></p>
+            <p class="title"><span>Lajme t&euml; ngjashme <strong></strong></span></p>
             <div class="row">
                 <div class="item grid_4">
                     <a href="#"><img src="demo/80x65.gif" /></a>
