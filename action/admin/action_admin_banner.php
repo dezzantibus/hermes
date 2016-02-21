@@ -18,7 +18,8 @@ class action_admin_banner extends action
 
         if( empty( $banner->id ) )
         {
-            $banner->id = model_banner::create( $banner );
+            $banner->active = 1;
+            $banner->id     = model_banner::create( $banner );
         }
         else
         {
