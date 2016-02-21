@@ -39,20 +39,20 @@ class banner
     {
 
         return array(
-            1  => 'Homepage categoria',
-            2  => 'Categoria sopra',
-            3  => 'Categoria centrale',
-            4  => 'Categoria sotto',
-            5  => 'Articolo',
-            6  => 'Laterale Homepage sopra',
-            7  => 'Laterale Homepage sotto',
-            8  => 'Laterale Categoria sopra',
-            9  => 'Laterale Categoria sotto',
-            10 => 'Laterale Articolo sopra',
-            11 => 'Laterale Articolo sotto',
-            12 => 'Header Homepage',
-            13 => 'Header Categoria',
-            14 => 'Header Articolo',
+            1  => 'Homepage categoria (larghezza 728)',
+            2  => 'Categoria sopra (larghezza 728)',
+            3  => 'Categoria centrale (larghezza 728)',
+            4  => 'Categoria sotto (larghezza 728)',
+            5  => 'Articolo (larghezza 728)',
+            6  => 'Laterale Homepage sopra (larghezza 300)',
+            7  => 'Laterale Homepage sotto (larghezza 300)',
+            8  => 'Laterale Categoria sopra (larghezza 300)',
+            9  => 'Laterale Categoria sotto (larghezza 300)',
+            10 => 'Laterale Articolo sopra (larghezza 300)',
+            11 => 'Laterale Articolo sotto (larghezza 300)',
+            12 => 'Header Homepage (468 x 60)',
+            13 => 'Header Categoria (468 x 60)',
+            14 => 'Header Articolo (468 x 60)',
         );
 
     }

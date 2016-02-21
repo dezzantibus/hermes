@@ -33,7 +33,7 @@ class layout_admin_page extends layout_page
         );
         $main->addChild( new layout_basic_button_link( constant::$text['Articles'], $params ) );
 
-        if( $_SESSION['journalist']->id == 1 )
+        if( $_SESSION['journalist']->admin == 1 )
         {
 
 //            $params = array(
