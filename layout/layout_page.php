@@ -114,6 +114,9 @@ abstract class layout_page extends layout
 
             '<link rel="stylesheet" href="/css/mine.css">',
 
+            '<link rel="stylesheet" href="/css/datepicker3.css">',
+            '<script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>',
+
             '<link rel="stylesheet" href="/css/', constant::$text['site'], '.css">',
 
         '</head>',

@@ -23,7 +23,7 @@ abstract class handler
 
     }
 
-    protected function getHeaderData( $adData )
+    protected function getHeaderData( $adData=null )
     {
 
         $result = new data_header();
