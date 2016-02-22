@@ -47,9 +47,9 @@ class layout_category_page extends layout_page
             $counter++;
             switch( $counter )
             {
-                case  5: $banner = banner::CATEGORY_TOP;    break;
-                case 10: $banner = banner::CATEGORY_MIDDLE; break;
-                case 15: $banner = banner::CATEGORY_BOTTOM; break;
+                case  6: $banner = banner::CATEGORY_TOP;    break;
+                case 11: $banner = banner::CATEGORY_MIDDLE; break;
+                case 16: $banner = banner::CATEGORY_BOTTOM; break;
                 default: $banner = false;
             }
             $content->addChild( new layout_category_item( $article, $banner ) );

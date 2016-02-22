@@ -16,12 +16,22 @@ class layout_category_item extends layout
     function __construct( data_article $article, $banner=false )
     {
         $this->article = $article;
-
-        $this->banner = $banner;
+        $this->banner  = $banner;
     }
 
     public function render()
     {
+
+        if( $this->banner )
+        {
+            $banner = banner::getForPosition( $this->banner, $this->article->category_id );
+            if( !is_null( $banner ) )
+            {
+                echo '<div class="main-item no-image">';
+                banner::outputBanner( $banner );
+                echo '</div>';
+            }
+        }
 
         // this will check if there is an image
         // instead of being random as it is now
@@ -38,15 +48,6 @@ class layout_category_item extends layout
 
     private function withoutImage()
     {
-
-        if( $this->banner )
-        {
-            $banner = banner::getForPosition( $this->banner, $this->article->category_id );
-            if( !is_null( $banner ) )
-            {
-                banner::outputBanner( $banner );
-            }
-        }
 
         echo
         '<div class="main-item no-image">',
