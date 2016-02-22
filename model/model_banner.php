@@ -29,6 +29,7 @@ class model_banner extends model
 
         if( $data->position_id == banner::SIDEBAR_HOMEPAGE_TOP )    $data->category_id = 0;
         if( $data->position_id == banner::SIDEBAR_HOMEPAGE_BOTTOM ) $data->category_id = 0;
+        if( $data->position_id == banner::HEADER_HOME )             $data->category_id = 0;
 
         $query = db::prepare( $sql );
         $query
@@ -65,6 +66,7 @@ class model_banner extends model
 
         if( $data->position_id == banner::SIDEBAR_HOMEPAGE_TOP )    $data->category_id = 0;
         if( $data->position_id == banner::SIDEBAR_HOMEPAGE_BOTTOM ) $data->category_id = 0;
+        if( $data->position_id == banner::HEADER_HOME )             $data->category_id = 0;
 
         $query = db::prepare( $sql );
         $query
