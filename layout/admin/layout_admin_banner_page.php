@@ -84,6 +84,8 @@ class layout_admin_banner_page extends layout_page
 
         $form->addChild( new layout_form_text( 'link', 'Link', $banner->link ) );
 
+        $form->addChild( new layout_form_text( 'views', 'Visto', $banner->views ) );
+
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
         $this->addChild( new layout_footer( $footer ) );

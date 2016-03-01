@@ -41,7 +41,7 @@ class model_banner extends model
             ->bindString( ':file',          $data->file )
             ->bindString( ':link',          $data->link )
             ->bindInt   ( ':active',        $data->active )
-            ->bindInt   ( ':views',         0 )
+            ->bindInt   ( ':views',         $data->views )
             ->execute();
 
         return db::lastInsertId();
@@ -60,6 +60,7 @@ class model_banner extends model
                 date_to     = :date_to,
                 file        = :file,
                 link        = :link,
+                views       = :views,
                 active      = :active
             WHERE id = :id
         ';
@@ -77,6 +78,7 @@ class model_banner extends model
             ->bindDate  ( ':date_to',       $data->date_to )
             ->bindString( ':file',          $data->file )
             ->bindString( ':link',          $data->link )
+            ->bindInt   ( ':views',         $data->views )
             ->bindInt   ( ':active',        $data->active )
             ->bindInt   ( ':id',            $data->id )
             ->execute();

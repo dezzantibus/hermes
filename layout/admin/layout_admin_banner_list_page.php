@@ -36,7 +36,7 @@ class layout_admin_banner_list_page extends layout_page
         /** @var $banner data_banner */
         foreach( $banners->getData() as $banner )
         {
-            $main->addChild( new layout_admin_listcell_banner( '/admin/banner/edit.form?id=' . $banner->id, $banner->name ) );
+            $main->addChild( new layout_admin_listcell_banner( '/admin/banner/edit.form?id=' . $banner->id, $banner->name . ' - [par&euml; ' . $banner->views . ' her&euml;]' ) );
         }
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );

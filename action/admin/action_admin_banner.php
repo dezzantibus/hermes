@@ -20,12 +20,13 @@ class action_admin_banner extends action
         {
             $banner->active = 1;
             $banner->id     = model_banner::create( $banner );
+            $banner->views  = (int) $banner->views;
         }
         else
         {
             $db_banner      = model_banner::getById( $banner->id );
             $banner->active = $db_banner->active;
-            $banner->views  = $db_banner->views;
+            $banner->views  = (int) $banner->views;
             $banner->file   = $db_banner->file;
             model_banner::update( $banner );
         }
