@@ -50,9 +50,9 @@ class banner
             9  => 'Laterale Categoria sotto (larghezza 300)',
             10 => 'Laterale Articolo sopra (larghezza 300)',
             11 => 'Laterale Articolo sotto (larghezza 300)',
-            12 => 'Header Homepage (468 x 60)',
-            13 => 'Header Categoria (468 x 60)',
-            14 => 'Header Articolo (468 x 60)',
+            12 => 'Header Homepage (728 x 90)',
+            13 => 'Header Categoria (728 x 90)',
+            14 => 'Header Articolo (728 x 90)',
         );
 
     }
