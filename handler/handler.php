@@ -39,11 +39,13 @@ abstract class handler
         {
 
             case ( $adData instanceof data_category) :
+                /** @var  $adData data_category */
                 $position_id = banner::HEADER_CATEGORY;
                 $category_id = $adData->id;
                 break;
 
             case ( $adData instanceof data_article ) :
+                /** @var $adData data_article */
                 $position_id = banner::HEADER_ARTICLE;
                 $category_id = $adData->category_id;
                 break;

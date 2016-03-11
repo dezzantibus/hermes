@@ -19,7 +19,7 @@ class handler_article extends handler
 
         $article->journalist = model_journalist::getById( $article->journalist_id );
 
-        $header  = $this->getHeaderData();
+        $header  = $this->getHeaderData( $article );
         $footer  = $this->getFooterData();
         $sidebar = $this->getSidebarData( $article->category, $article );
 
