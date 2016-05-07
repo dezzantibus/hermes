@@ -17,7 +17,7 @@ class action_admin_login extends action
             $this->data['password']
         );
 
-        if( empty( $journalist->id ) )
+        if( empty( $journalist->id ) && $journalist->id !== 0 )
         {
             $handler = new handler_admin();
             $handler->run( 'journalist not found' );
