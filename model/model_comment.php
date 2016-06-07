@@ -107,10 +107,14 @@ class model_comment extends model
     {
 
         $sql = '
-            SELECT *
-            FROM comment
-            WHERE approved = 0
-            ORDER BY created
+            SELECT c.*, a.title, cat.name
+            FROM comment c
+                INNER JOIN article a
+                    ON a.id = c.article_id
+                INNER JOIN category cat
+                    ON a.category_id = cat.id
+            WHERE c.approved = 0
+            ORDER BY c.created
         ';
 
         $query = db::prepare( $sql )->execute();
@@ -118,7 +122,7 @@ class model_comment extends model
         $return = new data_array();
         while( $row = $query->fetch() )
         {
-            $return->add( new data_comment( $row ) );
+            $return->add( new data_comment( $row, $row['title'], $row['name'] ) );
         }
 
         return $return;

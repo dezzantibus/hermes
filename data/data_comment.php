@@ -23,7 +23,11 @@ class data_comment extends data
 
     public $created;
 
-    function __construct( $data=null )
+    public $article_title;
+
+    public $category_name;
+
+    function __construct( $data=null, $article_title=null, $category_name=null )
     {
 
         if( isset( $data ) )
@@ -36,6 +40,9 @@ class data_comment extends data
             if( isset( $data['approved'] ) )   $this->approved   = $data['approved'];
             if( isset( $data['created'] ) )    $this->created    = $data['created'];
         }
+
+        if( isset( $article_title ) ) $this->article_title = $article_title;
+        if( isset( $category_name ) ) $this->category_name = $category_name;
 
     }
 
