@@ -104,7 +104,7 @@ class layout_category_item extends layout
 //                    '</ul>',
                 echo
                 '</div>',
-                '<p>', empty( $this->article->brief ) ? substr( $this->article->text, 0, 300 ) . '...' : $this->article->brief, '</p>',
+                '<p>', empty( $this->article->brief ) ? substr( strip_tags( $this->article->text ), 0, 300 ) . '...' : $this->article->brief, '</p>',
             '</div>',
         '</div>';
 
