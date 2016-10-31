@@ -240,7 +240,7 @@ class model_article extends model
     static public function getAdminPage( $page=1 )
     {
 
-        if( $_SESSION['journalist']->id == 1 || $_SESSION['journalist']->display_name == 'Paolo Picci' )
+        if( $_SESSION['journalist']->admin == 1 )
         {
             $sql = '
                 SELECT *
@@ -264,8 +264,8 @@ class model_article extends model
         }
 
         $query
-            ->bindInt( ':start',       ( $page - 1 ) * constant::ADMIN_ARTICLES_PER_PAGE )
-            ->bindInt( ':number',      constant::ADMIN_ARTICLES_PER_PAGE )
+            ->bindInt( ':start',  ( $page - 1 ) * constant::ADMIN_ARTICLES_PER_PAGE )
+            ->bindInt( ':number', constant::ADMIN_ARTICLES_PER_PAGE )
             ->execute();
 
         $result = new data_array();

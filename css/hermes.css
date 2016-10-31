@@ -14,10 +14,17 @@ ul.main-menu li:first-child a{
     background: url("/images/logo/hermes.jpg") left top no-repeat;
     margin-top:10px;
     padding-left:16px;
+    margin-left:-20px;
 }
 
 #site-logo a{
     height:33px;
     width:250px;
     display:block;
+}
+
+.ad-banner-728x90{
+    padding:0;
+    margin-right:-20px;
+    margin-top:10px;
 }

@@ -72,6 +72,10 @@ class layout_article_content extends layout
 
         '</article>';
 
+        $banner = banner::getForPosition( banner::ARTICLE, $this->article->category_id );
+
+        banner::outputBanner( $banner );
+
     }
 
 }

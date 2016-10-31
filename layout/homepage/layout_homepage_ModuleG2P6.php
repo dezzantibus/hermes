@@ -12,24 +12,22 @@ class layout_homepage_ModuleG2P6 extends layout
     /** @var  data_category */
     private $list;
 
+    /** @var  data_banner */
+    private $banner;
+
     function __construct( data_category $list )
     {
+
         $this->list = $list;
+
+        $this->banner = banner::getForPosition( banner::HOMEPAGE, $list->id );
+
     }
 
     public function render()
     {
 
-//        if( $this->list->id == 9 )
-//        {
-//            echo
-//            '
-//
-//            <a href="https://www.facebook.com/Manjola-Baci-802169569849189/?fref=ts"><img src="/banner/Manjola-Baci.jpg"></a>
-//
-//            ';
-//            //<a href="http://www.konfindustria.org.al/?lang=en"><img src="/banner/ELISAA_728x90px_D.jpg"></a>
-//        }
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-two row ', $this->list->routing, '">',

@@ -31,6 +31,8 @@ class data_journalist extends data
 
     public $google;
 
+    public $admin;
+
     function __construct( $data=null )
     {
 
@@ -47,6 +49,7 @@ class data_journalist extends data
             if( isset( $data['bio'] ) )          $this->bio          = $data['bio'];
             if( isset( $data['created'] ) )      $this->created      = $data['created'];
             if( isset( $data['google'] ) )       $this->google       = $data['google'];
+            if( isset( $data['admin'] ) )        $this->admin        = $data['admin'];
         }
 
     }

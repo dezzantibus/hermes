@@ -9,7 +9,7 @@
 class file
 {
 
-    static public function saveFromPost( $input, $article_id )
+    static public function saveFromPost( $input, $article_id, $folder='articles' )
     {
 
         if( empty( $_FILES[ $input ]['tmp_name'] ) )
@@ -17,7 +17,7 @@ class file
             return false;
         }
 
-        $path = self::imagePathFromArticleId( $article_id );
+        $path = self::imagePathFromArticleId( $article_id, $folder );
 
         move_uploaded_file( $_FILES[ $input ]['tmp_name'], $path['file'] . $_FILES[ $input ]['name'] );
 
@@ -25,7 +25,7 @@ class file
 
     }
 
-    static public function imagePathFromArticleId( $id )
+    static public function imagePathFromArticleId( $id, $folder )
     {
 
         $level1  = floor( $id / 10000 );
@@ -37,8 +37,8 @@ class file
         $level3 = $id;
 
         $path = array(
-            'web'  => "/articles/$level1/$level2/$level3/",
-            'file' => __DIR__ . "/../upload/articles/$level1/$level2/$level3/",
+            'web'  => "/$folder/$level1/$level2/$level3/",
+            'file' => __DIR__ . "/../upload/$folder/$level1/$level2/$level3/",
         );
 
         if( !is_dir( $path['file'] ) )

@@ -11,7 +11,11 @@ abstract class handler
 
     function __construct()
     {
+
         $this->data = $_GET;
+
+        model_banner::getActive();
+
     }
 
     public function run()
@@ -19,7 +23,7 @@ abstract class handler
 
     }
 
-    protected function getHeaderData()
+    protected function getHeaderData( $adData=null )
     {
 
         $result = new data_header();
@@ -30,6 +34,30 @@ abstract class handler
         }
 
         $result->category_menu = $this->category_list;
+
+        switch( true )
+        {
+
+            case ( $adData instanceof data_category) :
+                /** @var  $adData data_category */
+                $position_id = banner::HEADER_CATEGORY;
+                $category_id = $adData->id;
+                break;
+
+            case ( $adData instanceof data_article ) :
+                /** @var $adData data_article */
+                $position_id = banner::HEADER_ARTICLE;
+                $category_id = $adData->category_id;
+                break;
+
+            default :
+                $position_id = banner::HEADER_HOME;
+                $category_id = 0;
+                break;
+
+        }
+
+        $result->banner = banner::getForPosition( $position_id, $category_id );
 
         return $result;
 

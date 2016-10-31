@@ -9,16 +9,25 @@
 class layout_homepage_ModuleG2P0 extends layout
 {
 
-    /** @var  $list data_category */
+    /** @var  data_category */
     private $list;
+
+    /** @var  data_banner */
+    private $banner;
 
     function __construct( data_category $list )
     {
+
         $this->list = $list;
+
+        $this->banner = banner::getForPosition( banner::HOMEPAGE, $list->id );
+
     }
 
     public function render()
     {
+
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-five">',

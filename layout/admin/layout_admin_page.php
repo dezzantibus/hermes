@@ -33,20 +33,31 @@ class layout_admin_page extends layout_page
         );
         $main->addChild( new layout_basic_button_link( constant::$text['Articles'], $params ) );
 
-        if( $_SESSION['journalist']->id == 1 )
+        if( $_SESSION['journalist']->admin == 3 )
         {
 
-//            $params = array(
-//                'href'  => '/admin/journalist/list',
-//                'class' => 'btn-large',
-//            );
-//            $main->addChild( new layout_basic_button_link( constant::$text['Journalists'], $params ) );
+            $params = array(
+                'href'  => '/admin/journalist/list',
+                'class' => 'btn-large',
+            );
+            $main->addChild( new layout_basic_button_link( constant::$text['Journalists'], $params ) );
+
+        }
+
+        if( $_SESSION['journalist']->admin > 0 )
+        {
 
             $params = array(
                 'href'  => '/admin/comment/list',
                 'class' => 'btn-large',
             );
             $main->addChild( new layout_basic_button_link( constant::$text['comments'], $params ) );
+
+            $params = array(
+                'href'  => '/admin/banner/list',
+                'class' => 'btn-large',
+            );
+            $main->addChild( new layout_basic_button_link( constant::$text['banner'], $params ) );
 
 
         }

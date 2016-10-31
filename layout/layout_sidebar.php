@@ -37,11 +37,11 @@ class layout_sidebar extends layout
 
         $this->category();
 
+        $this->banner( $this->data->adData, 'side2' );
+
         $this->meta();
 
         $this->text();
-
-        $this->banner( $this->data->adData, 'side2' );
 
 //        $this->tags();
 
@@ -64,21 +64,34 @@ class layout_sidebar extends layout
 
     }
 
-    private function banner( $data, $position )
+    private function banner( $adData, $position )
     {
 
-        switch( constant::$text['site'] )
+        switch( true )
         {
-            case 'athena':
-                if( !( $data instanceof data_journalist ) )
-                {
-                    $data = $position;
-                }
+
+            case ( $adData instanceof data_category) :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_CATEGORY_TOP : banner::SIDEBAR_CATEGORY_BOTTOM;
+                $category_id = $adData->id;
                 break;
 
-            case 'hermes':
-                $data = $position;
+            case ( $adData instanceof data_article ) :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_ARTICLE_TOP : banner::SIDEBAR_ARTICLE_BOTTOM;
+                $category_id = $adData->category_id;
                 break;
+
+            default :
+                $position_id = $position == 'side1' ? banner::SIDEBAR_HOMEPAGE_TOP : banner::SIDEBAR_HOMEPAGE_BOTTOM;
+                $category_id = 0;
+                break;
+
+        }
+
+        $banner = banner::getForPosition( $position_id, $category_id );
+
+        if( is_null( $banner ) )
+        {
+            return;
         }
 
         //<!-- Banner 300x250 -->
@@ -86,21 +99,9 @@ class layout_sidebar extends layout
         '<div class="widget">',
             '<h3 class="widget-title">', constant::$text['Advertising'], '</h3>',
             '<div class="ad-banner-300x250">';
-                if( $position == 'side1')
-                {
-                    switch( rand( 1, 5 ) )
-                    {
-                        case 1: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_1.jpg"></a>';  break;
-                        case 2: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_2.jpg"></a>';  break;
-                        case 3: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_A1.jpg"></a>'; break;
-                        case 4: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_B.jpg"></a>';  break;
-                        case 5: echo '<a href="https://www.facebook.com/Marketing-p%C3%ABr-t%C3%AB-gjitha-firmat-213678692307984/"><img src="/banner/HermesNews_Banner300x60px_C.jpg"></a>';  break;
-                    }
-                }
-                else
-                {
-                    banner::automatic( $data );
-                }
+
+                banner::outputBanner( $banner );
+
             echo
             '</div>',
         '</div>';

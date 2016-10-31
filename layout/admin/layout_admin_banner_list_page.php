@@ -1,6 +1,6 @@
 <?php
 
-class layout_admin_comment_list_page extends layout_page
+class layout_admin_banner_list_page extends layout_page
 {
 
     public function __construct
@@ -8,7 +8,7 @@ class layout_admin_comment_list_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_array   $comments
+        data_array   $banners
     )
     {
 
@@ -27,14 +27,16 @@ class layout_admin_comment_list_page extends layout_page
         );
         $main = $wrapper->addChild( new layout_basic_div( $params ) );
 
-        /** @var $comment data_comment */
-        foreach( $comments->getData() as $comment )
+        $params = array(
+            'href'  => '/admin/banner/new.form',
+            'class' => 'btn-large',
+        );
+        $main->addChild( new layout_basic_button_link( constant::$text['Insert new'], $params ) );
+
+        /** @var $banner data_banner */
+        foreach( $banners->getData() as $banner )
         {
-            $main->addChild( new layout_admin_listcell_twoButtons(
-                '/admin/comment_approve.action?value=1&id=' . $comment->id,
-                '/admin/comment_approve.action?value=-1&id=' . $comment->id,
-                $comment->category_name . ' - ' . $comment->article_title . '<br>' . $comment->text
-            ) );
+            $main->addChild( new layout_admin_listcell_banner( '/admin/banner/edit.form?id=' . $banner->id, $banner->name . ' - [par&euml; ' . $banner->views . ' her&euml;]' ) );
         }
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );

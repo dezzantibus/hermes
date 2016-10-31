@@ -1,6 +1,6 @@
 <?php
 
-class layout_admin_listcell extends layout
+class layout_admin_listcell_banner extends layout
 {
 
     private $link;

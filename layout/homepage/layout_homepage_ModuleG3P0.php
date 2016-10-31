@@ -12,25 +12,22 @@ class layout_homepage_ModuleG3P0 extends layout
     /** @var  data_category */
     private $list;
 
+    /** @var  data_banner */
+    private $banner;
+
     function __construct( data_category $list )
     {
+
         $this->list = $list;
+
+        $this->banner = banner::getForPosition( banner::HOMEPAGE, $list->id );
+
     }
 
     public function render()
     {
 
-        /*
-        if( $this->list->id == 12 )
-        {
-            echo
-            '
-
-            <a href="https://www.facebook.com/Manjola-Baci-802169569849189/?fref=ts"><img src="/banner/Manjola-Baci.jpg"></a>
-
-            ';
-        }
-        */
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-four row" id="', $this->list->routing, '">',

@@ -36,7 +36,7 @@ class layout_article_page extends layout_page
 
         $main->addChild( new layout_article_content( $article ) );
 
-        if( $article->journalist_id > 0 )
+//        if( $article->journalist_id > 0 )
         {
             $main->addChild( new layout_article_bio( $article->journalist ) );
         }

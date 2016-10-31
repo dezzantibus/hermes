@@ -33,9 +33,9 @@ class handler_category extends handler
             $pinned = model_article::getCategoryPinned( $category, 6 );
         }
 
-        $header  = $this->getHeaderData();
+        $header  = $this->getHeaderData( $category );
         $footer  = $this->getFooterData();
-        $sidebar = $this->getSidebarData( $category );
+        $sidebar = $this->getSidebarData( $category, $category );
 
         // Render page
         $page = new layout_category_page( $header, $footer, $sidebar, $category, $articles, $pinned, $pages, $page );
