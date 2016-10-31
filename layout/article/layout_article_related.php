@@ -10,70 +10,57 @@
 class layout_article_related extends layout
 {
 
-    function __construct()
-    {
+    private $related;
 
+    function __construct( data_array $related )
+    {
+        $this->related = $related;
     }
 
     public function render()
     {
-        ?>
-        <div class="block-layout-one">
-            <p class="title"><span>Lajme t&euml; ngjashme <strong></strong></span></p>
-            <div class="row">
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Sport</a></span>
-                        <h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" alt="d1008b"/></a>
-                    <div>
-                        <span><a href="#">Culture</a></span>
-                        <h3><a href="#">Sigrid Rausing: 'The sadness was overwhelming'</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" alt=d61d00"/></a>
-                    <div>
-                        <span><a href="#">Technology</a></span>
-                        <h3><a href="#">Is Brixton London's next tech hipster hub?</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" /></a>
-                    <div>
-                        <span><a href="#">Travel</a></span>
-                        <h3><a href="#">The Giro d'Italia comes to Northern Ireland</a></h3>
-                        <p class="date">December 13, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" alt="d1008b"/></a>
-                    <div>
-                        <span><a href="#">Business</a></span>
-                        <h3><a href="#">Does your business need to get a grip on marketing?</a></h3>
-                        <p class="date">Septmeber 16, 2014</p>
-                    </div>
-                </div>
-                <div class="item grid_4">
-                    <a href="#"><img src="demo/80x65.gif" alt="Post"/></a>
-                    <div>
-                        <span><a href="#">Politics</a></span>
-                        <h3><a href="#">Ryanair profits endure bumpy landing</a></h3>
-                        <p class="date">June 2, 2014</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
+
+        if( $this->related->isEmpty() )
+        {
+            return;
+        }
+
+        echo
+        '<div class="block-layout-one">',
+            '<p class="title"><span>Lajme t&euml; ngjashme <strong></strong></span></p>',
+            '<div class="row">';
+
+                $counter = 0;
+
+                /** var $item data_article */
+                foreach( $this->related->getData() as $item )
+                {
+
+                    if( !( $counter % 3 ) && $counter > 0 )
+                    {
+                        echo
+                        '</div>',
+                        '<div class="row">';
+                    }
+
+                    echo
+                    '<div class="item grid_4">',
+                        '<a href="#"><img src="demo/80x65.gif" /></a>',
+                        '<div>',
+                            '<span><a href="#">Sport</a></span>',
+                            '<h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>',
+                            '<p class="date">December 13, 2014</p>',
+                        '</div>',
+                    '</div>';
+
+                    $counter++;
+
+                }
+
+            echo
+            '</div>',
+        '</div>';
+
     }
 
 }

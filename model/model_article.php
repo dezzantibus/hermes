@@ -480,6 +480,33 @@ class model_article extends model
 
     }
 
+    static public function getRelated( $article_id )
+    {
+
+        $sql = '
+            SELECT a.*
+            FROM article a
+                INNER JOIN related r
+                    ON a.id = r.related_id
+            WHERE r.article_id = :article_id
+            ORDER BY a.created DESC
+        ';
+
+        $query = db::prepare( $sql );
+        $query
+            ->bindInt( ':article_id', $article_id )
+            ->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $result->add( new data_article( $row ) );
+        }
+
+        return $result;
+
+    }
+
     static public function sitemaps( $category_id )
     {
 

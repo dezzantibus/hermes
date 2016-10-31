@@ -27,8 +27,10 @@ class handler_article extends handler
 
         $comments = model_comment::getForArticle( $article->id );
 
+        $related = model_article::getRelated( $article->id );
+
         // Render page
-        $page = new layout_article_page( $header, $footer, $sidebar, $article, $comments );
+        $page = new layout_article_page( $header, $footer, $sidebar, $article, $comments, $related );
         $page->render();
 
     }
