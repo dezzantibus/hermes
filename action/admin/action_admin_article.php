@@ -43,6 +43,33 @@ class action_admin_article extends action
 
         model_article::update( $article );
 
+        model_related::deleteForArticleId( $article->id );
+
+        foreach( $this->data['related'] as $url )
+        {
+
+            if( is_numeric( $url ) )
+            {
+                model_related::create( $article->id, $url );
+            }
+            else
+            {
+
+                $url_array = explode( '/', $url );
+
+                $routing = array_pop( $url_array );
+                $routing = array_shift( explode( '.', $routing ) );
+
+                $category = array_pop( $url_array );
+
+                $related = model_article::getByRouting( $routing, $category );
+
+                model_related::create( $article->id, $related->id );
+
+            }
+
+        }
+
         model_article::sitemaps( $article->category_id );
 
         $this->success();

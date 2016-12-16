@@ -20,6 +20,11 @@ class layout_article_related extends layout
     public function render()
     {
 
+        if( empty( $this->related ) )
+        {
+            return;
+        }
+
         if( $this->related->isEmpty() )
         {
             return;

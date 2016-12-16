@@ -47,7 +47,9 @@ class data_article extends data
 
     public $pinned;
 
-    function __construct( $data=null, data_category $category=null, data_journalist $journalist=null )
+    public $related;
+
+    function __construct( $data=null, data_category $category=null, data_journalist $journalist=null, data_array $related=null )
     {
 
         if( !empty( $data ) )
@@ -73,6 +75,7 @@ class data_article extends data
 
         if( isset( $journalist ) ) $this->journalist = $journalist;
         if( isset( $category ) )   $this->category   = $category;
+        if( isset( $related ) )    $this->related    = $related;
 
     }
 
