@@ -501,7 +501,7 @@ class model_article extends model
         while( $row = $query->fetch() )
         {
             $category = model_category::getById( $row['category_id'] );
-            $result->add( new data_article( $row ), $category );
+            $result->add( new data_article( $row , $category ) );
         }
 
         return $result;
