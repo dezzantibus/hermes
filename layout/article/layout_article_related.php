@@ -37,8 +37,8 @@ class layout_article_related extends layout
 
                 $counter = 0;
 
-                /** var $item data_article */
-                foreach( $this->related->getData() as $item )
+                /** var $article data_article */
+                foreach( $this->related->getData() as $article )
                 {
 
                     if( !( $counter % 3 ) && $counter > 0 )
@@ -50,11 +50,11 @@ class layout_article_related extends layout
 
                     echo
                     '<div class="item grid_4">',
-                        '<a href="#"><img src="demo/80x65.gif" /></a>',
+                        '<a href="', $article->getLink(), '"><img src="', empty( $article->image_1 ) ? 'demo/80x65.gif' : '/80/65' . $article->image_1, '" /></a>',
                         '<div>',
-                            '<span><a href="#">Sport</a></span>',
-                            '<h3><a href="#">Wenger: FA Cup is my most important trophy</a></h3>',
-                            '<p class="date">December 13, 2014</p>',
+                            '<span style="background-color:', $article->category->colour, '"><a href="', $article->getLink(), '">', $article->category->name, '</a></span>',
+                            '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
+                            '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                         '</div>',
                     '</div>';
 
