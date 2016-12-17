@@ -36,6 +36,7 @@ class handler_admin_article_edit extends handler
         {
             // get the article from somewhere.
             $form_data = model_article::getById( $_GET['id'] );
+            $form_data->related = model_article::getRelated( $_GET['id'] );
         }
 
         // Render page

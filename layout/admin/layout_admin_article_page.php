@@ -118,9 +118,10 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_radio( 'pinned', constant::$text['pinned'], $radio_data, $article->pinned ) );
 
-        $form->addChild( new layout_form_text( 'related[0]', 'Correlati', $article->related[0] ) );
-        $form->addChild( new layout_form_text( 'related[1]', 'Correlati', $article->related[1] ) );
-        $form->addChild( new layout_form_text( 'related[2]', 'Correlati', $article->related[2] ) );
+        $related = $article->related->getData();
+        $form->addChild( new layout_form_text( 'related[0]', 'Correlati', $related[0] ) );
+        $form->addChild( new layout_form_text( 'related[1]', 'Correlati', $related[1] ) );
+        $form->addChild( new layout_form_text( 'related[2]', 'Correlati', $related[2] ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 
