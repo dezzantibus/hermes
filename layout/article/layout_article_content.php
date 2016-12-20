@@ -16,6 +16,7 @@ class layout_article_content extends layout
 
     function __construct( data_article $article )
     {
+
         $this->article = $article;
 
         $this->full_link = 'http://' . $_SERVER['HTTP_HOST'] . $this->article->getLink();
@@ -48,7 +49,18 @@ class layout_article_content extends layout
 //                '<span class="comments">Comments <a href="#">152</a></span>',
             '</div>',
 
-            '<div class="post-container"><p>', str_replace( chr(13).chr(10), '</p><p>', $this->article->text ), '</p></div>',
+            '<div class="post-container"><p>',
+
+            str_replace( chr(13).chr(10), '</p><p>',
+                str_replace(
+                    array( '[FOTO1]', '[FOTO2]', '[FOTO3]', '[FOTO4]' ),
+                    array( $this->article->image_1, $this->article->image_2, $this->article->image_3, $this->article->image_4 ),
+                    $this->article->text
+                )
+            ),
+
+
+            '</p></div>',
 
 
             //<!-- Post info -->
