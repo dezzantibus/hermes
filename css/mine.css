@@ -27,6 +27,7 @@
 }
 
 .post-container img{
-     margin:5px;
-     border: 1px solid #000;
- }
+    margin:5px;
+    border: 1px solid #000;
+    border-radius:5px;
+}
