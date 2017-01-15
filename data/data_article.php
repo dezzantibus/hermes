@@ -41,6 +41,14 @@ class data_article extends data
 
     public $image_4;
 
+    public $caption_1;
+
+    public $caption_2;
+
+    public $caption_3;
+
+    public $caption_4;
+
     public $hero;
 
     public $homepage;
@@ -68,6 +76,10 @@ class data_article extends data
             if( isset( $data['image_2'] ) )        $this->image_2       = $data['image_2'];
             if( isset( $data['image_3'] ) )        $this->image_3       = $data['image_3'];
             if( isset( $data['image_4'] ) )        $this->image_4       = $data['image_4'];
+            if( isset( $data['caption_1'] ) )      $this->caption_1     = $data['caption_1'];
+            if( isset( $data['caption_2'] ) )      $this->caption_2     = $data['caption_2'];
+            if( isset( $data['caption_3'] ) )      $this->caption_3     = $data['caption_3'];
+            if( isset( $data['caption_4'] ) )      $this->caption_4     = $data['caption_4'];
             if( isset( $data['hero'] ) )           $this->hero          = $data['hero'];
             if( isset( $data['homepage'] ) )       $this->homepage      = $data['homepage'];
             if( isset( $data['pinned'] ) )         $this->pinned        = $data['pinned'];

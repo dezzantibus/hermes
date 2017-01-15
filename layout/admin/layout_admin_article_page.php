@@ -75,7 +75,8 @@ class layout_admin_article_page extends layout_page
 
         for( $i=1; $i<=4; $i++ )
         {
-            $form->addChild( new layout_form_file( 'image' . $i, constant::$text['image'] . ' ' . $i ), null );
+            $form->addChild( new layout_form_file( 'image' . $i,    constant::$text['image'] . ' ' . $i ), null );
+            $form->addChild( new layout_form_text( 'caption_' . $i, 'Didascalia', $article->{'caption_' . $i} ) );
         }
 
         switch( constant::$text['site'] )
