@@ -53,14 +53,13 @@ class layout_article_content extends layout
 
             str_replace( chr(13).chr(10), '</p><p>',
                 str_replace(
-                    array( '[FOTO1]', '[FOTO2]', '[FOTO3]', '[FOTO4]' ),
-                    array( $this->article->image_1, $this->article->image_2, $this->article->image_3, $this->article->image_4 ),
+                    array( '[FOTO1]', '[FOTO2]', '[FOTO3]', '[FOTO4]', '[DIDASCALIA1]', '[DIDASCALIA2]', '[DIDASCALIA3]', '[DIDASCALIA4]' ),
+                    array( $this->article->image_1, $this->article->image_2, $this->article->image_3, $this->article->image_4, $this->article->caption_1, $this->article->caption_2, $this->article->caption_3, $this->article->caption_4 ),
                     $this->article->text
                 )
             ),
 
-
-            '</p></div>',
+        '</p></div>',
 
 
             //<!-- Post info -->
