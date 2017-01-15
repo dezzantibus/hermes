@@ -25,3 +25,9 @@
 .ad-banner-728x90{
     float:right;
 }
+
+.post-container img{
+    margin:5px;
+    border: 1px solid #000;
+    border-radius:5px;
+}
