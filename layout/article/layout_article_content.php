@@ -40,7 +40,7 @@ class layout_article_content extends layout
                 if( !empty( $this->article->caption_1 ) )
                 {
                     echo
-                    '<p style="border-bottom: 1px solid #ddd; padding-bottom: 5px; font-style: italic; color: #777; margin: 10px 0 30px 0; font-size: 12px; padding-left: 5px;">', $this->article->caption_1, '</p>';
+                    '<p style="border-bottom: 1px solid #ddd; padding-bottom: 5px; font-style: italic; color: #777; margin: 10px 0 50px 0; font-size: 12px; padding-left: 5px;">', $this->article->caption_1, '</p>';
                 }
 
             }
