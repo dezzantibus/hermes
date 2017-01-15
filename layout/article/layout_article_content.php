@@ -37,6 +37,12 @@ class layout_article_content extends layout
 //                    '</a>',
                 '</div>';
 
+                if( !empty( $this->article->caption_1 ) )
+                {
+                    echo
+                    '<p style="border-bottom: 1px solid #777; padding-bottom: 5px; font-style: italic; color: #777; margin: 10px 5px;">', $this->article->caption_1, '</p>';
+                }
+
             }
 
             echo
