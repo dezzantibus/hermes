@@ -20,7 +20,8 @@ class model_article extends model
                 category_id, journalist_id, routing,
                 title, subtitle, brief,
                 text, hero, homepage, pinned,
-                image_1, image_2, image_3, image_4
+                image_1, image_2, image_3, image_4,
+                caption_1, caption_2, caption_3, caption_4
                 )
             VALUES
                 (
@@ -28,6 +29,7 @@ class model_article extends model
                 :title, :subtitle, :brief,
                 :text, :hero, :homepage, :pinned,
                 :image_1, :image_2, :image_3, :image_4
+                :caption_1, :caption_2, :caption_3, :caption_4
                 )
         ';
 
@@ -47,6 +49,10 @@ class model_article extends model
             ->bindString( ':image_2',       $data->image_2 )
             ->bindString( ':image_3',       $data->image_3 )
             ->bindString( ':image_4',       $data->image_4 )
+            ->bindString( ':caption_1',     $data->caption_1 )
+            ->bindString( ':caption_2',     $data->caption_2 )
+            ->bindString( ':caption_3',     $data->caption_3 )
+            ->bindString( ':caption_4',     $data->caption_4 )
             ->execute();
 
         return db::lastInsertId();
@@ -72,6 +78,10 @@ class model_article extends model
                 image_2       = :image_2,
                 image_3       = :image_3,
                 image_4       = :image_4,
+                caption_1     = :caption_1,
+                caption_2     = :caption_2,
+                caption_3     = :caption_3,
+                caption_4     = :caption_4,
                 hero          = :hero,
                 homepage      = :homepage,
                 pinned        = :pinned
@@ -92,6 +102,10 @@ class model_article extends model
             ->bindString( ':image_2',       $data->image_2 )
             ->bindString( ':image_3',       $data->image_3 )
             ->bindString( ':image_4',       $data->image_4 )
+            ->bindString( ':caption_1',     $data->caption_1 )
+            ->bindString( ':caption_2',     $data->caption_2 )
+            ->bindString( ':caption_3',     $data->caption_3 )
+            ->bindString( ':caption_4',     $data->caption_4 )
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
             ->bindInt   ( ':pinned',        $data->pinned )
