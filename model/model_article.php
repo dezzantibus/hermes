@@ -28,7 +28,7 @@ class model_article extends model
                 :category_id, :journalist_id, :routing,
                 :title, :subtitle, :brief,
                 :text, :hero, :homepage, :pinned,
-                :image_1, :image_2, :image_3, :image_4
+                :image_1, :image_2, :image_3, :image_4,
                 :caption_1, :caption_2, :caption_3, :caption_4
                 )
         ';
