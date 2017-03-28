@@ -54,4 +54,14 @@ class cache_article extends cache
         self::save( 'hero', $data, 0 );
     }
 
+    static public function returnHomeCategory( $id, $number )
+    {
+        return self::retrieve( 'homecategory' . $id . '-' . $number );
+    }
+
+    static public function saveHomeCategory( $data, $id, $number )
+    {
+        self::save( 'homecategory' . $id . '-' . $number, $data, 0 );
+    }
+
 }

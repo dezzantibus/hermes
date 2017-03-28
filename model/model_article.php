@@ -189,7 +189,12 @@ class model_article extends model
     static public function getHomeCategory( data_category $category, $number )
     {
 
-        $sql = '
+        $result = cache_article::returnHomeCategory( $category->id, $number );
+
+        if( empty( $result ) )
+        {
+
+            $sql = '
             SELECT *
             FROM article
             WHERE category_id = :category_id
@@ -199,17 +204,21 @@ class model_article extends model
             LIMIT :number
         ';
 
-        $query = db::prepare( $sql );
-        $query
-            ->bindInt( ':category_id', $category->id )
-            ->bindInt( ':number',      $number )
-            ->execute();
+            $query = db::prepare( $sql );
+            $query
+                ->bindInt( ':category_id', $category->id )
+                ->bindInt( ':number',      $number )
+                ->execute();
 
-        $result = new data_array();
-        while( $row = $query->fetch() )
-        {
-            $journalist = model_journalist::getById( $row['journalist_id'] );
-            $result->add( new data_article( $row, $category, $journalist ) );
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $journalist = model_journalist::getById( $row['journalist_id'] );
+                $result->add( new data_article( $row, $category, $journalist ) );
+            }
+
+            cache_article::saveHomeCategory( $result, $category->id, $number );
+
         }
 
         return $result;
