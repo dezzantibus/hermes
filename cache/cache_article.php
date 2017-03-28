@@ -61,7 +61,17 @@ class cache_article extends cache
 
     static public function saveHomeCategory( $data, $id, $number )
     {
-        self::save( 'homecategory' . $id . '-' . $number, $data, 0 );
+        self::save( 'homecategory' . $id . '-' . $number, $data, rand( 300, 600 ) );
+    }
+
+    static public function returnCategoryPage( $id, $page )
+    {
+        return self::retrieve( 'CategoryPage-' . $id . '-' . $page );
+    }
+
+    static public function saveCategoryPage( $data, $id, $page )
+    {
+        self::save( 'CategoryPage-' . $id . '-' . $page, $data, rand( 300, 600 ) );
     }
 
 }

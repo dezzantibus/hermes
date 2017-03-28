@@ -317,26 +317,35 @@ class model_article extends model
     static public function getCategoryPage( data_category $category, $page=1 )
     {
 
-        $sql = '
-            SELECT *
-            FROM article
-            WHERE category_id = :category_id
-            ORDER BY id DESC
-            LIMIT :start, :number
-        ';
+        $result = cache_article::returnCategoryPage( $category->id, $page );
 
-        $query = db::prepare( $sql );
-        $query
-            ->bindInt( ':category_id', $category->id )
-            ->bindInt( ':start',       ( $page - 1 ) * constant::ARTICLES_PER_PAGE )
-            ->bindInt( ':number',      constant::ARTICLES_PER_PAGE )
-            ->execute();
-
-        $result = new data_array();
-        while( $row = $query->fetch() )
+        if( empty( $result ) )
         {
-            $journalist = model_journalist::getById( $row['journalist_id'] );
-            $result->add( new data_article( $row, $category, $journalist ) );
+
+            $sql = '
+                SELECT *
+                FROM article
+                WHERE category_id = :category_id
+                ORDER BY id DESC
+                LIMIT :start, :number
+            ';
+
+            $query = db::prepare( $sql );
+            $query
+                ->bindInt( ':category_id', $category->id )
+                ->bindInt( ':start',       ( $page - 1 ) * constant::ARTICLES_PER_PAGE )
+                ->bindInt( ':number',      constant::ARTICLES_PER_PAGE )
+                ->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $journalist = model_journalist::getById( $row['journalist_id'] );
+                $result->add( new data_article( $row, $category, $journalist ) );
+            }
+
+            cache_article::saveCategoryPage( $result, $category->id, $page );
+
         }
 
         return $result;

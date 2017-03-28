@@ -98,15 +98,24 @@ class model_category extends model
     static public function getFullList( $order='order' )
     {
 
-        $sql = "SELECT * FROM category ORDER BY `$order` ASC";
+        $result = cache_category::returnFullList( $order );
 
-        $query = db::prepare( $sql );
-        $query->execute();
-
-        $result = new data_array();
-        while( $row = $query->fetch() )
+        if( empty( $result ) )
         {
-            $result->add( new data_category( $row ) );
+
+            $sql = "SELECT * FROM category ORDER BY `$order` ASC";
+
+            $query = db::prepare( $sql );
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $result->add( new data_category( $row ) );
+            }
+
+            cache_category::saveFullList( $result, $order );
+
         }
 
         return $result;
@@ -116,15 +125,24 @@ class model_category extends model
     static public function getHomepageList()
     {
 
-        $sql = 'SELECT * FROM category WHERE home_order > 0 ORDER BY `home_order` ASC';
+        $result = cache_category::returnHomeCategories();
 
-        $query = db::prepare( $sql );
-        $query->execute();
-
-        $result = new data_array();
-        while( $row = $query->fetch() )
+        if( empty( $result ) )
         {
-            $result->add( new data_category( $row ) );
+
+            $sql = 'SELECT * FROM category WHERE home_order > 0 ORDER BY `home_order` ASC';
+
+            $query = db::prepare( $sql );
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $result->add( new data_category( $row ) );
+            }
+
+            cache_category::saveHomeCategories( $result );
+
         }
 
         return $result;
