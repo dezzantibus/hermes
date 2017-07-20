@@ -27,7 +27,7 @@ class layout_homepage_ModuleG1P6 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner );
+        banner::outputBanner( $this->banner, false );
 
         /** @var $main data_article */
         $main = $this->list->home_articles->first();

@@ -27,7 +27,7 @@ class layout_homepage_ModuleG2P6 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner );
+        banner::outputBanner( $this->banner, false );
 
         echo
         '<div class="block-layout-two row ', $this->list->routing, '">',
