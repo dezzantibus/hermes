@@ -89,11 +89,6 @@ class layout_sidebar extends layout
 
         $banner = banner::getForPosition( $position_id, $category_id );
 
-        if( is_null( $banner ) )
-        {
-            return;
-        }
-
         //<!-- Banner 300x250 -->
         echo
         '<div class="widget">',
