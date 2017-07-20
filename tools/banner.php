@@ -96,7 +96,21 @@ class banner
 
     }
 
-    public static function outputBanner( $banner, $replace=false )
+    public static function bannerDoriana()
+    {
+        echo
+        '<ins class="adsbygoogle" ',
+        'style="display:block" ',
+        'data-ad-client="ca-pub-0866520425041689" ',
+        'data-ad-slot="8400124744" ',
+        'data-ad-format="auto"></ins>',
+        '<script>',
+        '(adsbygoogle = window.adsbygoogle || []).push({});',
+        '</script>';
+
+    }
+
+    public static function outputBanner( $banner, $replace=true )
     {
 
         if( ! is_null( $banner ) )
@@ -105,7 +119,16 @@ class banner
         }
         elseif( $replace )
         {
-            self::bannerAndrea();
+            
+            if( date( 's' ) > 30 )
+            {
+                self::bannerAndrea();
+            }
+            else
+            {
+                self::bannerDoriana();
+            }
+
         }
 
     }
