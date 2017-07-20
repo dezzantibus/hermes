@@ -27,7 +27,7 @@ class layout_homepage_ModuleG1P4 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner );
+        banner::outputBanner( $this->banner, false );
 
         echo
         '<div class="block-layout-five">',
