@@ -65,7 +65,7 @@ class layout_admin_banner_page extends layout_page
             $params = array(
 //                'href'    => '/admin/article_delete.action?id=' . $article->id,
                 'class'   => 'btn-large',
-                'onclick' => 'if(confirm(\'Sicuro di voler cancellare?\')) window.location=\'/admin/article_delete.action?id=' . $article->id . '\'',
+                'onclick' => 'if(confirm(\'Sicuro di voler cancellare?\')) window.location=\'/admin/banner_delete.action?id=' . $banner->id . '\'',
             );
             $form->addChild( new layout_basic_button_link( 'Cancella', $params ) );
         }
