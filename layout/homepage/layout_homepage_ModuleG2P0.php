@@ -63,7 +63,7 @@ class layout_homepage_ModuleG2P0 extends layout
 //                            '</ul>',
                         '</div>',
                         '<p>', empty( $article->brief ) ? substr( $article->text, 0, 350 ) . '...' : $article->brief, '</p>',
-                        '<div style="display:none">', $article->text, '</div>',
+                        '<div style="position:absolute;left:5000px;">', $article->text, '</div>',
                     '</div>',
                 '</div>';
 

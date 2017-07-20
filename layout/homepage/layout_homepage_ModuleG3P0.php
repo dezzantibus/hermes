@@ -53,7 +53,7 @@ class layout_homepage_ModuleG3P0 extends layout
                         '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                     '</div>',
                     '<p>', empty( $article->brief ) ? substr( $article->text, 0, 300 ) . '...' : $article->brief, '</p>',
-                    '<div style="display:none">', $article->text, '</div>',
+                    '<div style="position:absolute;left:5000px;">', $article->text, '</div>',
                 '</div>';
 
             }
