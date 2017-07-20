@@ -27,7 +27,7 @@ class layout_homepage_ModuleG3P0 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner, false );
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-four row" id="', $this->list->routing, '">',
@@ -53,6 +53,7 @@ class layout_homepage_ModuleG3P0 extends layout
                         '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
                     '</div>',
                     '<p>', empty( $article->brief ) ? substr( $article->text, 0, 300 ) . '...' : $article->brief, '</p>',
+                    '<div style="display:none">', $article->text, '</div>',
                 '</div>';
 
             }

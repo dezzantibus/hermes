@@ -27,7 +27,7 @@ class layout_homepage_ModuleG2P0 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner, false );
+        banner::outputBanner( $this->banner );
 
         echo
         '<div class="block-layout-five">',
@@ -63,6 +63,7 @@ class layout_homepage_ModuleG2P0 extends layout
 //                            '</ul>',
                         '</div>',
                         '<p>', empty( $article->brief ) ? substr( $article->text, 0, 350 ) . '...' : $article->brief, '</p>',
+                        '<div style="display:none">', $article->text, '</div>',
                     '</div>',
                 '</div>';
 

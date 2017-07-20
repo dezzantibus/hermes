@@ -27,7 +27,7 @@ class layout_homepage_ModuleG1P6 extends layout
     public function render()
     {
 
-        banner::outputBanner( $this->banner, false );
+        banner::outputBanner( $this->banner );
 
         /** @var $main data_article */
         $main = $this->list->home_articles->first();
@@ -70,6 +70,7 @@ class layout_homepage_ModuleG1P6 extends layout
                             '<div>',
                                 '<h3><a href="', $article->getLink(), '">', $article->title, '</a></h3>',
                                 '<p class="date">', data_article::dateForDisplay( $article->created ), '</p>',
+                                '<div style="display:none">', $article->text, '</div>',
                             '</div>',
                         '</div>';
                     }
