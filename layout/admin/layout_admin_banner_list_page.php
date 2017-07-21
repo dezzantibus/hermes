@@ -8,7 +8,9 @@ class layout_admin_banner_list_page extends layout_page
         data_header  $header,
         data_footer  $footer,
         data_sidebar $sidebar,
-        data_array   $banners
+        data_array   $banners,
+                     $pages,
+                     $page
     )
     {
 
@@ -38,6 +40,8 @@ class layout_admin_banner_list_page extends layout_page
         {
             $main->addChild( new layout_admin_listcell_banner( '/admin/banner/edit.form?id=' . $banner->id, $banner->name . ' - [par&euml; ' . $banner->views . ' her&euml;]' ) );
         }
+
+        $main->addChild( new layout_category_pagination( $pages, $page ) );
 
         $wrapper->addChild( new layout_sidebar( $sidebar ) );
 

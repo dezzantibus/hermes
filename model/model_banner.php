@@ -170,4 +170,42 @@ class model_banner extends model
 
     }
 
+    static public function getAdminPage( $page=1 )
+    {
+
+        $sql = '
+            SELECT *
+            FROM banner
+            ORDER BY id DESC
+            LIMIT :start, :number
+        ';
+        $query = db::prepare( $sql );
+
+        $query
+            ->bindInt( ':start',  ( $page - 1 ) * constant::ADMIN_ARTICLES_PER_PAGE )
+            ->bindInt( ':number', constant::ADMIN_ARTICLES_PER_PAGE )
+            ->execute();
+
+        $result = new data_array();
+        while( $row = $query->fetch() )
+        {
+            $result->add( new data_banner( $row ) );
+        }
+
+        return $result;
+
+    }
+
+    static public function getAdminPageNumber()
+    {
+
+        $sql = 'SELECT COUNT( id ) AS num FROM banner';
+
+        $query = db::prepare( $sql )->execute();
+        $row   = $query->fetch();
+
+        return ceil( $row['num'] / constant::ADMIN_ARTICLES_PER_PAGE );
+
+    }
+
 }

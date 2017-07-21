@@ -18,10 +18,18 @@ class handler_admin_banner_list extends handler
 
         $this->login( $header, $footer, $sidebar, $message );
 
-        $banners = model_banner::getFullList();
+        // Get list of articles
+        $page = $this->data['page'];
+        if( empty( $page ) )
+        {
+            $page = 1;
+        }
+        $banners = model_banner::getAdminPage( $page );
+
+        $pages = model_banner::getAdminPageNumber();
 
         // Render page
-        $page = new layout_admin_banner_list_page( $header, $footer, $sidebar, $banners );
+        $page = new layout_admin_banner_list_page( $header, $footer, $sidebar, $banners, $pages, $page );
         $page->render();
 
     }
