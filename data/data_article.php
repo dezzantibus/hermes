@@ -55,6 +55,8 @@ class data_article extends data
 
     public $pinned;
 
+    public $gallery;
+
     public $related;
 
     function __construct( $data=null, data_category $category=null, data_journalist $journalist=null, data_array $related=null )
@@ -83,6 +85,7 @@ class data_article extends data
             if( isset( $data['hero'] ) )           $this->hero          = $data['hero'];
             if( isset( $data['homepage'] ) )       $this->homepage      = $data['homepage'];
             if( isset( $data['pinned'] ) )         $this->pinned        = $data['pinned'];
+            if( isset( $data['gallery'] ) )        $this->gallery       = $data['gallery'];
         }
 
         if( isset( $journalist ) ) $this->journalist = $journalist;

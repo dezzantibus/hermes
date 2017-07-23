@@ -21,7 +21,8 @@ class model_article extends model
                 title, subtitle, brief,
                 text, hero, homepage, pinned,
                 image_1, image_2, image_3, image_4,
-                caption_1, caption_2, caption_3, caption_4
+                caption_1, caption_2, caption_3, caption_4,
+                gallery
                 )
             VALUES
                 (
@@ -29,7 +30,8 @@ class model_article extends model
                 :title, :subtitle, :brief,
                 :text, :hero, :homepage, :pinned,
                 :image_1, :image_2, :image_3, :image_4,
-                :caption_1, :caption_2, :caption_3, :caption_4
+                :caption_1, :caption_2, :caption_3, :caption_4,
+                :gallery
                 )
         ';
 
@@ -53,6 +55,7 @@ class model_article extends model
             ->bindString( ':caption_2',     $data->caption_2 )
             ->bindString( ':caption_3',     $data->caption_3 )
             ->bindString( ':caption_4',     $data->caption_4 )
+            ->bindString( ':gallery',       $data->gallery )
             ->execute();
 
         return db::lastInsertId();
@@ -84,7 +87,8 @@ class model_article extends model
                 caption_4     = :caption_4,
                 hero          = :hero,
                 homepage      = :homepage,
-                pinned        = :pinned
+                pinned        = :pinned,
+                gallery       = :gallery
             WHERE id = :id
         ';
 
@@ -109,6 +113,7 @@ class model_article extends model
             ->bindInt   ( ':hero',          $data->hero )
             ->bindInt   ( ':homepage',      $data->homepage )
             ->bindInt   ( ':pinned',        $data->pinned )
+            ->bindString( ':gallery',       $data->gallery )
             ->bindInt   ( ':id',            $data->id )
             ->execute();
 

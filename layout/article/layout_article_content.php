@@ -53,8 +53,14 @@ class layout_article_content extends layout
 //                '<span class="author">Author <a href="#">John Doe</a></span>',
                 '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
 //                '<span class="comments">Comments <a href="#">152</a></span>',
-            '</div>',
+            '</div>';
 
+            if( !empty( $this->article->gallery ) )
+            {
+                echo '<div class="post-container">', $this->article->gallery, '</div>';
+            }
+
+            echo
             '<div class="post-container"><p>',
 
             str_replace( chr(13).chr(10), '</p><p>',

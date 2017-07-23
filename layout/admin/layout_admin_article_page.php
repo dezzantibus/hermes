@@ -69,6 +69,8 @@ class layout_admin_article_page extends layout_page
 
         $form->addChild( new layout_form_text( 'subtitle', constant::$text['subtitle'], $article->subtitle ) );
 
+        $form->addChild( new layout_form_text( 'gallery', 'Galleria', $article->gallery ) );
+
         $form->addChild( new layout_form_textarea( 'brief', constant::$text['brief'], $article->brief ) );
 
         $form->addChild( new layout_form_textarea( 'text', constant::$text['text'], $article->text, 25 ) );
