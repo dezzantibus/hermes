@@ -1,7 +1,10 @@
 
 ul.main-menu a{
-    padding:10px 7px;
+/*    padding:10px 7px;
     font-size:11px;
+    */
+    padding:0.59em;
+    font-size:10px;
 }
 
 ul.main-menu li:first-child a{
