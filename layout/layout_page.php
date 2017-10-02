@@ -124,7 +124,7 @@ abstract class layout_page extends layout
         '</head>',
         '<body>',
 
-            '<div id="wrapper">';
+            '<div id="wrapper" style="background:', $this->background , ';">';
 
 
 
