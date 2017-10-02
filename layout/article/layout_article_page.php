@@ -20,6 +20,8 @@ class layout_article_page extends layout_page
 
         $this->article = $article;
 
+        $this->background = $article->category->background;
+
         $this->addChild( new layout_header( $header ) );
 
         $params  = array( 'id' => 'section' );

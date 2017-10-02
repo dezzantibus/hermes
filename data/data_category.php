@@ -29,6 +29,8 @@ class data_category extends data
 
     public $colour;
 
+    public $background;
+
     function __construct( $data=null )
     {
 
@@ -42,6 +44,7 @@ class data_category extends data
             if( isset( $data['home_order'] ) )  $this->home_order = $data['home_order'];
             if( isset( $data['home_block'] ) )  $this->home_block = $data['home_block'];
             if( isset( $data['colour'] ) )      $this->colour     = $data['colour'];
+            if( isset( $data['background'] ) )  $this->background = $data['background'];
         }
 
     }

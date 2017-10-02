@@ -10,6 +10,8 @@ abstract class layout_page extends layout
     /** @var  data_article */
     protected $article;
 
+    protected $background = '#fff';
+
     protected function renderTop()
     {
 

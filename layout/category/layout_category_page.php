@@ -18,6 +18,8 @@ class layout_category_page extends layout_page
 
         $this->title = $category->name;
 
+        $this->background = $category->background;
+
         $this->addChild( new layout_header( $header ) );
 
         $this->addChild( new layout_category_title( $category ) );
