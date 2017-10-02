@@ -27,7 +27,7 @@ class layout_article_page extends layout_page
         $params  = array( 'id' => 'section' );
         $section = $this->addChild( new layout_basic_section( $params ) );
 
-        $params  = array( 'class' => 'inner-wrapper' );
+        $params  = array( 'class' => 'inner-wrapper', 'style' => 'background:' . $this->background );
         $wrapper = $section->addChild( new layout_basic_div( $params ) );
 
         $params = array(
