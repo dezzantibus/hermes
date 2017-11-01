@@ -111,7 +111,10 @@ class model_category extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_category( $row ) );
+                if( $row[ $order ] > 0 )
+                {
+                    $result->add( new data_category( $row ) );
+                }
             }
 
             cache_category::saveFullList( $result, $order );
