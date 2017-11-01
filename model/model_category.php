@@ -111,7 +111,7 @@ class model_category extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                if( $row[ $order ] > 0 )
+                if( !is_numeric($row[ $order ]) OR $row[ $order ] > 0 )
                 {
                     $result->add( new data_category( $row ) );
                 }
