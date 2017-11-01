@@ -202,7 +202,7 @@ class layout_header extends layout
 
                         echo
                         '<li>',
-                            '<a style="border-bottom:2px solid ', $category->colour, ';color:', $category->colour, '" href="/', $category->routing, '.html">' , $category->name, '</a>',
+                            '<a style="border-bottom:2px solid ', $category->colour, ';color:', $category->colour, '" href="/', $category->routing, '.html">' , $category->menu, '</a>',
                         '</li>';
 
                     }

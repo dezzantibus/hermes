@@ -15,6 +15,8 @@ class data_category extends data
 
     public $name;
 
+    public $menu;
+
     public $routing;
 
     public $order;
@@ -39,6 +41,7 @@ class data_category extends data
             if( isset( $data['id'] ) )          $this->id         = $data['id'];
             if( isset( $data['parent_id'] ) )   $this->parent_id  = $data['parent_id'];
             if( isset( $data['name'] ) )        $this->name       = $data['name'];
+            if( isset( $data['menu'] ) )        $this->menu       = $data['menu'];
             if( isset( $data['routing'] ) )     $this->routing    = $data['routing'];
             if( isset( $data['order'] ) )       $this->order      = $data['order'];
             if( isset( $data['home_order'] ) )  $this->home_order = $data['home_order'];
