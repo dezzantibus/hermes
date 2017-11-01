@@ -38,9 +38,9 @@ p.title span {
 
 .primary-menu.light .main-menu > li > a {
     line-height: 1.2em;
+    padding:0.59em 0.88em;
 }
 
 ul.main-menu a{
     height:40px;
-    padding:0.59em 0.88em;
 }
