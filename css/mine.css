@@ -98,7 +98,7 @@ ul.main-menu a{
 }
 
 #header{
-    background: transparent;
+    background: transparent !important;
     margin-bottom:0;
 }
 
@@ -108,8 +108,10 @@ ul.main-menu a{
 
 #header .primary-menu{
     border:transparent;
-    padding-bottom:2.5em;
 }
 
+#header .primary-menu .inner-wrapper{
+    padding-bottom:2.5em;
+}
 
 /* end body sfondo visibile */
