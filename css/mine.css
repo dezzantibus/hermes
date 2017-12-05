@@ -72,3 +72,20 @@ ul.main-menu a{
 .natale6{
     background-image: url("/natale/sfondo6.jpg");
 }
+
+#wrapper{
+    background: transparent;
+}
+
+#above-the-fold{
+    background: transparent;
+    border-bottom:0;
+}
+
+#above-the-fold .inner-wrapper{
+    background:#fff;
+}
+
+#section .inner-wrapper{
+    background:#fff;
+}
