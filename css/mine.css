@@ -45,6 +45,9 @@ ul.main-menu a{
     height:40px;
 }
 
+
+/* natale */
+
 .natale{
     background: no-repeat fixed center top;
 }
@@ -73,6 +76,10 @@ ul.main-menu a{
     background-image: url("/natale/sfondo6.jpg");
 }
 
+/* end natale */
+
+
+/* body sfondo visibile */
 #wrapper{
     background: transparent !important;
 }
@@ -89,3 +96,20 @@ ul.main-menu a{
 #section .inner-wrapper{
     background:#fff;
 }
+
+#header{
+    background: transparent;
+    margin-bottom:0;
+}
+
+#header .inner-wrapper{
+    background:#fff;
+}
+
+#header .primary-menu{
+    border:transparent;
+    padding-bottom:2.5em;
+}
+
+
+/* end body sfondo visibile */
