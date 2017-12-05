@@ -108,6 +108,7 @@ ul.main-menu a{
 
 #header .primary-menu{
     border:transparent;
+    background:transparent;
 }
 
 #header .primary-menu .inner-wrapper{
