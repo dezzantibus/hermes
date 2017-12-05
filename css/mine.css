@@ -44,3 +44,31 @@ p.title span {
 ul.main-menu a{
     height:40px;
 }
+
+.natale{
+    background: no-repeat fixed center top;
+}
+
+.natale1{
+    background-image: url("/natale/sfondo1.jpg");
+}
+
+.natale2{
+    background-image: url("/natale/sfondo2.jpg");
+}
+
+.natale3{
+    background-image: url("/natale/sfondo3.jpg");
+}
+
+.natale4{
+    background-image: url("/natale/sfondo4.jpg");
+}
+
+.natale5{
+    background-image: url("/natale/sfondo5.jpg");
+}
+
+.natale6{
+    background-image: url("/natale/sfondo6.jpg");
+}

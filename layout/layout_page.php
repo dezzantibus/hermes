@@ -122,10 +122,9 @@ abstract class layout_page extends layout
             '<link rel="stylesheet" href="/css/', constant::$text['site'], '.css">',
 
         '</head>',
-        '<body>',
+        '<body class="natale natale', rand(1,6) , '">',
 
             '<div id="wrapper" style="background:', $this->background , ';">';
-
 
 
     }
