@@ -40,8 +40,6 @@ class weather
         self::$day3 = self::$data[2];
         self::$day4 = self::$data[3];
 
-        print_r(self::$day1);
-
     }
 
     private static function echoCell( $data )
