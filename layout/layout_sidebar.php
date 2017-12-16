@@ -31,6 +31,8 @@ class layout_sidebar extends layout
 
 //        $this->recentComments();
 
+        $this->weather();
+
         $this->recentPosts();
 
         //$this->archive();
@@ -46,6 +48,14 @@ class layout_sidebar extends layout
 //        $this->tags();
 
         echo '</aside>';
+
+    }
+
+    private function weather()
+    {
+
+        weather::load( 'Tirana' );
+        weather::echoHtml();
 
     }
 
