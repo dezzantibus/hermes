@@ -27,7 +27,7 @@ class weather
 
         self::$translateTo = array(
             'Shi',
-            'Vran&euml;sira',
+            'vran&euml;sira',
         );
 
         $call = cache::retrieve( 'weather-' . $city );
