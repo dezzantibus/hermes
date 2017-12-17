@@ -13,8 +13,22 @@ class weather
 
     public static $day4;
 
+    private static $translateFrom;
+
+    private static $translateTo;
+
     public static function load( $city )
     {
+
+        self::$translateFrom = array(
+            'shi',
+            'Mundesi shiu',
+        );
+
+        self::$translateTo = array(
+            'Shi',
+            'Vran&euml;sira',
+        );
 
         $call = cache::retrieve( 'weather-' . $city );
 
@@ -44,11 +58,12 @@ class weather
 
     private static function echoCell( $data )
     {
+
         echo
         '<li>',
             '<div class="image"><img src="', $data['icon_url'], '" alt="Post"></div>',
             '<div class="text">',
-                '<h3>', $data['conditions'], '</h3>',
+                '<h3>', str_replace( self::$translateFrom, self::$translateTo, $data['conditions'] ), '</h3>',
                 '<p class="date">', $data['date']['pretty'], '</p>',
             '</div>',
         '</li>';
@@ -60,7 +75,7 @@ class weather
 
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">Parashikimet e motit</h3>',
+            '<h3 class="widget-title">e MOTI N&Euml; SHQIP&euml;RI</h3>',
             '<ul class="recent-posts">';
 
                 self::echoCell( self::$day1 );
