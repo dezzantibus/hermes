@@ -23,11 +23,13 @@ class weather
         self::$translateFrom = array(
             'shi',
             'Mundesi Shiu',
+            'i kthjellet',
         );
 
         self::$translateTo = array(
             'Shi',
             'vran&euml;sira',
+            'i kthj&euml;llet'
         );
 
         $call = cache::retrieve( 'weather-' . $city );
@@ -75,7 +77,7 @@ class weather
 
         echo
         '<div class="widget">',
-            '<h3 class="widget-title">e MOTI N&Euml; SHQIP&euml;RI</h3>',
+            '<h3 class="widget-title">MOTI N&Euml; SHQIP&euml;RI</h3>',
             '<ul class="recent-posts">';
 
                 self::echoCell( self::$day1 );
