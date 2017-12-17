@@ -22,7 +22,7 @@ class weather
 
         self::$translateFrom = array(
             'shi',
-            'Mundesi shiu',
+            'Mundesi Shiu',
         );
 
         self::$translateTo = array(
