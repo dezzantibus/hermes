@@ -32,12 +32,12 @@ class weather
             'i kthjell&euml;t'
         );
 
-        $call = cache::retrieve( 'weather-' . $city );
+        $call = cache_apis::weather_retrieve( $city );
 
         if( empty( $call ) )
         {
             $call = file_get_contents( 'http://api.wunderground.com/api/03aa91bcfad8b663/forecast/lang:AL/q/Albania/' . $city . '.json' );
-            cache::save( 'weather-' . $city, $call, 3600 );
+            cache_apis::weather_save( $city, $call );
         }
 
         self::$data = json_decode( $call, 1 );
