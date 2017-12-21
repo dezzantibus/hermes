@@ -19,9 +19,6 @@ abstract class cache
     static public function activate()
     {
 
-        error_log( empty( self::$available ) && self::$available !== false );
-        error_log( var_export( self::$available ) );
-
         if( empty( self::$available ) && self::$available !== false )
         {
 
