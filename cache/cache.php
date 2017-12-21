@@ -56,7 +56,7 @@ abstract class cache
 
         $index = self::stampIndex( $index );
 
-        return self::$memcache->set( $index, $data, $duration);
+        return self::$memcache->set( $index, $data, MEMCACHE_COMPRESSED, $duration);
 
     }
 
