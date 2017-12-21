@@ -50,7 +50,7 @@ abstract class cache
     static public function save( $index, $data, $duration=600 )
     {
 
-        self::activate();
+        //self::activate();
 
         if( ! self::$available )
         {
@@ -66,7 +66,7 @@ abstract class cache
     static public function retrieve( $index )
     {
 
-        self::activate();
+        //self::activate();
 
         if( ! self::$available )
         {
@@ -82,7 +82,7 @@ abstract class cache
     static public function clear( $index )
     {
 
-        self::activate();
+        //self::activate();
 
         if( ! self::$available )
         {
