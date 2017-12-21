@@ -27,6 +27,8 @@ abstract class cache
             self::$memcache->connect( self::HOST, self::PORT );
 
             $stats = self::$memcache->getExtendedStats();
+            
+            error_log( json_encode($stats) );
 
             self::$available = false;
 
