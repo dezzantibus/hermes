@@ -26,7 +26,7 @@ abstract class cache
 
             self::$memcache->connect( self::HOST, self::PORT );
 
-            self::$memcache->getExtendedStats();
+            $stats = self::$memcache->getExtendedStats();
 
             self::$available = false;
 
