@@ -19,6 +19,9 @@ abstract class cache
     static public function activate()
     {
 
+        error_log( empty( self::$available ) && self::$available !== false );
+        error_log( var_export( self::$available ) );
+
         if( empty( self::$available ) && self::$available !== false )
         {
 
@@ -27,7 +30,7 @@ abstract class cache
             self::$memcache->connect( self::HOST, self::PORT );
 
             $stats = self::$memcache->getExtendedStats();
-            
+
             error_log( json_encode($stats) );
 
             self::$available = false;
