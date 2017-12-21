@@ -22,7 +22,7 @@ abstract class cache
         if( empty( self::$available ) && self::$available !== false )
         {
 
-            self::$memcache = new Memcache();
+            self::$memcache = new Memcached();
 
             self::$memcache->connect( self::HOST, self::PORT );
 
