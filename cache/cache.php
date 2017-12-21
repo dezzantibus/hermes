@@ -28,8 +28,6 @@ abstract class cache
 
             $stats = self::$memcache->getExtendedStats();
 
-            error_log( json_encode($stats) );
-
             self::$available = false;
 
             foreach( $stats as $server )

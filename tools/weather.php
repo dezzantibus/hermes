@@ -36,13 +36,8 @@ class weather
 
         if( empty( $call ) )
         {
-            error_log( 'weather cache empty' );
             $call = file_get_contents( 'http://api.wunderground.com/api/03aa91bcfad8b663/forecast/lang:AL/q/Albania/' . $city . '.json' );
             cache_apis::weather_save( $city, $call );
-        }
-        else
-        {
-            error_log( 'weather cache found' );
         }
 
         self::$data = json_decode( $call, 1 );
