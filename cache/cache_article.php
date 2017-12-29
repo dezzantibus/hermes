@@ -29,9 +29,9 @@ class cache_article extends cache
         return self::retrieve( 'popular-' . $category );
     }
 
-    static public function savePopular( $data, $category )
+    static public function savePopular( $data, $category='home' )
     {
-        self::save( 'popular-' . $category, $data );
+        self::save( 'popular-' . $category, $data, 600 );
     }
 
     static public function returnRecent( $category='' )
