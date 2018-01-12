@@ -24,12 +24,14 @@ class weather
             'shi',
             'Mundesi Shiu',
             'i kthjellet',
+            'Mjegullire',
         );
 
         self::$translateTo = array(
             'Shi',
             'vran&euml;sira',
-            'i kthjell&euml;t'
+            'i kthjell&euml;t',
+            'mjegull',
         );
 
         $call = cache_apis::weather_retrieve( $city );
