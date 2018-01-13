@@ -90,11 +90,11 @@ class exchange
 
 
         <div class="widget">
-            <h3 class="widget-title">Currency Conversion</h3>
+            <h3 class="widget-title">KURSI I K&Euml;MBIMIT</h3>
 
             <ul class="currency-conversion">
                 <li>
-                    <div class="text"><p>From</p></div>
+                    <div class="text"><p>Nga</p></div>
                     <select id="currencyFrom">';
 
                         foreach( self::$fullList as $currency )
@@ -106,7 +106,7 @@ class exchange
                     '</select>
                </li>
                 <li>
-                    <div class="text"><p>To</p></div>
+                    <div class="text"><p>N&euml;</p></div>
                     <select id="currencyTo">';
 
                         foreach( self::$fullList as $currency )
@@ -118,12 +118,12 @@ class exchange
                     '</select>
                 </li>
                 <li>
-                    <div class="text"><p>Value</p></div>
+                    <div class="text"><p>Vlera</p></div>
                     <input type="text" id="currencyAmount" value="1" />
                 </li>
-                <li><button type="button" onclick="currencyConv()">Calcola</button></li>
+                <li><button type="button" onclick="currencyConv()">llogarit</button></li>
                 <li id="currency-conversion-result">
-                    <div>Result:&nbsp;&nbsp;<span></span></div>
+                    <div>Rezultati:&nbsp;&nbsp;<span></span></div>
                 </li>
 
             </ul>
