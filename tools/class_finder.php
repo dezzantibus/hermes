@@ -57,6 +57,7 @@ class class_finder
 			switch( $frags[1] )
 			{
                 case 'admin': require_once __DIR__ . '/../handler/admin/' . $name . '.php'; break;
+                case 'ajax':  require_once __DIR__ . '/../handler/ajax/' . $name . '.php';  break;
 				default:      require_once __DIR__ . '/../handler/' . $name . '.php';
 			}
 		}
