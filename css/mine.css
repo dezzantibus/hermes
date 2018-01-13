@@ -63,6 +63,10 @@ ul.main-menu a{
     display:none;
 }
 
+#currency-conversion-result span{
+    color:#000;
+}
+
 /* natale
 
 .natale{

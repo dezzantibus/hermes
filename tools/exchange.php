@@ -123,7 +123,7 @@ class exchange
                 </li>
                 <li><button type="button" onclick="currencyConv()">Calcola</button></li>
                 <li id="currency-conversion-result">
-                    <div>Result:<span></span></div>
+                    <div>Result:&nbsp;&nbsp;<span></span></div>
                 </li>
 
             </ul>
