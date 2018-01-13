@@ -15,11 +15,10 @@ class exchange
 
     public static function load( $from, $to, $amount)
     {
+
         self::$currencyFrom = $from;
         self::$currencyTo   = $to;
         self::$amountFrom   = $amount;
-
-        self::getFullList();
 
         self::convertCurrency();
 
@@ -69,6 +68,8 @@ class exchange
     public static function echoHtml()
     {
 
+        self::getFullList();
+
         echo
         '
         <script type="text/javascript">
@@ -76,7 +77,8 @@ class exchange
             function currencyconv()
             {
                 $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value(), function( data ) {
-                  $( "#currency-conversion-result span" ).html( data );
+                    $( "#currency-conversion-result span" ).html( data );
+                    $( "#currency-conversion-result" ).css( "display", "block" );
                 });
             }
 
@@ -89,21 +91,27 @@ class exchange
             <ul class="currency-conversion">
                 <li>
                     <div class="text"><p>From</p></div>
-                    <select id="currencyFrom">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
+                    <select id="currencyFrom">';
+
+                        foreach( self::$fullList as $currency )
+                        {
+                            echo '<option value="', $currency['id'], '">', $currency['currencyname'], ' (', $currency['currencySymbol'], ')</option>';
+                        }
+
+                    echo
+                    '</select>
                </li>
                 <li>
                     <div class="text"><p>To</p></div>
-                    <select id="currencyTo">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
+                    <select id="currencyTo">';
+
+                        foreach( self::$fullList as $currency )
+                        {
+                            echo '<option value="', $currency['id'], '">', $currency['currencyname'], ' (', $currency['currencySymbol'], ')</option>';
+                        }
+
+                    echo
+                    '</select>
                 </li>
                 <li>
                     <div class="text"><p>Value</p></div>

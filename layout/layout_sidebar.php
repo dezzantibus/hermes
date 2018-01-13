@@ -33,6 +33,8 @@ class layout_sidebar extends layout
 
         $this->weather();
 
+        $this->currencyExchange();
+
         $this->recentPosts();
 
         //$this->archive();
@@ -56,6 +58,13 @@ class layout_sidebar extends layout
 
         weather::load( 'Tirana' );
         weather::echoHtml();
+
+    }
+
+    private function currencyExchange()
+    {
+
+        exchange::echoHtml();
 
     }
 
