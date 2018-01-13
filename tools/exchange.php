@@ -76,7 +76,11 @@ class exchange
 
             function currencyConv()
             {
+            console.log("test");
                 $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value(), function( data ) {
+                              console.log("/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value());
+                              console.log(data);
+
                     $( "#currency-conversion-result span" ).html( data );
                     $( "#currency-conversion-result" ).css( "display", "block" );
                 });
@@ -119,7 +123,7 @@ class exchange
                 </li>
                 <li><button type="button" onclick="currencyConv()">Calcola</button></li>
                 <li id="currency-conversion-result">
-                    <div>Result:<span>3000</span></div>
+                    <div>Result:<span></span></div>
                 </li>
 
             </ul>
