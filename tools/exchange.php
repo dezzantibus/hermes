@@ -77,8 +77,8 @@ class exchange
             function currencyConv()
             {
             console.log("test");
-                $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value(), function( data ) {
-                              console.log("/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value());
+                $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").val() + "&to=" + $("#currencyTo").val() + "&amount=" + $("#currencyAmount").val(), function( data ) {
+                              console.log("/ajax/currencyconversion?from=" + $("#currencyFrom").val() + "&to=" + $("#currencyTo").val() + "&amount=" + $("#currencyAmount").val());
                               console.log(data);
 
                     $( "#currency-conversion-result span" ).html( data );
