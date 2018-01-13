@@ -74,7 +74,7 @@ class exchange
         '
         <script type="text/javascript">
 
-            function currencyconv()
+            function currencyConv()
             {
                 $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").value() + "&to=" + $("#currencyTo").value() + "&amount=" + $("#currencyAmount").value(), function( data ) {
                     $( "#currency-conversion-result span" ).html( data );
@@ -95,7 +95,7 @@ class exchange
 
                         foreach( self::$fullList as $currency )
                         {
-                            echo '<option value="', $currency['id'], '">', $currency['currencyname'], ' (', $currency['currencySymbol'], ')</option>';
+                            echo '<option value="', $currency['id'], '">', $currency['currencyName'], ' (', $currency['currencySymbol'], ')</option>';
                         }
 
                     echo
@@ -107,7 +107,7 @@ class exchange
 
                         foreach( self::$fullList as $currency )
                         {
-                            echo '<option value="', $currency['id'], '">', $currency['currencyname'], ' (', $currency['currencySymbol'], ')</option>';
+                            echo '<option value="', $currency['id'], '">', $currency['currencyName'], ' (', $currency['currencySymbol'], ')</option>';
                         }
 
                     echo

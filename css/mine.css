@@ -54,6 +54,11 @@ ul.main-menu a{
     font-weight:normal;
 }
 
+.currency-conversion button{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
 #currency-conversion-result{
     display:none;
 }
