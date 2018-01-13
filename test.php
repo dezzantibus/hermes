@@ -6,11 +6,11 @@
  * Time: 16:35
  */
 
-include 'tools/weather.php';
-include 'cache/cache.php';
+include 'tools/exchange.php';
+//include 'cache/cache.php';
+//include 'cache/cache_apis.php';
 
 
 
-$weather = new weather();
+exchange::load( 'USD', 'EUR', 1000 );
 
-$weather->load( 'Tirana' );

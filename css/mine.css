@@ -45,6 +45,14 @@ ul.main-menu a{
     height:40px;
 }
 
+.currency-conversion .text{
+    margin-bottom: -10px;
+    margin-top: 10px;
+    color:#000;
+    font-size:12px;
+    font-family:'Roboto Slab', serif;
+    font-weight:normal;
+}
 
 /* natale
 
@@ -123,3 +131,4 @@ ul.main-menu a{
 body{
     background:#fff;
 }
+

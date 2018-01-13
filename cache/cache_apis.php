@@ -15,5 +15,15 @@ class cache_apis extends cache
         self::save( 'weather-' . $city, $data, 3600 );
     }
 
+    static public function currency_retrieve( $from )
+    {
+        return self::retrieve( 'currency-' . $from );
+    }
+
+    static public function currency_save( $from, $data, $duration=7200 )
+    {
+        self::save( 'currency-' . $from, $data, $duration );
+    }
+
 
 }

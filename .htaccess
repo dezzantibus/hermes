@@ -6,6 +6,8 @@
     RewriteRule ^mobile$ / [QSA]
     RewriteRule ^mobile/(.*)$ $1 [QSA]
 
+    RewriteRule ^ajax/(.*)$ index.php?handler=handler_ajax_$1 [QSA,L]
+
 	RewriteRule ^(.*)demo/(.*)x(.*)\.gif$ image.php?width=$2&height=$3&file=filler.jpg [QSA,L]
 	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
 	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
