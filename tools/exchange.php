@@ -76,13 +76,11 @@ class exchange
 
             function currencyConv()
             {
-            console.log("test");
                 $.get( "/ajax/currencyconversion?from=" + $("#currencyFrom").val() + "&to=" + $("#currencyTo").val() + "&amount=" + $("#currencyAmount").val(), function( data ) {
-                              console.log("/ajax/currencyconversion?from=" + $("#currencyFrom").val() + "&to=" + $("#currencyTo").val() + "&amount=" + $("#currencyAmount").val());
-                              console.log(data);
-
-                    $( "#currency-conversion-result span" ).html( data );
+                    $( "#currency-conversion-result input" ).prop("readonly", false );
+                    $( "#currency-conversion-result input" ).val( data );
                     $( "#currency-conversion-result" ).css( "display", "block" );
+                    $( "#currency-conversion-result input" ).prop("readonly", true );
                 });
             }
 
@@ -123,7 +121,8 @@ class exchange
                 </li>
                 <li><button type="button" onclick="currencyConv()">llogarit</button></li>
                 <li id="currency-conversion-result">
-                    <div>Rezultati:&nbsp;&nbsp;<span></span></div>
+                    <div class="text"><p>Rezultati:</p></div>
+                    <input type="text" value="1" />
                 </li>
 
             </ul>
