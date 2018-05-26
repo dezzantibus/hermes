@@ -48,20 +48,24 @@ class layout_article_content extends layout
             echo
             '<h1 class="post-title">', $this->article->title, '</h1>',
             '<h3 class="lead">', $this->article->subtitle, '</h3>',
-/*
- * Bio di testa vecchia
- *
+
             '<div class="post-meta">',
                 '<span class="author">Author <a href="#">', $this->article->journalist->display_name, '</a></span>',
                 '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
 //                '<span class="comments">Comments <a href="#">152</a></span>',
             '</div>';
-*/
+
+        /*
+         * bio di test con foto
+
+
             '<div class="post-meta">',
                 '<img src="', empty( $this->article->journalist->icon ) ? '/100/40/journalists/hermes/hermes2.jpg' : '/60/60' . $this->article->journalist->icon, '" alt="Author" style="float:left;margin-right:10px;border-radius:50px;" />',
                 '<span class="author">Author <a href="#">', $this->article->journalist->display_name, '</a></span><br>',
                 '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
            '</div>';
+
+        */
 
             if( !empty( $this->article->gallery ) )
             {
