@@ -50,7 +50,7 @@ class layout_article_content extends layout
             '<h3 class="lead">', $this->article->subtitle, '</h3>',
 
             '<div class="post-meta">',
-//                '<span class="author">Author <a href="#">John Doe</a></span>',
+                '<span class="author">Author <a href="#">', $this->article->journalist->display_name, '</a></span>',
                 '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
 //                '<span class="comments">Comments <a href="#">152</a></span>',
             '</div>';
