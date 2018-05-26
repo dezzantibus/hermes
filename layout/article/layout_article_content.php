@@ -58,7 +58,7 @@ class layout_article_content extends layout
             '</div>';
 */
             '<div class="post-meta">',
-                '<img src="', empty( $this->article->journalist->icon ) ? '/100/40/journalists/hermes/hermes2.jpg' : '/100/100' . $this->article->journalist->icon, '" alt="Author" style="float:left" />',
+                '<img src="', empty( $this->article->journalist->icon ) ? '/100/40/journalists/hermes/hermes2.jpg' : '/60/60' . $this->article->journalist->icon, '" alt="Author" style="float:left;margin-right:10px;" />',
                 '<span class="author">Author <a href="#">', $this->article->journalist->display_name, '</a></span><br>',
                 '<span class="date">', constant::$text['published'], ' <a href="#">', $this->article->dateForDisplay( $this->article->created ), '</a></span>',
            '</div>';
