@@ -103,7 +103,7 @@ class model_category extends model
         if( empty( $result ) )
         {
 
-            $sql = "SELECT * FROM category WHERE order > 0 ORDER BY `$order` ASC";
+            $sql = "SELECT * FROM category WHERE `order` > 0 ORDER BY `$order` ASC";
 
             $query = db::prepare( $sql );
             $query->execute();
