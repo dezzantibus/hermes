@@ -471,6 +471,7 @@ class model_article extends model
                         INNER JOIN hit
                             ON hit.article_id = article.id
                     WHERE hit.created > NOW() - INTERVAL :days DAY
+                        AND article.created > NOW() - INTERVAL 21 day
                         AND hit.ignore = 0
                     GROUP BY hit.article_id
                     ORDER BY hits DESC
