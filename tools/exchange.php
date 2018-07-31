@@ -109,7 +109,12 @@ class exchange
 
                         foreach( self::$fullList as $currency )
                         {
-                            echo '<option value="', $currency['id'], '">', $currency['currencyName'], ' (', $currency['currencySymbol'], ')</option>';
+                            echo '<option value="', $currency['id'], '">', $currency['currencyName'];
+                            if( isset( $currency['currencySymbol'] ) )
+                            {
+                                echo ' (', $currency['currencySymbol'], ')';
+                            }
+                            echo '</option>';
                         }
 
                     echo
