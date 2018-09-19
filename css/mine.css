@@ -36,6 +36,10 @@ p.title span {
     background-color: transparent;
 }
 
+p.title:after{
+    top:110%;
+}
+
 .primary-menu.light .main-menu > li > a {
     line-height: 1.2em;
     padding:0.59em 0.68em;
