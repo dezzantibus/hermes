@@ -58,7 +58,7 @@ class text_hermesnews
             'post a comment'    => 'Posto komentin',
             'leave reply'       => 'Shkruaj nj&euml; <strong>koment</strong>',
             'contacts'          => 'Kontakte',
-            'contacts text'     => '<p>HermesNews Multimedia</p><ul><li><a href="mailto:drejtor@hermesnews.org">drejtor@hermesnews.org</a></li><li><a href="mailto:info@hermesnews.org">info@hermesnews.org</a></li></ul>',
+            'contacts text'     => '<p><b>Karilon COMMUNICATION</b></p><p>Kjo platformë informative kontrollohet dhe menaxhohet nga Karilon COMMUNICATION sh.p.k, e rregjistruar në QKB me Nuis: L71607007O. Drejtore Përgjegjëse Doriana METOLLARI</p><ul><li><a href="mailto:dorianametollari@yahoo.com">dorianametollari@yahoo.com</a></li><li><a href="mailto:info@kariloncommunication.com">info@kariloncommunication.com</a></li><li>cell: 069 730 5438</li></ul>',
             'published'         => 'Publikuar',
             'banner'            => 'Banner',
         );
