@@ -4,6 +4,7 @@ require_once __DIR__ . '/tools/class_finder.php';
 
 spl_autoload_register( 'class_finder::getClassFile' );
 
+/*
 switch( $_SERVER['HTTP_HOST'] )
 {
 //    case 'eroitaliano.com':
@@ -24,6 +25,11 @@ switch( $_SERVER['HTTP_HOST'] )
         break;
 
 }
+/*/
+constant::$text = text_hermesnews::text();
+db::$schema = 'hermes2';
+//*/
+
 
 session_start();
 
