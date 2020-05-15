@@ -119,7 +119,7 @@ class model_article extends model
 
     }
 
-    static public function delete( $id, $category_id )
+    static public function delete( $id, $category_id = null )
     {
 
         cache_article::delete();
@@ -129,7 +129,7 @@ class model_article extends model
         $query = db::prepare( $sql );
         $query->bindInt( ':id', $id )->execute();
 
-        self::sitemaps( $category_id );
+        //self::sitemaps( $category_id );
 
     }
 
