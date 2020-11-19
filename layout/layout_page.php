@@ -102,15 +102,15 @@ abstract class layout_page extends layout
             '<link rel="stylesheet" media="(min-width:1301px)" href="/css/1200.css">',
 
             //<!-- Fonts Google -->
-            "<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>",
-            "<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>",
+            "<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>",
+            "<link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>",
 
             //<!-- Fonts library -->
             '<link rel="stylesheet" href="/css/fonts.css">',
 
             //<!-- Load jQuery -->
-            '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>',
-            '<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>',
+            '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>',
+            '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>',
 
             '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>',
 
