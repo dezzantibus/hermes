@@ -6,13 +6,13 @@ class db
     /** @var $connection PDO  */
     static protected $connection = null;
 
-    const HOST = '127.0.0.1';
+    const HOST = 'database.hermesnews.al';
 
     public static $schema; // = 'hermes2';
 
-    const USER = 'root';
+    const USER = 'hermes';
 
-    const PASS = 'antani75';
+    const PASS = 'h3rm35n1u5';
 
     public static function connect()
     {
